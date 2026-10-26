@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ka" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobalEdu | შენი გზამკვლევი განათლებაში</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ნავიგაცია -->
+    <nav id="main-nav">
+        <a href="javascript:void(0)" class="logo" onclick="navigateTo('page-home')">GlobalEdu 🎓</a>
+        <ul class="nav-links">
+            <li><a href="javascript:void(0)" onclick="navigateTo('page-home')">მთავარი</a></li>
+            <li><a href="javascript:void(0)" onclick="navigateTo('page-scholarships')">სტიპენდიები</a></li>
+            <li><a href="javascript:void(0)" onclick="navigateTo('page-universities')">უნივერსიტეტები</a></li>
+            <li><a href="javascript:void(0)" onclick="navigateTo('page-agencies')">კონსულტაცია</a></li>
+            <li><a href="#" id="ai-btn-nav" class="ai-btn">AI მრჩეველი ✨</a></li>
+        </ul>
+        <div class="controls">
+            <button id="themeToggle" class="theme-toggle">🌙</button>
+            <button class="register-btn" id="navRegBtn" onclick="navigateTo('page-register')">შესვლა</button>
+        </div>
+    </nav>
+
+    <!-- მთავარი გვერდი -->
+    <div id="page-home" class="app-page active">
+        <header class="hero">
+            <div class="hero-bg-shapes"></div> 
+            <div class="hero-content">
+                <h1>შენი გზამკვლევი ევროპისა და აშშ-ის უნივერსიტეტებში</h1>
+                <p>აღმოაჩინე სრული დაფინანსების შესაძლებლობები და მიიღე პერსონალიზებული AI რეკომენდაცია.</p>
+                <a href="#" id="ai-btn-hero" class="btn-main">მოძებნე შენი პროგრამა 🚀</a>
+            </div>
+        </header>
+        
+        <section class="section" style="max-width: 900px;">
+            <h2 class="section-title">რა უნდა იცოდე საზღვარგარეთ სწავლაზე?</h2>
+            <div class="accordion-container">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span style="display:flex; align-items:center; gap:15px;"><span class="card-icon" style="width:40px;height:40px;font-size:1.5rem;margin:0;">📚</span> აკადემიური მოთხოვნები (GPA)</span>
+                        <span class="acc-icon">▼</span>
+                    </div>
+                    <div class="accordion-content"><p>ევროპისა და აშშ-ის წამყვან უნივერსიტეტებში მოსახვედრად, როგორც წესი, მოითხოვება მინიმუმ 75-80%-იანი აკადემიური მოსწრება (GPA 3.0+ 4.0-იანი სკალით). მნიშვნელოვანია იცოდეთ, რომ უნივერსიტეტები აფასებენ არა მხოლოდ საბოლოო ნიშანს, არამედ საგნების სირთულესა და პროგრესს წლების განმავლობაში. ტრანსკრიპტის სწორი თარგმნა და ნოტარიული დამოწმება აპლიკაციის კრიტიკული ნაწილია.</p></div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span style="display:flex; align-items:center; gap:15px;"><span class="card-icon" style="width:40px;height:40px;font-size:1.5rem;margin:0;">🗣️</span> ენის ბარიერის დაძლევა და სერტიფიკატები</span>
+                        <span class="acc-icon">▼</span>
+                    </div>
+                    <div class="accordion-content"><p>ინგლისურენოვან პროგრამებზე სასწავლებლად აუცილებელია საერთაშორისო სერტიფიკატის წარდგენა. ყველაზე მოთხოვნადია <strong>IELTS (მინიმუმ 6.0 - 6.5)</strong> და <strong>TOEFL (მინიმუმ 80-90)</strong>. ბოლო წლებში ბევრი უნივერსიტეტი იღებს Duolingo English Test-საც. გერმანულენოვანი პროგრამებისთვის დაგჭირდებათ Goethe-Zertifikat ან TestDaF (B2/C1 დონე). სერტიფიკატის გარეშე დაფინანსების მიღება პრაქტიკულად შეუძლებელია.</p></div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span style="display:flex; align-items:center; gap:15px;"><span class="card-icon" style="width:40px;height:40px;font-size:1.5rem;margin:0;">📝</span> სამოტივაციო წერილი (SOP) და რეკომენდაციები</span>
+                        <span class="acc-icon">▼</span>
+                    </div>
+                    <div class="accordion-content"><p>სამოტივაციო წერილი (Statement of Purpose) არის თქვენი შანსი, გამოირჩეთ სხვა აპლიკანტებისგან. მასში ნათლად უნდა ჩანდეს თქვენი აკადემიური ინტერესები, კარიერული მიზნები და ის, თუ რატომ ირჩევთ კონკრეტულად ამ უნივერსიტეტს. ასევე, დაგჭირდებათ 2 სარეკომენდაციო წერილი ლექტორებისგან ან დამსაქმებლებისგან, რომლებიც დაადასტურებენ თქვენს პროფესიულ და პიროვნულ უნარებს.</p></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- სტიპენდიები -->
+    <div id="page-scholarships" class="app-page">
+        <section class="section">
+            <h2 class="section-title">საერთაშორისო სტიპენდიები და გრანტები</h2>
+            <div class="grid-3">
+                <div class="card clickable-card" onclick="openScholarshipModal('daad')"><span class="tag tag-yellow">გერმანია</span><h3 style="margin:10px 0;">DAAD სტიპენდია</h3><p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6;">გერმანიის მთავრობის სრული დაფინანსება საერთაშორისო სტუდენტებისთვის სამაგისტრო და სადოქტორო საფეხურებზე.</p></div>
+                <div class="card clickable-card" onclick="openScholarshipModal('chevening')"><span class="tag tag-blue">დიდი ბრიტანეთი</span><h3 style="margin:10px 0;">Chevening</h3><p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6;">ბრიტანეთის ლიდერების პროგრამა, რომელიც ფარავს სწავლის, ფრენისა და ცხოვრების ხარჯებს 1 წლიანი მაგისტრატურისთვის.</p></div>
+                <div class="card clickable-card" onclick="openScholarshipModal('dsu')"><span class="tag tag-green">იტალია</span><h3 style="margin:10px 0;">DSU (Need-Based)</h3><p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6;">სოციალური სტიპენდია იტალიაში, რომელიც გაიცემა სტუდენტის ოჯახის ფინანსური მდგომარეობის (ISEE) საფუძველზე.</p></div>
+                <div class="card clickable-card" onclick="openScholarshipModal('fulbright')"><span class="tag tag-red">აშშ (USA)</span><h3 style="margin:10px 0;">Fulbright Program</h3><p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6;">ამერიკის შეერთებული შტატების ყველაზე პრესტიჟული გაცვლითი პროგრამა სრული დაფინანსებით.</p></div>
+                <div class="card clickable-card" onclick="openScholarshipModal('erasmus')"><span class="tag tag-purple">ევროკავშირი</span><h3 style="margin:10px 0;">Erasmus Mundus</h3><p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6;">ევროპული ერთობლივი სამაგისტრო პროგრამები, სადაც სტუდენტი სწავლობს მინიმუმ ორ სხვადასხვა ქვეყანაში.</p></div>
+                <div class="card clickable-card" onclick="openScholarshipModal('stipendium')"><span class="tag tag-teal">უნგრეთი</span><h3 style="margin:10px 0;">Stipendium Hungaricum</h3><p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6;">უნგრეთის მთავრობის გრანტი, რომელიც მოიცავს უფასო სწავლას, საცხოვრებელს და ყოველთვიურ სტიპენდიას.</p></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- სააგენტოები (API) -->
+    <div id="page-agencies" class="app-page">
+        <section class="section">
+            <h2 class="section-title">დაჯავშნე კონსულტაცია ექსპერტებთან</h2>
+            <p style="text-align:center; color:var(--text-muted); margin-top:-40px; margin-bottom:50px; font-size:1.1rem;">ჩვენი პარტნიორი კომპანიები დაგეხმარებიან სააპლიკაციო პროცესის სრულყოფილად მართვაში.</p>
+            <div class="grid-3" id="agenciesGrid">
+                <p style="text-align: center; color: var(--secondary); grid-column: span 3;">იტვირთება კომპანიების ბაზა...</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- უნივერსიტეტების ბაზა -->
+    <div id="page-universities" class="app-page">
+        <section class="section" style="max-width: 1450px;">
+            <h2 class="section-title">უნივერსიტეტების ბაზა</h2>
+            <div class="search-layout">
+                <aside class="search-sidebar">
+                    <h3 style="margin-top: 0; color: var(--primary); font-size: 1.5rem;">ფილტრაცია 🔍</h3>
+                    <div class="form-group filter-group"><label>ქვეყანა</label><select id="filterCountry" onchange="filterAndSortUnis()"><option value="">ყველა ქვეყანა</option><option value="გერმანია">გერმანია</option><option value="იტალია">იტალია</option><option value="დიდი ბრიტანეთი">დიდი ბრიტანეთი</option><option value="აშშ">აშშ</option><option value="კანადა">კანადა</option></select></div>
+                    <div class="form-group filter-group"><label>ხარისხი</label><select id="filterDegree" onchange="filterAndSortUnis()"><option value="">ყველა საფეხური</option><option value="ბაკალავრიატი">ბაკალავრიატი</option><option value="მაგისტრატურა">მაგისტრატურა</option></select></div>
+                    <div class="form-group filter-group"><label>მიმართულება</label><select id="filterField" onchange="filterAndSortUnis()"><option value="">იტვირთება...</option></select></div>
+                    <div class="form-group filter-group"><label>სწავლების ენა</label><select id="filterLang" onchange="filterAndSortUnis()"><option value="">ყველა ენა</option><option value="ინგლისური">ინგლისური</option><option value="გერმანული">გერმანული</option></select></div>
+                    <div class="form-group filter-group"><label>მაქს. ფასი: <span id="priceVal" style="color: var(--secondary); font-weight: 800;">65000 $</span></label><input type="range" id="filterPrice" min="0" max="65000" step="1000" value="65000" oninput="updatePriceLabel(); filterAndSortUnis();" style="width: 100%; accent-color: var(--secondary);"></div>
+                </aside>
+                <div class="search-content">
+                    <div class="results-header">
+                        <p style="margin: 0; color: var(--text-muted);"><strong id="resultsCount" style="color: var(--primary); font-size: 1.3rem;">0</strong> პროგრამა მოიძებნა</p>
+                        <select id="sortOption" onchange="filterAndSortUnis()" style="padding: 10px; border-radius: 12px; border: 1px solid var(--border);"><option value="default">Match Score</option><option value="priceAsc">ფასი: ზრდადობით</option><option value="priceDesc">ფასი: კლებადობით</option></select>
+                    </div>
+                    <div class="grid-2" id="uniResultsGrid"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="compareBar" class="compare-floating-bar" style="display: none;">
+        <div style="display: flex; align-items: center; gap: 15px;"><span style="font-size: 1.5rem;">⚖️</span><div><strong style="display: block;">შესადარებელი პროგრამები</strong><span style="font-size: 0.85rem; color: var(--text-muted);">არჩეულია: <strong id="compareCount">0</strong> / 3</span></div></div>
+        <div style="display: flex; gap: 10px;"><button class="btn-secondary" onclick="clearCompare()">გასუფთავება</button><button class="btn-main" onclick="openCompareModal()">შედარება</button></div>
+    </div>
+
+    <!-- ანიმირებული ავტორიზაცია -->
+    <div id="page-register" class="app-page">
+        <div class="auth-container">
+            <button class="back-btn" onclick="navigateTo('page-home')">← უკან დაბრუნება</button>
+            <div class="auth-box">
+                <div class="auth-tabs" id="authTabsContainer">
+                    <button class="auth-tab-btn active" onclick="switchAuthTab('login')">შესვლა</button>
+                    <button class="auth-tab-btn" onclick="switchAuthTab('register')">რეგისტრაცია</button>
+                </div>
+                <form id="loginForm" class="auth-form active">
+                    <h2 style="color: var(--primary); margin-top:0;">მოგესალმებით! 👋</h2>
+                    <div class="form-group"><label>ელ. ფოსტა</label><input type="email" required></div>
+                    <div class="form-group"><label>პაროლი</label><input type="password" required></div>
+                    <button type="submit" class="submit-btn full-width">შესვლა</button>
+                </form>
+                <form id="registerForm" class="auth-form" style="display: none;">
+                    <h2 style="color: var(--primary); margin-top:0;">შექმენი ექაუნთი 🚀</h2>
+                    <div class="form-group"><label>სახელი და გვარი</label><input type="text" id="regName" required></div>
+                    <div class="form-group"><label>ელ. ფოსტა</label><input type="email" id="regEmail" required></div>
+                    <div class="form-group"><label>ტელეფონი</label><div class="phone-input-group"><select id="countryCode"><option value="+995">🇬🇪 +995</option></select><input type="tel" id="regPhone" required></div></div>
+                    <div class="form-group"><label>პაროლი</label><input type="password" id="regPassword" required><div id="passwordError" class="error-msg">პაროლი უნდა შეიცავდეს მინ. 8 სიმბოლოს, 1 ციფრს.</div></div>
+                    <button type="submit" class="submit-btn full-width">რეგისტრაცია</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- დახვეწილი Dashboard -->
+    <div id="page-dashboard" class="app-page">
+        <div class="dashboard-layout">
+            <aside class="dashboard-sidebar">
+                <div class="sidebar-logo" onclick="navigateTo('page-home')">GlobalEdu 🎓</div>
+                <div class="sidebar-user"><div class="profile-avatar-large" style="width: 50px; height: 50px; font-size: 1.2rem;" id="sidebarAvatar">ჩპ</div><div><strong id="sidebarName">ჩემი პროფილი</strong></div></div>
+                <nav class="sidebar-menu">
+                    <button class="dash-tab-btn active" onclick="switchDashTab('profile')">👤 პირადი პროფილი</button>
+                    <button class="dash-tab-btn" onclick="switchDashTab('documents')">📁 დოკუმენტები</button>
+                    <button class="dash-tab-btn" onclick="switchDashTab('application')">📄 გენერაცია</button>
+                    <button class="dash-tab-btn" onclick="switchDashTab('favorites')">⭐ ფავორიტები</button>
+                </nav>
+                <div style="padding: 20px; border-top: 1px dashed var(--border);">
+                    <button class="btn-secondary full-width" onclick="resetNavBtn(); navigateTo('page-home');">გასვლა</button>
+                </div>
+            </aside>
+            <main class="dashboard-main">
+                <header class="dashboard-header"><h2 id="dashboard-title">პირადი პროფილი</h2><button class="theme-toggle" id="themeToggleDash">🌙</button></header>
+                <div class="dashboard-content-wrapper">
+                    <!-- პროფილი -->
+                    <div id="tab-profile" class="dash-tab-content active">
+                        <div class="profile-header-panel">
+                            <div class="profile-avatar-large" id="mainAvatar">ჩპ</div>
+                            <div><h2 id="profileTopName">ჩემი პროფილი</h2><p>აპლიკანტი | განათლების მაძიებელი</p></div>
+                        </div>
+                        <div class="panel">
+                            <h3 style="color: var(--primary); margin-top:0;">პირადი მონაცემები</h3>
+                            <div class="form-grid">
+                                <div class="form-group"><label>სახელი</label><input type="text" id="profileFirstName"></div>
+                                <div class="form-group"><label>გვარი</label><input type="text" id="profileLastName"></div>
+                                <div class="form-group"><label>ელ. ფოსტა</label><input type="email" id="profileEmail" disabled></div>
+                                <div class="form-group"><label>ტელეფონი</label><input type="text" id="profilePhone"></div>
+                            </div>
+                            <button class="submit-btn" onclick="saveProfile()">შენახვა</button>
+                        </div>
+                    </div>
+                    <!-- დოკუმენტები -->
+                    <div id="tab-documents" class="dash-tab-content" style="display: none;">
+                        <div class="panel">
+                            <h3 style="margin-top:0;">დოკუმენტები</h3>
+                            <input type="file" id="docInput" accept=".pdf" style="display: none;">
+                            <div class="drag-drop-zone" id="dragDropZone" style="border:2px dashed var(--primary); padding:40px; text-align:center; border-radius:16px; cursor:pointer; background:var(--primary-light);">☁️ გადმოიტანეთ PDF ფაილი აქ
+                                <select id="docCategory" style="margin-top:15px; width:200px; display:block; margin:15px auto;"><option value="CV">CV</option><option value="Passport">პასპორტი</option></select>
+                            </div>
+                            <div class="table-container"><table class="data-table" id="documentsTable"><thead><tr><th>ფაილი</th><th>კატეგორია</th><th>თარიღი</th><th>სტატუსი</th></tr></thead><tbody></tbody></table></div>
+                        </div>
+                    </div>
+                    <!-- ფავორიტები -->
+                    <div id="tab-favorites" class="dash-tab-content" style="display: none;">
+                        <div class="panel"><h3 style="color: var(--secondary); margin-top:0;">⭐ ფავორიტი პროგრამები</h3><div id="favoritesList" class="grid-2"></div></div>
+                    </div>
+                    <!-- PDF გენერაცია -->
+                    <div id="tab-application" class="dash-tab-content" style="display: none;">
+                        <div class="panel">
+                            <h3 style="margin-top:0;">PDF გენერაცია</h3><button class="submit-btn" id="generate-btn" onclick="generatePDF()">📄 გაერთიანება</button>
+                            <div id="pdf-loading" style="display:none; margin-top:20px;"><div class="progress-bar"><div class="progress-fill" id="pdf-progress"></div></div></div>
+                            <div id="pdf-preview" style="display:none; margin-top:20px;"><h4 style="color:#10b981;">✅ მზადაა! გადმოწერა დაიწყო.</h4></div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- ================= 10-ველიანი AI მრჩეველი ================= -->
+    <div id="aiModal" class="modal-overlay">
+        <div class="modal-box ai-modal-premium">
+            <span class="close-btn" onclick="closeAllModals()">&times;</span>
+            <div class="ai-modal-header">
+                <div class="ai-icon-pulse">🤖</div>
+                <h2>GlobalEdu <span class="gradient-text">AI Core</span></h2>
+                <p>შეიყვანეთ მონაცემები სრულყოფილად და მიეცით ნეირონულ ქსელს საშუალება, იპოვოს თქვენთვის იდეალური პროგრამა.</p>
+            </div>
+            
+            <form id="aiForm" onsubmit="analyzeProfile(event)">
+                <div class="ai-form-grid">
+                    <div class="ai-input-group"><label><span class="label-icon">🎓</span> აკადემიური საფეხური</label><select id="degreeSelect" onchange="toggleCustomInput('degreeSelect', 'degreeCustom')" required><option value="" disabled selected>აირჩიეთ...</option><option value="ბაკალავრიატი">ბაკალავრიატი</option><option value="მაგისტრატურა">მაგისტრატურა</option><option value="დოქტორანტურა">დოქტორანტურა</option><option value="other">სხვა (ჩაწერეთ)</option></select><input type="text" id="degreeCustom" class="custom-hidden-input" placeholder="მიუთითეთ საფეხური..."></div>
+                    <div class="ai-input-group"><label><span class="label-icon">🎯</span> მიმართულება</label><select id="majorSelect" onchange="toggleCustomInput('majorSelect', 'majorCustom')" required><option value="" disabled selected>აირჩიეთ...</option><option value="IT & Computer Science">IT & კომპიუტერული მეცნიერებები</option><option value="Business & Management">ბიზნესი და მენეჯმენტი</option><option value="Medicine & Healthcare">მედიცინა და ჯანდაცვა</option><option value="Arts & Design">ხელოვნება და დიზაინი</option><option value="Law & Social Sciences">სამართალი და სოცი. მეცნიერებები</option><option value="other">სხვა (ჩაწერეთ)</option></select><input type="text" id="majorCustom" class="custom-hidden-input" placeholder="ჩაწერეთ მიმართულება..."></div>
+                    <div class="ai-input-group"><label><span class="label-icon">📊</span> აკადემიური მოსწრება</label><div class="gpa-wrapper"><input type="number" id="gpa" min="0" max="100" placeholder="GPA (0-100)" required><span class="gpa-suffix">%</span></div></div>
+                    <div class="ai-input-group"><label><span class="label-icon">🌍</span> სასურველი ლოკაცია</label><select id="regionSelect" onchange="toggleCustomInput('regionSelect', 'regionCustom')" required><option value="" disabled selected>აირჩიეთ...</option><option value="europe">ევროპა</option><option value="usa">აშშ / კანადა</option><option value="uk">დიდი ბრიტანეთი</option><option value="any">ნებისმიერი</option><option value="other">სხვა (ჩაწერეთ)</option></select><input type="text" id="regionCustom" class="custom-hidden-input" placeholder="ჩაწერეთ ქვეყანა..."></div>
+                    <div class="ai-input-group"><label><span class="label-icon">🗣️</span> სწავლების ენა</label><select id="studyLangSelect" onchange="toggleCustomInput('studyLangSelect', 'studyLangCustom')" required><option value="" disabled selected>აირჩიეთ...</option><option value="ინგლისური">ინგლისური</option><option value="გერმანული">გერმანული</option><option value="იტალიური">იტალიური</option><option value="other">სხვა (ჩაწერეთ)</option></select><input type="text" id="studyLangCustom" class="custom-hidden-input" placeholder="ჩაწერეთ ენა..."></div>
+                    <div class="ai-input-group"><label><span class="label-icon">📈</span> ენის ცოდნის დონე</label><select id="langLevelSelect" onchange="toggleCustomInput('langLevelSelect', 'langLevelCustom')" required><option value="" disabled selected>აირჩიეთ...</option><option value="B1">B1 (საშუალო)</option><option value="B2">B2 (საშუალოზე მაღალი)</option><option value="C1">C1 (თავისუფალი)</option><option value="C2">C2 (პროფესიონალური)</option><option value="other">სხვა (ჩაწერეთ)</option></select><input type="text" id="langLevelCustom" class="custom-hidden-input" placeholder="ჩაწერეთ დონე..."></div>
+                    <div class="ai-input-group"><label><span class="label-icon">📜</span> გაქვთ სერტიფიკატი?</label><select id="hasCertSelect" onchange="toggleCertVisibility()" required><option value="" disabled selected>აირჩიეთ...</option><option value="yes">კი, მაქვს</option><option value="no">არა</option><option value="in_progress">ვიღებ უახლოეს მომავალში</option><option value="other">სხვა (ჩაწერეთ)</option></select><input type="text" id="hasCertCustom" class="custom-hidden-input" placeholder="დააკონკრეტეთ..."></div>
+                    <div class="ai-input-group" id="certNameWrapper" style="display: none;"><label><span class="label-icon">🏅</span> რომელი სერტიფიკატი?</label><select id="certNameSelect" onchange="toggleCustomInput('certNameSelect', 'certNameCustom')"><option value="" disabled selected>აირჩიეთ...</option><option value="IELTS">IELTS</option><option value="TOEFL">TOEFL</option><option value="Goethe">Goethe / TestDaF</option><option value="other">სხვა (ჩაწერეთ)</option></select><input type="text" id="certNameCustom" class="custom-hidden-input" placeholder="ჩაწერეთ სერტიფიკატი..."></div>
+                    <div class="ai-input-group"><label><span class="label-icon">💼</span> სამუშაო გამოცდილება</label><select id="expSelect" onchange="toggleCustomInput('expSelect', 'expCustom')" required><option value="" disabled selected>აირჩიეთ...</option><option value="no">არა / ვსწავლობ</option><option value="1-2">1-2 წელი</option><option value="3+">3+ წელი</option><option value="other">სხვა (ჩაწერეთ)</option></select><input type="text" id="expCustom" class="custom-hidden-input" placeholder="მიუთითეთ გამოცდილება..."></div>
+                    <div class="ai-input-group"><label><span class="label-icon">💰</span> ფინანსური მოლოდინი</label><select id="budgetSelect" onchange="toggleCustomInput('budgetSelect', 'budgetCustom')" required><option value="" disabled selected>აირჩიეთ...</option><option value="0">მხოლოდ სრული დაფინანსება</option><option value="5000">წლიურად 5,000$-მდე</option><option value="10000">წლიურად 10,000$-მდე</option><option value="other">სხვა თანხა (ჩაწერეთ)</option></select><input type="number" id="budgetCustom" class="custom-hidden-input" placeholder="მაქს. თანხა ($)..." min="0"></div>
+                </div>
+                <button type="submit" class="ai-submit-btn"><span class="btn-text">სისტემის ამოქმედება</span><span class="btn-icon">⚡</span></button>
+            </form>
+            <div id="result-container" style="display:none;"></div>
+        </div>
+    </div>
+
+    <!-- სტატიკური მოდალები -->
+    <div id="uniModal" class="modal-overlay"><div class="modal-box" style="max-width: 650px;"><span class="close-btn" onclick="closeAllModals()">&times;</span><div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;"><h2 id="uniModalTitle" style="color: var(--primary); margin: 0; font-size: 1.6rem;">უნივერსიტეტი</h2><button id="modalFavBtn" class="fav-btn-large">🤍</button></div><span id="uniModalTag" class="tag">ქვეყანა</span><div id="uniModalDesc" style="color: var(--text-dark); margin: 25px 0; line-height: 1.8;"></div><a href="#" id="uniModalLink"></a></div></div>
+    <div id="compareModal" class="modal-overlay"><div class="modal-box" style="max-width: 900px;"><span class="close-btn" onclick="closeAllModals()">&times;</span><h2 style="color: var(--primary); margin-top: 0;">⚖️ შედარება</h2><div class="table-container"><table class="data-table" style="text-align: center;"><thead><tr id="compareTableHead"></tr></thead><tbody id="compareTableBody"></tbody></table></div></div></div>
+    <div id="scholarshipModal" class="modal-overlay"><div class="modal-box" style="max-width: 650px;"><span class="close-btn" onclick="closeAllModals()">&times;</span><h2 id="schModalTitle" style="color: var(--primary); margin-top: 0;">სტიპენდია</h2><span id="schModalTag" class="tag">ქვეყანა</span><div id="schModalDesc" style="margin: 25px 0; line-height: 1.8;"></div><a href="#" id="schModalLink"></a></div></div>
+
+    <footer id="main-footer" style="text-align:center; padding:30px; background:var(--bg-light); border-top:1px solid var(--border); margin-top:50px;"><p>© 2026 GlobalEdu AI. All Rights Reserved.</p></footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
