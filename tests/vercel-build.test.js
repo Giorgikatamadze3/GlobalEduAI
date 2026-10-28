@@ -129,8 +129,12 @@ test('Vercel uses the native Express entry and retains private catalog JSON in t
     assert.equal(config.framework, 'express');
     assert.equal(config.buildCommand, 'npm run build');
     assert.equal(config.functions['app.js'].maxDuration, 60);
-    assert.ok(config.functions['app.js'].includeFiles.includes('Server/data/{institutions,programs,admissions-statistics,funding,program-source-registry,institution-domain-overrides}.json'));
-    for(const file of PUBLIC_FILES)assert.ok(config.functions['app.js'].includeFiles.includes(file),`${file} must remain in the runtime fallback`);
+    const includeFiles=config.functions['app.js'].includeFiles;
+    assert.ok(includeFiles.length<=256,'Vercel limits includeFiles patterns to 256 characters');
+    const runtimeFiles=new Set(fs.globSync(includeFiles,{cwd:project}).map(file=>file.split(path.sep).join('/')));
+    for(const file of ['institutions','programs','admissions-statistics','funding','program-source-registry','institution-domain-overrides'])assert.ok(runtimeFiles.has(`Server/data/${file}.json`),`${file} JSON must remain in the runtime fallback`);
+    for(const file of PUBLIC_FILES)assert.ok(runtimeFiles.has(file),`${file} must remain in the runtime fallback`);
+    assert.ok(![...runtimeFiles].some(file=>/\.env|accounts\.sqlite/.test(file)));
     assert.equal(config.builds, undefined);
     assert.equal(config.routes, undefined);
     assert.equal(config.rewrites, undefined);
