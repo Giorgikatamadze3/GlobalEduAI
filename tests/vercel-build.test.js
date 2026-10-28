@@ -127,11 +127,15 @@ test('Vercel uses the native Express entry and retains private catalog JSON in t
     assert.equal(config.framework, 'express');
     assert.equal(config.buildCommand, 'npm run build');
     assert.equal(config.functions['app.js'].maxDuration, 60);
-    assert.equal(config.functions['app.js'].includeFiles, 'Server/data/{institutions,programs,admissions-statistics}.json');
+    assert.ok(config.functions['app.js'].includeFiles.includes('Server/data/{institutions,programs,admissions-statistics}.json'));
+    for(const file of PUBLIC_FILES)assert.ok(config.functions['app.js'].includeFiles.includes(file),`${file} must remain in the runtime fallback`);
     assert.equal(config.builds, undefined);
     assert.equal(config.routes, undefined);
     assert.equal(config.rewrites, undefined);
     const entry = fs.readFileSync(path.join(project, 'app.js'), 'utf8');
-    assert.match(entry, /module\.exports\s*=\s*require\('\.\/Server\/server'\)/);
+    assert.match(entry, /require\('express'\)/);
+    assert.match(entry, /require\('\.\/Server\/server'\)/);
+    assert.match(entry, /app\.use\(server\)/);
+    assert.match(entry, /module\.exports\s*=\s*app/);
     assert.doesNotMatch(entry, /\.listen\s*\(/);
 });

@@ -25,3 +25,6 @@ design-preview/
 *.db-*
 *.zip
 *.tar.gz
+.agents/
+skills-lock.json
+

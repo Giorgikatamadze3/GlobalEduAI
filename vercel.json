@@ -1,11 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "express",
+  "regions": ["fra1"],
   "buildCommand": "npm run build",
   "functions": {
     "app.js": {
       "maxDuration": 60,
-      "includeFiles": "Server/data/{institutions,programs,admissions-statistics}.json"
+      "includeFiles": "{Server/data/{institutions,programs,admissions-statistics}.json,index.html,style.css,ai-agent.css,script.js,catalog-core.js,scoring-core.js,catalog-ui.js,discovery-ui.js,ai-agent-ui.js,account-ui.js,preview-data.js,scholarships.js}"
     }
   },
   "headers": [

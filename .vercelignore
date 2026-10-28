@@ -1,5 +1,4 @@
-# Generated locally and rebuilt on Vercel.
-public/
+# Generated public files are safe to upload and are rebuilt on Vercel.
 node_modules/
 Server/node_modules/
 .git/
