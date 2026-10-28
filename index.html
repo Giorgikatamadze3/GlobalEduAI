@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="ai-agent.css">
+    <link rel="stylesheet" href="funding.css">
 </head>
 <body>
     <a class="skip-link" href="#page-home">კონტენტზე გადასვლა</a>
@@ -106,7 +107,8 @@
                 <div class="form-group"><label for="filterBudget">წლიური სწავლის მაქს. საფასური</label><div class="budget-input"><input id="filterBudget" type="number" min="0" step="100" placeholder="შეზღუდვის გარეშე" onchange="filterAndSortUnis()"><select id="filterCurrency" aria-label="ბიუჯეტის ვალუტა" onchange="filterAndSortUnis()"><option>EUR</option><option>USD</option><option>GBP</option><option>CAD</option><option>CHF</option><option>AUD</option></select></div><p class="small-note">ვალუტა არ გადაითვლება. ცხოვრების ხარჯები ცალკეა.</p></div>
                 <label class="catalog-check"><input type="checkbox" id="filterFree" onchange="filterAndSortUnis()"> მხოლოდ სწავლის ნულოვანი საფასურით</label>
                 <label class="catalog-check"><input type="checkbox" id="filterKnownFees" onchange="filterAndSortUnis()"> მხოლოდ წყაროში მითითებული საფასურით</label>
-                <label class="catalog-check"><input type="checkbox" id="filterScholarships" onchange="filterAndSortUnis()"> აღწერილი სასტიპენდიო შესაძლებლობით</label>
+                <div class="form-group"><label for="filterFundingScheme">დაფინანსების პროგრამა</label><select id="filterFundingScheme" onchange="filterAndSortUnis()"><option value="">ყველა შესაძლებლობა</option></select><small>შესაძლო შესაბამისობა; პირადი მოთხოვნები და მიღების ვადები ცალკე მოწმდება.</small></div>
+                <label class="catalog-check"><input type="checkbox" id="filterScholarships" onchange="filterAndSortUnis()"> დადასტურებული კავშირით სტიპენდიასთან</label>
                 <label class="catalog-check"><input type="checkbox" id="filterFunding" onchange="filterAndSortUnis()"> დადასტურებული სრული დაფინანსება</label>
                 <label class="catalog-check"><input type="checkbox" id="filterUnknown" onchange="filterAndSortUnis()"> ბიუჯეტის ფილტრში უცნობი ფასებიც მაჩვენე</label>
             </div></details>
@@ -256,6 +258,8 @@
     <div id="previewBanner" class="preview-banner" hidden><span>✧ ანგარიშის დემო <span class="preview-detail">· უნივერსიტეტების რეალური კატალოგი</span></span><a href="/">რეალურ რეჟიმზე დაბრუნება ↗</a></div>
     <script src="catalog-core.js"></script>
     <script src="scoring-core.js"></script>
+    <script src="funding-core.js"></script>
+    <script src="funding-ui.js"></script>
     <script src="catalog-ui.js"></script>
     <script src="discovery-ui.js"></script>
     <script src="preview-data.js"></script>

@@ -16,7 +16,9 @@ test('unknown duration never satisfies a requested duration bound',()=>{
  const rows=C.filterPrograms(data.programs,data.institutions,prefs({durationMaxMonths:12}),opts);assert.ok(rows.length>0);assert.ok(rows.every(p=>p.durationMonths!=null&&p.durationMonths<=12));
 });
 test('subject fields match real specializations and do not leak into unrelated fields',()=>{
- const rows=C.filterPrograms(data.programs,data.institutions,prefs({subjectFields:['cybersecurity']}),opts);assert.equal(rows.length,1);assert.match(rows[0].title,/cybersecurity/i);
+ const rows=C.filterPrograms(data.programs,data.institutions,prefs({subjectFields:['cybersecurity']}),opts);
+ assert.ok(rows.some(p=>p.id==='program_taltech-cybersecurity-msc'),'the curated programme remains discoverable after adding official imports');
+ assert.ok(rows.every(p=>p.field==='cybersecurity'||/cyber\s*security/i.test(p.title)),'each result needs an actual subject or title match');
 });
 test('unknown fees and full funding retain distinct meanings',()=>{
  const free=C.filterPrograms(data.programs,data.institutions,prefs({freeTuitionOnly:true}),opts);assert.equal(free.length,1);assert.equal(free[0].tuition.amount,0);

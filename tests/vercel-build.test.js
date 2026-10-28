@@ -71,7 +71,9 @@ test('Vercel output contains only approved frontend files, assets and validated 
     assert.equal(catalog.metadata.admissionStatisticsCount, catalog.admissionStatistics.length);
     assert.ok(catalog.institutions.length >= 10000);
     assert.ok(catalog.metadata.countryCount >= 190);
-    assert.equal(catalog.programs.length, 20);
+    assert.ok(catalog.programs.length >= 1600);
+    assert.equal(catalog.funding.schemes.length,12);
+    assert.equal(catalog.metadata.programCoverage.completeness,'partial');
     assert.ok(catalog.programs.every(program => program.sources.length > 0));
     assert.ok(result.catalogBytes > 4_500_000, 'The full catalog is a CDN asset rather than an oversized function response.');
 });
@@ -127,7 +129,7 @@ test('Vercel uses the native Express entry and retains private catalog JSON in t
     assert.equal(config.framework, 'express');
     assert.equal(config.buildCommand, 'npm run build');
     assert.equal(config.functions['app.js'].maxDuration, 60);
-    assert.ok(config.functions['app.js'].includeFiles.includes('Server/data/{institutions,programs,admissions-statistics}.json'));
+    assert.ok(config.functions['app.js'].includeFiles.includes('Server/data/{institutions,programs,admissions-statistics,funding,program-source-registry,institution-domain-overrides}.json'));
     for(const file of PUBLIC_FILES)assert.ok(config.functions['app.js'].includeFiles.includes(file),`${file} must remain in the runtime fallback`);
     assert.equal(config.builds, undefined);
     assert.equal(config.routes, undefined);

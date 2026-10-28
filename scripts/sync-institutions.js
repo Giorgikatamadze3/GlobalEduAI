@@ -5,6 +5,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
 const { isIP } = require('node:net');
+const { applyInstitutionOverrides } = require('./institution-overrides');
 
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const OUTPUT_PATH = path.join(PROJECT_ROOT, 'Server', 'data', 'institutions.json');
@@ -94,7 +95,7 @@ function normalizeDirectory(raw, retrievedAt, extraMetadata = {}) {
         });
     });
     const rows = [...institutions.values()].sort((a, b) => a.name.localeCompare(b.name, 'en') || a.countryCode.localeCompare(b.countryCode) || a.id.localeCompare(b.id));
-    const catalog = {
+    const catalog = applyInstitutionOverrides({
         metadata: {
             sourceName: SOURCE_NAME, sourceUrl: SOURCE_URL, repositoryUrl: REPOSITORY_URL,
             license: 'MIT', licenseUrl: LICENSE_URL, retrievedAt,
@@ -106,7 +107,7 @@ function normalizeDirectory(raw, retrievedAt, extraMetadata = {}) {
             ...extraMetadata
         },
         institutions: rows
-    };
+    });
     const errors = validateDirectory(catalog);
     if (errors.length) throw new Error(`Normalized catalog failed validation: ${errors.slice(0, 8).join('; ')}`);
     return { catalog, rejected };

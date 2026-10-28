@@ -263,7 +263,9 @@
         if(deadlineAfter&&deadlineBefore&&deadlineAfter>deadlineBefore)filterIssue('განაცხადის ვადების მინიმუმი მაქსიმუმს აღემატება.');
         if(provided(input.intakeCycle)&&typeof input.intakeCycle!=='string')filterIssue('მიღების ციკლი ტექსტის სახით მიუთითე.');
         const intakeCycle=text(input.intakeCycle);
-        const advanced={countryCodes,regions,fields,subjectFields,degrees,languages,modes,durationMinMonths,durationMaxMonths,deadlines,deadlineAfter,deadlineBefore,intakeCycle};
+        const fundingScheme=text(input.fundingScheme);
+        if(provided(input.fundingScheme)&&(typeof input.fundingScheme!=='string'||fundingScheme.length>100||!/^funding_[a-z0-9-]+$/.test(fundingScheme)))filterIssue('დაფინანსების სქემა: აირჩიე მხარდაჭერილი სქემის იდენტიფიკატორი.');
+        const advanced={countryCodes,regions,fields,subjectFields,degrees,languages,modes,durationMinMonths,durationMaxMonths,deadlines,deadlineAfter,deadlineBefore,intakeCycle,fundingScheme};
         for(const key of ['tuitionKnownOnly','freeTuitionOnly','hasScholarships','sourceFreshOnly','hasPrograms','includeUnknownFees','includeExpired'])advanced[key]=booleanFilter(key);
         return {
             query:text(input.query ?? input.search), countryCode:selectedCountry, region,
@@ -406,14 +408,21 @@
             else pass('სწავლის საფასური: ნულოვანია; ცხოვრების ხარჯები ცალკეა.');
         }
         if(prefs.hasScholarships) {
-            if(!Array.isArray(program.funding?.scholarships))unknown('სასტიპენდიო შესაძლებლობები წყაროთი დასაზუსტებელია.');
-            else if(!program.funding.scholarships.length)fail('ამ პროგრამისთვის აღწერილი სტიპენდია არ არის მითითებული.');
-            else pass('პროგრამასთან დაკავშირებული სასტიპენდიო შესაძლებლობა აღწერილია.');
+            const listed=Array.isArray(program.funding?.scholarships)?program.funding.scholarships:[];
+            if(!Array.isArray(program.funding?.scholarships))unknown('დადასტურებული სასტიპენდიო კავშირი წყაროთი დასაზუსტებელია.');
+            else if(!listed.length)fail('ამ პროგრამისთვის სტიპენდიასთან დადასტურებული კავშირი მითითებული არ არის.');
+            else pass('სტიპენდიასთან კავშირი წყაროთი აღწერილია; პირადი პირობები და კონკურსის ვადა ცალკე მოწმდება.');
+        }
+        if(prefs.fundingScheme) {
+            const opportunities=program.funding?.opportunityIds;
+            if(!Array.isArray(opportunities))unknown('ამ პროგრამის დაფინანსების სქემებთან კავშირი დასაზუსტებელია.');
+            else if(!opportunities.includes(prefs.fundingScheme))fail('არჩეულ დაფინანსების სქემასთან კავშირი ამ პროგრამისთვის აღწერილი არ არის.');
+            else pass('არჩეული დაფინანსების სქემა შესაძლო გზად არის მითითებული; ეს მიღებას, პირად შესაბამისობას ან დაფინანსების მინიჭებას არ ნიშნავს.');
         }
         if(prefs.sourceFreshOnly) {
             const sources=Array.isArray(program.sources)?program.sources:[];
             const dates=sources.map(source=>isoDate(source.checkedAt));
-            if(program.verificationStatus!=='official-source'||!sources.length||sources.some(source=>!hostname(source.url))||dates.some(date=>!date))unknown('ოფიციალური წყაროს სანდოობა ან შემოწმების თარიღი დასაზუსტებელია.');
+            if(!['official-source','official-directory'].includes(program.verificationStatus)||!sources.length||sources.some(source=>!hostname(source.url))||dates.some(date=>!date))unknown('ოფიციალური წყაროს სანდოობა ან შემოწმების თარიღი დასაზუსტებელია.');
             else {
                 const cutoff=new Date(`${asOf}T00:00:00Z`)-365*86400000;
                 if(dates.some(date=>date>asOf||new Date(`${date}T00:00:00Z`)<cutoff))fail('წყარო არჩეული სიახლის მოთხოვნას არ აკმაყოფილებს.');
@@ -468,14 +477,14 @@
         return selectedMany(prefs.fields,prefs.field).length||prefs.subjectFields.length||selectedMany(prefs.degrees,prefs.degree).length
             ||selectedMany(prefs.languages,prefs.language).length||selectedMany(prefs.modes,prefs.mode).length
             ||prefs.durationMinMonths!==null||prefs.durationMaxMonths!==null||prefs.deadlines!=='any'||prefs.deadlineAfter||prefs.deadlineBefore||prefs.intakeCycle
-            ||prefs.budget!==null||prefs.requiresFullFunding||prefs.tuitionKnownOnly||prefs.freeTuitionOnly||prefs.hasScholarships||prefs.sourceFreshOnly||prefs.hasPrograms;
+            ||prefs.budget!==null||prefs.requiresFullFunding||prefs.tuitionKnownOnly||prefs.freeTuitionOnly||prefs.hasScholarships||prefs.fundingScheme||prefs.sourceFreshOnly||prefs.hasPrograms;
     }
     function filterCatalogInstitutions(institutions,programs,input={},options={}) {
         const prefs=normalizePreferences(input);
         if(prefs.filterIssues.length)return [];
         const candidates=filterInstitutions(institutions,prefs);
         if(!hasProgramFilters(prefs))return candidates;
-        const verified=programs.filter(program=>program.verificationStatus==='official-source'&&Array.isArray(program.sources)&&program.sources.some(source=>hostname(source.url)));
+        const verified=programs.filter(program=>['official-source','official-directory'].includes(program.verificationStatus)&&Array.isArray(program.sources)&&program.sources.some(source=>hostname(source.url)));
         const linked=filterPrograms(verified,institutions,{...prefs,query:''},options);
         const index=createInstitutionIndex(institutions);
         const matching=new Set(linked.map(program=>resolveInstitution(program,index)?.id).filter(Boolean));
@@ -628,7 +637,7 @@
         else if (!deadlineDate && deadline.rolling !== true) missingDetail('მიმდინარე მიღების ვადა და სასწავლო ციკლი დასაზუსტებელია.');
         if (deadline.note) warnings.push(String(deadline.note));
         const sources = Array.isArray(program.sources) ? program.sources.filter(source => hostname(source.url)) : [];
-        if (program.verificationStatus !== 'official-source' || !sources.length) missingDetail('პროგრამის ოფიციალური წყარო დასაზუსტებელია.');
+        if (!['official-source','official-directory'].includes(program.verificationStatus) || !sources.length) missingDetail('პროგრამის ოფიციალური წყარო დასაზუსტებელია.');
         const dates = sources.map(source => isoDate(source.checkedAt)).filter(Boolean);
         if (sources.length && dates.length !== sources.length) missingDetail('ერთ-ერთი ოფიციალური წყაროს გადამოწმების თარიღი უცნობია.');
         if (dates.some(date => date > asOf)) missingDetail('წყაროს გადამოწმების თარიღი მომავალშია; მონაცემები ხელახლა გადაამოწმე.');

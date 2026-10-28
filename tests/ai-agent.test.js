@@ -166,6 +166,10 @@ test('directory tools return real matching institutions and sources only from re
     const found=outputs(requests[1].body)[0].data;assert.match(JSON.stringify(found),/Oxford/i);
     assert.ok(result.matches.length>0);assert.ok(result.matches.every(item=>item.countryCode==='GB'));
     const trusted=new Set(catalog.payload.institutions.filter(item=>item.name.toLowerCase().includes('oxford')).flatMap(item=>[item.website,item.source.url]));
+    for(const item of found.items||[])for(const opportunity of item.funding?.opportunities||[]){
+        const scheme=catalog.payload.funding?.schemes.find(row=>row.id===opportunity.id);
+        for(const source of scheme?.sources||[])trusted.add(source.url);
+    }
     assert.ok(result.sources.length>0);assert.ok(result.sources.every(source=>trusted.has(source.url)));publicResponse(result);
 });
 

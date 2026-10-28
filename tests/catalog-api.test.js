@@ -6,6 +6,7 @@ const {once} = require('node:events');
 const fs = require('node:fs');
 const path = require('node:path');
 const {validatePrograms} = require('../scripts/validate-programs');
+const expectedPrograms=JSON.parse(fs.readFileSync(path.join(__dirname,'../Server/data/programs.json'),'utf8')).programs;
 let server, base, accountStore;
 
 before(async()=>{
@@ -21,7 +22,7 @@ after(async()=>{server.closeAllConnections();await new Promise(resolve=>server.c
 
 test('worldwide catalog is usable with no MongoDB connection',async()=>{
     const response=await fetch(`${base}/api/catalog/meta`);assert.equal(response.status,200);
-    const meta=await response.json();assert.ok(meta.institutionCount>=10000);assert.ok(meta.countryCount>=190);assert.equal(meta.programCount,20);assert.equal(meta.countries.length,meta.countryCount);
+    const meta=await response.json();assert.ok(meta.institutionCount>=10000);assert.ok(meta.countryCount>=190);assert.equal(meta.programCount,expectedPrograms.length);assert.ok(meta.programCount>=1600);assert.equal(meta.programCoverage.completeness,'partial');assert.equal(meta.countries.length,meta.countryCount);
 });
 test('country search and pagination return institutions without invented program facts',async()=>{
     const response=await fetch(`${base}/api/institutions?countryCode=GE&limit=3`);const data=await response.json();
@@ -40,7 +41,7 @@ test('unknown institution ID returns 404 and bounded page size',async()=>{
 });
 test('full payload uses gzip caching without repeated directory transfer',async()=>{
     const response=await fetch(`${base}/api/catalog`,{headers:{'Accept-Encoding':'gzip'}});assert.equal(response.headers.get('content-encoding'),'gzip');
-    const data=await response.json();assert.ok(data.institutions.length>=10000);assert.equal(data.programs.length,20);
+    const data=await response.json();assert.ok(data.institutions.length>=10000);assert.equal(data.programs.length,expectedPrograms.length);
     const ids=new Set(data.institutions.map(i=>i.id));assert.ok(data.programs.every(p=>ids.has(p.institutionId)));
     const cached=await fetch(`${base}/api/catalog`,{headers:{'If-None-Match':response.headers.get('etag')}});assert.equal(cached.status,304);
     const plain=await fetch(`${base}/api/catalog`,{headers:{'Accept-Encoding':'gzip;q=0, identity'}});assert.equal(plain.headers.get('content-encoding'),null);await plain.arrayBuffer();
@@ -52,7 +53,7 @@ test('budget-only zero tuition never becomes a full-funding promise',async()=>{
 });
 test('unavailable combination has no arbitrary fallback programs',async()=>{
     const data=await fetch(`${base}/api/recommendations`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({countryCode:'JP',degree:'phd',language:'ka',budget:1,currency:'EUR'})}).then(r=>r.json());
-    assert.equal(data.matches.length,0);assert.equal(data.needsVerification.length,0);assert.equal(data.excludedCount,20);
+    assert.equal(data.matches.length,0);assert.equal(data.needsVerification.length,0);assert.equal(data.excludedCount,expectedPrograms.length);
 });
 test('account operations use SQLite without a MongoDB connection',async()=>{
     const status=await fetch(`${base}/api/auth/status`).then(r=>r.json());
@@ -117,4 +118,37 @@ test('recommendations include score breakdown and distinguish cohort rates from 
     const result=[...data.matches,...data.needsVerification].find(r=>r.program.id==='program_helsinki-data-science-msc');assert.ok(result);
     assert.ok(result.scoring.fitScore>=0&&result.scoring.fitScore<=100);assert.ok(Array.isArray(result.scoring.breakdown));
     assert.equal(result.scoring.admissionChance.probability,null);assert.equal(result.scoring.admissionChance.baseline.offers,53);assert.equal(result.scoring.admissionChance.baseline.applicants,528);
+});
+
+test('funding API publishes dated official rules and no award promises',async()=>{
+    const response=await fetch(`${base}/api/funding`);assert.equal(response.status,200);
+    const data=await response.json();assert.equal(data.schemes.length,12);
+    assert.ok(data.schemes.every(s=>s.sources.length&&s.sources.every(source=>source.url.startsWith('https://')&&source.checkedAt)));
+    assert.ok(data.schemes.every(s=>s.awardGuaranteed!==true&&!('fullFunding' in s.coverage)));
+});
+
+test('programme detail distinguishes tuition waivers from personal funding eligibility',async()=>{
+    const response=await fetch(`${base}/api/programs/program_helsinki-data-science-msc`);assert.equal(response.status,200);
+    const data=await response.json();assert.equal(data.program.funding.fullFunding,null);
+    const waiver=data.funding.find(a=>a.id==='funding_helsinki-master-waiver');assert.ok(waiver);
+    assert.equal(waiver.associationStatus,'listed');assert.equal(waiver.awardGuaranteed,false);
+    assert.equal(waiver.coverage.livingSupport,false);assert.ok(waiver.missing.length>0);
+    assert.equal((await fetch(`${base}/api/programs/missing`)).status,404);
+});
+
+test('funding filter joins the actual programme and institution rather than country alone',async()=>{
+    const data=await fetch(`${base}/api/institutions?fundingScheme=funding_helsinki-master-waiver`).then(r=>r.json());
+    assert.equal(data.total,1);assert.match(data.items[0].name,/Helsinki/);
+    const none=await fetch(`${base}/api/institutions?fundingScheme=funding_undefined-scheme`).then(r=>r.json());assert.equal(none.total,0);
+    const mixed=await fetch(`${base}/api/institutions?fundingScheme=funding_helsinki-master-waiver&countryCode=DE`).then(r=>r.json());assert.equal(mixed.total,0);
+});
+
+test('imported programme provenance and unknown admissions/financial data survive the public payload',async()=>{
+    const data=await fetch(`${base}/catalog.json`).then(r=>r.json());
+    const imported=data.programs.filter(p=>p.verificationStatus==='official-directory');assert.ok(imported.length>=1600);
+    assert.ok(imported.every(p=>p.provenance.sourceId==='daad-international-programmes'&&p.provenance.checkedAt&&p.institutionId));
+    assert.ok(imported.every(p=>p.tuition.amount===null&&p.requirements.gpaMinPercent===null&&p.funding.fullFunding===null));
+    assert.ok(data.programs.some(p=>p.id==='program_taltech-cybersecurity-msc'));
+    assert.equal(data.metadata.programSources.sourceSnapshots['daad-international-programmes'].listingComplete,true);
+    assert.equal(data.metadata.programCoverage.completeness,'partial');
 });

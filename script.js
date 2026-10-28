@@ -37,7 +37,7 @@ function formatPrice(value) { return value == null ? 'დასაზუსტ�
 function formatDate(value) {
     if (!value) return 'დასაზუსტებელია';
     const date = new Date(value);
-    return Number.isNaN(date.getTime()) ? 'დასაზუსტებელია' : date.toLocaleDateString('ka-GE');
+    return Number.isNaN(date.getTime()) ? 'დასაზუსტებელია' : date.toLocaleDateString('ka-GE',/^\d{4}-\d{2}-\d{2}$/.test(value)?{timeZone:'UTC'}:{});
 }
 function notify(message, error = false) {
     const toast = document.createElement('div');

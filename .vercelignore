@@ -28,6 +28,8 @@ tests/
 .codex/
 .aws/
 .qa*/
+.qa-*
+.program-cache/
 *.log
 **/*.log
 *.har

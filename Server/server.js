@@ -36,7 +36,7 @@ app.use('/api/advisor-agent',express.json({limit:'128kb'}),createAdvisorRouter({
 app.use(express.json({limit:'64kb'}));
 app.get('/assets/vendor/pdf-lib.min.js',(req,res)=>res.sendFile(require.resolve('pdf-lib/dist/pdf-lib.min.js')));
 app.use('/assets', express.static(path.join(__dirname, '../assets')));
-for (const filename of ['index.html','style.css','ai-agent.css','script.js','catalog-core.js','scoring-core.js','catalog-ui.js','discovery-ui.js','ai-agent-ui.js','account-ui.js','preview-data.js','scholarships.js']) {
+for (const filename of ['index.html','style.css','ai-agent.css','funding.css','script.js','catalog-core.js','scoring-core.js','funding-core.js','funding-ui.js','catalog-ui.js','discovery-ui.js','ai-agent-ui.js','account-ui.js','preview-data.js','scholarships.js']) {
     app.get(`/${filename}`, (req,res) => res.sendFile(path.join(__dirname, '..', filename)));
 }
 app.get('/', (req,res) => res.sendFile(path.join(__dirname, '../index.html')));
@@ -60,7 +60,8 @@ app.get('/api/institutions', (req,res) => res.json(catalog.listInstitutions(req.
 app.get('/api/institutions/:id', (req,res) => {
     const institution = catalog.institutionById(req.params.id);
     if (!institution) return res.status(404).json({message:'უნივერსიტეტი ვერ მოიძებნა.'});
-    res.json({institution, programs:catalog.payload.programs.filter(p => p.institutionId === institution.id)});
+    const funding=catalog.fundingForInstitution(institution.id).filter(a=>a.status!=='ineligible').map(({programAssessments,associatedProgramIds=[],...assessment})=>({...assessment,associatedProgramIds:associatedProgramIds.slice(0,24),associatedProgramCount:associatedProgramIds.length}));
+    res.json({institution, programs:catalog.payload.programs.filter(p => p.institutionId === institution.id), funding, coverage:'partial'});
 });
 app.post('/api/recommendations', (req,res) => {
     if (!req.body || Array.isArray(req.body) || typeof req.body !== 'object') return res.status(400).json({message:'შეიყვანე შერჩევის პირობები.'});
@@ -68,6 +69,12 @@ app.post('/api/recommendations', (req,res) => {
     res.json(catalog.recommend(req.body, {asOf}));
 });
 app.get('/api/programs', (req,res) => res.json({items:catalog.payload.programs, total:catalog.payload.programs.length}));
+app.get('/api/programs/:id', (req,res) => {
+    const program=catalog.programById(req.params.id);
+    if(!program)return res.status(404).json({message:'პროგრამა ვერ მოიძებნა.'});
+    res.json({program,funding:catalog.fundingForProgram(program.id).filter(a=>a.status!=='ineligible')});
+});
+app.get('/api/funding', (req,res) => res.json(catalog.payload.funding));
 
 app.use('/api',createAuthRouter({store:accountStore,cookieSecure:process.env.NODE_ENV==='production'||process.env.VERCEL==='1'}));
 

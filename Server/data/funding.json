@@ -1,0 +1,1186 @@
+{
+  "metadata": {
+    "schemaVersion": 1,
+    "checkedAt": "2026-10-28",
+    "schemeCount": 12,
+    "sourcePolicy": "Manually researched summaries from official providers, participating universities and consortia. An official scheme is not an admission decision, individual eligibility ruling or scholarship award.",
+    "coverageNote": "Initial curated snapshot of 12 schemes and limited exact programme bindings, not a global or exhaustive scholarship inventory. Unlisted programme participation is not inferred. No applicant is promised tuition plus living funding.",
+    "datePolicy": "Only explicitly published calendar-year calls receive exact dates. Recurring annual deadlines retain null dates. Closed and upcoming calls are shown separately; no automatic next-year rollover."
+  },
+  "schemes": [
+    {
+      "id": "funding_daad-master-all-disciplines",
+      "title": "DAAD — Study Scholarships: Master Studies for All Academic Disciplines",
+      "provider": "DAAD",
+      "relationship": "external",
+      "scope": {
+        "countryCodes": [
+          "DE"
+        ],
+        "degrees": [
+          "master"
+        ],
+        "fields": [],
+        "programIds": [],
+        "institutionDomains": [],
+        "institutionNames": [],
+        "programBindings": []
+      },
+      "conditions": {
+        "durationMonths": {
+          "min": 10,
+          "max": 24
+        },
+        "excludedFields": [
+          "fine-arts",
+          "art",
+          "design",
+          "film",
+          "music",
+          "performing-arts",
+          "architecture",
+          "urban-design"
+        ],
+        "checks": [
+          {
+            "subject": "institution",
+            "key": "stateRecognized",
+            "expected": true,
+            "label": "უნივერსიტეტი გერმანიის სახელმწიფო ან სახელმწიფოს მიერ აღიარებული დაწესებულება უნდა იყოს."
+          },
+          {
+            "subject": "applicant",
+            "key": "hasFirstDegree",
+            "expected": true,
+            "label": "პირველი აკადემიური ხარისხი დაფინანსების დაწყებამდე უნდა გქონდეს."
+          },
+          {
+            "subject": "applicant",
+            "key": "alreadyStartedGermanMaster",
+            "expected": false,
+            "label": "გერმანიაში უკვე დაწყებული მაგისტრატურა ამ სქემით არ ფინანსდება."
+          },
+          {
+            "subject": "program",
+            "key": "startsInWinterSemester",
+            "expected": true,
+            "label": "მიმდინარე სქემა მომდევნო წლის ზამთრის სემესტრში დაწყებას მოითხოვს."
+          },
+          {
+            "subject": "applicant",
+            "key": "daadCountryEligible",
+            "expected": true,
+            "label": "ქვეყნის მიხედვით DAAD-ის მოქმედი პირობები და განაცხადის ვადა უნდა გადამოწმდეს."
+          },
+          {
+            "subject": "applicant",
+            "key": "daadResidenceAndDegreeAgeEligible",
+            "expected": true,
+            "label": "გადაამოწმე გერმანიაში წინა რეზიდენტობისა და დიპლომის თარიღის შეზღუდვები."
+          }
+        ]
+      },
+      "coverage": {
+        "tuitionFull": false,
+        "livingSupport": true,
+        "amount": 992,
+        "currency": "EUR",
+        "period": "month",
+        "note": "DAAD სწავლის საფასურს არ ფარავს. გამოქვეყნებული საარსებო სტიპენდია, დაზღვევა და პირობითი დანამატები ცალკეა; უნივერსიტეტის საფასური სტუდენტმა უნდა გადაამოწმოს."
+      },
+      "call": {
+        "opensAt": null,
+        "deadline": null,
+        "cycle": "2027",
+        "deadlineScope": null,
+        "observedStatus": "unknown",
+        "note": "წყარო აცხადებს 2027 წელს დაფინანსების დაწყებას; განაცხადის ვადა აპლიკანტის ქვეყანაზეა დამოკიდებული და აქ არ არის გამოგონილი."
+      },
+      "sources": [
+        {
+          "url": "https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database?detail=50026200",
+          "label": "DAAD — current master scholarship terms and tuition exclusion",
+          "checkedAt": "2026-10-28"
+        }
+      ],
+      "notes": [
+        "ეროვნული გარე შესაძლებლობაა; უნივერსიტეტი ან ყველა გერმანული პროგრამა ავტომატურად მონაწილედ არ ითვლება.",
+        "ჰუმანიტარული დარგები მთლიანად არ არის გამორიცხული; ხელოვნებისა და არქიტექტურისთვის ცალკე DAAD პროგრამებია."
+      ]
+    },
+    {
+      "id": "funding_daad-epos",
+      "title": "DAAD — Development-Related Postgraduate Courses (EPOS)",
+      "provider": "DAAD",
+      "relationship": "listed-program",
+      "scope": {
+        "countryCodes": [
+          "DE"
+        ],
+        "degrees": [
+          "master"
+        ],
+        "fields": [],
+        "programIds": [],
+        "institutionDomains": [],
+        "institutionNames": [],
+        "programBindings": [
+          {
+            "institutionDomains": [
+              "uni-goettingen.de",
+              "unigottingen.de"
+            ],
+            "titles": [
+              "Development Economics",
+              "MSc Development Economics",
+              "Development Economics (M.Sc.)",
+              "Master in Development Economics",
+              "Development Economics (MSc)"
+            ],
+            "sourceUrl": "https://uni-goettingen.de/en/572462.html"
+          },
+          {
+            "institutionDomains": [
+              "tu-dresden.de"
+            ],
+            "titles": [
+              "Hydro Science and Engineering",
+              "Hydro Science & Engineering",
+              "Hydro Science and Engineering (M.Sc.)",
+              "Hydro Science and Engineering (HSE)"
+            ],
+            "sourceUrl": "https://hse.bu.tu-dresden.de/ausschreibung?call=EPOS2027-HSE",
+            "call": {
+              "opensAt": "2026-08-15",
+              "deadline": "2026-10-15",
+              "cycle": "2027/28",
+              "deadlineScope": "applicant",
+              "observedStatus": "unknown",
+              "note": "TU Dresden-ის ზუსტი 2027 HSE კონკურსი უკვე დახურულია; ახალი წლიური ვადა არ იგულისხმება."
+            }
+          }
+        ]
+      },
+      "conditions": {
+        "modes": [
+          "full-time"
+        ],
+        "minExperienceYears": 2,
+        "checks": [
+          {
+            "subject": "applicant",
+            "key": "eposCountryEligible",
+            "expected": true,
+            "label": "მოქალაქეობის/წარმოშობის შესაბამისობა EPOS-ის მოქმედ განვითარებადი ქვეყნების სიასთან უნდა გადამოწმდეს."
+          },
+          {
+            "subject": "applicant",
+            "key": "hasFirstDegree",
+            "expected": true,
+            "label": "საჭიროა შესაბამისი პირველი აკადემიური ხარისხი."
+          },
+          {
+            "subject": "applicant",
+            "key": "eposPostDegreeExperienceEligible",
+            "expected": true,
+            "label": "გამოცდილება დიპლომის მიღების შემდეგ და განვითარების მიზნებთან კავშირით უნდა დადასტურდეს."
+          },
+          {
+            "subject": "applicant",
+            "key": "eposDegreeAgeEligible",
+            "expected": true,
+            "label": "დიპლომის ასაკისა და სხვა EPOS პირობების შესაბამისობა დასაზუსტებელია."
+          }
+        ],
+        "exclusions": [
+          {
+            "institutionDomains": [
+              "htw-berlin.de"
+            ],
+            "sourceUrl": "https://mide.htw-berlin.de/applying/faq/",
+            "reason": "HTW Berlin-ის MIDE ოფიციალური FAQ მიმდინარე მიღებაზე EPOS დაფინანსების მიუწვდომლობას აცხადებს."
+          }
+        ]
+      },
+      "coverage": {
+        "tuitionFull": null,
+        "livingSupport": true,
+        "amount": 992,
+        "currency": "EUR",
+        "period": "month",
+        "note": "მაგისტრების გამოქვეყნებული ყოველთვიური სტიპენდია და დამატებითი სარგებელი; კონკრეტული კურსის საფასური და გათავისუფლება ცალკე მოწმდება."
+      },
+      "call": {
+        "opensAt": null,
+        "deadline": null,
+        "cycle": "2027/28",
+        "deadlineScope": null,
+        "observedStatus": "unknown",
+        "note": "ვადები კურსზეა დამოკიდებული. Göttingen აქვეყნებს განმეორებად 1 ოქტომბერ–15 ნოემბრის ფანჯარას; ზუსტი წელი ამ ჩანაწერით არ ენიჭება."
+      },
+      "sources": [
+        {
+          "url": "https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database?detail=50076777",
+          "label": "DAAD — EPOS eligibility and benefits",
+          "checkedAt": "2026-10-28"
+        },
+        {
+          "url": "https://static.daad.de/media/daad_de/pdfs_nicht_barrierefrei/in-deutschland-studieren-forschen-lehren/epos-course_overview__2027_28.pdf",
+          "label": "DAAD — published participating courses 2027/28",
+          "checkedAt": "2026-10-28"
+        },
+        {
+          "url": "https://uni-goettingen.de/en/572462.html",
+          "label": "Göttingen — Development Economics EPOS application",
+          "checkedAt": "2026-10-28"
+        },
+        {
+          "url": "https://hse.bu.tu-dresden.de/ausschreibung?call=EPOS2027-HSE",
+          "label": "TU Dresden — exact HSE EPOS2027 call",
+          "checkedAt": "2026-10-28"
+        },
+        {
+          "url": "https://mide.htw-berlin.de/applying/faq/",
+          "label": "HTW MIDE — current intake EPOS unavailable",
+          "checkedAt": "2026-10-28"
+        }
+      ],
+      "notes": [
+        "ეს ჩანაწერი ზუსტად ამოწმებს მხოლოდ ორ გადამოწმებულ მონაწილე კურსს და არა EPOS-ის მთელ სიას.",
+        "იგივე უნივერსიტეტის Computer Science ან სხვა კურსზე EPOS კავშირი ავტომატურად არ გადადის."
+      ]
+    },
+    {
+      "id": "funding_erasmus-mundus-cybersure",
+      "title": "Erasmus Mundus Joint Masters — CYBERSURE",
+      "provider": "European Union / CYBERSURE consortium",
+      "relationship": "listed-program",
+      "scope": {
+        "countryCodes": [
+          "NO",
+          "FI",
+          "SE",
+          "DK",
+          "EE",
+          "FR",
+          "AT"
+        ],
+        "degrees": [
+          "master"
+        ],
+        "fields": [],
+        "programIds": [],
+        "institutionDomains": [],
+        "institutionNames": [],
+        "programBindings": [
+          {
+            "institutionDomains": [
+              "ntnu.no",
+              "aalto.fi",
+              "kth.se",
+              "dtu.dk",
+              "ut.ee",
+              "eurecom.eu",
+              "tugraz.at"
+            ],
+            "titles": [
+              "Cybersecurity and Assurance",
+              "Master's Programme in Cybersecurity and Assurance (CYBERSURE)",
+              "Cybersecurity and Assurance (CYBERSURE, Erasmus Mundus)",
+              "Cybersecurity and Assurance (CYBERSURE)"
+            ],
+            "sourceUrl": "https://www.aalto.fi/en/programmes/masters-programme-in-cybersecurity-and-assurance-cybersure"
+          }
+        ]
+      },
+      "conditions": {
+        "modes": [
+          "full-time"
+        ],
+        "durationMonths": {
+          "min": 24,
+          "max": 24
+        },
+        "checks": [
+          {
+            "subject": "applicant",
+            "key": "hasFirstDegree",
+            "expected": true,
+            "label": "ბაკალავრის ხარისხი ან ოფიციალურად აღიარებული ეკვივალენტი სწავლის დაწყებამდე უნდა გქონდეს."
+          },
+          {
+            "subject": "applicant",
+            "key": "previousEmjmScholarship",
+            "expected": false,
+            "label": "წინა EMJM სტიპენდიის მიმღები მეორე EMJM სტიპენდიას ვერ მიიღებს."
+          }
+        ]
+      },
+      "coverage": {
+        "tuitionFull": true,
+        "livingSupport": true,
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "note": "გამარჯვებულ სტიპენდიატს მონაწილეობის საფასური არ ეკისრება და აქვს ხარჯების სტიპენდია. 2027 მიღების ჯილდოების რაოდენობა არ არის გადმოტანილი 2026 წლიდან."
+      },
+      "call": {
+        "opensAt": "2026-11-16",
+        "deadline": "2027-01-04",
+        "cycle": "2027",
+        "deadlineScope": "applicant",
+        "observedStatus": "unknown",
+        "note": "კონსორციუმის 2027 განაცხადის ფანჯარა; ენის მტკიცებულებას ცალკე ვადა აქვს. ვადის საათი ოფიციალურ გვერდზე გადაამოწმე."
+      },
+      "sources": [
+        {
+          "url": "https://erasmus-plus.ec.europa.eu/opportunities/individuals/students/erasmus-mundus-joint-masters",
+          "label": "European Commission — EMJM student route",
+          "checkedAt": "2026-10-28"
+        },
+        {
+          "url": "https://erasmus-plus.ec.europa.eu/programme-guide/part-b/key-action-2/erasmus-mundus",
+          "label": "European Commission — scholarship and participation-cost rules",
+          "checkedAt": "2026-10-28"
+        },
+        {
+          "url": "https://www.aalto.fi/en/programmes/masters-programme-in-cybersecurity-and-assurance-cybersure",
+          "label": "Aalto — exact CYBERSURE consortium and programme",
+          "checkedAt": "2026-10-28"
+        },
+        {
+          "url": "https://www.cybersure-master.eu/scholarships-and-fees",
+          "label": "CYBERSURE — scholarships and funding limitations",
+          "checkedAt": "2026-10-28"
+        },
+        {
+          "url": "https://www.cybersure-master.eu/admission",
+          "label": "CYBERSURE — published 2027 admission timeline",
+          "checkedAt": "2026-10-28"
+        }
+      ],
+      "notes": [
+        "ყველა ევროპული მაგისტრატურა Erasmus Mundus არ არის.",
+        "კონსორციუმის წევრობა უნივერსიტეტის სხვა პროგრამებს დაფინანსების სტატუსს არ ანიჭებს."
+      ]
+    },
+    {
+      "id": "funding_chevening",
+      "title": "Chevening Scholarships",
+      "provider": "UK Government / FCDO and partners",
+      "relationship": "external",
+      "scope": {
+        "countryCodes": [
+          "GB"
+        ],
+        "degrees": [
+          "master"
+        ],
+        "fields": [],
+        "programIds": [],
+        "institutionDomains": [],
+        "institutionNames": [],
+        "programBindings": []
+      },
+      "conditions": {
+        "modes": [
+          "full-time"
+        ],
+        "durationMonths": {
+          "min": 9,
+          "max": 12
+        },
+        "excludedQualificationTypes": [
+          "mres"
+        ],
+        "excludedResidenceCodes": [
+          "GB"
+        ],
+        "minPostGraduationWorkHours": 2800,
+        "checks": [
+          {
+            "subject": "program",
+            "key": "taughtMaster",
+            "expected": true,
+            "label": "პროგრამა უნდა იყოს შესაბამისი სასწავლო და არა კვლევითი მაგისტრატურა."
+          },
+          {
+            "subject": "program",
+            "key": "cheveningCourseEligible",
+            "expected": true,
+            "label": "კონკრეტული კურსის შესაბამისობა Chevening-ის ოფიციალურ საძიებო სისტემაში უნდა დადასტურდეს."
+          },
+          {
+            "subject": "program",
+            "key": "autumnStart",
+            "expected": true,
+            "label": "პროგრამა შემოდგომაზე უნდა იწყებოდეს."
+          },
+          {
+            "subject": "applicant",
+            "key": "cheveningCountryEligible",
+            "expected": true,
+            "label": "ქვეყნისა და შესაძლო ორმაგი მოქალაქეობის უფლებამოსილება ოფიციალურად გადაამოწმე."
+          },
+          {
+            "subject": "applicant",
+            "key": "cheveningResidenceEligible",
+            "expected": true,
+            "label": "რეზიდენტობის, ODA-ისა და ლტოლვილის სტატუსის წესები უნდა გადამოწმდეს."
+          },
+          {
+            "subject": "applicant",
+            "key": "returnHomeCommitment",
+            "expected": true,
+            "label": "სტიპენდიის შემდეგ მინიმუმ ორი წლით სამშობლოში დაბრუნების ვალდებულებაა."
+          },
+          {
+            "subject": "applicant",
+            "key": "cheveningDegreeAndOffersEligible",
+            "expected": true,
+            "label": "გადაამოწმე დიპლომის თარიღი, სამი დასაშვები კურსი და უპირობო შეთავაზების მოთხოვნა."
+          }
+        ]
+      },
+      "coverage": {
+        "tuitionFull": null,
+        "livingSupport": true,
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "note": "სტანდარტული სრული ჯილდო მოიცავს სწავლასა და საარსებო ხარჯებს; MBA-ს საფასურს £22,000 ზღვარი და ნაწილობრივ ჯილდოებს გამონაკლისები აქვს. საბოლოო წერილი განსაზღვრავს დაფარვას."
+      },
+      "call": {
+        "opensAt": null,
+        "deadline": null,
+        "cycle": "2027/28",
+        "deadlineScope": null,
+        "observedStatus": "closed",
+        "note": "ოფიციალური საქართველოს გვერდი 2027/28 მიღებას დახურულად აჩვენებს; შემდეგი კონკურსის თარიღი უცნობია.",
+        "checkedAt": "2026-10-28"
+      },
+      "sources": [
+        {
+          "url": "https://www.chevening.org/resource-hub/guidance/eligibility/",
+          "label": "Chevening — applicant eligibility",
+          "checkedAt": "2026-10-28"
+        },
+        {
+          "url": "https://www.chevening.org/resource-hub/guidance/courses/",
+          "label": "Chevening — exact course and MBA limitations",
+          "checkedAt": "2026-10-28"
+        },
+        {
+          "url": "https://www.chevening.org/terms-and-conditions-scholarships/",
+          "label": "Chevening — full and partial award coverage",
+          "checkedAt": "2026-10-28"
+        },
+        {
+          "url": "https://www.chevening.org/scholarship/georgia/",
+          "label": "Chevening Georgia — 2027/28 applications closed",
+          "checkedAt": "2026-10-28"
+        }
+      ],
+      "notes": [
+        "ეს გარე შესაძლო გზა არ ადასტურებს კონკრეტული უნივერსიტეტის კურსის უფლებამოსილებას.",
+        "2,800 საათი დიპლომის მიღების შემდეგ უნდა იყოს დაგროვებული; ზოგადი გამოცდილების წლები ავტომატურ ეკვივალენტად არ გარდაიქმნება."
+      ]
+    },
+    {
+      "id": "funding_dsu-toscana",
+      "title": "DSU Toscana — Borsa di studio",
+      "provider": "Azienda Regionale DSU Toscana",
+      "relationship": "institution",
+      "scope": {
+        "countryCodes": [
+          "IT"
+        ],
+        "degrees": [
+          "bachelor",
+          "master"
+        ],
+        "fields": [],
+        "programIds": [],
+        "institutionDomains": [
+          "unifi.it",
+          "unipi.it",
+          "unisi.it"
+        ],
+        "institutionNames": [],
+        "programBindings": []
+      },
+      "conditions": {
+        "checks": [
+          {
+            "subject": "applicant",
+            "key": "dsuEconomicDocumentsEligible",
+            "expected": true,
+            "label": "საჭიროა მოქმედი კონკურსის შესაბამისი ISEE/ISPE ან უცხოური ფინანსური დოკუმენტები."
+          },
+          {
+            "subject": "applicant",
+            "key": "dsuMeritEligible",
+            "expected": true,
+            "label": "საჭიროა აკადემიური პროგრესისა და კრედიტების მოთხოვნების დაცვა."
+          },
+          {
+            "subject": "applicant",
+            "key": "firstQualificationAtLevel",
+            "expected": true,
+            "label": "იმავე საფეხურზე პირველი ხარისხის მოთხოვნა უნდა გადაამოწმო."
+          },
+          {
+            "subject": "applicant",
+            "key": "dsuEnrollmentEligible",
+            "expected": true,
+            "label": "საჭიროა მხარდაჭერილ დაწესებულებაში ჩარიცხვა ან კონკურსის მიხედვით დასაშვები ჩარიცხვის განზრახვა."
+          }
+        ]
+      },
+      "coverage": {
+        "tuitionFull": null,
+        "livingSupport": true,
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "note": "თანხა ფინანსურ მდგომარეობასა და სტუდენტის სტატუსზეა დამოკიდებული; კვება, რეგიონული მოსაკრებლის შეღავათი და ხელმისაწვდომობის ფარგლებში საცხოვრებელი. სრული სწავლის საფასურის გადახდა უნივერსიტეტის წესებით ცალკე მოწმდება."
+      },
+      "call": {
+        "opensAt": "2026-07-20",
+        "deadline": "2026-09-07",
+        "cycle": "2026/27",
+        "deadlineScope": "applicant",
+        "observedStatus": "unknown",
+        "note": "ეს ფანჯარა მხოლოდ ბაკალავრიატსა და მაგისტრატურას ეხება და უკვე დახურულია; დოქტორანტურის განსხვავებული ფანჯარა ამ ჩანაწერის ფარგლებს სცდება."
+      },
+      "sources": [
+        {
+          "url": "https://www.dsu.toscana.it/web/ardsu/borsa-di-studio",
+          "label": "DSU Toscana — supported institutions, eligibility, benefits and 2026/27 call",
+          "checkedAt": "2026-10-28"
+        }
+      ],
+      "notes": [
+        "მონაცემებში პირდაპირ მხარდაჭერილია მხოლოდ ფლორენციის, პიზისა და სიენას უნივერსიტეტები; სხვა ტოსკანური დაწესებულებების დამატებას ცალკე მტკიცებულება სჭირდება.",
+        "მილანის ან სხვა იტალიური უნივერსიტეტის რეგიონული DSU პროგრამა ავტომატურად DSU Toscana არ არის."
+      ]
+    },
+    {
+      "id": "funding_helsinki-master-waiver",
+      "title": "University of Helsinki — Master's tuition fee waivers",
+      "provider": "University of Helsinki",
+      "relationship": "institution",
+      "scope": {
+        "countryCodes": [
+          "FI"
+        ],
+        "degrees": [
+          "master"
+        ],
+        "fields": [],
+        "programIds": [],
+        "institutionDomains": [
+          "helsinki.fi"
+        ],
+        "institutionNames": [],
+        "programBindings": []
+      },
+      "conditions": {
+        "modes": [
+          "full-time"
+        ],
+        "languages": [
+          "en"
+        ],
+        "tuitionFeeLiable": true,
+        "excludeEuEeaSwiss": true,
+        "checks": [
+          {
+            "subject": "applicant",
+            "key": "academicExcellence",
+            "expected": true,
+            "label": "საჭიროა კონკურსით შეფასებული მაღალი აკადემიური შედეგები."
+          },
+          {
+            "subject": "applicant",
+            "key": "helsinkiResidencePermitEligible",
+            "expected": true,
+            "label": "ვიზისა და ბინადრობის პირადი პირობები დასადასტურებელია."
+          }
+        ]
+      },
+      "coverage": {
+        "tuitionFull": null,
+        "livingSupport": false,
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "note": "სქემა გასცემს 50% ან 100% სწავლის საფასურის შეღავათს; უმეტესობა 50%-ია. საარსებო ხარჯები არ ფინანსდება. მეორე წლის გაგრძელებისთვის მინიმუმ 55 ECTS-ის პირობაა."
+      },
+      "call": {
+        "opensAt": null,
+        "deadline": null,
+        "cycle": null,
+        "deadlineScope": null,
+        "observedStatus": "unknown",
+        "note": "შეღავათზე განაცხადი მაგისტრატურის განაცხადთან ერთად იგზავნება; კონკრეტული მიღების ვადა პროგრამის გვერდზე მოწმდება."
+      },
+      "sources": [
+        {
+          "url": "https://www.helsinki.fi/en/admissions-and-education/apply-bachelors-and-masters-programmes/tuition-fees-and-scholarship-programme",
+          "label": "Helsinki — fee liability, 50/100% waivers and living-cost exclusion",
+          "checkedAt": "2026-10-28"
+        }
+      ],
+      "notes": [
+        "არაევროპული მოქალაქეობა მარტო არ ამტკიცებს საფასურის ვალდებულებას; ბინადრობის გამონაკლისები ინდივიდუალურია.",
+        "ჩანაწერი არ მოიცავს ბაკალავრიატის დაფინანსებას ან ყველა ერთობლივი პროგრამის განსხვავებულ სქემას."
+      ]
+    },
+    {
+      "id": "funding_aalto-master-excellence",
+      "title": "Aalto University Excellence Scholarship — Master's",
+      "provider": "Aalto University",
+      "relationship": "institution",
+      "scope": {
+        "countryCodes": [
+          "FI"
+        ],
+        "degrees": [
+          "master"
+        ],
+        "fields": [],
+        "programIds": [],
+        "institutionDomains": [
+          "aalto.fi"
+        ],
+        "institutionNames": [],
+        "programBindings": []
+      },
+      "conditions": {
+        "modes": [
+          "full-time"
+        ],
+        "languages": [
+          "en"
+        ],
+        "tuitionFeeLiable": true,
+        "excludeEuEeaSwiss": true,
+        "checks": [
+          {
+            "subject": "applicant",
+            "key": "academicExcellence",
+            "expected": true,
+            "label": "სტიპენდია შეზღუდული რაოდენობით, პროგრამის აკადემიური შეფასებით გაიცემა."
+          },
+          {
+            "subject": "applicant",
+            "key": "appliedForScholarshipWithAdmission",
+            "expected": true,
+            "label": "სტიპენდია მიღების განაცხადთან ერთად უნდა მოითხოვო; შემდეგ დამატება არ შეიძლება."
+          }
+        ],
+        "excludedQualificationTypes": [
+          "erasmus-mundus",
+          "eit-digital"
+        ],
+        "excludedProgramTitles": [
+          "Autonomous Systems and Intelligent Robots - ICT Innovation (EIT Digital Master School)",
+          "Cloud and Network Infrastructures and High-Performance Computing - ICT Innovation (EIT Digital Master School)",
+          "Communications and Data Science (CoDaS)",
+          "Communications and Data Science",
+          "Cybersecurity and Assurance",
+          "Master's Programme in Cybersecurity and Assurance (CYBERSURE)",
+          "Cybersecurity and Assurance (CYBERSURE, Erasmus Mundus)",
+          "Cybersecurity and Assurance (CYBERSURE)",
+          "Data Science - ICT Innovation (EIT Digital Master School)",
+          "Environomical Pathways for Sustainable Energy Systems (SELECT)"
+        ]
+      },
+      "coverage": {
+        "tuitionFull": true,
+        "livingSupport": false,
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "note": "სრული სწავლის საფასურის შეღავათი ნომინალური ვადით; საარსებო ხარჯები არ ფინანსდება. ზოგიერთმა პროგრამამ შეიძლება საერთოდ არ გასცეს ჯილდო."
+      },
+      "call": {
+        "opensAt": null,
+        "deadline": null,
+        "cycle": null,
+        "deadlineScope": null,
+        "observedStatus": "unknown",
+        "note": "განაცხადი მიღების პერიოდში იგზავნება; პროგრამის მიმდინარე თარიღი და კონკურსის პირობები ცალკე მოწმდება."
+      },
+      "sources": [
+        {
+          "url": "https://www.aalto.fi/en/admission-services/scholarships-and-tuition-fees",
+          "label": "Aalto — Excellence Scholarship scope, joint-program exceptions and no living support",
+          "checkedAt": "2026-10-28"
+        }
+      ],
+      "notes": [
+        "განსხვავებული სქემა აქვთ ზოგიერთ საერთაშორისო ერთობლივ პროგრამას; მათ შორის CYBERSURE/CoDaS/EIT Digital/SELECT.",
+        "ჩარიცხვა სტიპენდიას არ ნიშნავს; ხელოვნებისა და დიზაინის მაგისტრატურაც შეიძლება ამ სქემის ფარგლებში იყოს."
+      ]
+    },
+    {
+      "id": "funding_tum-international-grant",
+      "title": "TUM — Scholarship for International Students",
+      "provider": "Technical University of Munich / Bavaria",
+      "relationship": "institution",
+      "scope": {
+        "countryCodes": [
+          "DE"
+        ],
+        "degrees": [
+          "bachelor",
+          "master"
+        ],
+        "fields": [],
+        "programIds": [],
+        "institutionDomains": [
+          "tum.de"
+        ],
+        "institutionNames": [],
+        "programBindings": []
+      },
+      "conditions": {
+        "enrollment": {
+          "minSemesterByDegree": {
+            "bachelor": 3,
+            "master": 2
+          },
+          "masterFirstSemesterIfTumBachelor": true
+        },
+        "checks": [
+          {
+            "subject": "applicant",
+            "key": "bafogNationalityIneligible",
+            "expected": true,
+            "label": "მოქალაქეობის გამო BAföG-ის არმიღების პირობა უნდა დადასტურდეს."
+          },
+          {
+            "subject": "applicant",
+            "key": "academicMerit",
+            "expected": true,
+            "label": "საჭიროა კარგი აკადემიური შედეგები."
+          },
+          {
+            "subject": "applicant",
+            "key": "financialNeed",
+            "expected": true,
+            "label": "საჭიროა პირადი და ოჯახის ფინანსური საჭიროების დასაბუთება."
+          },
+          {
+            "subject": "applicant",
+            "key": "onLeaveOfAbsence",
+            "expected": false,
+            "label": "აკადემიური შვებულების პერიოდში გრანტი არ გადაიხდება."
+          }
+        ]
+      },
+      "coverage": {
+        "tuitionFull": false,
+        "livingSupport": true,
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "note": "ერთჯერადი დახმარება €500–€1,800 სემესტრში; ხელახალი განაცხადი შეიძლება. ეს არ არის სრული სწავლის საფასურის დაფინანსება და მომავალ ახალჩარიცხულ სტუდენტს ავტომატურად არ ეკუთვნის."
+      },
+      "call": {
+        "opensAt": "2026-10-01",
+        "deadline": "2026-10-15",
+        "cycle": "winter 2026/27",
+        "deadlineScope": "applicant",
+        "observedStatus": "unknown",
+        "note": "ზამთრის სემესტრის ზუსტი ფანჯარა დახურულია; შემდეგი ფანჯარა აქ არ არის ნავარაუდევი."
+      },
+      "sources": [
+        {
+          "url": "https://www.tum.de/en/studies/fees-and-financial-aid/scholarships/tum-scholarships/scholarship-for-international-students-of-tum",
+          "label": "TUM — international grant, semesters, merits, need and current call",
+          "checkedAt": "2026-10-28"
+        }
+      ],
+      "notes": [
+        "პირველი სამაგისტრო სემესტრის გამონაკლისი მოქმედებს TUM-ის ბაკალავრის დამთავრების შემთხვევაში.",
+        "TUM-ის სხვა სწავლის საფასურის გათავისუფლებები სხვა სქემებია."
+      ]
+    },
+    {
+      "id": "funding_eth-esop",
+      "title": "ETH Zurich — Excellence Scholarship & Opportunity Programme (ESOP)",
+      "provider": "ETH Zurich",
+      "relationship": "institution",
+      "scope": {
+        "countryCodes": [
+          "CH"
+        ],
+        "degrees": [
+          "master"
+        ],
+        "fields": [],
+        "programIds": [],
+        "institutionDomains": [
+          "ethz.ch"
+        ],
+        "institutionNames": [],
+        "programBindings": []
+      },
+      "conditions": {
+        "modes": [
+          "full-time"
+        ],
+        "excludedQualificationTypes": [
+          "mas"
+        ],
+        "checks": [
+          {
+            "subject": "applicant",
+            "key": "topTenPercentBachelor",
+            "expected": true,
+            "label": "საჭიროა ბაკალავრიატის საუკეთესო 10%-ის შესაბამისი შედეგი და ოფიციალური შეფასება."
+          },
+          {
+            "subject": "applicant",
+            "key": "alreadyHasMasterDegree",
+            "expected": false,
+            "label": "უკვე მიღებული მაგისტრის ხარისხით ESOP-ზე განაცხადი არ დაიშვება."
+          },
+          {
+            "subject": "applicant",
+            "key": "alreadyEnrolledEthMaster",
+            "expected": false,
+            "label": "ETH-ის მაგისტრატურაზე უკვე ჩარიცხული სტუდენტი ამ ESOP მიღებაზე ვერ განაცხადებს."
+          },
+          {
+            "subject": "applicant",
+            "key": "esopProposalAndReferences",
+            "expected": true,
+            "label": "საჭიროა მაგისტრის თეზისის წინასწარი გეგმა და მოთხოვნილი რეკომენდაციები."
+          }
+        ]
+      },
+      "coverage": {
+        "tuitionFull": true,
+        "livingSupport": true,
+        "amount": 13500,
+        "currency": "CHF",
+        "period": "semester",
+        "note": "2027 წლის შემოდგომიდან გამოქვეყნებულია CHF13,500 სემესტრში და სწავლის საფასურის შეღავათი, მაგისტრატურის ნომინალური ვადით; მხოლოდ კონკურსის გამარჯვებულთათვის."
+      },
+      "call": {
+        "opensAt": "2026-11-01",
+        "deadline": "2026-11-30",
+        "cycle": "2027/28",
+        "deadlineScope": "applicant",
+        "observedStatus": "unknown",
+        "note": "პირველი სამაგისტრო განაცხადის ფანჯარა HS27 დასაწყისისთვის; განაცხადის საათი MEZ-ით გადაამოწმე."
+      },
+      "sources": [
+        {
+          "url": "https://ethz.ch/students/en/studies/financial/scholarships/excellencescholarship.html",
+          "label": "ETH — ESOP conditions, 2027 funding level and Nov 2026 window",
+          "checkedAt": "2026-10-28"
+        }
+      ],
+      "notes": [
+        "ეს შესაძლებლობა კონკურსში მონაწილეობის გზაა და არა ავტომატური ESOP ჯილდო."
+      ]
+    },
+    {
+      "id": "funding_oxford-clarendon",
+      "title": "University of Oxford — Clarendon Scholarships",
+      "provider": "University of Oxford / Clarendon Fund",
+      "relationship": "institution",
+      "scope": {
+        "countryCodes": [
+          "GB"
+        ],
+        "degrees": [
+          "master",
+          "phd"
+        ],
+        "fields": [],
+        "programIds": [],
+        "institutionDomains": [
+          "ox.ac.uk"
+        ],
+        "institutionNames": [],
+        "programBindings": []
+      },
+      "conditions": {
+        "modes": [
+          "full-time",
+          "part-time"
+        ],
+        "excludedQualificationTypes": [
+          "pgcert",
+          "pgdip"
+        ],
+        "checks": [
+          {
+            "subject": "applicant",
+            "key": "newOxfordCourse",
+            "expected": true,
+            "label": "განაცხადი ახალ ხარისხის პროგრამაზე უნდა იყოს; მიმდინარე იმავე კურსის გაგრძელება არ შედის."
+          },
+          {
+            "subject": "applicant",
+            "key": "deferredOxfordOffer",
+            "expected": false,
+            "label": "გადადებული შეთავაზების მქონე აპლიკანტი Clarendon-ის ამ მიღებაში არ განიხილება."
+          },
+          {
+            "subject": "applicant",
+            "key": "appliedByOxfordFundingDeadline",
+            "expected": true,
+            "label": "პროგრამის შესაბამის დეკემბრის ან იანვრის დაფინანსების ვადამდე სრული განაცხადია საჭირო."
+          }
+        ]
+      },
+      "coverage": {
+        "tuitionFull": true,
+        "livingSupport": true,
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "note": "დაფინანსება მოიცავს კურსის საფასურს და საარსებო გრანტს საფასურის ვალდებულების პერიოდით; არასრული განაკვეთის სტიპენდიის ოდენობა განსხვავდება."
+      },
+      "call": {
+        "opensAt": null,
+        "deadline": null,
+        "cycle": null,
+        "deadlineScope": null,
+        "observedStatus": "unknown",
+        "note": "დეკემბრის ან იანვრის ზუსტი ვადა კურსზეა დამოკიდებული. წლიური დღის/წლის ავტომატური მინიჭება არ ხდება."
+      },
+      "sources": [
+        {
+          "url": "https://www.ox.ac.uk/admissions/graduate/fees-and-funding/funding/clarendon",
+          "label": "Oxford — Clarendon fees, maintenance and degree scope",
+          "checkedAt": "2026-10-28"
+        },
+        {
+          "url": "https://www.ox.ac.uk/admissions/graduate/fees-and-funding/funding/clarendon/applicants",
+          "label": "Oxford — new-course, deferred-offer and funding-deadline conditions",
+          "checkedAt": "2026-10-28"
+        }
+      ],
+      "notes": [
+        "განიხილება ხარისხის მიმნიჭებელი მაგისტრატურა და DPhil; PGCert/PGDip მაგისტრის ხარისხის ტოლი არ არის.",
+        "ავტომატური განხილვა ავტომატურ ჯილდოს არ ნიშნავს."
+      ]
+    },
+    {
+      "id": "funding_gates-cambridge",
+      "title": "Gates Cambridge Scholarship",
+      "provider": "Gates Cambridge Trust",
+      "relationship": "institution",
+      "scope": {
+        "countryCodes": [
+          "GB"
+        ],
+        "degrees": [
+          "master",
+          "phd"
+        ],
+        "fields": [],
+        "programIds": [],
+        "institutionDomains": [
+          "cam.ac.uk"
+        ],
+        "institutionNames": [],
+        "programBindings": []
+      },
+      "conditions": {
+        "modes": [
+          "full-time",
+          "part-time"
+        ],
+        "checks": [
+          {
+            "subject": "program",
+            "key": "gatesCourseEligible",
+            "expected": true,
+            "label": "კონკრეტული კურსი უნდა იყოს Gates Cambridge-ის მოქმედ დასაშვებ სიაში; კურსისა და რეჟიმის გამონაკლისები ცალკე მოწმდება."
+          },
+          {
+            "subject": "applicant",
+            "key": "gatesCitizenshipEligible",
+            "expected": true,
+            "label": "მოქალაქეობის და ორმაგი მოქალაქეობის პირობები Gates-ის მოქმედი წესებით დასადასტურებელია."
+          },
+          {
+            "subject": "applicant",
+            "key": "newCambridgeCourse",
+            "expected": true,
+            "label": "დაფინანსება ახალი კურსისთვისაა; უკვე დაწყებული იმავე კურსის გაგრძელება ცალკე უნდა გადამოწმდეს."
+          },
+          {
+            "subject": "applicant",
+            "key": "gatesRoundAndCourseDeadlineEligible",
+            "expected": true,
+            "label": "აშშ-ის რეზიდენტი აშშ-ის მოქალაქისთვის ცალკე რაუნდი და ვადაა; სხვა აპლიკანტებს კურსის ვადა ეხებათ."
+          }
+        ]
+      },
+      "coverage": {
+        "tuitionFull": true,
+        "livingSupport": true,
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "note": "მოქმედი Cambridge-ის წყარო ასახელებს უნივერსიტეტის საფასურს, საარსებო სტიპენდიას და განსაზღვრულ დამატებით ხარჯებს; ჯილდო კონკურსით გაიცემა. კვლევის სახარჯი მასალა ცალკე არ შედის."
+      },
+      "call": {
+        "opensAt": null,
+        "deadline": null,
+        "cycle": "2027/28",
+        "deadlineScope": null,
+        "observedStatus": "unknown",
+        "note": "2027/28 საერთაშორისო რაუნდს კურსის დაფინანსების ვადა აქვს; აშშ-ის რეზიდენტ მოქალაქეთა 14 ოქტომბრის რაუნდი ცალკეა."
+      },
+      "sources": [
+        {
+          "url": "https://www.student-funding.cam.ac.uk/fund/gates-cambridge-scholarship-2026",
+          "label": "University of Cambridge — current Gates 2027/28 award and exact course eligibility list",
+          "checkedAt": "2026-10-28"
+        },
+        {
+          "url": "https://www.student-funding.cam.ac.uk/fund/gates-us-fund-2026",
+          "label": "University of Cambridge — separate US round and 14 Oct 2026 deadline",
+          "checkedAt": "2026-10-28"
+        }
+      ],
+      "notes": [
+        "Gates-ის საკუთარი eligibility გვერდი გადამოწმებისას 410-ს აბრუნებდა; გამოყენებულია მიმდინარე Cambridge-ის ოფიციალური დაფინანსების ჩანაწერი.",
+        "ყველა სამაგისტრო, პროფესიული ან part-time კურსი დასაშვებად არ ითვლება; ზუსტი კურსის შემოწმების გარეშე სტატუსი needs-verification რჩება."
+      ]
+    },
+    {
+      "id": "funding_eiffel-paris-saclay",
+      "title": "France Excellence Eiffel — Université Paris-Saclay nominations",
+      "provider": "French Ministry for Europe and Foreign Affairs / Campus France",
+      "relationship": "institution",
+      "scope": {
+        "countryCodes": [
+          "FR"
+        ],
+        "degrees": [
+          "master"
+        ],
+        "fields": [
+          "biology",
+          "health",
+          "environmental-science",
+          "mathematics",
+          "computer-science",
+          "data-science",
+          "engineering",
+          "history",
+          "french-studies",
+          "law",
+          "political-science",
+          "economics",
+          "business"
+        ],
+        "programIds": [],
+        "institutionDomains": [
+          "universite-paris-saclay.fr"
+        ],
+        "institutionNames": [],
+        "programBindings": []
+      },
+      "conditions": {
+        "modes": [
+          "full-time"
+        ],
+        "maxAge": 29,
+        "excludedCitizenshipCodes": [
+          "FR"
+        ],
+        "checks": [
+          {
+            "subject": "program",
+            "key": "eiffelAccreditedDegreeEligible",
+            "expected": true,
+            "label": "პროგრამის აკრედიტაცია, პრიორიტეტული სფერო და Eiffel-ის პირობებთან შესაბამისობა დასადასტურებელია."
+          },
+          {
+            "subject": "applicant",
+            "key": "institutionNomination",
+            "expected": true,
+            "label": "განაცხადს მხოლოდ ფრანგული უნივერსიტეტი წარადგენს; სტუდენტი Campus France-ში პირდაპირ ვერ აგზავნის."
+          },
+          {
+            "subject": "applicant",
+            "key": "currentlyStudyingFrance",
+            "expected": false,
+            "label": "სამაგისტრო კატეგორიის მოქმედი წესებით საფრანგეთში მიმდინარე სწავლის შეზღუდვა უნდა გადაამოწმო."
+          },
+          {
+            "subject": "applicant",
+            "key": "firstEiffelMasterApplication",
+            "expected": true,
+            "label": "პირველი განაცხადისა და წინა უარის/ჯილდოს შეზღუდვები დასადასტურებელია."
+          }
+        ],
+        "exclusions": [
+          {
+            "institutionDomains": [
+              "sciencespo.fr"
+            ],
+            "cycle": "2027/28",
+            "sourceUrl": "https://www.sciencespo.fr/students/fr/financer/bourses-aides-financieres/bourse-eiffel/",
+            "reason": "Sciences Po ოფიციალურად არ მონაწილეობს Eiffel-ის 2027 წლის კონკურსში."
+          }
+        ]
+      },
+      "coverage": {
+        "tuitionFull": false,
+        "livingSupport": true,
+        "amount": 1200,
+        "currency": "EUR",
+        "period": "month",
+        "note": "Eiffel უშუალოდ სწავლის საფასურს არ იხდის; ზოგი სახელმწიფო ეროვნული ხარისხისთვის საფასურისგან გათავისუფლება ცალკე სამართლებრივი საფუძვლით მოქმედებს. სამაგისტრო სტიპენდია €1,200 თვეშია."
+      },
+      "call": {
+        "opensAt": "2026-10-01",
+        "deadline": "2026-11-26",
+        "cycle": "2027/28",
+        "deadlineScope": "applicant",
+        "observedStatus": "unknown",
+        "note": "ეს Paris-Saclay-ის შიდა ვადაა. Campus France-ის 6 იანვარი 2027 უნივერსიტეტის წარდგენის ვადაა და სტუდენტის პირად ვადად არ გამოიყენება."
+      },
+      "sources": [
+        {
+          "url": "https://www.campusfrance.org/en/france-excellence-eiffel-scholarship-program",
+          "label": "Campus France — 2027 campaign and institutional nomination",
+          "checkedAt": "2026-10-28"
+        },
+        {
+          "url": "https://www.campusfrance.org/en/france-excellence-eiffel-scholarship-implementation",
+          "label": "Campus France — current master benefits and tuition limitations",
+          "checkedAt": "2026-10-28"
+        },
+        {
+          "url": "https://www.universite-paris-saclay.fr/en/admission/bourses-et-aides-financieres/france-excellence-eiffel-scholarship",
+          "label": "Paris-Saclay — 2027 support, eligible fields and internal 26 Nov deadline",
+          "checkedAt": "2026-10-28"
+        },
+        {
+          "url": "https://www.sciencespo.fr/students/fr/financer/bourses-aides-financieres/bourse-eiffel/",
+          "label": "Sciences Po — no participation in Eiffel2027",
+          "checkedAt": "2026-10-28"
+        }
+      ],
+      "notes": [
+        "სხვა ფრანგულ დაწესებულებას საკუთარი მონაწილეობა და შიდა ვადა ცალკე უნდა დაუდასტურდეს.",
+        "Polytech Paris-Saclay-ის საინჟინრო ხარისხები ამ უნივერსიტეტის მიმდინარე მოწვევით არ დაიშვება."
+      ]
+    }
+  ]
+}

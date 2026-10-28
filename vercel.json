@@ -6,7 +6,7 @@
   "functions": {
     "app.js": {
       "maxDuration": 60,
-      "includeFiles": "{Server/data/{institutions,programs,admissions-statistics}.json,index.html,style.css,ai-agent.css,script.js,catalog-core.js,scoring-core.js,catalog-ui.js,discovery-ui.js,ai-agent-ui.js,account-ui.js,preview-data.js,scholarships.js}"
+      "includeFiles": "{Server/data/{institutions,programs,admissions-statistics,funding,program-source-registry,institution-domain-overrides}.json,index.html,style.css,ai-agent.css,funding.css,script.js,catalog-core.js,scoring-core.js,funding-core.js,funding-ui.js,catalog-ui.js,discovery-ui.js,ai-agent-ui.js,account-ui.js,preview-data.js,scholarships.js}"
     }
   },
   "headers": [

@@ -3,6 +3,8 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const Core = require('../catalog-core');
+const {isIP}=require('node:net');
+const registeredSources=require('../Server/data/program-source-registry.json').sources;
 
 function validDate(value) {
     if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
@@ -10,7 +12,7 @@ function validDate(value) {
     return Number.isFinite(parsed.getTime()) && parsed.toISOString().slice(0,10) === value;
 }
 function host(value) {
-    try { const url = new URL(value); return ['https:','http:'].includes(url.protocol) && !url.username && !url.password ? url.hostname.replace(/^www\./,'') : null; }
+    try { const url = new URL(value);const hostname=url.hostname.replace(/^www\./,'');return ['https:','http:'].includes(url.protocol) && !url.username && !url.password&&!isIP(hostname.replace(/^\[|\]$/g,''))&&hostname.includes('.')&&!/(?:^|\.)(localhost|local|internal)$/.test(hostname) ? hostname : null; }
     catch { return null; }
 }
 function validatePrograms(catalog) {
@@ -27,19 +29,25 @@ function validatePrograms(catalog) {
         ids.add(p.id);
         if (!p.title || !p.institutionName || !host(p.institutionWebsite)) errors.push(`${label}: program/institution identity required`);
         if (!/^[A-Z]{2}$/.test(p.countryCode || '')) errors.push(`${label}: country code required`);
-        if (!degrees.has(p.degree) || !languages.has(p.language) || !categories.has(p.category) || !p.field) errors.push(`${label}: invalid degree, language, or field taxonomy`);
-        if (!['full-time','part-time','online'].includes(p.mode)) errors.push(`${label}: invalid mode`);
+        if (!(p.degree===null||degrees.has(p.degree)) || !(p.language===null||languages.has(p.language)) || !(p.category===null||categories.has(p.category)) || !(p.field===null||typeof p.field==='string'&&p.field)) errors.push(`${label}: invalid degree, language, or field taxonomy`);
+        if(p.languages!==undefined&&(!Array.isArray(p.languages)||p.languages.some(value=>!languages.has(value))))errors.push(`${label}: invalid teaching-language list`);
+        if (!(p.mode===null||['full-time','part-time','online'].includes(p.mode))) errors.push(`${label}: invalid mode`);
         if (p.durationMonths !== null && (!Number.isFinite(p.durationMonths) || p.durationMonths<=0)) errors.push(`${label}: invalid duration`);
         if (!p.tuition || !(p.tuition.amount === null || (typeof p.tuition.amount === 'number' && Number.isFinite(p.tuition.amount) && p.tuition.amount>=0))) errors.push(`${label}: unknown tuition must be null, known tuition nonnegative`);
-        if (!/^[A-Z]{3}$/.test(p.tuition?.currency || '') || !['year','program'].includes(p.tuition?.period)) errors.push(`${label}: currency/period required`);
-        if (!['non-eu','international','all'].includes(p.tuition?.applicantScope)) errors.push(`${label}: applicant fee scope required`);
+        if (!(p.tuition?.currency===null||/^[A-Z]{3}$/.test(p.tuition?.currency || '')) || !(p.tuition?.period===null||['year','program'].includes(p.tuition?.period))) errors.push(`${label}: currency/period must be valid or explicitly unknown`);
+        if (!(p.tuition?.applicantScope===null||['non-eu','international','all'].includes(p.tuition?.applicantScope))) errors.push(`${label}: applicant fee scope must be valid or explicitly unknown`);
+        if(p.tuition?.amount!==null&&(!p.tuition?.currency||!p.tuition?.period||!p.tuition?.applicantScope))errors.push(`${label}: known tuition requires currency, period and applicant scope`);
         if (![true,false,null].includes(p.funding?.fullFunding)) errors.push(`${label}: fullFunding must be explicit boolean/null`);
         if (p.requirements?.gpaMinPercent != null && (typeof p.requirements.gpaMinPercent !== 'number' || p.requirements.gpaMinPercent<0 || p.requirements.gpaMinPercent>100)) errors.push(`${label}: GPA threshold must be explicitly percent`);
         if (p.deadline?.date !== null && !validDate(p.deadline?.date)) errors.push(`${label}: deadline must be exact ISO date or null`);
-        if (!validDate(p.updatedAt) || p.verificationStatus !== 'official-source') errors.push(`${label}: source status/date missing`);
+        if (!validDate(p.updatedAt) || !['official-source','official-directory'].includes(p.verificationStatus)) errors.push(`${label}: source status/date missing`);
         if (!Array.isArray(p.sources) || !p.sources.length || p.sources.some(source=>!host(source.url)||!validDate(source.checkedAt)||!source.label)) errors.push(`${label}: dated HTTP(S) references required`);
         const base = host(p.institutionWebsite);
-        if (!p.sources?.some(source=>{const candidate=host(source.url);return candidate&&base&&(candidate===base||candidate.endsWith(`.${base}`));})) errors.push(`${label}: at least one institution-owned source required`);
+        if(p.verificationStatus==='official-directory'){
+            const registry=registeredSources.find(source=>source.id===p.provenance?.sourceId&&source.kind==='official-directory');
+            const matches=value=>{try{const url=new URL(value),registered=new URL(registry.url);const prefix=registered.pathname.replace(/\/+$/,'');return host(value)===host(registry.url)&&(url.pathname===prefix||url.pathname.startsWith(prefix+'/'));}catch{return false;}};
+            if(!registry||!registry.countryCodes.includes(p.countryCode)||p.provenance?.kind!=='official-directory'||!validDate(p.provenance?.checkedAt)||!matches(p.programUrl)||!p.sources?.some(source=>source.sourceId===registry.id&&source.kind==='official-directory'&&matches(source.url)))errors.push(`${label}: registered official-directory provenance required`);
+        }else if (!p.sources?.some(source=>{const candidate=host(source.url);return candidate&&base&&(candidate===base||candidate.endsWith(`.${base}`));})) errors.push(`${label}: at least one institution-owned source required`);
         if ('price' in p || 'matchScore' in p) errors.push(`${label}: legacy invented price/score fields prohibited`);
     }
     return errors;

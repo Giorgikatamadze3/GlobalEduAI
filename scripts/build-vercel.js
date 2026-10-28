@@ -8,7 +8,7 @@ const PROJECT_ROOT = path.resolve(__dirname, '..');
 const PUBLIC_FILES = Object.freeze([
     'index.html', 'style.css', 'ai-agent.css', 'script.js', 'catalog-core.js',
     'scoring-core.js', 'catalog-ui.js', 'discovery-ui.js', 'ai-agent-ui.js',
-    'account-ui.js', 'preview-data.js', 'scholarships.js'
+    'account-ui.js', 'preview-data.js', 'scholarships.js', 'funding-core.js', 'funding-ui.js', 'funding.css'
 ]);
 const PDF_LIB_ROOT = path.dirname(require.resolve('pdf-lib/package.json'));
 const VENDOR_ASSETS = Object.freeze([

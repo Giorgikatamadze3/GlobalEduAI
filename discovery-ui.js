@@ -44,7 +44,7 @@ const StudentDiscovery = (() => {
         restoreProfile();updateChips();
     }
     function filters() {
-        return {query:$('programSearch').value.trim(),countryCodes:selected('filterCountry'),regions:selected('filterRegion'),fields:selected('filterField'),subjectFields:selected('filterSubject'),degrees:selected('filterDegree'),languages:selected('filterLang'),modes:selected('filterMode'),durationMinMonths:number('filterDurationMin'),durationMaxMonths:number('filterDurationMax'),deadlines:$('filterDeadline').value,deadlineAfter:$('filterDeadlineAfter').value||null,deadlineBefore:$('filterDeadlineBefore').value||null,intakeCycle:$('filterIntake').value,budget:number('filterBudget'),currency:$('filterCurrency').value,budgetPeriod:'year',requiresFullFunding:$('filterFunding').checked,freeTuitionOnly:$('filterFree').checked,tuitionKnownOnly:$('filterKnownFees').checked,hasScholarships:$('filterScholarships').checked,sourceFreshOnly:$('filterFresh').checked,includeUnknownFees:$('filterUnknown').checked,hasPrograms:$('filterHasPrograms').checked};
+        return {query:$('programSearch').value.trim(),countryCodes:selected('filterCountry'),regions:selected('filterRegion'),fields:selected('filterField'),subjectFields:selected('filterSubject'),degrees:selected('filterDegree'),languages:selected('filterLang'),modes:selected('filterMode'),durationMinMonths:number('filterDurationMin'),durationMaxMonths:number('filterDurationMax'),deadlines:$('filterDeadline').value,deadlineAfter:$('filterDeadlineAfter').value||null,deadlineBefore:$('filterDeadlineBefore').value||null,intakeCycle:$('filterIntake').value,budget:number('filterBudget'),currency:$('filterCurrency').value,budgetPeriod:'year',requiresFullFunding:$('filterFunding').checked,freeTuitionOnly:$('filterFree').checked,tuitionKnownOnly:$('filterKnownFees').checked,hasScholarships:$('filterScholarships').checked,fundingScheme:$('filterFundingScheme').value,sourceFreshOnly:$('filterFresh').checked,includeUnknownFees:$('filterUnknown').checked,hasPrograms:$('filterHasPrograms').checked};
     }
     function effectivePreferences() {
         const f=filters(),merged={...profile,weights:{...weights},weightPreset:preset};
@@ -128,7 +128,7 @@ const StudentDiscovery = (() => {
     function clearProfile() {profile={};writeStored(profileKey(),profile);restoreProfile();filterAndSortUnis();notify('შენახული შეფასების პროფილი გასუფთავდა.');}
     function reset() {
         multiIds.filter(id=>id.startsWith('filter')).forEach(id=>setSelected(id,[]));
-        ['filterBudget','filterDurationMin','filterDurationMax','filterDeadlineAfter','filterDeadlineBefore','filterIntake'].forEach(id=>$(id).value='');
+        ['filterBudget','filterDurationMin','filterDurationMax','filterDeadlineAfter','filterDeadlineBefore','filterIntake','filterFundingScheme'].forEach(id=>$(id).value='');
         ['filterFunding','filterUnknown','filterHasPrograms','filterFree','filterKnownFees','filterScholarships','filterFresh'].forEach(id=>$(id).checked=false);
         $('filterCurrency').value='EUR';$('filterDeadline').value='any';$('filterEligibility').value='any';$('filterMinScore').value='0';$('programSearch').value='';$('sortOption').value='default';cache.clear();
     }
@@ -137,6 +137,7 @@ const StudentDiscovery = (() => {
         multiIds.filter(id=>id.startsWith('filter')).forEach(id=>[...$(id).selectedOptions].filter(o=>o.value).forEach(o=>chips.push(`<button data-action="remove-filter-choice" data-select-id="${id}" data-value="${escaped(o.value)}">${escaped(o.textContent)} <span>×</span></button>`)));
         const names={filterBudget:'ბიუჯეტი',filterDurationMin:'მინ. თვე',filterDurationMax:'მაქს. თვე',filterDeadlineAfter:'ვადა დან',filterDeadlineBefore:'ვადა მდე',filterIntake:'ციკლი'};
         Object.entries(names).forEach(([id,name])=>{if($(id).value!=='')chips.push(`<button data-action="clear-filter-value" data-input-id="${id}">${name}: ${escaped($(id).value)} <span>×</span></button>`);});
+        if($('filterFundingScheme').value)chips.push(`<button data-action="clear-filter-value" data-input-id="filterFundingScheme">${escaped($('filterFundingScheme').selectedOptions[0].textContent)} <span>×</span></button>`);
         const booleans={filterHasPrograms:'აღწერილი პროგრამები',filterFunding:'სრული დაფინანსება',filterFree:'სწავლის საფასური 0',filterKnownFees:'ცნობილი საფასური',filterScholarships:'აღწერილი სტიპენდია',filterFresh:'ბოლო 365 დღეში შემოწმებული',filterUnknown:'უცნობი ფასის ჩათვლით'};
         Object.entries(booleans).forEach(([id,name])=>{if($(id).checked)chips.push(`<button data-action="clear-filter-value" data-input-id="${id}">${name} <span>×</span></button>`);});
         if($('filterDeadline').value!=='any')chips.push(`<button data-action="clear-filter-value" data-input-id="filterDeadline">${escaped($('filterDeadline').selectedOptions[0].textContent)} <span>×</span></button>`);

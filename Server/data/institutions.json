@@ -138768,15 +138768,38 @@
       "city": null,
       "stateProvince": null,
       "domains": [
+        "taltech.ee",
         "ttu.ee"
       ],
-      "website": "http://www.ttu.ee/",
+      "website": "https://taltech.ee/",
       "source": {
         "name": "Hipo University Domains and Names Data List",
         "url": "https://raw.githubusercontent.com/Hipo/university-domains-list/master/world_universities_and_domains.json",
         "retrievedAt": "2026-10-27"
       },
-      "verificationStatus": "directory-listed"
+      "verificationStatus": "directory-listed",
+      "domainOverrides": [
+        {
+          "overrideId": "taltech-official-domain-2026",
+          "addedDomains": [
+            "taltech.ee"
+          ],
+          "checkedAt": "2026-10-28",
+          "sources": [
+            {
+              "url": "https://www.ttu.ee/",
+              "resolvedUrl": "https://taltech.ee/",
+              "label": "Official legacy university domain redirects to TalTech's current domain",
+              "checkedAt": "2026-10-28"
+            },
+            {
+              "url": "https://taltech.ee/en/masters-programmes/cybersecurity",
+              "label": "Official Cybersecurity MSc page identifies Tallinn University of Technology",
+              "checkedAt": "2026-10-28"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "inst_2dd98072816ad2d6603ba293",

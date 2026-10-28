@@ -1,0 +1,31 @@
+{
+  "metadata": {
+    "updatedAt": "2026-10-28",
+    "policy": "Small attributed institution-domain corrections verified against official sources. Preserve existing stable identities and upstream provenance; never add programme facts or relax bulk matching by name alone."
+  },
+  "overrides": [
+    {
+      "id": "taltech-official-domain-2026",
+      "institutionId": "inst_8b64391c1f68d109485055c0",
+      "institutionName": "Tallinn University of Technology",
+      "countryCode": "EE",
+      "knownDomains": ["ttu.ee", "taltech.ee"],
+      "additionalDomains": ["taltech.ee"],
+      "website": "https://taltech.ee/",
+      "checkedAt": "2026-10-28",
+      "sources": [
+        {
+          "url": "https://www.ttu.ee/",
+          "resolvedUrl": "https://taltech.ee/",
+          "label": "Official legacy university domain redirects to TalTech's current domain",
+          "checkedAt": "2026-10-28"
+        },
+        {
+          "url": "https://taltech.ee/en/masters-programmes/cybersecurity",
+          "label": "Official Cybersecurity MSc page identifies Tallinn University of Technology",
+          "checkedAt": "2026-10-28"
+        }
+      ]
+    }
+  ]
+}

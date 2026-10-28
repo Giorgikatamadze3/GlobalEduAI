@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "updatedAt": "2026-10-28",
+    "scope": "Source registry for incremental, attributed imports of real study-programme listings. The worldwide institution directory is not evidence of worldwide programme coverage.",
+    "matchingPolicy": "Match each imported programme to a unique existing institution using an institution-owned domain verified by the official source. Quarantine missing, unmatched or ambiguous domains; never distribute a country's programmes across all its institutions.",
+    "unknownDataPolicy": "Keep unpublished degree, primary teaching language, mode, fees, deadlines, entry requirements and funding unknown. Multiple teaching languages do not prove an English-only route. Funding schemes require their own eligibility and deadline evidence.",
+    "snapshotPolicy": "A failed source fetch must preserve its previous successful snapshot. Pagination bounds, source scope and unresolved institution links must remain visible. A complete source listing is not complete national or global coverage.",
+    "reusePolicy": "Public accessibility is not an open-data licence. Retain attribution and factual metadata; do not import images or full descriptive text. Recheck provider terms and robots policies before scheduled collection."
+  },
+  "sources": [
+    {
+      "id": "daad-international-programmes",
+      "kind": "official-directory",
+      "name": "DAAD International Programmes in Germany",
+      "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/",
+      "apiUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json",
+      "countryCodes": ["DE"],
+      "checkedAt": "2026-10-28",
+      "enabled": true,
+      "adapter": "daad-international-programmes",
+      "status": "live-endpoint-verified",
+      "authorityUrl": "https://www.daad.de/de/in-deutschland-studieren/hilfe-beratung/international-programmes/",
+      "scope": "Internationally oriented German higher-education programmes listed by DAAD. Import only courseType 1 (bachelor), 2 (master) and 3 (PhD/doctorate). Exclude language/preparatory/short courses and cross-faculty research-school entries without a representable degree.",
+      "coverageNote": "This curated international catalogue is not all programmes of every German institution and does not cover the worldwide directory. The degree[] API filter also returns cross-faculty research schools; those are counted as exclusions rather than converted to PhDs.",
+      "institutionMatching": "Read the exact institution-name c-contact__link from a DAAD course-detail page, cache that institution-owned website for other listings of the same named institution, and retain the detail page as institutionEvidenceUrl. Missing domains remain unresolved. Individual university programme links are retained only when that exact detail page was read.",
+      "disciplineMapping": "Map only exact published subject labels through an explicit dictionary to existing Core.SUBFIELDS and their categories. Programme titles and global filter counts are not classification evidence; unrecognised or compound subjects stay unknown.",
+      "pagination": {"type":"offset", "totalField":"numResults", "recordsField":"courses", "defaultPageSize":250, "defaultMaxPages":50},
+      "requestPolicy": {"maximumConcurrentRequests":4, "defaultConcurrentInstitutionLookups":3, "minimumDefaultRequestIntervalMs":250, "maximumAttempts":3, "timeoutMs":20000, "maximumRetryAfterMs":60000},
+      "robots": {"url":"https://www2.daad.de/robots.txt", "checkedAt":"2026-10-28", "httpStatus":404, "note":"No robots.txt policy was returned at the checked host. This is not a licence or unrestricted-use permission."},
+      "license": {"status":"copyright-stated-no-open-data-licence-confirmed", "url":"https://www.daad.de/en/imprint/", "checkedAt":"2026-10-28", "note":"DAAD's imprint states copyright protection for website content. Do not claim CC/MIT/public-domain rights for the catalogue. Adapter retains short factual fields and source links, excludes photographs and long descriptions, and keeps attribution. Bulk reuse permission is not established by this technical integration."},
+      "limitations": [
+        "A listed programme may have changed since publication; verify the official source before applying.",
+        "German institution scope does not imply every campus is physically in Germany.",
+        "A scholarship or admissions probability is not inferred from a programme's appearance in this catalogue.",
+        "International bachelor's/master's discovery has also been integrated into My GUIDE; monitor the legacy endpoint for changes."
+      ]
+    },
+    {
+      "id": "finland-studyinfo",
+      "kind": "official-directory",
+      "name": "Studyinfo / Opintopolku — Finnish National Agency for Education",
+      "url": "https://opintopolku.fi/konfo/",
+      "apiUrl": "https://opintopolku.fi/konfo-backend/search/koulutukset",
+      "countryCodes": ["FI"],
+      "checkedAt": "2026-10-28",
+      "enabled": false,
+      "adapter": null,
+      "status": "public-endpoint-researched-not-imported",
+      "scope": "Official Finnish education search. Its unfiltered results include secondary, vocational, continuing and higher education; university degree records require explicit type and provider verification.",
+      "coverageNote": "No Studyinfo programme snapshot is imported by this adapter. Interface language and available translations must not be mistaken for teaching languages.",
+      "robots": {"url":"https://opintopolku.fi/robots.txt", "checkedAt":"2026-10-28", "httpStatus":200, "crawlDelaySeconds":30, "note":"Published robots policy disallows the public /konfo/*/haku/ search pages and specifies crawl-delay 30. Review applicable API access and reuse terms before implementing collection."},
+      "license": {"status":"not-confirmed", "note":"Public endpoint access was verified, but a bulk-reuse licence and complete provider/domain mapping have not been established."}
+    }
+  ]
+}

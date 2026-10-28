@@ -27,4 +27,5 @@ design-preview/
 *.tar.gz
 .agents/
 skills-lock.json
+.program-cache/
 
