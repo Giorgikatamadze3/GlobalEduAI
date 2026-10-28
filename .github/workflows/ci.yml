@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      AUTH_DB_DRIVER: sqlite
+      AUTH_DB_PATH: ':memory:'
+      OPENAI_API_KEY: ''
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Use Node.js 24
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24.x'
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Check source and catalog
+        run: npm run check
+      - name: Run tests
+        run: npm test
+      - name: Build public assets
+        run: npm run build

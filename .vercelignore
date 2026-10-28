@@ -1,0 +1,37 @@
+# Generated locally and rebuilt on Vercel.
+public/
+node_modules/
+Server/node_modules/
+.git/
+.vercel/
+
+# Local secrets, databases, and uploads never belong in a deployment bundle.
+.env
+.env.*
+**/.env
+**/.env.*
+**/*.sqlite*
+**/*.db
+**/*.db-*
+**/*.pem
+**/*.key
+**/accounts/
+uploads/
+Server/uploads/
+**/uploads/
+
+# Development artifacts. Keep scripts and Server/data JSON for catalog builds.
+design-preview/
+docs/
+tests/
+.vscode/
+.agents/
+.codex/
+.aws/
+.qa*/
+*.log
+**/*.log
+*.har
+**/*.har
+.DS_Store
+Thumbs.db

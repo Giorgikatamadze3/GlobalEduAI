@@ -4,12 +4,24 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node Server/server.js",
+    "dev": "nodemon Server/server.js",
+    "check": "node --check script.js && node --check catalog-ui.js && node --check discovery-ui.js && node --check account-ui.js && node --check ai-agent-ui.js && node --check scoring-core.js && node --check catalog-core.js && node --check scholarships.js && node --check preview-data.js && node --check Server/server.js && node --check Server/auth.js && node --check Server/ai-agent.js && node --check Server/account-store.js && node --check Server/account-store-config.js && node --check Server/postgres-account-store.js && node --check app.js && node --check scripts/build-vercel.js && node --check scripts/init-auth-db.js && node scripts/check-catalog.js && node scripts/validate-programs.js",
+    "test": "node --test tests/*.test.js",
+    "catalog:sync": "node scripts/sync-institutions.js",
+    "catalog:check": "node scripts/check-catalog.js && node scripts/validate-programs.js",
+    "catalog:import": "node Server/seed.js",
+    "auth:init": "node scripts/init-auth-db.js",
+    "build": "node scripts/build-vercel.js",
+    "auth:migrate": "node scripts/migrate-accounts-postgres.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
+  "engines": {
+    "node": "24.x"
+  },
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",
@@ -19,9 +31,11 @@
     "mongoose": "^9.9.3",
     "multer": "^2.2.0",
     "nodemailer": "^9.0.5",
-    "pdf-lib": "^1.17.1"
+    "pdf-lib": "^1.17.1",
+    "pg": "^8.23.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.14"
+    "nodemon": "^3.1.14",
+    "pg-mem": "^3.0.14"
   }
 }

@@ -1,0 +1,37 @@
+{
+  "metadata": {
+    "updatedAt": "2026-10-27",
+    "policy": "Historical program-specific admissions only. Offers are accepted applications, including reserve-list admissions, not enrolled students or places. A cohort proportion is not an individual admission probability.",
+    "recordCount": 2
+  },
+  "records": [
+    {
+      "programId": "program_helsinki-data-science-msc",
+      "institutionName": "University of Helsinki",
+      "programTitle": "Master's Programme in Data Science — English degree-language applicants",
+      "cycle": "2025",
+      "applicants": 528,
+      "offers": 53,
+      "populationScope": "program",
+      "scopeDescription": "ინგლისურენოვან ხარისხზე შემოსული და მიღებული განაცხადები, გაზაფხული 2025. რეზერვიდან მიღებულებიც შედის. მონაცემი მოქალაქეობის, GPA-ის ან საფასურის კატეგორიის მიხედვით გამოყოფილი არ არის.",
+      "sourceUrl": "https://www.helsinki.fi/assets/drupal/2025-09/Applicants%2C%20admissions%20and%20applicants%20accepting%20student%20places%20to%20foreign-language%20and%20multilingual%20master%E2%80%99s%20programmes%20by%20application%20target%2C%203%20September%202025.pdf",
+      "sourceLabel": "University of Helsinki — applications and accepted students, spring 2025 (pp. 2–4)",
+      "checkedAt": "2026-10-27",
+      "verificationStatus": "official-source"
+    },
+    {
+      "programId": "program_helsinki-science-bsc",
+      "institutionName": "University of Helsinki",
+      "programTitle": "Bachelor's Programme in Science — all admission groups",
+      "cycle": "2025",
+      "applicants": 502,
+      "offers": 146,
+      "populationScope": "program",
+      "scopeDescription": "პროგრამის ჯამური მონაცემი მიღების ყველა ჯგუფზე, გაზაფხული 2025; გამოყენებულია სექტემბრის საბოლოო სტატისტიკა. უნივერსიტეტმა ადგილებზე მეტი აპლიკანტი მიიღო (overbooking). 146 მიღებული აპლიკანტი არ უდრის 32 სტუდენტს, რომელმაც შეთავაზებული ადგილი მიიღო.",
+      "sourceUrl": "https://www.helsinki.fi/assets/drupal/2025-09/University%20of%20Helsinki%2C%20number%20of%20applications%20and%20accepted%20students%20to%20Bachelor%27s%20Programme%20in%20Science%2C%20spring%202025%2C%208.9.2025_0.pdf",
+      "sourceLabel": "University of Helsinki — Science bachelor's admissions, final 8 September 2025",
+      "checkedAt": "2026-10-27",
+      "verificationStatus": "official-source"
+    }
+  ]
+}

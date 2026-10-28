@@ -1,0 +1,1038 @@
+{
+  "metadata": {
+    "sourcePolicy": "Only institution-owned programme/admissions pages were consulted. Official-source means the record has primary-source references, not that all admission conditions are complete or the student is admitted. Institution directory records do not imply any programme, price, deadline, accreditation or scholarship.",
+    "updatedAt": "2026-10-27",
+    "programCount": 20,
+    "coverageNote": "A curated initial sample of specific bachelor, master and doctoral programmes; not a complete worldwide programme inventory.",
+    "defaultApplicant": "Non-EU/international fee-paying applicant; citizenship/residence exemptions require individual verification.",
+    "unknownValuePolicy": "Unverified or applicant-dependent numeric values are null, never zero. No generic GPA conversion, currency conversion, annualisation, scholarship award or recurring-deadline year has been invented.",
+    "fundingPolicy": "No record guarantees full tuition plus living-cost funding; fullFunding remains null."
+  },
+  "programs": [
+    {
+      "id": "program_saarland-computer-science-msc",
+      "institutionId": null,
+      "institutionName": "Saarland University",
+      "institutionWebsite": "https://www.uni-saarland.de/",
+      "countryCode": "DE",
+      "title": "Computer Science (M.Sc.)",
+      "field": "computer-science",
+      "category": "tech",
+      "degree": "master",
+      "language": "en",
+      "mode": "full-time",
+      "durationMonths": 24,
+      "tuition": {
+        "amount": 0,
+        "currency": "EUR",
+        "period": "year",
+        "applicantScope": "all",
+        "note": "კონსეკუტიურ სამაგისტრო პროგრამაზე სწავლის საფასური არ ირიცხება; სემესტრული შენატანი და ცხოვრების ხარჯები დამატებითია. ეს არ ნიშნავს სრულ დაფინანსებას."
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": "C1",
+        "languageTest": null,
+        "experienceYears": null,
+        "note": "საჭიროა კომპიუტერული მეცნიერების ან შესაბამისი სფეროს ბაკალავრი, აკადემიური შეფასება, მოტივაცია და რეკომენდაციები. საჭიროა მიღებული C1 მტკიცებულება; სწავლების ენის ცნობა (MOI) არ მიიღება."
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": "წყარო ასახელებს განმეორებად 15 მაისისა და 15 ნოემბრის ვადებს სხვადასხვა მიღებისთვის. კონკრეტული წლისა და სემესტრის თარიღი არ არის ავტომატურად მინიჭებული."
+      },
+      "sources": [
+        {
+          "url": "https://www.uni-saarland.de/en/study/programmes/master/informatics.html",
+          "label": "Computer Science — programme and requirements",
+          "checkedAt": "2026-10-27"
+        },
+        {
+          "url": "https://www.uni-saarland.de/en/study/organisation/fees.html",
+          "label": "University fees",
+          "checkedAt": "2026-10-27"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-10-27"
+    },
+    {
+      "id": "program_tum-informatics-msc",
+      "institutionId": null,
+      "institutionName": "Technical University of Munich",
+      "institutionWebsite": "https://www.tum.de/",
+      "countryCode": "DE",
+      "title": "Informatics — Master of Science",
+      "field": "computer-science",
+      "category": "tech",
+      "degree": "master",
+      "language": "en",
+      "mode": "full-time",
+      "durationMonths": 24,
+      "tuition": {
+        "amount": null,
+        "currency": "EUR",
+        "period": "year",
+        "applicantScope": "non-eu",
+        "note": "პროგრამის წყარო აქვეყნებს 6,000 EUR-ს თითო სემესტრზე მესამე ქვეყნების სტუდენტებისთვის; 2027/28-დან ტარიფები იცვლება. წლიური თანხა და კონკრეტული კოჰორტის გამონაკლისები არ არის ავტომატურად გამოთვლილი."
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": "შესაბამისი კომპიუტერული მეცნიერების ბაკალავრი, ინგლისურის მტკიცებულება და aptitude assessment. სხვა სფეროს დიპლომი ავტომატურად არ კვალიფიცირდება."
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": "წყარო ასახელებს ზამთრის მიღების 1 თებერვალი–31 მაისისა და ზაფხულის მიღების 1 ოქტომბერი–30 ნოემბრის პერიოდებს; წელი დასაზუსტებელია."
+      },
+      "sources": [
+        {
+          "url": "https://www.tum.de/en/studies/degree-programs/detail/informatics-master-of-science-msc",
+          "label": "Informatics MSc",
+          "checkedAt": "2026-10-27"
+        },
+        {
+          "url": "https://www.tum.de/en/studies/fees/tuition",
+          "label": "Non-EU tuition policy",
+          "checkedAt": "2026-10-27"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-10-27"
+    },
+    {
+      "id": "program_taltech-cybersecurity-msc",
+      "institutionId": null,
+      "institutionName": "Tallinn University of Technology",
+      "institutionWebsite": "https://taltech.ee/",
+      "countryCode": "EE",
+      "title": "Cybersecurity (MSc)",
+      "field": "computer-science",
+      "category": "tech",
+      "degree": "master",
+      "language": "en",
+      "mode": "full-time",
+      "durationMonths": 24,
+      "tuition": {
+        "amount": 7000,
+        "currency": "EUR",
+        "period": "year",
+        "applicantScope": "non-eu",
+        "note": "მითითებულია მხოლოდ სწავლის წლიური საფასური; საცხოვრებელი და სხვა ხარჯები ცალკეა."
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": 60,
+        "languageLevel": null,
+        "languageTest": {
+          "name": "IELTS Academic",
+          "minScore": 6,
+          "componentsMinScore": 5.5
+        },
+        "experienceYears": null,
+        "note": "მინიმუმ 60% CGPA; IT/ICT ბაკალავრი ან სხვა სფეროს ხარისხი და მინიმუმ 1 წელი IT გამოცდილება. საჭიროა ლაბორატორიული შეფასება და ინტერვიუ. GRE-ის მოთხოვნას გამონაკლისები აქვს. IELTS-ის თითო კომპონენტი მინიმუმ 5.5; სხვა მიღებული ტესტები და გამონაკლისები წყაროშია."
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": "მიმდინარე მიღების ზუსტი თარიღი გადასამოწმებელია ოფიციალურ წყაროში."
+      },
+      "sources": [
+        {
+          "url": "https://taltech.ee/en/masters-programmes/cybersecurity",
+          "label": "Cybersecurity — programme, fees and admissions",
+          "checkedAt": "2026-10-27"
+        },
+        {
+          "url": "https://taltech.ee/en/apply",
+          "label": "Degree admissions and English requirements",
+          "checkedAt": "2026-10-27"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-10-27"
+    },
+    {
+      "id": "program_tartu-computer-science-msc",
+      "institutionId": null,
+      "institutionName": "University of Tartu",
+      "institutionWebsite": "https://ut.ee/",
+      "countryCode": "EE",
+      "title": "Computer Science — MSc",
+      "field": "computer-science",
+      "category": "tech",
+      "degree": "master",
+      "language": "en",
+      "mode": "full-time",
+      "durationMonths": 24,
+      "tuition": {
+        "amount": 7200,
+        "currency": "EUR",
+        "period": "year",
+        "applicantScope": "non-eu",
+        "note": "მითითებულია მხოლოდ სწავლის წლიური საფასური; საცხოვრებელი და სხვა ხარჯები ცალკეა."
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": {
+          "name": "IELTS Academic",
+          "minScore": 6,
+          "componentsMinScore": 5.5
+        },
+        "experienceYears": null,
+        "note": "პროგრამის აკადემიური და საგნობრივი მოთხოვნები ინდივიდუალურად მოწმდება. IELTS-ის თითო კომპონენტი მინიმუმ 5.5; ტესტის მოქმედების ვადა და გამონაკლისები ცალკე შესამოწმებელია."
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": "გვერდზე ნაჩვენებია 15 მარტის განმეორებადი ვადა; კონკრეტული მიღების წელი ამ ჩანაწერში არ არის მინიჭებული."
+      },
+      "sources": [
+        {
+          "url": "https://ut.ee/en/curriculum/computer-science",
+          "label": "Computer Science MSc",
+          "checkedAt": "2026-10-27"
+        },
+        {
+          "url": "https://ut.ee/en/english-language-requirements",
+          "label": "English language requirements",
+          "checkedAt": "2026-10-27"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-10-27"
+    },
+    {
+      "id": "program_aalto-computer-science-msc",
+      "institutionId": null,
+      "institutionName": "Aalto University",
+      "institutionWebsite": "https://www.aalto.fi/",
+      "countryCode": "FI",
+      "title": "Computer Science — MSc (Technology)",
+      "field": "computer-science",
+      "category": "tech",
+      "degree": "master",
+      "language": "en",
+      "mode": "full-time",
+      "durationMonths": 24,
+      "tuition": {
+        "amount": 17000,
+        "currency": "EUR",
+        "period": "year",
+        "applicantScope": "non-eu",
+        "note": "მითითებულია მხოლოდ სწავლის წლიური საფასური; საცხოვრებელი და სხვა ხარჯები ცალკეა."
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": {
+          "name": "IELTS Academic",
+          "minScore": 6.5,
+          "componentMinimums": {
+            "writing": 6.0
+          }
+        },
+        "experienceYears": null,
+        "note": "შესაბამისი ბაკალავრი, პროგრამის სპეციფიკური შეფასება და დოკუმენტები. IELTS writing მინიმუმ 6.0; მიღებული ალტერნატიული მტკიცებულებები და ვალიდურობა ცალკე მოწმდება."
+      },
+      "deadline": {
+        "date": "2027-01-05",
+        "cycle": "Autumn 2027",
+        "note": "განაცხადის პერიოდი: 7 დეკემბერი 2026–5 იანვარი 2027; ენის საბუთების დამატებითი ვადა განსხვავდება. გადაამოწმე საათი და დროის სარტყელი."
+      },
+      "sources": [
+        {
+          "url": "https://www.aalto.fi/en/study-options/computer-science-master-of-science-technology",
+          "label": "Computer Science MSc",
+          "checkedAt": "2026-10-27"
+        },
+        {
+          "url": "https://www.aalto.fi/en/admission-services/language-requirements-in-masters-admissions",
+          "label": "Master language requirements",
+          "checkedAt": "2026-10-27"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-10-27"
+    },
+    {
+      "id": "program_helsinki-data-science-msc",
+      "institutionId": null,
+      "institutionName": "University of Helsinki",
+      "institutionWebsite": "https://www.helsinki.fi/",
+      "countryCode": "FI",
+      "title": "Data Science — Master’s Programme",
+      "field": "data-science",
+      "category": "tech",
+      "degree": "master",
+      "language": "en",
+      "mode": "full-time",
+      "durationMonths": 24,
+      "tuition": {
+        "amount": 15000,
+        "currency": "EUR",
+        "period": "year",
+        "applicantScope": "non-eu",
+        "note": "მითითებულია მხოლოდ სწავლის წლიური საფასური; საცხოვრებელი და სხვა ხარჯები ცალკეა."
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": {
+          "name": "IELTS Academic",
+          "minScore": 6.5,
+          "componentsMinScore": 6.0
+        },
+        "experienceYears": null,
+        "note": "შესაბამისი პირველი ხარისხი და პროგრამის აკადემიური მოთხოვნები. IELTS-ის ყველა სექცია მინიმუმ 6.0; მიღებული სხვა მტკიცებულებები და გამონაკლისები წყაროშია. არჩეული სწავლების ენაა ინგლისური; პროგრამა ასევე ფინურსა და შვედურს ასახელებს."
+      },
+      "deadline": {
+        "date": "2027-01-19",
+        "cycle": "Autumn 2027",
+        "note": "განაცხადები 5–19 იანვარს 2027; გვერდზე დახურვის საათი 15:00-ია. დროის სარტყელი გადაამოწმე განაცხადის სისტემაში."
+      },
+      "sources": [
+        {
+          "url": "https://www.helsinki.fi/en/degree-programmes/data-science-masters-programme",
+          "label": "Data Science programme",
+          "checkedAt": "2026-10-27"
+        },
+        {
+          "url": "https://www.helsinki.fi/en/admissions-and-education/apply-bachelors-and-masters-programmes/apply-international-masters-programmes/proving-your-english-language-skills",
+          "label": "Master English requirements",
+          "checkedAt": "2026-10-27"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-10-27"
+    },
+    {
+      "id": "program_polimi-computer-science-engineering-msc",
+      "institutionId": null,
+      "institutionName": "Politecnico di Milano",
+      "institutionWebsite": "https://www.polimi.it/",
+      "countryCode": "IT",
+      "title": "Computer Science and Engineering — MSc",
+      "field": "computer-science",
+      "category": "tech",
+      "degree": "master",
+      "language": "en",
+      "mode": "full-time",
+      "durationMonths": 24,
+      "tuition": {
+        "amount": null,
+        "currency": "EUR",
+        "period": "year",
+        "applicantScope": "non-eu",
+        "note": "თანხა დამოკიდებულია ECTS დატვირთვაზე, სტატუსსა და შეღავათებზე. უცხოეთის ხარისხის მქონე განსაზღვრულ non-EU კატეგორიას მაქსიმალური შენატანი ეხება; ერთი უნივერსალური ფასი არ არის მინიჭებული."
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": "ბაკალავრის საგნობრივი შესაბამისობა, ნიშნები და ინგლისურის სერტიფიკატი უნდა შეფასდეს უცხოეთის დიპლომის წესებით."
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": "მიმდინარე მიღების ზუსტი თარიღი გადასამოწმებელია ოფიციალურ წყაროში."
+      },
+      "sources": [
+        {
+          "url": "https://www.polimi.it/en/education/laurea-magistrale-programmes/programme-detail/computer-science-and-engineering-ingegneria-informatica",
+          "label": "Programme overview",
+          "checkedAt": "2026-10-27"
+        },
+        {
+          "url": "https://www.polimi.it/en/students/tuition-fees-scholarships-and-financial-aid/tuition-fees/",
+          "label": "Tuition policy",
+          "checkedAt": "2026-10-27"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-10-27"
+    },
+    {
+      "id": "program_delft-computer-science-msc",
+      "institutionId": null,
+      "institutionName": "Delft University of Technology",
+      "institutionWebsite": "https://www.tudelft.nl/",
+      "countryCode": "NL",
+      "title": "MSc Computer Science",
+      "field": "computer-science",
+      "category": "tech",
+      "degree": "master",
+      "language": "en",
+      "mode": "full-time",
+      "durationMonths": 24,
+      "tuition": {
+        "amount": null,
+        "currency": "EUR",
+        "period": "year",
+        "applicantScope": "non-eu",
+        "note": "ზუსტი, სტუდენტზე მოქმედი საფასური დასაზუსტებელია ოფიციალურ წყაროში."
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": "საჭიროა წინა განათლების, საგნობრივი მოთხოვნების, საბუთებისა და ენის დამადასტურებელი მტკიცებულების ინდივიდუალური შემოწმება."
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": "მიმდინარე მიღების ზუსტი თარიღი გადასამოწმებელია ოფიციალურ წყაროში."
+      },
+      "sources": [
+        {
+          "url": "https://www.tudelft.nl/en/education/programmes/masters/cs/msc-computer-science",
+          "label": "MSc Computer Science",
+          "checkedAt": "2026-10-27"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-10-27"
+    },
+    {
+      "id": "program_utrecht-artificial-intelligence-msc",
+      "institutionId": null,
+      "institutionName": "Utrecht University",
+      "institutionWebsite": "https://www.uu.nl/",
+      "countryCode": "NL",
+      "title": "Artificial Intelligence (MSc)",
+      "field": "computer-science",
+      "category": "tech",
+      "degree": "master",
+      "language": "en",
+      "mode": "full-time",
+      "durationMonths": 24,
+      "tuition": {
+        "amount": 25306,
+        "currency": "EUR",
+        "period": "year",
+        "applicantScope": "non-eu",
+        "note": "წყარო აქვეყნებს non-EU/EEA institutional fee-ს 25,306 EUR-ს 2026/27 სასწავლო წლისთვის; სხვა სასწავლო წლის თანხა ხელახლა უნდა შემოწმდეს.",
+        "academicYear": "2026/2027"
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": "საჭიროა წინა განათლების, საგნობრივი მოთხოვნების, საბუთებისა და ენის დამადასტურებელი მტკიცებულების ინდივიდუალური შემოწმება."
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": "მიმდინარე მიღების ზუსტი თარიღი გადასამოწმებელია ოფიციალურ წყაროში."
+      },
+      "sources": [
+        {
+          "url": "https://www.uu.nl/en/masters/artificial-intelligence",
+          "label": "Artificial Intelligence MSc",
+          "checkedAt": "2026-10-27"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-10-27"
+    },
+    {
+      "id": "program_oxford-advanced-computer-science-msc",
+      "institutionId": null,
+      "institutionName": "University of Oxford",
+      "institutionWebsite": "https://www.ox.ac.uk/",
+      "countryCode": "GB",
+      "title": "MSc in Advanced Computer Science",
+      "field": "computer-science",
+      "category": "tech",
+      "degree": "master",
+      "language": "en",
+      "mode": "full-time",
+      "durationMonths": 12,
+      "tuition": {
+        "amount": null,
+        "currency": "GBP",
+        "period": "year",
+        "applicantScope": "international",
+        "note": "საერთაშორისო (overseas) სტუდენტის ზუსტი საფასური ამ ჩანაწერში არ არის დადასტურებული; Home ტარიფი საერთაშორისო ფასად არ გამოიყენება."
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": {
+          "name": "IELTS Academic",
+          "minScore": 7.5,
+          "componentsMinScore": 7.0
+        },
+        "experienceYears": null,
+        "note": "First-class ხარისხი CS-ში ან მათემატიკაში ან ქვეყნის შესაბამისი ეკვივალენტი. GPA პროცენტში არ არის გადაყვანილი. IELTS თითო კომპონენტი მინიმუმ 7.0; პროგრამირების/მათემატიკის წინაპირობები და ენის გამონაკლისები შესამოწმებელია."
+      },
+      "deadline": {
+        "date": "2027-01-06",
+        "cycle": "2027/2028 entry",
+        "note": "ოფიციალური ვადა: 6 იანვარი 2027, 12:00 UK time; დღის ბოლო ვადად არ უნდა ჩაითვალოს."
+      },
+      "sources": [
+        {
+          "url": "https://www.ox.ac.uk/admissions/graduate/courses/msc-advanced-computer-science",
+          "label": "Advanced Computer Science MSc — 2027/28",
+          "checkedAt": "2026-10-27"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-10-27"
+    },
+    {
+      "id": "program_ubc-data-science-mds",
+      "institutionId": null,
+      "institutionName": "University of British Columbia",
+      "institutionWebsite": "https://www.ubc.ca/",
+      "countryCode": "CA",
+      "title": "Master of Data Science — Vancouver",
+      "field": "data-science",
+      "category": "tech",
+      "degree": "master",
+      "language": "en",
+      "mode": "full-time",
+      "durationMonths": 10,
+      "tuition": {
+        "amount": 59767.92,
+        "currency": "CAD",
+        "period": "program",
+        "applicantScope": "international",
+        "note": "წყაროში გამოქვეყნებული საერთაშორისო პროგრამის საფასურია 59,767.92 CAD; სტუდენტური და ცხოვრების ხარჯები არ შედის. უნივერსიტეტს შეუძლია ტარიფის ცვლილება; ზუსტი კოჰორტა გადაამოწმე."
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": "ოთხწლიანი ბაკალავრის ეკვივალენტი და ზედა კურსებსა და წინაპირობებში მინიმუმ B+ (UBC-ზე 76%). ეს ინსტიტუციური შეფასება უნივერსალურ GPA პროცენტად არ არის გადატანილი. საჭიროა პროგრამირება, ალბათობა/სტატისტიკა, კალკულუსი ან ხაზოვანი ალგებრა; ინგლისურის მოთხოვნა ცალკე მოწმდება."
+      },
+      "deadline": {
+        "date": "2027-01-31",
+        "cycle": "September 2027",
+        "note": "საერთაშორისო განაცხადების ოფიციალური ვადა 31 იანვარი 2027; საბუთებისა და ინტერვიუს დამატებითი ვადები გადაამოწმე."
+      },
+      "sources": [
+        {
+          "url": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs/master-of-data-science",
+          "label": "MDS Vancouver programme, international program fee and 2027 deadline",
+          "checkedAt": "2026-10-27"
+        },
+        {
+          "url": "https://masterdatascience.ubc.ca/admissions",
+          "label": "MDS admission requirements",
+          "checkedAt": "2026-10-27"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-10-27"
+    },
+    {
+      "id": "program_cmu-computational-data-science-mcds",
+      "institutionId": null,
+      "institutionName": "Carnegie Mellon University",
+      "institutionWebsite": "https://www.cmu.edu/",
+      "countryCode": "US",
+      "title": "Master of Computational Data Science",
+      "field": "data-science",
+      "category": "tech",
+      "degree": "master",
+      "language": "en",
+      "mode": "full-time",
+      "durationMonths": 16,
+      "tuition": {
+        "amount": null,
+        "currency": "USD",
+        "period": "year",
+        "applicantScope": "international",
+        "note": "ზუსტი, სტუდენტზე მოქმედი საფასური დასაზუსტებელია ოფიციალურ წყაროში."
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": "წყარო ასახელებს GPA 3.0-ს, GRE-ს შესაბამისი გამონაკლისით, ინგლისურის მტკიცებულებასა და საბუთებს. 4.0 სკალა უნივერსალურ პროცენტში არ არის გადაყვანილი. 16-თვიანი სტანდარტული ვარიანტის გარდა შესაძლებელია 20-თვიანი ვარიანტი."
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": "მიმდინარე მიღების ზუსტი თარიღი გადასამოწმებელია ოფიციალურ წყაროში."
+      },
+      "sources": [
+        {
+          "url": "https://www.lti.cmu.edu/academics/masters-programs/mcds.html",
+          "label": "Master of Computational Data Science",
+          "checkedAt": "2026-10-27"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-10-27"
+    },
+    {
+      "id": "program_warwick-management-msc",
+      "institutionId": null,
+      "institutionName": "University of Warwick",
+      "institutionWebsite": "https://warwick.ac.uk/",
+      "countryCode": "GB",
+      "title": "Management MSc",
+      "field": "business",
+      "category": "business",
+      "degree": "master",
+      "language": "en",
+      "mode": "full-time",
+      "durationMonths": 12,
+      "tuition": {
+        "amount": null,
+        "currency": "GBP",
+        "period": "year",
+        "applicantScope": "international",
+        "note": "ზუსტი, სტუდენტზე მოქმედი საფასური დასაზუსტებელია ოფიციალურ წყაროში."
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": {
+          "name": "IELTS Academic",
+          "minScore": 7
+        },
+        "experienceYears": null,
+        "note": "UK 2:1 ან საერთაშორისო ეკვივალენტი; მრავალფეროვანი პირველი ხარისხები მიიღება. IELTS Band B-ის კომპონენტური წესები ცალკე მოწმდება. სამი ან მეტი წლის გამოცდილებასთან MBA შეიძლება უფრო შესაბამისი იყოს; ეს MSc-ის გარანტირებულ მიღებას არ ნიშნავს."
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": "მიმდინარე მიღების ზუსტი თარიღი გადასამოწმებელია ოფიციალურ წყაროში."
+      },
+      "sources": [
+        {
+          "url": "https://warwick.ac.uk/study/postgraduate/courses/msc-management/",
+          "label": "Management MSc — 2027 entry",
+          "checkedAt": "2026-10-27"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-10-27"
+    },
+    {
+      "id": "program_sciencespo-public-policy-master",
+      "institutionId": null,
+      "institutionName": "Sciences Po",
+      "institutionWebsite": "https://www.sciencespo.fr/",
+      "countryCode": "FR",
+      "title": "Master in Public Policy — English-taught policy streams",
+      "field": "social-sciences",
+      "category": "social",
+      "degree": "master",
+      "language": "en",
+      "mode": "full-time",
+      "durationMonths": 24,
+      "tuition": {
+        "amount": null,
+        "currency": "EUR",
+        "period": "year",
+        "applicantScope": "non-eu",
+        "note": "ზუსტი, სტუდენტზე მოქმედი საფასური დასაზუსტებელია ოფიციალურ წყაროში."
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": "ჩანაწერი ეხება ინგლისურენოვან policy stream-ებს; ფრანგულენოვანი stream-ების მოთხოვნები განსხვავდება. საჭიროა შესაბამისი ენის ტესტი და აკადემიური დაშვების პირობების ინდივიდუალური შემოწმება."
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": "მიმდინარე მიღების ზუსტი თარიღი გადასამოწმებელია ოფიციალურ წყაროში."
+      },
+      "sources": [
+        {
+          "url": "https://www.sciencespo.fr/ecole-affaires-publiques/en/academics/masters/master-public-policy/",
+          "label": "Master in Public Policy",
+          "checkedAt": "2026-10-27"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-10-27"
+    },
+    {
+      "id": "program_aalto-collaborative-industrial-design-ma",
+      "institutionId": null,
+      "institutionName": "Aalto University",
+      "institutionWebsite": "https://www.aalto.fi/",
+      "countryCode": "FI",
+      "title": "Collaborative and Industrial Design — MA",
+      "field": "design",
+      "category": "arts",
+      "degree": "master",
+      "language": "en",
+      "mode": "full-time",
+      "durationMonths": 24,
+      "tuition": {
+        "amount": 20000,
+        "currency": "EUR",
+        "period": "year",
+        "applicantScope": "non-eu",
+        "note": "მითითებულია მხოლოდ სწავლის წლიური საფასური; საცხოვრებელი და სხვა ხარჯები ცალკეა."
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": {
+          "name": "IELTS Academic",
+          "minScore": 6.5,
+          "componentMinimums": {
+            "writing": 6.0
+          }
+        },
+        "experienceYears": null,
+        "note": "შესაბამისი ბაკალავრი და პროგრამის სპეციფიკური შეფასება/პორტფოლიო. IELTS writing მინიმუმ 6.0; ენის გამონაკლისები და ქულის მოქმედების ვადა ინდივიდუალურად მოწმდება."
+      },
+      "deadline": {
+        "date": "2027-01-05",
+        "cycle": "Autumn 2027",
+        "note": "ოფიციალური განაცხადის პერიოდი 7 დეკემბერი 2026–5 იანვარი 2027; საათი და საბუთების დამატებითი ვადები ცალკე გადაამოწმე."
+      },
+      "sources": [
+        {
+          "url": "https://www.aalto.fi/en/study-options/collaborative-and-industrial-design-master-of-arts-art-and-design",
+          "label": "Collaborative and Industrial Design",
+          "checkedAt": "2026-10-27"
+        },
+        {
+          "url": "https://www.aalto.fi/en/admission-services/language-requirements-in-masters-admissions",
+          "label": "Master language requirements",
+          "checkedAt": "2026-10-27"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-10-27"
+    },
+    {
+      "id": "program_helsinki-science-bsc",
+      "institutionId": null,
+      "institutionName": "University of Helsinki",
+      "institutionWebsite": "https://www.helsinki.fi/",
+      "countryCode": "FI",
+      "title": "Bachelor’s Programme in Science",
+      "field": "natural-sciences",
+      "category": "science",
+      "degree": "bachelor",
+      "language": "en",
+      "mode": "full-time",
+      "durationMonths": 36,
+      "tuition": {
+        "amount": 13000,
+        "currency": "EUR",
+        "period": "year",
+        "applicantScope": "non-eu",
+        "note": "მითითებულია მხოლოდ სწავლის წლიური საფასური; საცხოვრებელი და სხვა ხარჯები ცალკეა."
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": "წინა სკოლის კვალიფიკაცია განსაზღვრავს მიღების ჯგუფსა და შეფასების წესს; ინგლისურის დასტური სავალდებულოა. GPA-ს ერთი უნივერსალური პროცენტული ზღვარი არ არის დადგენილი ამ ჩანაწერში."
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": "2027-ში მიღების ჯგუფის მიხედვით ბოლო ვადაა 19 იანვარი ან 23 მარტი. სტუდენტის წინა განათლების ჯგუფი დაუდგენელია, ამიტომ ერთიანი ბოლო თარიღი არ არის მინიჭებული."
+      },
+      "sources": [
+        {
+          "url": "https://www.helsinki.fi/en/degree-programmes/science-bachelors-programme",
+          "label": "Science bachelor programme",
+          "checkedAt": "2026-10-27"
+        },
+        {
+          "url": "https://www.helsinki.fi/en/admissions-and-education/apply-bachelors-and-masters-programmes/apply-bachelors-programmes",
+          "label": "Bachelor admissions — 2027 groups",
+          "checkedAt": "2026-10-27"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-10-27"
+    },
+    {
+      "id": "program_tartu-science-technology-bsc",
+      "institutionId": null,
+      "institutionName": "University of Tartu",
+      "institutionWebsite": "https://ut.ee/",
+      "countryCode": "EE",
+      "title": "Science and Technology — BSc",
+      "field": "natural-sciences",
+      "category": "science",
+      "degree": "bachelor",
+      "language": "en",
+      "mode": "full-time",
+      "durationMonths": 36,
+      "tuition": {
+        "amount": 6000,
+        "currency": "EUR",
+        "period": "year",
+        "applicantScope": "international",
+        "note": "მითითებულია მხოლოდ სწავლის წლიური საფასური; საცხოვრებელი და სხვა ხარჯები ცალკეა."
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": {
+          "name": "IELTS Academic",
+          "minScore": 6,
+          "componentsMinScore": 5.5
+        },
+        "experienceYears": null,
+        "note": "სასკოლო კვალიფიკაცია და პროგრამის სპეციფიკური შერჩევა ცალკე მოწმდება. IELTS-ის თითო კომპონენტი მინიმუმ 5.5, ალტერნატიული მიღებული ტესტები და გამონაკლისები წყაროშია."
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": "წყაროზე მითითებულია 15 აპრილის განმეორებადი ვადა; წელი კონკრეტულ მიღებასთან უნდა დადასტურდეს."
+      },
+      "sources": [
+        {
+          "url": "https://ut.ee/en/curriculum/science-and-technology",
+          "label": "Science and Technology bachelor",
+          "checkedAt": "2026-10-27"
+        },
+        {
+          "url": "https://ut.ee/en/english-language-requirements",
+          "label": "English requirements",
+          "checkedAt": "2026-10-27"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-10-27"
+    },
+    {
+      "id": "program_aalto-economics-bsc",
+      "institutionId": null,
+      "institutionName": "Aalto University",
+      "institutionWebsite": "https://www.aalto.fi/",
+      "countryCode": "FI",
+      "title": "Economics — Bachelor of Science",
+      "field": "business",
+      "category": "business",
+      "degree": "bachelor",
+      "language": "en",
+      "mode": "full-time",
+      "durationMonths": 36,
+      "tuition": {
+        "amount": 12000,
+        "currency": "EUR",
+        "period": "year",
+        "applicantScope": "non-eu",
+        "note": "მითითებულია მხოლოდ სწავლის წლიური საფასური; საცხოვრებელი და სხვა ხარჯები ცალკეა."
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": "3-წლიანი საბაკალავრო ფაზა; მიღება მოიცავს 3+2 გზას, ხოლო შემდგომი მაგისტრატურის ფასი ცალკეა. შერჩევა SAT/ACT-ის ან განსაზღვრული სასკოლო კვალიფიკაციების/კონკურსების გზით; ზოგადი GPA პროცენტი არ გამოიყენება."
+      },
+      "deadline": {
+        "date": "2027-01-22",
+        "cycle": "Autumn 2027",
+        "note": "ოფიციალური განაცხადის პერიოდი 7–22 იანვარი 2027; საბუთების ვადები ცალკე გადაამოწმე."
+      },
+      "sources": [
+        {
+          "url": "https://www.aalto.fi/en/study-options/bachelors-programme-in-economics",
+          "label": "Economics bachelor and master pathway",
+          "checkedAt": "2026-10-27"
+        },
+        {
+          "url": "https://www.aalto.fi/en/study-at-aalto/admission-to-the-bachelors-programme-in-economics-bachelor-and-master-of-science-in-economics-and",
+          "label": "Economics bachelor admissions",
+          "checkedAt": "2026-10-27"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-10-27"
+    },
+    {
+      "id": "program_cambridge-computer-science-phd",
+      "institutionId": null,
+      "institutionName": "University of Cambridge",
+      "institutionWebsite": "https://www.cam.ac.uk/",
+      "countryCode": "GB",
+      "title": "PhD in Computer Science",
+      "field": "computer-science",
+      "category": "tech",
+      "degree": "phd",
+      "language": "en",
+      "mode": "full-time",
+      "durationMonths": null,
+      "tuition": {
+        "amount": null,
+        "currency": "GBP",
+        "period": "year",
+        "applicantScope": "international",
+        "note": "ზუსტი, სტუდენტზე მოქმედი საფასური დასაზუსტებელია ოფიციალურ წყაროში."
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": {
+          "name": "IELTS Academic",
+          "minScore": 7.5,
+          "componentsMinScore": 7.0
+        },
+        "experienceYears": null,
+        "note": "First-class ხარისხი ან საერთაშორისო ეკვივალენტი; სამაგისტრო დონე სასურველია. IELTS თითო კომპონენტი მინიმუმ 7.0. სრული დატვირთვით ხანგრძლივობა 3–4 წელია, ამიტომ ერთი ზუსტი თვე არ არის მინიჭებული. ხელმძღვანელი, კვლევა, ATAS და დაფინანსება ცალკე მოწმდება."
+      },
+      "deadline": {
+        "date": "2027-05-13",
+        "cycle": "Michaelmas 2027",
+        "note": "ამ ჩანაწერში არჩეულია Michaelmas 2027 მიღება. კურსის დაფინანსების ვადა უფრო ადრეა: 8 დეკემბერი 2026. სხვა მიღებების ვადები განსხვავდება."
+      },
+      "sources": [
+        {
+          "url": "https://www.postgraduate.study.cam.ac.uk/courses/directory/cscspdpcs/study",
+          "label": "PhD Computer Science study and intake deadlines",
+          "checkedAt": "2026-10-27"
+        },
+        {
+          "url": "https://www.postgraduate.study.cam.ac.uk/courses/directory/cscspdpcs/requirements",
+          "label": "PhD Computer Science requirements",
+          "checkedAt": "2026-10-27"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-10-27"
+    },
+    {
+      "id": "program_london-computer-science-bsc-online",
+      "institutionId": null,
+      "institutionName": "University of London",
+      "institutionWebsite": "https://www.london.ac.uk/",
+      "countryCode": "GB",
+      "title": "BSc Computer Science — Online",
+      "field": "computer-science",
+      "category": "tech",
+      "degree": "bachelor",
+      "language": "en",
+      "mode": "online",
+      "durationMonths": null,
+      "tuition": {
+        "amount": null,
+        "currency": "GBP",
+        "period": "program",
+        "applicantScope": "international",
+        "note": "საფასური იცვლება საცხოვრებელი ქვეყნის ბანდის, web-supported/teaching-centre გზისა და მოდულების მიხედვით; ერთიანი ფასი არ არის მინიჭებული."
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": "ონლაინ გზა; ხანგრძლივობა 3–6 წელი, მოქნილი დატვირთვით. არსებობს სტანდარტული და performance-based დაშვების სხვადასხვა გზა; ასაკი, მათემატიკა და ენის მტკიცებულება ცალკე მოწმდება."
+      },
+      "deadline": {
+        "date": "2027-03-17",
+        "cycle": "April 2027",
+        "note": "არჩეულია აპრილი 2027: განაცხადების დახურვა 17 მარტი 2027; რეგისტრაციის ვადა განსხვავდება. ოქტომბრის მიღებას სხვა ვადა აქვს."
+      },
+      "sources": [
+        {
+          "url": "https://www.london.ac.uk/study/courses/undergraduate/bsc-computer-science",
+          "label": "BSc Computer Science online route",
+          "checkedAt": "2026-10-27"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-10-27"
+    }
+  ]
+}
