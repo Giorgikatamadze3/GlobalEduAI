@@ -8,7 +8,7 @@ test('multi countries use OR while unrelated dimensions use AND',()=>{
  assert.ok(rows.length>1);assert.ok(rows.every(p=>['DE','FI'].includes(p.countryCode)&&p.degree==='master'&&p.category==='tech'));
 });
 test('the directory joins program interests instead of assigning every university a subject',()=>{
- const plain=C.filterCatalogInstitutions(data.institutions,data.programs,prefs({}),opts);assert.equal(plain.length,10268);
+ const plain=C.filterCatalogInstitutions(data.institutions,data.programs,prefs({}),opts);assert.equal(plain.length,data.metadata.institutionCount);
  const specific=C.filterCatalogInstitutions(data.institutions,data.programs,prefs({fields:['tech'],degrees:['master']}),opts);
  assert.ok(specific.length>1&&specific.length<plain.length);assert.ok(specific.every(i=>data.programs.some(p=>p.institutionId===i.id&&p.degree==='master'&&p.category==='tech')));
 });

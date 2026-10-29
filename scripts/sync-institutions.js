@@ -129,7 +129,10 @@ function validateDirectory(catalog) {
         if (![...Object.keys(REGIONS), 'other'].includes(row.region)) errors.push(`${label}: invalid region.`);
         if (row.city !== null && typeof row.city !== 'string') errors.push(`${label}: invalid city.`);
         if (row.stateProvince !== null && typeof row.stateProvince !== 'string') errors.push(`${label}: invalid stateProvince.`);
-        if (row.verificationStatus !== 'directory-listed' || row.source?.url !== SOURCE_URL || !/^\d{4}-\d{2}-\d{2}$/.test(row.source?.retrievedAt || '')) errors.push(`${label}: missing directory provenance.`);
+        const upstreamProvenance=row.verificationStatus==='directory-listed'&&row.source?.url===SOURCE_URL;
+        let institutionalProvenance=false;
+        try{const host=new URL(row.source?.url).hostname.replace(/^www\./,'');institutionalProvenance=row.verificationStatus==='official-institution-listed'&&row.source?.kind==='institution'&&Boolean(safeWebsite(row.source.url))&&row.domains.some(domain=>host===domain||host.endsWith('.'+domain));}catch(_){/* Invalid source is reported below. */}
+        if ((!upstreamProvenance&&!institutionalProvenance) || !/^\d{4}-\d{2}-\d{2}$/.test(row.source?.retrievedAt || '')) errors.push(`${label}: missing directory provenance.`);
         if (['price', 'degree', 'lang', 'deadline', 'matchScore', 'scholarships'].some(key => Object.hasOwn(row, key))) errors.push(`${label}: invented program facts do not belong in an institution directory.`);
     }
     if (catalog.metadata.institutionCount !== catalog.institutions.length) errors.push('Institution count does not match rows.');

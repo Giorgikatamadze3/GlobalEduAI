@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "updatedAt": "2026-10-28",
+    "updatedAt": "2026-10-29",
     "policy": "Small attributed institution-domain corrections verified against official sources. Preserve existing stable identities and upstream provenance; never add programme facts or relax bulk matching by name alone."
   },
   "overrides": [
@@ -9,8 +9,13 @@
       "institutionId": "inst_8b64391c1f68d109485055c0",
       "institutionName": "Tallinn University of Technology",
       "countryCode": "EE",
-      "knownDomains": ["ttu.ee", "taltech.ee"],
-      "additionalDomains": ["taltech.ee"],
+      "knownDomains": [
+        "ttu.ee",
+        "taltech.ee"
+      ],
+      "additionalDomains": [
+        "taltech.ee"
+      ],
       "website": "https://taltech.ee/",
       "checkedAt": "2026-10-28",
       "sources": [
@@ -24,6 +29,94 @@
           "url": "https://taltech.ee/en/masters-programmes/cybersecurity",
           "label": "Official Cybersecurity MSc page identifies Tallinn University of Technology",
           "checkedAt": "2026-10-28"
+        }
+      ]
+    },
+    {
+      "id": "official-domain-ub-edu-2026",
+      "institutionId": "inst_dfe0532c2a61cd097a32cf83",
+      "institutionName": "Universitat de Barcelona",
+      "countryCode": "ES",
+      "knownDomains": [
+        "ub.es",
+        "ub.edu"
+      ],
+      "additionalDomains": [
+        "ub.edu"
+      ],
+      "website": "https://ub.edu/",
+      "checkedAt": "2026-10-29",
+      "sources": [
+        {
+          "url": "https://web.ub.edu/en/web/estudis/w/masterdegree-m0k05",
+          "label": "Official university degree page identifies the institution and current institutional domain",
+          "checkedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "official-domain-ucg-ac-me-2026",
+      "institutionId": "inst_3e10b14f05c2516828b29985",
+      "institutionName": "University of Montenegro",
+      "countryCode": "ME",
+      "knownDomains": [
+        "ucg.cg.ac.yu",
+        "ucg.ac.me"
+      ],
+      "additionalDomains": [
+        "ucg.ac.me"
+      ],
+      "website": "https://ucg.ac.me/",
+      "checkedAt": "2026-10-29",
+      "sources": [
+        {
+          "url": "https://www.ucg.ac.me/studprog/7/1/16/2025-racunarske-nauke",
+          "label": "Official university degree page identifies the institution and current institutional domain",
+          "checkedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "official-domain-tsu-ge-2026",
+      "institutionId": "inst_426e3ee7994825a8c4452007",
+      "institutionName": "Tbilisi State University",
+      "countryCode": "GE",
+      "knownDomains": [
+        "tsu.edu.ge",
+        "tsu.ge"
+      ],
+      "additionalDomains": [
+        "tsu.ge"
+      ],
+      "website": "https://tsu.ge/",
+      "checkedAt": "2026-10-29",
+      "sources": [
+        {
+          "url": "https://www.tsu.ge/en/pages/Foreign-Language-Programs---Bachelor-Level",
+          "label": "Official university degree page identifies the institution and current institutional domain",
+          "checkedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "official-domain-unigre-it-2026",
+      "institutionId": "inst_40511f766a204b3fc04b154b",
+      "institutionName": "Pontifcia Università Gregoriana",
+      "countryCode": "VA",
+      "knownDomains": [
+        "unigre.urbe.it",
+        "unigre.it"
+      ],
+      "additionalDomains": [
+        "unigre.it"
+      ],
+      "website": "https://unigre.it/",
+      "checkedAt": "2026-10-29",
+      "sources": [
+        {
+          "url": "https://www.unigre.it/en/philosophy/programs-and-courses/baccalaureate/",
+          "label": "Official university degree page identifies the institution and current institutional domain",
+          "checkedAt": "2026-10-29"
         }
       ]
     }

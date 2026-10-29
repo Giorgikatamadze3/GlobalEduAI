@@ -4,6 +4,7 @@ const {fetchOfficialCatalog}=require('./providers/official-catalogs');
 const {mergeProgramCatalog,computeProgramCoverage}=require('../program-catalog-core');
 const {validatePrograms}=require('./validate-programs');
 const {applyInstitutionOverrides}=require('./institution-overrides');
+const {applyInstitutionSupplements}=require('./institution-supplements');
 const ROOT=path.resolve(__dirname,'..');
 function argumentsFor(args){
  const options={source:'daad-international-programmes',write:false,cache:null};
@@ -20,7 +21,7 @@ function argumentsFor(args){
  return options;
 }
 // Tests inject an in-memory filesystem and provider; CLI uses the real project.
-async function syncPrograms(options={}, {fileSystem=nativeFS,fetchCatalog=fetchOfficialCatalog}={}){
+async function syncPrograms(options={}, {fileSystem=nativeFS,fetchCatalog=fetchOfficialCatalog,supplementInstitutions=applyInstitutionSupplements}={}){
  const fs=fileSystem;
  const registry=JSON.parse(fs.readFileSync(path.join(ROOT,'Server/data/program-source-registry.json'),'utf8'));
  const source=registry.sources.find(item=>item.id===(options.source||'daad-international-programmes')&&item.enabled);if(!source)throw new Error('Choose an enabled official source from the registry.');
@@ -30,7 +31,7 @@ async function syncPrograms(options={}, {fileSystem=nativeFS,fetchCatalog=fetchO
  if(cachePath){const relative=path.relative(ROOT,cachePath);if(relative==='..'||relative.startsWith(`..${path.sep}`)||path.isAbsolute(relative))throw new Error('Snapshot cache must remain in the project.');}
  const snapshot=cachePath?JSON.parse(fs.readFileSync(cachePath,'utf8')):await fetchCatalog(source,{onProgress:options.onProgress});
  if(snapshot.coverage?.sourceId!==source.id||!snapshot.coverage.listingComplete||!Array.isArray(snapshot.records)||!snapshot.records.length)throw new Error('Source snapshot is incomplete or empty; previous catalog preserved.');
- const directory=applyInstitutionOverrides(JSON.parse(fs.readFileSync(path.join(ROOT,'Server/data/institutions.json'),'utf8')));
+ const directory=supplementInstitutions(applyInstitutionOverrides(JSON.parse(fs.readFileSync(path.join(ROOT,'Server/data/institutions.json'),'utf8'))));
  const file=path.join(ROOT,'Server/data/programs.json');const existing=JSON.parse(fs.readFileSync(file,'utf8'));
  const checkedAt=snapshot.coverage.asOf;const merged=mergeProgramCatalog({existingPrograms:existing.programs,records:snapshot.records,source,directory,checkedAt});
  if(merged.report.accepted+merged.report.updated+merged.report.duplicates===0)throw new Error('No source records could be validated and linked; previous catalog preserved.');

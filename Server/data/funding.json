@@ -1,10 +1,10 @@
 {
   "metadata": {
     "schemaVersion": 1,
-    "checkedAt": "2026-10-28",
-    "schemeCount": 12,
+    "checkedAt": "2026-10-29",
+    "schemeCount": 20,
     "sourcePolicy": "Manually researched summaries from official providers, participating universities and consortia. An official scheme is not an admission decision, individual eligibility ruling or scholarship award.",
-    "coverageNote": "Initial curated snapshot of 12 schemes and limited exact programme bindings, not a global or exhaustive scholarship inventory. Unlisted programme participation is not inferred. No applicant is promised tuition plus living funding.",
+    "coverageNote": "Curated official-source schemes with exact programme or institution scope where verified. European country coverage is not exhaustive scholarship coverage. Dates, eligibility and awards require separate confirmation.",
     "datePolicy": "Only explicitly published calendar-year calls receive exact dates. Recurring annual deadlines retain null dates. Closed and upcoming calls are shown separately; no automatic next-year rollover."
   },
   "schemes": [
@@ -1180,6 +1180,690 @@
       "notes": [
         "სხვა ფრანგულ დაწესებულებას საკუთარი მონაწილეობა და შიდა ვადა ცალკე უნდა დაუდასტურდეს.",
         "Polytech Paris-Saclay-ის საინჟინრო ხარისხები ამ უნივერსიტეტის მიმდინარე მოწვევით არ დაიშვება."
+      ]
+    },
+    {
+      "id": "funding_erasmus-mundus-multidiverse",
+      "title": "Erasmus Mundus — MultiDiverse",
+      "provider": "European Union / MultiDiverse consortium",
+      "relationship": "listed-program",
+      "scope": {
+        "countryCodes": [
+          "DE",
+          "GR",
+          "PL"
+        ],
+        "degrees": [
+          "master"
+        ],
+        "fields": [],
+        "programIds": [],
+        "institutionDomains": [],
+        "institutionNames": [],
+        "programBindings": [
+          {
+            "institutionDomains": [
+              "uni-konstanz.de",
+              "auth.gr",
+              "uj.edu.pl"
+            ],
+            "titles": [
+              "Multilingualism and Cultural Diversity (MultiDiverse)"
+            ],
+            "sourceUrl": "https://www.multidiverse.eu/scholarships"
+          }
+        ]
+      },
+      "conditions": {
+        "checks": [
+          {
+            "subject": "applicant",
+            "key": "relatedFirstDegree",
+            "label": "საჭიროა შესაბამისი პირველი ხარისხი და პროგრამის აკადემიური ზღვრის დაკმაყოფილება.",
+            "expected": true
+          },
+          {
+            "subject": "applicant",
+            "key": "englishC1OrWaiver",
+            "label": "საჭიროა ინგლისურის C1 დონის დადასტურება ან დაშვებული გამონაკლისი.",
+            "expected": true
+          },
+          {
+            "subject": "applicant",
+            "key": "priorEmjmScholarship",
+            "label": "წინა EMJM სტიპენდიის მიმღებმა განმეორებითი დაფინანსების შეზღუდვა უნდა გადაამოწმოს.",
+            "expected": false
+          }
+        ]
+      },
+      "coverage": {
+        "tuitionFull": true,
+        "livingSupport": true,
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "note": "შერჩეული სტიპენდიატებისთვის: მონაწილეობის საფასურის შეღავათი, საარსებო დახმარება და დაზღვევა. სტიპენდიების რაოდენობა შეზღუდულია; არის თვითდაფინანსებული ადგილებიც."
+      },
+      "call": {
+        "opensAt": null,
+        "deadline": null,
+        "deadlineScope": null,
+        "cycle": "2026–2028",
+        "observedStatus": "closed",
+        "checkedAt": "2026-10-29",
+        "note": "პირველი მიღება და მოლოდინის სია დახურულია. მომდევნო სტიპენდიის ვადა ავტომატურად არ განისაზღვრება."
+      },
+      "sources": [
+        {
+          "url": "https://www.multidiverse.eu/scholarships",
+          "label": "Erasmus Mundus — MultiDiverse — official terms",
+          "checkedAt": "2026-10-29"
+        },
+        {
+          "url": "https://www.multidiverse.eu/partners",
+          "label": "Official consortium partners",
+          "checkedAt": "2026-10-29"
+        }
+      ],
+      "notes": [
+        "პროგრამაზე მიღება და სტიპენდიის მინიჭება ცალკე გადაწყვეტილებებია. განაცხადამდე გადაამოწმე მიმდინარე კონკურსი და პირადი შესაბამისობა."
+      ]
+    },
+    {
+      "id": "funding_ku-leuven-ai-waiver",
+      "title": "KU Leuven — Master of Artificial Intelligence Fee Waiver",
+      "provider": "KU Leuven Faculty of Engineering Science",
+      "relationship": "listed-program",
+      "scope": {
+        "countryCodes": [
+          "BE"
+        ],
+        "degrees": [
+          "master"
+        ],
+        "fields": [],
+        "programIds": [],
+        "institutionDomains": [],
+        "institutionNames": [],
+        "programBindings": [
+          {
+            "institutionDomains": [
+              "kuleuven.be"
+            ],
+            "titles": [
+              "Master of Artificial Intelligence"
+            ],
+            "sourceUrl": "https://www.kuleuven.be/scholarships/year/2027-2028/master-of-artificial-intelligence-fee-waiver"
+          }
+        ]
+      },
+      "conditions": {
+        "checks": [
+          {
+            "subject": "applicant",
+            "key": "notProfessionallyActive",
+            "label": "აპლიკანტს პროფესიული საქმიანობა დაწყებული არ უნდა ჰქონდეს.",
+            "expected": true
+          },
+          {
+            "subject": "applicant",
+            "key": "initialMastersWithinTwoYears",
+            "label": "განაცხადი პირველი სამაგისტრო ხარისხის მიღებიდან ორ წელიწადში უნდა შეიტანო.",
+            "expected": true
+          },
+          {
+            "subject": "applicant",
+            "key": "programmeOffer",
+            "label": "საჭიროა ამ გაღრმავებულ სამაგისტრო პროგრამაზე მიღება.",
+            "expected": true
+          },
+          {
+            "subject": "applicant",
+            "key": "registeredStudentNumber",
+            "label": "საჭიროა რეგისტრაცია და სტუდენტის ნომერი.",
+            "expected": true
+          }
+        ]
+      },
+      "coverage": {
+        "tuitionFull": false,
+        "livingSupport": false,
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "note": "ნაწილობრივი შეღავათი მხოლოდ ამ გაღრმავებულ მაგისტრატურას ეხება. 2027–2028 წლის შემცირებული საფასური ჯერ არ გამოქვეყნებულა; წინა წლის თანხა არ გადმოგვაქვს."
+      },
+      "call": {
+        "opensAt": null,
+        "deadline": null,
+        "deadlineScope": null,
+        "cycle": "2027–2028",
+        "observedStatus": "unknown",
+        "checkedAt": "2026-10-29",
+        "note": "მოთხოვნა სასწავლო წლის განმავლობაში რეგისტრაციას მოჰყვება. მიმდინარე შეღავათი და პროცედურა პროგრამასთან გადაამოწმე."
+      },
+      "sources": [
+        {
+          "url": "https://www.kuleuven.be/scholarships/year/2027-2028/master-of-artificial-intelligence-fee-waiver",
+          "label": "KU Leuven — Master of Artificial Intelligence Fee Waiver — official terms",
+          "checkedAt": "2026-10-29"
+        }
+      ],
+      "notes": [
+        "პროგრამაზე მიღება და სტიპენდიის მინიჭება ცალკე გადაწყვეტილებებია. განაცხადამდე გადაამოწმე მიმდინარე კონკურსი და პირადი შესაბამისობა."
+      ]
+    },
+    {
+      "id": "funding_flanders-master-mind",
+      "title": "Master Mind Scholarships — Flanders",
+      "provider": "Flemish Ministry of Education and Training",
+      "relationship": "institution",
+      "scope": {
+        "countryCodes": [
+          "BE"
+        ],
+        "degrees": [
+          "master"
+        ],
+        "fields": [],
+        "programIds": [],
+        "institutionDomains": [
+          "kuleuven.be",
+          "uantwerpen.be",
+          "ugent.be",
+          "uhasselt.be",
+          "vub.be"
+        ],
+        "institutionNames": [],
+        "programBindings": []
+      },
+      "conditions": {
+        "minGpa4": 3.5,
+        "excludedCitizenshipCodes": [
+          "RU"
+        ],
+        "checks": [
+          {
+            "subject": "applicant",
+            "key": "hostNomination",
+            "label": "საჭიროა მონაწილე მასპინძელი უნივერსიტეტის ნომინაცია.",
+            "expected": true
+          },
+          {
+            "subject": "applicant",
+            "key": "priorDegreeOutsideFlanders",
+            "label": "წინა ხარისხი ფლანდრიის ფარგლებს გარეთ მიღების წესს უნდა შეესაბამებოდეს.",
+            "expected": true
+          },
+          {
+            "subject": "applicant",
+            "key": "englishEvidenceAccepted",
+            "label": "მასპინძელმა ინგლისურის სერტიფიკატის ამ სქემის ზღვარი უნდა გადაამოწმოს.",
+            "expected": true
+          },
+          {
+            "subject": "program",
+            "key": "eligibleMasterMindCourse",
+            "label": "გადაამოწმე დასაშვები პროგრამა და ჩარიცხვის გზა.",
+            "expected": true
+          }
+        ]
+      },
+      "coverage": {
+        "tuitionFull": false,
+        "livingSupport": true,
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "note": "გრანტი და სწავლის საფასურის შემცირება; მინიმალური გადასახადი შეიძლება დარჩეს. მომავალი პირობები განიხილება, ამიტომ ძველი გრანტის თანხა არ გადმოგვაქვს."
+      },
+      "call": {
+        "opensAt": null,
+        "deadline": null,
+        "deadlineScope": null,
+        "cycle": "2026–2027",
+        "observedStatus": "closed",
+        "checkedAt": "2026-10-29",
+        "note": "2026–2027 წლის კონკურსი დახურულია. 2027–2028 წლის კონკურსი განხილვის პროცესშია; მომავალი დაფინანსება და ვადები ნავარაუდევი არ არის."
+      },
+      "sources": [
+        {
+          "url": "https://www.studyinflanders.be/scholarships/master-mind-scholarships",
+          "label": "Master Mind Scholarships — Flanders — official terms",
+          "checkedAt": "2026-10-29"
+        },
+        {
+          "url": "https://www.studyinflanders.be/scholarships/master-mind-scholarships/eligibility-criteria",
+          "label": "Official GPA and applicant criteria",
+          "checkedAt": "2026-10-29"
+        },
+        {
+          "url": "https://www.studyinflanders.be/scholarships/master-mind-scholarships/host-institutions",
+          "label": "Official participating hosts",
+          "checkedAt": "2026-10-29"
+        }
+      ],
+      "notes": [
+        "პროგრამაზე მიღება და სტიპენდიის მინიჭება ცალკე გადაწყვეტილებებია. განაცხადამდე გადაამოწმე მიმდინარე კონკურსი და პირადი შესაბამისობა."
+      ]
+    },
+    {
+      "id": "funding_nl-scholarship",
+      "title": "NL Scholarship",
+      "provider": "Dutch Ministry of Education / participating institutions",
+      "relationship": "institution",
+      "scope": {
+        "countryCodes": [
+          "NL"
+        ],
+        "degrees": [
+          "bachelor",
+          "master"
+        ],
+        "fields": [],
+        "programIds": [],
+        "institutionDomains": [
+          "tue.nl",
+          "maastrichtuniversity.nl",
+          "pthu.nl",
+          "ru.nl",
+          "tua.nl",
+          "rug.nl",
+          "utwente.nl",
+          "tuu.nl",
+          "uu.nl",
+          "vu.nl",
+          "wur.nl"
+        ],
+        "institutionNames": [],
+        "programBindings": []
+      },
+      "conditions": {
+        "modes": [
+          "full-time"
+        ],
+        "excludedCitizenshipCodes": [
+          "AT",
+          "BE",
+          "BG",
+          "HR",
+          "CY",
+          "CZ",
+          "DK",
+          "EE",
+          "FI",
+          "FR",
+          "DE",
+          "GR",
+          "HU",
+          "IS",
+          "IE",
+          "IT",
+          "LV",
+          "LI",
+          "LT",
+          "LU",
+          "MT",
+          "NL",
+          "NO",
+          "PL",
+          "PT",
+          "RO",
+          "SK",
+          "SI",
+          "ES",
+          "SE"
+        ],
+        "checks": [
+          {
+            "subject": "applicant",
+            "key": "noPriorDutchDegree",
+            "label": "ნიდერლანდების საგანმანათლებლო დაწესებულების წინა ხარისხი არ უნდა გქონდეს.",
+            "expected": true
+          },
+          {
+            "subject": "program",
+            "key": "nlScholarshipEligibleCourse",
+            "label": "უნდა დადასტურდეს მასპინძლის მონაწილეობა და კონკრეტული პროგრამის ვადა.",
+            "expected": true
+          }
+        ]
+      },
+      "coverage": {
+        "tuitionFull": false,
+        "livingSupport": true,
+        "amount": 5000,
+        "currency": "EUR",
+        "period": "first-year",
+        "note": "პირველი წლის ფინანსური შენატანია; სწავლის სრულ საფასურს არ ფარავს. მასპინძლები 2026–2027 წლის გამოქვეყნებული კვლევითი უნივერსიტეტების სიითაა განსაზღვრული."
+      },
+      "call": {
+        "opensAt": null,
+        "deadline": null,
+        "deadlineScope": null,
+        "cycle": "2026–2027",
+        "observedStatus": "unknown",
+        "checkedAt": "2026-10-29",
+        "note": "ვადები მასპინძლის მიხედვით განსხვავდება. კონკრეტული უნივერსიტეტის ან მომავალი წლის ვადა გამოგონილი არ არის."
+      },
+      "sources": [
+        {
+          "url": "https://www.studyinnl.org/finances/nl-scholarship",
+          "label": "NL Scholarship — official terms",
+          "checkedAt": "2026-10-29"
+        }
+      ],
+      "notes": [
+        "პროგრამაზე მიღება და სტიპენდიის მინიჭება ცალკე გადაწყვეტილებებია. განაცხადამდე გადაამოწმე მიმდინარე კონკურსი და პირადი შესაბამისობა."
+      ]
+    },
+    {
+      "id": "funding_luxembourg-guillaume-dupaix",
+      "title": "Guillaume Dupaix International Scholarship",
+      "provider": "Luxembourg ministries / University of Luxembourg",
+      "relationship": "institution",
+      "scope": {
+        "countryCodes": [
+          "LU"
+        ],
+        "degrees": [
+          "master"
+        ],
+        "fields": [],
+        "programIds": [],
+        "institutionDomains": [
+          "uni.lu"
+        ],
+        "institutionNames": [],
+        "programBindings": []
+      },
+      "conditions": {
+        "modes": [
+          "full-time"
+        ],
+        "checks": [
+          {
+            "subject": "program",
+            "key": "noMandatoryMobility",
+            "label": "მაგისტრატურა საზღვარგარეთ სავალდებულო სემესტრს ან წელს არ უნდა ითხოვდეს.",
+            "expected": true
+          },
+          {
+            "subject": "applicant",
+            "key": "noLuxembourgStateAid",
+            "label": "უნდა სრულდებოდეს ლუქსემბურგის სახელმწიფო ფინანსურ დახმარებასთან დაკავშირებული შეზღუდვა.",
+            "expected": true
+          },
+          {
+            "subject": "applicant",
+            "key": "academicExcellence",
+            "label": "მაღალ აკადემიურ მოსწრებას უნივერსიტეტი აფასებს.",
+            "expected": true
+          }
+        ]
+      },
+      "coverage": {
+        "tuitionFull": false,
+        "livingSupport": true,
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "note": "შერჩეული საერთაშორისო მაგისტრანტებისთვის საარსებო და საცხოვრებლის დახმარებაა. სწავლისა და რეგისტრაციის საფასური არ უქმდება."
+      },
+      "call": {
+        "opensAt": null,
+        "deadline": "2026-03-24",
+        "deadlineScope": "applicant",
+        "cycle": "2026–2027",
+        "observedStatus": "unknown",
+        "checkedAt": "2026-10-29",
+        "note": "მხოლოდ 2026 წლის გამოქვეყნებული კონკურსი; მომდევნო წელზე ავტომატურად არ გადადის."
+      },
+      "sources": [
+        {
+          "url": "https://www.uni.lu/life-en/financial-support/scholarships/guillaume-dupaix-international-scholarship/",
+          "label": "Guillaume Dupaix International Scholarship — official terms",
+          "checkedAt": "2026-10-29"
+        }
+      ],
+      "notes": [
+        "პროგრამაზე მიღება და სტიპენდიის მინიჭება ცალკე გადაწყვეტილებებია. განაცხადამდე გადაამოწმე მიმდინარე კონკურსი და პირადი შესაბამისობა."
+      ]
+    },
+    {
+      "id": "funding_ireland-goi-trinity",
+      "title": "Government of Ireland International Education Scholarship — Trinity",
+      "provider": "Government of Ireland / Trinity College Dublin",
+      "relationship": "institution",
+      "scope": {
+        "countryCodes": [
+          "IE"
+        ],
+        "degrees": [
+          "master"
+        ],
+        "fields": [],
+        "programIds": [],
+        "institutionDomains": [
+          "tcd.ie"
+        ],
+        "institutionNames": [],
+        "programBindings": []
+      },
+      "conditions": {
+        "modes": [
+          "full-time"
+        ],
+        "durationMonths": {
+          "min": 12,
+          "max": 12
+        },
+        "excludedQualificationTypes": [
+          "mba"
+        ],
+        "checks": [
+          {
+            "subject": "applicant",
+            "key": "eligibleDomicileOfOrigin",
+            "label": "Trinity-ის ამ კონკურსში წარმოშობის საცხოვრებელი ქვეყანა მსოფლიო ბანკის დაბალი ან საშუალოზე დაბალი შემოსავლის ჯგუფს უნდა ეკუთვნოდეს; მხოლოდ მოქალაქეობა საკმარისი არ არის.",
+            "expected": true
+          },
+          {
+            "subject": "applicant",
+            "key": "nonEuFeeStatus",
+            "label": "საჭიროა non-EU კატეგორიის სწავლის საფასურის სტატუსი.",
+            "expected": true
+          },
+          {
+            "subject": "applicant",
+            "key": "programmeOffer",
+            "label": "საჭიროა დასაშვები ერთწლიანი სასწავლო მაგისტრატურის შეთავაზება.",
+            "expected": true
+          }
+        ]
+      },
+      "coverage": {
+        "tuitionFull": true,
+        "livingSupport": true,
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "note": "შერჩეული მიმღებისთვის ერთწლიანი სწავლის შეღავათი და სტიპენდია. მოქმედებს Trinity-ის შეზღუდვები; ეს ირლანდიის მასშტაბით უპირობო შესაბამისობას არ ნიშნავს."
+      },
+      "call": {
+        "opensAt": "2026-01-29",
+        "deadline": "2026-03-12",
+        "deadlineScope": "applicant",
+        "cycle": "2026–2027",
+        "observedStatus": "unknown",
+        "checkedAt": "2026-10-29",
+        "note": "Trinity-ის 2026–2027 წლის გამოქვეყნებული კონკურსი დახურულია."
+      },
+      "sources": [
+        {
+          "url": "https://www.tcd.ie/study/international/scholarships/postgraduate/goi/",
+          "label": "Government of Ireland International Education Scholarship — Trinity — official terms",
+          "checkedAt": "2026-10-29"
+        }
+      ],
+      "notes": [
+        "პროგრამაზე მიღება და სტიპენდიის მინიჭება ცალკე გადაწყვეტილებებია. განაცხადამდე გადაამოწმე მიმდინარე კონკურსი და პირადი შესაბამისობა."
+      ]
+    },
+    {
+      "id": "funding_stipendium-hungaricum",
+      "title": "Stipendium Hungaricum",
+      "provider": "Hungarian Government / Tempus Public Foundation",
+      "relationship": "external",
+      "scope": {
+        "countryCodes": [
+          "HU"
+        ],
+        "degrees": [
+          "bachelor",
+          "master",
+          "phd"
+        ],
+        "fields": [],
+        "programIds": [],
+        "institutionDomains": [],
+        "institutionNames": [],
+        "programBindings": []
+      },
+      "conditions": {
+        "checks": [
+          {
+            "subject": "applicant",
+            "key": "eligibleSendingPartner",
+            "label": "შესაბამისობა გამგზავნ პარტნიორსა და ორმხრივ შეთანხმებაზეა დამოკიდებული.",
+            "expected": true
+          },
+          {
+            "subject": "applicant",
+            "key": "sendingPartnerNomination",
+            "label": "სადაც მოთხოვნილია, საჭიროა გამგზავნი პარტნიორის ნომინაცია.",
+            "expected": true
+          },
+          {
+            "subject": "program",
+            "key": "eligibleSendingPartnerCourse",
+            "label": "ოფიციალურ საძიებელში პროგრამა აპლიკანტის ქვეყნისა და საფეხურისთვის ხელმისაწვდომი უნდა იყოს.",
+            "expected": true
+          }
+        ]
+      },
+      "coverage": {
+        "tuitionFull": true,
+        "livingSupport": true,
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "note": "შერჩეული მიმღებისთვის სწავლის საფასურის შეღავათი და საარსებო/საცხოვრებლის შენატანებია. დახმარება ყველა ხარჯს არ ფარავს; ქვეყნისთვის დასაშვები პროგრამა და საფეხურის კონკურსი გადასამოწმებელია."
+      },
+      "call": {
+        "opensAt": null,
+        "deadline": "2026-01-15",
+        "deadlineScope": "applicant",
+        "cycle": "2026–2027",
+        "observedStatus": "unknown",
+        "checkedAt": "2026-10-29",
+        "note": "ამ კონკურსის ვადა გასულია. გადაამოწმე მომდევნო კონკურსი და გამგზავნი ქვეყნის პროგრამების სია."
+      },
+      "sources": [
+        {
+          "url": "https://stipendiumhungaricum.hu/apply/",
+          "label": "Stipendium Hungaricum — official terms",
+          "checkedAt": "2026-10-29"
+        },
+        {
+          "url": "https://stipendiumhungaricum.hu/wp-content/uploads/2025/10/BA_MA_OTM_Call_for_Applications_2026_27.pdf",
+          "label": "Official 2026–2027 call — tuition exemption and living-cost contributions",
+          "checkedAt": "2026-10-29"
+        }
+      ],
+      "notes": [
+        "პროგრამაზე მიღება და სტიპენდიის მინიჭება ცალკე გადაწყვეტილებებია. განაცხადამდე გადაამოწმე მიმდინარე კონკურსი და პირადი შესაბამისობა."
+      ]
+    },
+    {
+      "id": "funding_si-global-professionals-orebro",
+      "title": "SI Scholarship for Global Professionals — Örebro programmes",
+      "provider": "Swedish Institute",
+      "relationship": "listed-program",
+      "scope": {
+        "countryCodes": [
+          "SE"
+        ],
+        "degrees": [
+          "master"
+        ],
+        "fields": [],
+        "programIds": [],
+        "institutionDomains": [],
+        "institutionNames": [],
+        "programBindings": [
+          {
+            "institutionDomains": [
+              "oru.se"
+            ],
+            "titles": [
+              "Master's Programme in Information Systems - Information Security Management",
+              "Master's Programme in Statistics - Statistical Modelling and Data Science",
+              "Master's Programme in Public Planning for Sustainable Development"
+            ],
+            "sourceUrl": "https://www.oru.se/english/study/master-students/scholarships/scholarship-sisgp/"
+          }
+        ]
+      },
+      "conditions": {
+        "tuitionFeeLiable": true,
+        "checks": [
+          {
+            "subject": "applicant",
+            "key": "siEligibleCitizenship",
+            "label": "მოქალაქეობა SI-ის მიმდინარე დასაშვები ქვეყნების სიაში უნდა იყოს.",
+            "expected": true
+          },
+          {
+            "subject": "applicant",
+            "key": "siWorkExperience",
+            "label": "მიმდინარე ქვეყნის წესების მიხედვით მოთხოვნილი სამუშაო გამოცდილება დაადასტურე.",
+            "expected": true
+          },
+          {
+            "subject": "applicant",
+            "key": "siLeadershipExperience",
+            "label": "დაადასტურე მოთხოვნილი ლიდერობის გამოცდილება.",
+            "expected": true
+          }
+        ]
+      },
+      "coverage": {
+        "tuitionFull": true,
+        "livingSupport": true,
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "note": "შერჩეული მიმღებისთვის სწავლის, საარსებო და მგზავრობის დახმარება. პროგრამების ზუსტი კავშირები უნივერსიტეტის 2026 წლის შემოდგომის სიას ეყრდნობა; ეს 2027 წლის დაფინანსების დადასტურებული სია არ არის."
+      },
+      "call": {
+        "opensAt": null,
+        "deadline": null,
+        "deadlineScope": null,
+        "cycle": "2026–2027",
+        "observedStatus": "unknown",
+        "checkedAt": "2026-10-29",
+        "note": "შემდეგი მიღება, ქვეყნის წესები და კონკურსი SI-სთან გადაამოწმე. წყარო 2026 წლის შემოდგომის პროგრამებს ასახელებს; მომდევნო ციკლის ვადები უცნობია."
+      },
+      "sources": [
+        {
+          "url": "https://www.oru.se/english/study/master-students/scholarships/scholarship-sisgp/",
+          "label": "SI Scholarship for Global Professionals — Örebro programmes — official terms",
+          "checkedAt": "2026-10-29"
+        }
+      ],
+      "notes": [
+        "პროგრამაზე მიღება და სტიპენდიის მინიჭება ცალკე გადაწყვეტილებებია. განაცხადამდე გადაამოწმე მიმდინარე კონკურსი და პირადი შესაბამისობა."
       ]
     }
   ]

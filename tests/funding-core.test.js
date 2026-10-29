@@ -22,8 +22,8 @@ function assess(id, program, applicant = null, options = {}) {
     return Funding.fundingForProgram(program, program ? institution(program) : null, catalog, applicant, { asOf, ...options }).find(result => result.id === id);
 }
 
-test('all 12 sourced schemes validate in CommonJS and browser UMD without network', () => {
-    assert.deepEqual(Funding.validateFundingCatalog(catalog), { valid: true, issues: [], schemeCount: 12 });
+test('all 20 sourced schemes validate in CommonJS and browser UMD without network', () => {
+    assert.deepEqual(Funding.validateFundingCatalog(catalog), { valid: true, issues: [], schemeCount: 20 });
     const context = { URL };
     vm.runInNewContext(fs.readFileSync(path.resolve(__dirname, '../funding-core.js'), 'utf8'), context);
     assert.equal(typeof context.FundingCore.fundingForProgram, 'function');
@@ -33,7 +33,7 @@ test('all 12 sourced schemes validate in CommonJS and browser UMD without networ
     for (const source of sources) {
         const url = new URL(source.url);
         assert.equal(url.protocol, 'https:'); assert.equal(url.username, ''); assert.equal(url.password, '');
-        assert.equal(source.checkedAt, asOf); assert(source.label.length > 0);
+        assert.match(source.checkedAt,/^\d{4}-\d{2}-\d{2}$/); assert.ok(source.checkedAt<=catalog.metadata.checkedAt); assert(source.label.length > 0);
     }
 });
 

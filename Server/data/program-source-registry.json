@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "updatedAt": "2026-10-28",
+    "updatedAt": "2026-10-29",
     "scope": "Source registry for incremental, attributed imports of real study-programme listings. The worldwide institution directory is not evidence of worldwide programme coverage.",
     "matchingPolicy": "Match each imported programme to a unique existing institution using an institution-owned domain verified by the official source. Quarantine missing, unmatched or ambiguous domains; never distribute a country's programmes across all its institutions.",
     "unknownDataPolicy": "Keep unpublished degree, primary teaching language, mode, fees, deadlines, entry requirements and funding unknown. Multiple teaching languages do not prove an English-only route. Funding schemes require their own eligibility and deadline evidence.",
@@ -14,7 +14,9 @@
       "name": "DAAD International Programmes in Germany",
       "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/",
       "apiUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json",
-      "countryCodes": ["DE"],
+      "countryCodes": [
+        "DE"
+      ],
       "checkedAt": "2026-10-28",
       "enabled": true,
       "adapter": "daad-international-programmes",
@@ -24,10 +26,33 @@
       "coverageNote": "This curated international catalogue is not all programmes of every German institution and does not cover the worldwide directory. The degree[] API filter also returns cross-faculty research schools; those are counted as exclusions rather than converted to PhDs.",
       "institutionMatching": "Read the exact institution-name c-contact__link from a DAAD course-detail page, cache that institution-owned website for other listings of the same named institution, and retain the detail page as institutionEvidenceUrl. Missing domains remain unresolved. Individual university programme links are retained only when that exact detail page was read.",
       "disciplineMapping": "Map only exact published subject labels through an explicit dictionary to existing Core.SUBFIELDS and their categories. Programme titles and global filter counts are not classification evidence; unrecognised or compound subjects stay unknown.",
-      "pagination": {"type":"offset", "totalField":"numResults", "recordsField":"courses", "defaultPageSize":250, "defaultMaxPages":50},
-      "requestPolicy": {"maximumConcurrentRequests":4, "defaultConcurrentInstitutionLookups":3, "minimumDefaultRequestIntervalMs":250, "maximumAttempts":3, "timeoutMs":20000, "maximumRetryAfterMs":60000},
-      "robots": {"url":"https://www2.daad.de/robots.txt", "checkedAt":"2026-10-28", "httpStatus":404, "note":"No robots.txt policy was returned at the checked host. This is not a licence or unrestricted-use permission."},
-      "license": {"status":"copyright-stated-no-open-data-licence-confirmed", "url":"https://www.daad.de/en/imprint/", "checkedAt":"2026-10-28", "note":"DAAD's imprint states copyright protection for website content. Do not claim CC/MIT/public-domain rights for the catalogue. Adapter retains short factual fields and source links, excludes photographs and long descriptions, and keeps attribution. Bulk reuse permission is not established by this technical integration."},
+      "pagination": {
+        "type": "offset",
+        "totalField": "numResults",
+        "recordsField": "courses",
+        "defaultPageSize": 250,
+        "defaultMaxPages": 50
+      },
+      "requestPolicy": {
+        "maximumConcurrentRequests": 4,
+        "defaultConcurrentInstitutionLookups": 3,
+        "minimumDefaultRequestIntervalMs": 250,
+        "maximumAttempts": 3,
+        "timeoutMs": 20000,
+        "maximumRetryAfterMs": 60000
+      },
+      "robots": {
+        "url": "https://www2.daad.de/robots.txt",
+        "checkedAt": "2026-10-28",
+        "httpStatus": 404,
+        "note": "No robots.txt policy was returned at the checked host. This is not a licence or unrestricted-use permission."
+      },
+      "license": {
+        "status": "copyright-stated-no-open-data-licence-confirmed",
+        "url": "https://www.daad.de/en/imprint/",
+        "checkedAt": "2026-10-28",
+        "note": "DAAD's imprint states copyright protection for website content. Do not claim CC/MIT/public-domain rights for the catalogue. Adapter retains short factual fields and source links, excludes photographs and long descriptions, and keeps attribution. Bulk reuse permission is not established by this technical integration."
+      },
       "limitations": [
         "A listed programme may have changed since publication; verify the official source before applying.",
         "German institution scope does not imply every campus is physically in Germany.",
@@ -41,15 +66,810 @@
       "name": "Studyinfo / Opintopolku — Finnish National Agency for Education",
       "url": "https://opintopolku.fi/konfo/",
       "apiUrl": "https://opintopolku.fi/konfo-backend/search/koulutukset",
-      "countryCodes": ["FI"],
+      "countryCodes": [
+        "FI"
+      ],
       "checkedAt": "2026-10-28",
       "enabled": false,
       "adapter": null,
       "status": "public-endpoint-researched-not-imported",
       "scope": "Official Finnish education search. Its unfiltered results include secondary, vocational, continuing and higher education; university degree records require explicit type and provider verification.",
       "coverageNote": "No Studyinfo programme snapshot is imported by this adapter. Interface language and available translations must not be mistaken for teaching languages.",
-      "robots": {"url":"https://opintopolku.fi/robots.txt", "checkedAt":"2026-10-28", "httpStatus":200, "crawlDelaySeconds":30, "note":"Published robots policy disallows the public /konfo/*/haku/ search pages and specifies crawl-delay 30. Review applicable API access and reuse terms before implementing collection."},
-      "license": {"status":"not-confirmed", "note":"Public endpoint access was verified, but a bulk-reuse licence and complete provider/domain mapping have not been established."}
+      "robots": {
+        "url": "https://opintopolku.fi/robots.txt",
+        "checkedAt": "2026-10-28",
+        "httpStatus": 200,
+        "crawlDelaySeconds": 30,
+        "note": "Published robots policy disallows the public /konfo/*/haku/ search pages and specifies crawl-delay 30. Review applicable API access and reuse terms before implementing collection."
+      },
+      "license": {
+        "status": "not-confirmed",
+        "note": "Public endpoint access was verified, but a bulk-reuse licence and complete provider/domain mapping have not been established."
+      }
+    },
+    {
+      "id": "university-oslo-masters",
+      "name": "University of Oslo — official master programme listings",
+      "kind": "institution",
+      "url": "https://www.uio.no/english/studies/programmes/",
+      "countryCodes": [
+        "NO"
+      ],
+      "institutionDomains": [
+        "uio.no"
+      ],
+      "institutionName": "University of Oslo",
+      "institutionWebsite": "https://uio.no/",
+      "checkedAt": "2026-10-29",
+      "enabled": true,
+      "adapter": "oslo-masters",
+      "scope": "Selected official master-level listings from this configured university catalogue page. Not a complete national inventory.",
+      "unknownDataPolicy": "Titles and programme links are verified in the listing; languages, fees, dates and entry requirements remain unknown unless expressly published.",
+      "reusePolicy": "Retain factual titles and links with attribution; no images or full descriptions are republished."
+    },
+    {
+      "id": "university-vienna-masters",
+      "name": "University of Vienna — official master programme listings",
+      "kind": "institution",
+      "url": "https://studieren.univie.ac.at/en/applying-for-a-programme/admission-info/mag",
+      "countryCodes": [
+        "AT"
+      ],
+      "institutionDomains": [
+        "univie.ac.at"
+      ],
+      "institutionName": "University of Vienna",
+      "institutionWebsite": "https://univie.ac.at/",
+      "checkedAt": "2026-10-29",
+      "enabled": true,
+      "adapter": "vienna-masters",
+      "scope": "Selected official master-level listings from this configured university catalogue page. Not a complete national inventory.",
+      "unknownDataPolicy": "Titles and programme links are verified in the listing; languages, fees, dates and entry requirements remain unknown unless expressly published.",
+      "reusePolicy": "Retain factual titles and links with attribution; no images or full descriptions are republished."
+    },
+    {
+      "id": "university-uppsala-it-masters",
+      "name": "Uppsala University — official master programme listings",
+      "kind": "institution",
+      "url": "https://www.uu.se/en/study/masters-studies/masters-programmes/subjects/information-technology-and-data-science.html",
+      "countryCodes": [
+        "SE"
+      ],
+      "institutionDomains": [
+        "uu.se"
+      ],
+      "institutionName": "Uppsala University",
+      "institutionWebsite": "https://uu.se/",
+      "checkedAt": "2026-10-29",
+      "enabled": true,
+      "adapter": "uppsala-masters",
+      "scope": "Selected official master-level listings from this configured university catalogue page. Not a complete national inventory.",
+      "unknownDataPolicy": "Titles and programme links are verified in the listing; languages, fees, dates and entry requirements remain unknown unless expressly published.",
+      "reusePolicy": "Retain factual titles and links with attribution; no images or full descriptions are republished."
+    },
+    {
+      "id": "university-copenhagen-masters",
+      "name": "University of Copenhagen — official master programme listings",
+      "kind": "institution",
+      "url": "https://www.ku.dk/studies/masters",
+      "countryCodes": [
+        "DK"
+      ],
+      "institutionDomains": [
+        "ku.dk"
+      ],
+      "institutionName": "University of Copenhagen",
+      "institutionWebsite": "https://ku.dk/",
+      "checkedAt": "2026-10-29",
+      "enabled": true,
+      "adapter": "copenhagen-masters",
+      "scope": "Selected official master-level listings from this configured university catalogue page. Not a complete national inventory.",
+      "unknownDataPolicy": "Titles and programme links are verified in the listing; languages, fees, dates and entry requirements remain unknown unless expressly published.",
+      "reusePolicy": "Retain factual titles and links with attribution; no images or full descriptions are republished."
+    },
+    {
+      "id": "europe-kuleuven-be",
+      "name": "Katholieke Universiteit Leuven — verified official programme sources",
+      "kind": "institution",
+      "url": "https://kuleuven.be/",
+      "countryCodes": [
+        "BE"
+      ],
+      "institutionDomains": [
+        "kuleuven.be"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-cuni-cz",
+      "name": "Charles University Prague — verified official programme sources",
+      "kind": "institution",
+      "url": "https://cuni.cz/",
+      "countryCodes": [
+        "CZ"
+      ],
+      "institutionDomains": [
+        "cuni.cz"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-uw-edu-pl",
+      "name": "University of Warsaw — verified official programme sources",
+      "kind": "institution",
+      "url": "https://uw.edu.pl/",
+      "countryCodes": [
+        "PL"
+      ],
+      "institutionDomains": [
+        "uw.edu.pl"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-bme-hu",
+      "name": "Budapest University of Technology and Economics — verified official programme sources",
+      "kind": "institution",
+      "url": "https://bme.hu/",
+      "countryCodes": [
+        "HU"
+      ],
+      "institutionDomains": [
+        "bme.hu"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-tcd-ie",
+      "name": "University of Dublin, Trinity College — verified official programme sources",
+      "kind": "institution",
+      "url": "https://tcd.ie/",
+      "countryCodes": [
+        "IE"
+      ],
+      "institutionDomains": [
+        "tcd.ie"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-uni-lu",
+      "name": "University of Luxemburg — verified official programme sources",
+      "kind": "institution",
+      "url": "https://uni.lu/",
+      "countryCodes": [
+        "LU"
+      ],
+      "institutionDomains": [
+        "uni.lu"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-uc-pt",
+      "name": "Universidade de Coimbra — verified official programme sources",
+      "kind": "institution",
+      "url": "https://uc.pt/",
+      "countryCodes": [
+        "PT"
+      ],
+      "institutionDomains": [
+        "uc.pt"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-ub-edu",
+      "name": "Universitat de Barcelona — verified official programme sources",
+      "kind": "institution",
+      "url": "https://ub.edu/",
+      "countryCodes": [
+        "ES"
+      ],
+      "institutionDomains": [
+        "ub.edu"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-unibuc-ro",
+      "name": "University of Bucharest — verified official programme sources",
+      "kind": "institution",
+      "url": "https://unibuc.ro/",
+      "countryCodes": [
+        "RO"
+      ],
+      "institutionDomains": [
+        "unibuc.ro"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-tu-sofia-bg",
+      "name": "Technical University of Sofia — verified official programme sources",
+      "kind": "institution",
+      "url": "https://tu-sofia.bg/",
+      "countryCodes": [
+        "BG"
+      ],
+      "institutionDomains": [
+        "tu-sofia.bg"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-uni-lj-si",
+      "name": "University of Ljubljana — verified official programme sources",
+      "kind": "institution",
+      "url": "https://uni-lj.si/",
+      "countryCodes": [
+        "SI"
+      ],
+      "institutionDomains": [
+        "uni-lj.si"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-stuba-sk",
+      "name": "Slovak University of Technology in Bratislava — verified official programme sources",
+      "kind": "institution",
+      "url": "https://stuba.sk/",
+      "countryCodes": [
+        "SK"
+      ],
+      "institutionDomains": [
+        "stuba.sk"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-unizg-hr",
+      "name": "University of Zagreb — verified official programme sources",
+      "kind": "institution",
+      "url": "https://unizg.hr/",
+      "countryCodes": [
+        "HR"
+      ],
+      "institutionDomains": [
+        "unizg.hr"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-unsa-ba",
+      "name": "University of Sarajevo — verified official programme sources",
+      "kind": "institution",
+      "url": "https://unsa.ba/",
+      "countryCodes": [
+        "BA"
+      ],
+      "institutionDomains": [
+        "unsa.ba"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-bg-ac-rs",
+      "name": "University of Belgrade — verified official programme sources",
+      "kind": "institution",
+      "url": "https://bg.ac.rs/",
+      "countryCodes": [
+        "RS"
+      ],
+      "institutionDomains": [
+        "bg.ac.rs"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-ucg-ac-me",
+      "name": "University of Montenegro — verified official programme sources",
+      "kind": "institution",
+      "url": "https://ucg.ac.me/",
+      "countryCodes": [
+        "ME"
+      ],
+      "institutionDomains": [
+        "ucg.ac.me"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-unitir-edu-al",
+      "name": "University of Tirana — verified official programme sources",
+      "kind": "institution",
+      "url": "https://unitir.edu.al/",
+      "countryCodes": [
+        "AL"
+      ],
+      "institutionDomains": [
+        "unitir.edu.al"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-ukim-mk",
+      "name": "St.Cyril and Methodius University — verified official programme sources",
+      "kind": "institution",
+      "url": "https://ukim.mk/",
+      "countryCodes": [
+        "MK"
+      ],
+      "institutionDomains": [
+        "ukim.mk"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-uni-pr-edu",
+      "name": "University of Prishtina — verified official programme sources",
+      "kind": "institution",
+      "url": "https://uni-pr.edu/",
+      "countryCodes": [
+        "XK"
+      ],
+      "institutionDomains": [
+        "uni-pr.edu"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-vu-lt",
+      "name": "Vilnius University — verified official programme sources",
+      "kind": "institution",
+      "url": "https://vu.lt/",
+      "countryCodes": [
+        "LT"
+      ],
+      "institutionDomains": [
+        "vu.lt"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-lu-lv",
+      "name": "University of Latvia — verified official programme sources",
+      "kind": "institution",
+      "url": "https://lu.lv/",
+      "countryCodes": [
+        "LV"
+      ],
+      "institutionDomains": [
+        "lu.lv"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-hi-is",
+      "name": "University of Iceland — verified official programme sources",
+      "kind": "institution",
+      "url": "https://hi.is/",
+      "countryCodes": [
+        "IS"
+      ],
+      "institutionDomains": [
+        "hi.is"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-uni-li",
+      "name": "Universität Liechtenstein — verified official programme sources",
+      "kind": "institution",
+      "url": "https://uni.li/",
+      "countryCodes": [
+        "LI"
+      ],
+      "institutionDomains": [
+        "uni.li"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-ucy-ac-cy",
+      "name": "University of Cyprus — verified official programme sources",
+      "kind": "institution",
+      "url": "https://ucy.ac.cy/",
+      "countryCodes": [
+        "CY"
+      ],
+      "institutionDomains": [
+        "ucy.ac.cy"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-um-edu-mt",
+      "name": "University of Malta — verified official programme sources",
+      "kind": "institution",
+      "url": "https://um.edu.mt/",
+      "countryCodes": [
+        "MT"
+      ],
+      "institutionDomains": [
+        "um.edu.mt"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-uoc-gr",
+      "name": "University of Crete — verified official programme sources",
+      "kind": "institution",
+      "url": "https://uoc.gr/",
+      "countryCodes": [
+        "GR"
+      ],
+      "institutionDomains": [
+        "uoc.gr"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-uda-ad",
+      "name": "University of Andorra — verified official programme sources",
+      "kind": "institution",
+      "url": "https://uda.ad/",
+      "countryCodes": [
+        "AD"
+      ],
+      "institutionDomains": [
+        "uda.ad"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-unirsm-sm",
+      "name": "University of San Marino — verified official programme sources",
+      "kind": "institution",
+      "url": "https://unirsm.sm/",
+      "countryCodes": [
+        "SM"
+      ],
+      "institutionDomains": [
+        "unirsm.sm"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-monaco-edu",
+      "name": "International University of Monaco — verified official programme sources",
+      "kind": "institution",
+      "url": "https://monaco.edu/",
+      "countryCodes": [
+        "MC"
+      ],
+      "institutionDomains": [
+        "monaco.edu"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-utm-md",
+      "name": "Moldova Technical University — verified official programme sources",
+      "kind": "institution",
+      "url": "https://utm.md/",
+      "countryCodes": [
+        "MD"
+      ],
+      "institutionDomains": [
+        "utm.md"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-hse-ru",
+      "name": "Higher School of Economics — verified official programme sources",
+      "kind": "institution",
+      "url": "https://hse.ru/",
+      "countryCodes": [
+        "RU"
+      ],
+      "institutionDomains": [
+        "hse.ru"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-knu-ua",
+      "name": "Taras Shevchenko National University of Kyiv — verified official programme sources",
+      "kind": "institution",
+      "url": "https://knu.ua/",
+      "countryCodes": [
+        "UA"
+      ],
+      "institutionDomains": [
+        "knu.ua"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-tsu-ge",
+      "name": "Tbilisi State University — verified official programme sources",
+      "kind": "institution",
+      "url": "https://tsu.ge/",
+      "countryCodes": [
+        "GE"
+      ],
+      "institutionDomains": [
+        "tsu.ge"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-aua-am",
+      "name": "American University of Armenia — verified official programme sources",
+      "kind": "institution",
+      "url": "https://aua.am/",
+      "countryCodes": [
+        "AM"
+      ],
+      "institutionDomains": [
+        "aua.am"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-ada-edu-az",
+      "name": "Azerbaijan Diplomatic Academy — verified official programme sources",
+      "kind": "institution",
+      "url": "https://ada.edu.az/",
+      "countryCodes": [
+        "AZ"
+      ],
+      "institutionDomains": [
+        "ada.edu.az"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-metu-edu-tr",
+      "name": "Middle East Technical University — verified official programme sources",
+      "kind": "institution",
+      "url": "https://metu.edu.tr/",
+      "countryCodes": [
+        "TR"
+      ],
+      "institutionDomains": [
+        "metu.edu.tr"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-ethz-ch",
+      "name": "ETHZ - ETH Zurich — verified official programme sources",
+      "kind": "institution",
+      "url": "https://ethz.ch/",
+      "countryCodes": [
+        "CH"
+      ],
+      "institutionDomains": [
+        "ethz.ch"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-grsu-by",
+      "name": "Grodno State University Yanka Kupaly — verified official programme sources",
+      "kind": "institution",
+      "url": "https://grsu.by/",
+      "countryCodes": [
+        "BY"
+      ],
+      "institutionDomains": [
+        "grsu.by"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-unigre-it",
+      "name": "Pontifcia Università Gregoriana — verified official programme sources",
+      "kind": "institution",
+      "url": "https://unigre.it/",
+      "countryCodes": [
+        "VA"
+      ],
+      "institutionDomains": [
+        "unigre.it"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "cybersure-consortium",
+      "name": "CYBERSURE — official consortium programme",
+      "kind": "official-directory",
+      "url": "https://www.aalto.fi/en/programmes/masters-programme-in-cybersecurity-and-assurance-cybersure",
+      "countryCodes": [
+        "FI",
+        "NO",
+        "SE",
+        "DK",
+        "EE",
+        "FR",
+        "AT"
+      ],
+      "institutionDomains": [
+        "aalto.fi",
+        "ntnu.no",
+        "kth.se",
+        "dtu.dk",
+        "ut.ee",
+        "eurecom.eu",
+        "tugraz.at"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "multidiverse-consortium",
+      "name": "MultiDiverse — official joint master consortium",
+      "kind": "official-directory",
+      "url": "https://www.multidiverse.eu/",
+      "countryCodes": [
+        "DE",
+        "GR",
+        "PL"
+      ],
+      "institutionDomains": [
+        "uni-konstanz.de",
+        "auth.gr",
+        "uj.edu.pl"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-oru-se",
+      "name": "Örebro University — verified official programme sources",
+      "kind": "institution",
+      "url": "https://oru.se/",
+      "countryCodes": [
+        "SE"
+      ],
+      "institutionDomains": [
+        "oru.se"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "europe-nu-edu-kz",
+      "name": "Nazarbayev University — verified official programme sources",
+      "kind": "institution",
+      "url": "https://nu.edu.kz/",
+      "countryCodes": [
+        "KZ"
+      ],
+      "institutionDomains": [
+        "nu.edu.kz"
+      ],
+      "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
     }
   ]
 }

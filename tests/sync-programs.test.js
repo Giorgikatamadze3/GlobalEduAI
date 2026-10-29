@@ -38,7 +38,7 @@ function fixture({snapshot,fetchError,failWrite,failRename,existingPatch}={}){
         unlinkSync(filename){files.delete(path.resolve(filename));}
     };
     const fetchCatalog=async fetchedSource=>{fetches.push(fetchedSource.id);if(fetchError)throw fetchError;return clone(value);};
-    return {files,events,fetches,before,dependencies:{fileSystem,fetchCatalog}};
+    return {files,events,fetches,before,dependencies:{fileSystem,fetchCatalog,supplementInstitutions:directory=>directory}};
 }
 
 test('program sync defaults to a fully validated dry run without changing the catalog or report',async()=>{

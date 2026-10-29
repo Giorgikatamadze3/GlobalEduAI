@@ -1,0 +1,375 @@
+{
+  "checkedAt": "2026-10-29",
+  "programCount": 1927,
+  "institutionsWithPrograms": 181,
+  "addedSincePreviousSnapshot": 251,
+  "individuallyCheckedEuropeanSeedRecords": 54,
+  "enabledInstitutionalSources": [
+    {
+      "sourceId": "university-oslo-masters",
+      "url": "https://www.uio.no/english/studies/programmes/",
+      "scope": "Selected official master-level listings from this configured university catalogue page. Not a complete national inventory.",
+      "records": 65
+    },
+    {
+      "sourceId": "university-vienna-masters",
+      "url": "https://studieren.univie.ac.at/en/applying-for-a-programme/admission-info/mag",
+      "scope": "Selected official master-level listings from this configured university catalogue page. Not a complete national inventory.",
+      "records": 112
+    },
+    {
+      "sourceId": "university-uppsala-it-masters",
+      "url": "https://www.uu.se/en/study/masters-studies/masters-programmes/subjects/information-technology-and-data-science.html",
+      "scope": "Selected official master-level listings from this configured university catalogue page. Not a complete national inventory.",
+      "records": 8
+    },
+    {
+      "sourceId": "university-copenhagen-masters",
+      "url": "https://www.ku.dk/studies/masters",
+      "scope": "Selected official master-level listings from this configured university catalogue page. Not a complete national inventory.",
+      "records": 12
+    }
+  ],
+  "supplementalInstitutions": [
+    {
+      "id": "inst_2ded600537d1d2079a3dd5d7",
+      "name": "International University of Monaco",
+      "source": {
+        "name": "International University of Monaco — official institution and programme page",
+        "url": "https://www.monaco.edu/en/program/master-of-science-in-international-management/",
+        "retrievedAt": "2026-10-29",
+        "kind": "institution"
+      }
+    },
+    {
+      "id": "inst_c77fc1d2329af13fdf00caab",
+      "name": "EURECOM",
+      "source": {
+        "name": "EURECOM — official institution",
+        "url": "https://www.eurecom.fr/en",
+        "retrievedAt": "2026-10-29",
+        "kind": "institution"
+      }
+    }
+  ],
+  "europe": {
+    "scope": "51 European countries and education systems, including transcontinental/Caucasus systems, Kazakhstan and Kosovo. This is institutional affiliation, not a guarantee of an on-site campus in every country. All programme coverage remains partial.",
+    "countryCount": 51,
+    "countriesWithPrograms": 51,
+    "countries": [
+      {
+        "countryCode": "AD",
+        "institutionCount": 1,
+        "institutionsWithPrograms": 1,
+        "programCount": 2
+      },
+      {
+        "countryCode": "AL",
+        "institutionCount": 16,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "AM",
+        "institutionCount": 12,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "AT",
+        "institutionCount": 46,
+        "institutionsWithPrograms": 2,
+        "programCount": 113
+      },
+      {
+        "countryCode": "AZ",
+        "institutionCount": 33,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "BA",
+        "institutionCount": 16,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "BE",
+        "institutionCount": 50,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "BG",
+        "institutionCount": 37,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "BY",
+        "institutionCount": 34,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "CH",
+        "institutionCount": 76,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "CY",
+        "institutionCount": 17,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "CZ",
+        "institutionCount": 30,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "DE",
+        "institutionCount": 321,
+        "institutionsWithPrograms": 115,
+        "programCount": 1659
+      },
+      {
+        "countryCode": "DK",
+        "institutionCount": 34,
+        "institutionsWithPrograms": 2,
+        "programCount": 13
+      },
+      {
+        "countryCode": "EE",
+        "institutionCount": 10,
+        "institutionsWithPrograms": 2,
+        "programCount": 4
+      },
+      {
+        "countryCode": "ES",
+        "institutionCount": 96,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "FI",
+        "institutionCount": 35,
+        "institutionsWithPrograms": 2,
+        "programCount": 6
+      },
+      {
+        "countryCode": "FR",
+        "institutionCount": 295,
+        "institutionsWithPrograms": 2,
+        "programCount": 2
+      },
+      {
+        "countryCode": "GB",
+        "institutionCount": 193,
+        "institutionsWithPrograms": 4,
+        "programCount": 4
+      },
+      {
+        "countryCode": "GE",
+        "institutionCount": 15,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "GR",
+        "institutionCount": 33,
+        "institutionsWithPrograms": 2,
+        "programCount": 2
+      },
+      {
+        "countryCode": "HR",
+        "institutionCount": 12,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "HU",
+        "institutionCount": 42,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "IE",
+        "institutionCount": 27,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "IS",
+        "institutionCount": 10,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "IT",
+        "institutionCount": 93,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "KZ",
+        "institutionCount": 29,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "LI",
+        "institutionCount": 2,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "LT",
+        "institutionCount": 17,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "LU",
+        "institutionCount": 2,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "LV",
+        "institutionCount": 24,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "MC",
+        "institutionCount": 1,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "MD",
+        "institutionCount": 12,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "ME",
+        "institutionCount": 1,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "MK",
+        "institutionCount": 9,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "MT",
+        "institutionCount": 4,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "NL",
+        "institutionCount": 48,
+        "institutionsWithPrograms": 2,
+        "programCount": 2
+      },
+      {
+        "countryCode": "NO",
+        "institutionCount": 25,
+        "institutionsWithPrograms": 2,
+        "programCount": 66
+      },
+      {
+        "countryCode": "PL",
+        "institutionCount": 138,
+        "institutionsWithPrograms": 2,
+        "programCount": 2
+      },
+      {
+        "countryCode": "PT",
+        "institutionCount": 65,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "RO",
+        "institutionCount": 63,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "RS",
+        "institutionCount": 13,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "RU",
+        "institutionCount": 308,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "SE",
+        "institutionCount": 37,
+        "institutionsWithPrograms": 3,
+        "programCount": 12
+      },
+      {
+        "countryCode": "SI",
+        "institutionCount": 4,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "SK",
+        "institutionCount": 31,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "SM",
+        "institutionCount": 1,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "TR",
+        "institutionCount": 188,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "UA",
+        "institutionCount": 75,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "VA",
+        "institutionCount": 5,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
+        "countryCode": "XK",
+        "institutionCount": 5,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      }
+    ],
+    "completeness": "partial"
+  },
+  "integrity": {
+    "unmatchedProgrammeCount": 0,
+    "allProgrammesHaveSources": true,
+    "unknownFacts": "Unpublished fee, language and admission facts remain null. Country coverage is not all programmes or all institutions in a country.",
+    "jointProgrammes": "CYBERSURE and MultiDiverse partner-linked records describe shared joint programmes, not separate unique degrees."
+  }
+}

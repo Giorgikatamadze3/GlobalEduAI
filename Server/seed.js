@@ -28,7 +28,7 @@ function parseOptions(args) {
 }
 
 function loadImportSnapshot() {
-    const directory = JSON.parse(fs.readFileSync(DIRECTORY_FILE, 'utf8'));
+    const directory = require('../scripts/institution-supplements').applyInstitutionSupplements(require('../scripts/institution-overrides').applyInstitutionOverrides(JSON.parse(fs.readFileSync(DIRECTORY_FILE, 'utf8'))));
     const directoryErrors = validateDirectory(directory);
     if (directoryErrors.length) throw new Error(`Directory is invalid: ${directoryErrors.slice(0, 3).join('; ')}`);
     const programFile = JSON.parse(fs.readFileSync(PROGRAMS_FILE, 'utf8'));

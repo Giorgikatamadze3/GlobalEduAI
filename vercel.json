@@ -1,20 +1,28 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "express",
-  "regions": ["fra1"],
+  "regions": [
+    "fra1"
+  ],
   "buildCommand": "npm run build",
   "functions": {
     "app.js": {
       "maxDuration": 60,
-      "includeFiles": "{Server/data/{institutions,programs,admissions-statistics,funding,program-source-registry,institution-domain-overrides}.json,index.html,*.css,*.js}"
+      "includeFiles": "{Server/data/{institutions,programs,admissions-statistics,funding,program-source-registry,institution-domain-overrides,additional-institutions}.json,index.html,*.css,*.js}"
     }
   },
   "headers": [
     {
       "source": "/catalog.json",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=300, stale-while-revalidate=3600" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=300, stale-while-revalidate=3600"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
       ]
     }
   ]

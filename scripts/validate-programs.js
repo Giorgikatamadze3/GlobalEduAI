@@ -15,7 +15,7 @@ function host(value) {
     try { const url = new URL(value);const hostname=url.hostname.replace(/^www\./,'');return ['https:','http:'].includes(url.protocol) && !url.username && !url.password&&!isIP(hostname.replace(/^\[|\]$/g,''))&&hostname.includes('.')&&!/(?:^|\.)(localhost|local|internal)$/.test(hostname) ? hostname : null; }
     catch { return null; }
 }
-function validatePrograms(catalog) {
+function validatePrograms(catalog, {sources=registeredSources}={}) {
     const errors = [];
     if (!catalog || !Array.isArray(catalog.programs) || !catalog.metadata) return ['Expected {metadata,programs:[]}'];
     if (catalog.metadata.programCount !== catalog.programs.length) errors.push('Program metadata count must match records.');
@@ -45,7 +45,7 @@ function validatePrograms(catalog) {
         if (!Array.isArray(p.sources) || !p.sources.length || p.sources.some(source=>!host(source.url)||!validDate(source.checkedAt)||!source.label)) errors.push(`${label}: dated HTTP(S) references required`);
         const base = host(p.institutionWebsite);
         if(p.verificationStatus==='official-directory'){
-            const registry=registeredSources.find(source=>source.id===p.provenance?.sourceId&&source.kind==='official-directory');
+            const registry=sources.find(source=>source.id===p.provenance?.sourceId&&source.kind==='official-directory');
             const matches=value=>{try{const url=new URL(value),registered=new URL(registry.url);const prefix=registered.pathname.replace(/\/+$/,'');return host(value)===host(registry.url)&&(url.pathname===prefix||url.pathname.startsWith(prefix+'/'));}catch{return false;}};
             if(!registry||!registry.countryCodes.includes(p.countryCode)||p.provenance?.kind!=='official-directory'||!validDate(p.provenance?.checkedAt)||!matches(p.programUrl)||!p.sources?.some(source=>source.sourceId===registry.id&&source.kind==='official-directory'&&matches(source.url)))errors.push(`${label}: registered official-directory provenance required`);
         }else if (!p.sources?.some(source=>{const candidate=host(source.url);return candidate&&base&&(candidate===base||candidate.endsWith(`.${base}`));})) errors.push(`${label}: at least one institution-owned source required`);

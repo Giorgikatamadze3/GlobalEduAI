@@ -122,7 +122,7 @@ test('recommendations include score breakdown and distinguish cohort rates from 
 
 test('funding API publishes dated official rules and no award promises',async()=>{
     const response=await fetch(`${base}/api/funding`);assert.equal(response.status,200);
-    const data=await response.json();assert.equal(data.schemes.length,12);
+    const data=await response.json();assert.equal(data.schemes.length,20);
     assert.ok(data.schemes.every(s=>s.sources.length&&s.sources.every(source=>source.url.startsWith('https://')&&source.checkedAt)));
     assert.ok(data.schemes.every(s=>s.awardGuaranteed!==true&&!('fullFunding' in s.coverage)));
 });
@@ -146,7 +146,9 @@ test('funding filter joins the actual programme and institution rather than coun
 test('imported programme provenance and unknown admissions/financial data survive the public payload',async()=>{
     const data=await fetch(`${base}/catalog.json`).then(r=>r.json());
     const imported=data.programs.filter(p=>p.verificationStatus==='official-directory');assert.ok(imported.length>=1600);
-    assert.ok(imported.every(p=>p.provenance.sourceId==='daad-international-programmes'&&p.provenance.checkedAt&&p.institutionId));
+    const registered=new Set(require('../Server/data/program-source-registry.json').sources.filter(s=>s.kind==='official-directory').map(s=>s.id));
+    assert.ok(imported.every(p=>registered.has(p.provenance.sourceId)&&p.provenance.checkedAt&&p.institutionId));
+    assert.ok(imported.some(p=>p.provenance.sourceId==='multidiverse-consortium'));
     assert.ok(imported.every(p=>p.tuition.amount===null&&p.requirements.gpaMinPercent===null&&p.funding.fullFunding===null));
     assert.ok(data.programs.some(p=>p.id==='program_taltech-cybersecurity-msc'));
     assert.equal(data.metadata.programSources.sourceSnapshots['daad-international-programmes'].listingComplete,true);

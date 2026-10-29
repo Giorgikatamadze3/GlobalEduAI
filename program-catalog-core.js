@@ -169,6 +169,8 @@ function normalizeProgramRecord(record,source,{checkedAt} = {}) {
         field,category,degree,language,languages:[...new Set(languages)].sort(),mode:optionalEnum(record.mode,MODES,'mode'),
         durationMonths:record.durationMonths == null ? null : optionalNumber(record.durationMonths,'durationMonths',Number.MIN_VALUE,1200),
         programUrl,subject:shortText(record.subject,'subject',500),city:shortText(record.city,'city',200),
+        ...(record.studyLocation?{studyLocation:{countryCode:optionalEnum(record.studyLocation.countryCode,new Set(Object.keys(Core.COUNTRIES)),'studyLocation.countryCode'),'city':shortText(record.studyLocation.city,'studyLocation.city',200),note:shortText(record.studyLocation.note,'studyLocation.note',1000)}}:{}),
+        ...(record.qualificationType?{qualificationType:shortText(record.qualificationType,'qualificationType',100)}:{}),
         sourceLanguages:sourceLanguageLabels,
         tuition,funding:{fullFunding:fundingInput.fullFunding ?? null,scholarships:[]},requirements,deadline,sources,
         verificationStatus:registry.kind === 'official-directory' ? 'official-directory' : 'official-source',updatedAt:registry.checkedAt,provenance,imports:[clone(provenance)]
@@ -353,7 +355,9 @@ function computeProgramCoverage(institutions,programs,sources = {}) {
         const rows = index.institutions.filter(item => item.countryCode === countryCode);
         return {countryCode,institutionCount:rows.length,institutionsWithPrograms:rows.filter(item => linked.has(item.id)).length,programCount:counts.get(countryCode) || 0};
     });
-    return {institutionCount:index.institutions.length,institutionsWithPrograms:linked.size,institutionsWithoutPrograms:index.institutions.length - linked.size,
+    const europeCodes='AL AD AT BA BE BG BY CH CZ DE DK EE ES FI FR GB GR HR HU IE IS IT LI LT LU LV MC MD ME MK MT NL NO PL PT RO RS RU SE SI SK SM UA VA XK AM AZ CY GE TR KZ'.split(' ');
+    const europeCountries=europeCodes.map(countryCode=>countries.find(row=>row.countryCode===countryCode)||{countryCode,institutionCount:0,institutionsWithPrograms:0,programCount:0}).sort((a,b)=>a.countryCode.localeCompare(b.countryCode));
+    return {europe:{scope:'51 European countries and education systems, including transcontinental/Caucasus systems, Kazakhstan and Kosovo. This is institutional affiliation, not a guarantee of an on-site campus in every country. All programme coverage remains partial.',countryCount:europeCodes.length,countriesWithPrograms:europeCountries.filter(row=>row.programCount>0).length,countries:europeCountries,completeness:'partial'},institutionCount:index.institutions.length,institutionsWithPrograms:linked.size,institutionsWithoutPrograms:index.institutions.length - linked.size,
         programCount:programs.length,linkedProgramCount,unmatchedProgramCount:programs.length - linkedProgramCount,
         coveragePercent:index.institutions.length ? Math.round(linked.size / index.institutions.length * 10000) / 100 : 0,
         sources:sourceList.map(source => ({id:source.id,kind:source.kind || null,checkedAt:source.checkedAt || null,programCount:sourceCounts.get(source.id) || 0,

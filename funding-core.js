@@ -95,7 +95,7 @@
             if (!validCall(scheme.call)) add(id, 'Call dates/status are invalid; never infer an annual deadline.');
             const conditions = scheme.conditions;
             if (!record(conditions)) { add(id, 'conditions are required.'); continue; }
-            const allowed = new Set(['modes', 'languages', 'durationMonths', 'excludedFields', 'excludedQualificationTypes', 'excludedProgramTitles', 'tuitionFeeLiable', 'excludeEuEeaSwiss', 'excludedCitizenshipCodes', 'excludedResidenceCodes', 'minExperienceYears', 'minPostGraduationWorkHours', 'maxAge', 'enrollment', 'checks', 'exclusions']);
+            const allowed = new Set(['modes', 'languages', 'durationMonths', 'excludedFields', 'excludedQualificationTypes', 'excludedProgramTitles', 'tuitionFeeLiable', 'excludeEuEeaSwiss', 'excludedCitizenshipCodes', 'excludedResidenceCodes', 'minExperienceYears', 'minPostGraduationWorkHours', 'minGpa4', 'maxAge', 'enrollment', 'checks', 'exclusions']);
             if (Object.keys(conditions).some(key => !allowed.has(key))) add(id, 'Unknown applicability condition.');
             const conditionArrays = ['modes', 'languages', 'excludedFields', 'excludedQualificationTypes', 'excludedProgramTitles', 'excludedCitizenshipCodes', 'excludedResidenceCodes', 'checks', 'exclusions'];
             if (conditionArrays.some(key => conditions[key] !== undefined && !Array.isArray(conditions[key]))) {
@@ -108,6 +108,7 @@
             if (conditions.durationMonths != null && (!record(conditions.durationMonths) || !['min', 'max'].some(key => conditions.durationMonths[key] != null) || !['min', 'max'].every(key => conditions.durationMonths[key] == null || Number.isFinite(conditions.durationMonths[key]) && conditions.durationMonths[key] >= 0) || conditions.durationMonths.min != null && conditions.durationMonths.max != null && conditions.durationMonths.min > conditions.durationMonths.max || conditions.durationMonths.degrees !== undefined && (!Array.isArray(conditions.durationMonths.degrees) || !conditions.durationMonths.degrees.every(degree => DEGREES.includes(degree))))) add(id, 'Invalid duration range.');
             for (const check of conditions.checks || []) if (!record(check) || !['program', 'institution', 'applicant'].includes(check.subject) || !/^[a-zA-Z][a-zA-Z0-9]*$/.test(check.key) || ![true, false].includes(check.expected) || !text(check.label)) add(id, 'Invalid explicit applicability check.');
             for (const exclusion of conditions.exclusions || []) if (!record(exclusion) || !Array.isArray(exclusion.institutionDomains) || !exclusion.institutionDomains.length || !exclusion.institutionDomains.every(host => host === domain(host)) || !sourceUrls.has(exclusion.sourceUrl) || !text(exclusion.reason)) add(id, 'Institution exclusion requires official evidence.');
+            if (conditions.minGpa4 != null && (typeof conditions.minGpa4 !== 'number' || !Number.isFinite(conditions.minGpa4) || conditions.minGpa4 < 0 || conditions.minGpa4 > 4)) add(id, 'Invalid 4-point GPA condition.');
             if (conditions.enrollment != null && (!record(conditions.enrollment) || !record(conditions.enrollment.minSemesterByDegree) || !Object.entries(conditions.enrollment.minSemesterByDegree).every(([key, value]) => DEGREES.includes(key) && Number.isInteger(value) && value > 0))) add(id, 'Invalid enrollment condition.');
         }
         return { valid: issues.length === 0, issues, schemeCount: catalog.schemes.length };
@@ -208,6 +209,11 @@
             const value = applicant && applicant[key];
             if (typeof value !== 'number' || !Number.isFinite(value) || value < 0) unknown(`${label} დასაზუსტებელია.`);
             else if (value < conditions[condition]) fail(`${label}: მინიმალური მოთხოვნა არ სრულდება.`);
+        }
+        if (conditions.minGpa4 != null) {
+            const value = applicant && applicant.gpa4;
+            if (typeof value !== 'number' || !Number.isFinite(value) || value < 0 || value > 4) unknown('საჭიროა დადასტურებული GPA 0–4 სკალაზე. პროცენტული ქულა ავტომატურად არ გადაითვლება.');
+            else if (value < conditions.minGpa4) fail('გამოქვეყნებული მინიმალური GPA 0–4 სკალაზე არ სრულდება.');
         }
         if (conditions.maxAge != null) {
             const age = applicant && applicant.age;

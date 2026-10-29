@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "checkedAt": "2026-10-29",
+    "policy": "Verified institutions absent from the upstream directory. Separate source and stable IDs; never populate countries with invented universities."
+  },
+  "institutions": [
+    {
+      "id": "inst_2ded600537d1d2079a3dd5d7",
+      "name": "International University of Monaco",
+      "countryCode": "MC",
+      "country": "მონაკო",
+      "countryEnglish": "Monaco",
+      "region": "europe",
+      "city": "Monaco",
+      "stateProvince": null,
+      "domains": [
+        "monaco.edu"
+      ],
+      "website": "https://www.monaco.edu/",
+      "source": {
+        "name": "International University of Monaco — official institution and programme page",
+        "url": "https://www.monaco.edu/en/program/master-of-science-in-international-management/",
+        "retrievedAt": "2026-10-29",
+        "kind": "institution"
+      },
+      "verificationStatus": "official-institution-listed"
+    },
+    {
+      "id": "inst_c77fc1d2329af13fdf00caab",
+      "name": "EURECOM",
+      "countryCode": "FR",
+      "country": "საფრანგეთი",
+      "countryEnglish": "France",
+      "region": "europe",
+      "city": "Biot",
+      "stateProvince": null,
+      "domains": [
+        "eurecom.eu",
+        "eurecom.fr"
+      ],
+      "website": "https://www.eurecom.fr/",
+      "source": {
+        "name": "EURECOM — official institution",
+        "url": "https://www.eurecom.fr/en",
+        "retrievedAt": "2026-10-29",
+        "kind": "institution"
+      },
+      "verificationStatus": "official-institution-listed"
+    }
+  ]
+}

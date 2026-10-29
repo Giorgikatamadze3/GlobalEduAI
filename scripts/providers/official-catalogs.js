@@ -133,6 +133,7 @@ function createRequester({fetchImpl, signal, requestIntervalMs}) {
 }
 
 async function fetchOfficialCatalog(source, options = {}) {
+    if(['oslo-masters','vienna-masters','uppsala-masters','copenhagen-masters'].includes(source?.adapter))return require('./europe-official').fetchEuropeanCatalog(source,options);
     const sourceId = typeof source === 'string' ? source : source?.id;
     if (sourceId !== SOURCE_ID) throw new Error(`Unsupported official catalog source: ${sourceId || '(missing)'}`);
     const fetchImpl = options.fetchImpl || globalThis.fetch;

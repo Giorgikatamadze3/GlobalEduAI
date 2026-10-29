@@ -72,7 +72,7 @@ test('Vercel output contains only approved frontend files, assets and validated 
     assert.ok(catalog.institutions.length >= 10000);
     assert.ok(catalog.metadata.countryCount >= 190);
     assert.ok(catalog.programs.length >= 1600);
-    assert.equal(catalog.funding.schemes.length,12);
+    assert.equal(catalog.funding.schemes.length,20);
     assert.equal(catalog.metadata.programCoverage.completeness,'partial');
     assert.ok(catalog.programs.every(program => program.sources.length > 0));
     assert.ok(result.catalogBytes > 4_500_000, 'The full catalog is a CDN asset rather than an oversized function response.');

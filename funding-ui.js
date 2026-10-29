@@ -11,7 +11,14 @@ const FundingUI = (() => {
         'funding_dsu-toscana':'DSU Toscana', 'funding_helsinki-master-waiver':'Helsinki Scholarship',
         'funding_aalto-master-excellence':'Aalto Excellence', 'funding_tum-international-grant':'TUM / Bavaria',
         'funding_eth-esop':'ETH ESOP', 'funding_oxford-clarendon':'Clarendon',
-        'funding_gates-cambridge':'Gates Cambridge', 'funding_eiffel-paris-saclay':'Eiffel'
+        'funding_gates-cambridge':'Gates Cambridge', 'funding_eiffel-paris-saclay':'Eiffel',
+        'funding_erasmus-mundus-multidiverse':'Erasmus Mundus · MultiDiverse',
+        'funding_ku-leuven-ai-waiver':'KU Leuven · AI Waiver',
+        'funding_flanders-master-mind':'Master Mind', 'funding_nl-scholarship':'NL Scholarship',
+        'funding_luxembourg-guillaume-dupaix':'Guillaume Dupaix',
+        'funding_ireland-goi-trinity':'GOI-IES · Trinity',
+        'funding_stipendium-hungaricum':'Stipendium Hungaricum',
+        'funding_si-global-professionals-orebro':'SI · Global Professionals'
     };
     function summary(entity) {
         if(!catalogData?.funding||!entity?.id||!entityMap.has(entity.id))return '';

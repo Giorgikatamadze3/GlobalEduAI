@@ -36,7 +36,7 @@ app.use('/api/advisor-agent',express.json({limit:'128kb'}),createAdvisorRouter({
 app.use(express.json({limit:'64kb'}));
 app.get('/assets/vendor/pdf-lib.min.js',(req,res)=>res.sendFile(require.resolve('pdf-lib/dist/pdf-lib.min.js')));
 app.use('/assets', express.static(path.join(__dirname, '../assets')));
-for (const filename of ['index.html','i18n.js','style.css','ai-agent.css','funding.css','script.js','catalog-core.js','scoring-core.js','funding-core.js','funding-ui.js','catalog-ui.js','discovery-ui.js','ai-agent-ui.js','account-ui.js','preview-data.js','scholarships.js']) {
+for (const filename of ['index.html','i18n.js','style.css','ai-agent.css','funding.css','script.js','catalog-core.js','scoring-core.js','funding-core.js','funding-ui.js','catalog-ui.js','discovery-ui.js','ai-agent-ui.js','account-ui.js', 'account-workspace.css', 'student-workspace-core.js', 'student-workspace.js','preview-data.js','scholarships.js']) {
     app.get(`/${filename}`, (req,res) => res.sendFile(path.join(__dirname, '..', filename)));
 }
 app.get('/', (req,res) => res.sendFile(path.join(__dirname, '../index.html')));

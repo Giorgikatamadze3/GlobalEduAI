@@ -45,7 +45,7 @@ function programCard(entity, compare = true) {
     const id = escapeHTML(entity.id);
     const favorite = favoritesList.includes(entity.id);
     const program = entity.program;
-    const label = program ? (program.verificationStatus==='official-directory'?'DAAD · ოფიციალური კატალოგი':'პროგრამის ოფიციალური წყარო') : 'უნივერსიტეტების დირექტორია';
+    const label = program ? (program.verificationStatus==='official-directory'?(program.provenance?.sourceId?.startsWith('daad')?'DAAD · ოფიციალური კატალოგი':'ოფიციალური პროგრამების კატალოგი'):'პროგრამის ოფიციალური წყარო') : 'უნივერსიტეტების დირექტორია';
     const description = program ? program.title : (entity.domains?.[0] || entity.country);
     const tags = program
         ? `<span class="tag tag-neutral">${escapeHTML(optionLabel(CatalogCore.DEGREES, program.degree))}</span><span class="tag tag-neutral">${escapeHTML(programLanguage(program))}</span><span class="tag">${escapeHTML(fieldLabel(program))}</span>`
@@ -97,6 +97,11 @@ function renderCatalogSummary() {
     const meta = catalogData.metadata;
     $('catalogCoverage').innerHTML = `<div><strong>${meta.institutionCount.toLocaleString('en-US')}</strong><span>დაწესებულება დირექტორიაში</span></div><div><strong>${meta.countryCount}</strong><span>ქვეყანა და ტერიტორია</span></div><div><strong>${meta.programCount}</strong><span>პროგრამა ოფიციალური წყაროებით</span></div><p>${meta.institutionsWithPrograms} დაწესებულების პროგრამები · ${meta.fundingSchemeCount} დაფინანსების სქემა. პროგრამების დაფარვა ნაწილობრივია; პრიორიტეტია გერმანია და ევროპა. უცნობი საფასური და მიღების მოთხოვნები დასაზუსტებელია.</p>`;
     $('catalogSource').innerHTML = `წყარო: <a href="${escapeHTML(safeLink(meta.repositoryUrl || meta.sourceUrl) || '#')}" target="_blank" rel="noopener noreferrer">Hipo directory ↗</a> · განახლდა ${escapeHTML(meta.retrievedAt)} · სია არ არის სრული აკრედიტაციის რეესტრი.`;
+    const europe=meta.programCoverage?.europe;
+    if(europe){
+        $('catalogCoverage').insertAdjacentHTML('beforeend',`<details class="europe-coverage"><summary>ევროპის პროგრამები <span data-i18n-ignore>· ${europe.countriesWithPrograms} / ${europe.countryCount}</span></summary><p>აირჩიე ქვეყანა პროგრამების სანახავად. სიაში შედის ტრანსკონტინენტური ქვეყნები და განათლების სისტემები; პროგრამების დაფარვა ნაწილობრივია.</p><div class="europe-country-grid">${europe.countries.map(row=>`<button type="button" data-europe-country="${row.countryCode}"><span>${escapeHTML(CatalogCore.countryInfo(row.countryCode).name)}</span><b data-i18n-ignore>${row.programCount}</b></button>`).join('')}</div></details>`);
+        $('catalogCoverage').querySelectorAll('[data-europe-country]').forEach(button=>button.addEventListener('click',()=>{resetFilters(false);$('filterCountry').value=button.dataset.europeCountry;StudentDiscovery.refreshMulti('filterCountry');setCatalogView('programs');$('uniResultsGrid').scrollIntoView({behavior:'smooth',block:'start'});}));
+    }
 }
 function setCatalogView(view, keepFilters = false) {
     if (!['institutions','programs'].includes(view)) return;
@@ -165,6 +170,7 @@ function toggleFavorite(id) {
     if(currentUser){currentUser.favorites=[...favoritesList];api('/api/user/profile',{method:'PUT',headers:authHeaders(),body:JSON.stringify({favorites:favoritesList})}).catch(()=>notify('შენახულია ამ ბრაუზერში; ანგარიშთან სინქრონიზაცია ვერ მოხერხდა.',true));}
 }
 function renderFavorites() {
+    if (typeof StudentWorkspace !== 'undefined') StudentWorkspace.render();
     ['sidebarFavCount','statFavorites'].forEach(id=>$(id).textContent=favoritesList.length);
     if(universitiesStatus==='loading'){$('favoritesList').innerHTML='<div class="skeleton-card"></div>';return;}
     if(!favoritesList.length){$('favoritesList').innerHTML=emptyState('შენი მოკლე სია მზადაა შესავსებად','შეინახე როგორც უნივერსიტეტები, ისე კონკრეტული პროგრამები.','აღმოაჩინე კატალოგი','universities');return;}
@@ -183,6 +189,7 @@ function openDynamicUniModal(id) {
         const req=p.requirements||{};
         const details=[['პროგრამა',p.title],['საფეხური',optionLabel(CatalogCore.DEGREES,p.degree)],['მიმართულება',fieldLabel(p)],['ენა',programLanguage(p)],['სწავლის რეჟიმი',modeLabel(p.mode)],['ხანგრძლივობა',p.durationMonths?`${p.durationMonths} თვე`:'დასაზუსტებელია'],['სწავლის საფასური',tuitionText(p)],['ვისთვისაა საფასური',p.tuition?.applicantScope==='non-eu'?'EU/EEA-ს გარეთ მყოფი აპლიკანტი':p.tuition?.applicantScope==='international'?'საერთაშორისო აპლიკანტი':'წყაროს პირობების მიხედვით'],['მინ. აკადემიური მოსწრება',req.gpaMin4!=null?`${req.gpaMin4} / 4 GPA`:req.gpaMinPercent!=null?`${req.gpaMinPercent}%`:'ერთიანი პროცენტული ზღვარი არ არის დადასტურებული'],['ენის მოთხოვნა',req.languageTest?`${req.languageTest.name}: ${req.languageTest.minScore}${req.languageTest.componentsMinScore?` · თითო კომპონენტი: ${req.languageTest.componentsMinScore}`:''}`:req.languageLevel||'დასაზუსტებელია'],['განაცხადის ვადა',p.deadline?.date?formatDate(p.deadline.date):'დასაზუსტებელია'],['მიღების ციკლი',p.deadline?.cycle||'დასაზუსტებელია']];
         body=`<div class="detail-grid">${details.map(([label,value])=>`<div><span>${label}</span><strong${label==='პროგრამა'?' data-i18n-ignore':''}>${escapeHTML(value)}</strong></div>`).join('')}</div><div class="catalog-data-note"><strong>საფასური და ფინანსები</strong><p>${escapeHTML(p.tuition?.note||'მოითხოვე მიმდინარე ფასის დაზუსტება.')}</p><p>ცხოვრების, დაზღვევის, ვიზისა და სხვა ხარჯები ამ თანხაში ავტომატურად არ შედის. სტიპენდია გარანტირებული არ არის.</p></div><p class="detail-description">${escapeHTML(req.note||'ზუსტი აკადემიური წინაპირობები გადაამოწმე პროგრამის ოფიციალურ გვერდზე.')}</p><p class="detail-description">${escapeHTML(p.deadline?.note||'')}</p><h3 class="coverage-heading">წყაროები და შემოწმების თარიღი</h3>${sourceLinks(p.sources)}`;
+        if(p.studyLocation?.note)body=`<div class="catalog-data-note"><strong>სწავლის ფაქტობრივი ლოკაცია</strong><p data-i18n-ignore>${escapeHTML(p.studyLocation.city)} · ${escapeHTML(CatalogCore.countryInfo(p.studyLocation.countryCode).name)}</p><p>${escapeHTML(p.studyLocation.note)}</p></div>`+body;
     }else{
         const linked=programByInstitution.get(id)||[];
         body=`<p class="detail-description">ეს დაწესებულება უნივერსიტეტების საერთაშორისო დირექტორიაშია. ჩანაწერი შეიცავს სახელს, ქვეყანასა და ვებსაიტს. ის არ ადასტურებს კონკრეტული პროგრამის არსებობას, აკრედიტაციას ან მიღების პირობებს.</p><div class="detail-grid"><div><span>ქვეყანა</span><strong>${escapeHTML(entity.country)}</strong></div><div><span>დომენი</span><strong>${escapeHTML(entity.domains?.join(', '))}</strong></div><div><span>აღწერილი პროგრამები</span><strong>${linked.length}</strong></div><div><span>საფასური / მიღების ვადები</span><strong>კონკრეტული პროგრამის მიხედვით</strong></div></div><h3 class="coverage-heading">პროგრამები ჩვენს კატალოგში</h3>${linked.length?FundingUI.programList(id):'<p class="detail-description">ამ უნივერსიტეტის პროგრამების ოფიციალური აღწერები ჯერ დასამატებელია. ეწვიე უნივერსიტეტის ვებსაიტს — მიმართულება, საფასური და მიღების პირობები იქ გადაამოწმე.</p>'}<h3 class="coverage-heading">დირექტორიის წყარო</h3>${sourceLinks([entity.source])}`;

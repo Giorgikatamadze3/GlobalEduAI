@@ -66,6 +66,7 @@ function readAdvisorFields(prefix) {
     return {organizationName:$(register?'regOrganization':'advisorOrganization').value.trim(),position:$(register?'regPosition':'advisorPosition').value.trim(),website:$(register?'regWebsite':'advisorWebsite').value.trim(),bio:$(register?'regBio':'advisorBio').value.trim(),specialties:[...$(register?'regSpecialties':'advisorSpecialties').querySelectorAll('input:checked')].map(input => input.value)};
 }
 function updateAccountUI() {
+    if (typeof StudentWorkspace !== 'undefined') StudentWorkspace.render();
     if (typeof ChatAdvisor !== 'undefined') ChatAdvisor.accountChanged();
     if (typeof StudentDiscovery !== 'undefined') StudentDiscovery.restoreProfile();
     $('navRegBtn').innerHTML = `${currentUser ? 'კაბინეტი' : 'შესვლა'} <span>↗</span>`;
@@ -90,13 +91,14 @@ function updateAccountUI() {
     $('advisorSpecialties').querySelectorAll('input').forEach(input => input.checked = (profile.specialties || []).includes(input.value));
 }
 function switchDashTab(tab) {
-    const titles = {profile:'ჩემი პროფილი',documents:'დოკუმენტები',application:'PDF გენერაცია',favorites:'ჩემი ფავორიტები',organization:'პროფესიული პროფილი'};
+    const titles = {profile:'ჩემი პროფილი',planner:'ჩემი გეგმა',documents:'დოკუმენტები',application:'PDF გენერაცია',favorites:'ჩემი ფავორიტები',organization:'პროფესიული პროფილი'};
     if (!currentUser || !titles[tab]) return;
-    if ((tab === 'organization' && currentUser.role !== 'advisor') || (['documents','application'].includes(tab) && currentUser.role !== 'student')) tab = 'profile';
+    if ((tab === 'organization' && currentUser.role !== 'advisor') || (['documents','application','planner'].includes(tab) && currentUser.role !== 'student')) tab = 'profile';
     document.querySelectorAll('.dash-tab-content').forEach(panel => panel.style.display = panel.id === `tab-${tab}` ? 'block' : 'none');
     document.querySelectorAll('.dash-tab-btn').forEach(button => { const active = button.dataset.tab === tab; button.classList.toggle('active',active); button.setAttribute('aria-pressed',String(active)); });
     $('dashboard-title').textContent = titles[tab];
     if (tab === 'favorites') renderFavorites();
+    if (typeof StudentWorkspace !== 'undefined') StudentWorkspace.render();
 }
 function applyAccount(user) {
     if (!user || !['student','advisor'].includes(user.role) || !user.id && !user._id) throw new Error('სერვერმა ანგარიშის არასწორი მონაცემები დააბრუნა.');
