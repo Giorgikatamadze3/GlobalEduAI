@@ -38,7 +38,8 @@ function validatePrograms(catalog) {
         if (!(p.tuition?.applicantScope===null||['non-eu','international','all'].includes(p.tuition?.applicantScope))) errors.push(`${label}: applicant fee scope must be valid or explicitly unknown`);
         if(p.tuition?.amount!==null&&(!p.tuition?.currency||!p.tuition?.period||!p.tuition?.applicantScope))errors.push(`${label}: known tuition requires currency, period and applicant scope`);
         if (![true,false,null].includes(p.funding?.fullFunding)) errors.push(`${label}: fullFunding must be explicit boolean/null`);
-        if (p.requirements?.gpaMinPercent != null && (typeof p.requirements.gpaMinPercent !== 'number' || p.requirements.gpaMinPercent<0 || p.requirements.gpaMinPercent>100)) errors.push(`${label}: GPA threshold must be explicitly percent`);
+        if (p.requirements?.gpaMinPercent != null && (typeof p.requirements.gpaMinPercent !== 'number' || !Number.isFinite(p.requirements.gpaMinPercent) || p.requirements.gpaMinPercent<0 || p.requirements.gpaMinPercent>100)) errors.push(`${label}: GPA threshold must be explicitly percent`);
+        if (p.requirements?.gpaMin4 != null && (typeof p.requirements.gpaMin4 !== 'number' || !Number.isFinite(p.requirements.gpaMin4) || p.requirements.gpaMin4<0 || p.requirements.gpaMin4>4)) errors.push(`${label}: GPA 4-point threshold must be a finite number from 0 to 4`);
         if (p.deadline?.date !== null && !validDate(p.deadline?.date)) errors.push(`${label}: deadline must be exact ISO date or null`);
         if (!validDate(p.updatedAt) || !['official-source','official-directory'].includes(p.verificationStatus)) errors.push(`${label}: source status/date missing`);
         if (!Array.isArray(p.sources) || !p.sources.length || p.sources.some(source=>!host(source.url)||!validDate(source.checkedAt)||!source.label)) errors.push(`${label}: dated HTTP(S) references required`);

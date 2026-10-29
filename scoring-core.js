@@ -114,9 +114,9 @@
             push('interests',Core.searchInstitution(searchable,prefs.query)?match('ძიების სიტყვები პროგრამის აღწერას ემთხვევა.'):fail('ძიების სიტყვები პროგრამის აღწერაში ვერ მოიძებნა.'));
         }
         const requirements=program.requirements||{};
-        if(present(prefs.gpaPercent)){
-            const student=number(prefs.gpaPercent),minimum=number(requirements.gpaMinPercent);
-            push('academics',student===null||student<0||student>100?unknown('აკადემიური მოსწრების ვალიდური პროცენტული ქულა დასაზუსტებელია.') : minimum===null||minimum<0||minimum>100?unknown('პროგრამის პროცენტული აკადემიური მინიმუმი არ არის დადასტურებული.') : student>=minimum?match(`მოსწრება ${minimum}%-იან გამოქვეყნებულ მინიმუმს აკმაყოფილებს. ქულის აკადემიურ კომპონენტში მინიმუმის შესრულება იძლევა 60 ქულას; დარჩენილი 40 ასახავს სხვაობას 100%-მდე.`,minimum===100?1:0.6+0.4*(student-minimum)/(100-minimum)):fail(`მოსწრება ${minimum}%-იან გამოქვეყნებულ მინიმუმზე დაბალია.`));
+        if(present(prefs.gpa4)||present(prefs.gpaPercent)){
+            const academic=Core.academicComparison(program,prefs);
+            push('academics',academic.status==='unknown'?unknown(academic.detail):academic.status==='below'?fail(academic.detail):match(academic.detail,academic.minimum===academic.max?1:0.6+0.4*(academic.student-academic.minimum)/(academic.max-academic.minimum)));
         }
         if(present(prefs.experienceYears)){
             const student=number(prefs.experienceYears),minimum=number(requirements.experienceYears);
@@ -223,8 +223,8 @@
         if(dataCoverage<80)confidenceReasons.push('არჩეული კრიტერიუმების მონაცემთა ნაწილი უცნობია.');
         if(missing.length)confidenceReasons.push('მიღების მოთხოვნები ან აპლიკანტის გარემოებები ჯერ დასაზუსტებელია.');
         const confidence={status:confidenceReasons.length?'limited':'supported',label:confidenceReasons.length?'შეზღუდული მონაცემები':'ცნობილი მონაცემებით მხარდაჭერილი',reasons:confidenceReasons};
-        const academicMinimum=number(program.requirements?.gpaMinPercent),studentGpa=number(prefs.gpaPercent);
-        return {programId:program.id,institutionId:institution?.id||program.institutionId||null,program,institution,status:evaluation.status,fitScore,fitScoreLabel:'შესაბამისობის ქულა',conservativeScore,conservativeScoreLabel:'დადასტურებული ქულა ყველა მითითებული კრიტერიუმიდან',scoreRange:[conservativeScore,upperBoundScore],dataCoverage,dataCoverageLabel:'მითითებული კრიტერიუმების მონაცემთა დაფარვა',requestedWeight,knownWeight,earnedWeight,requestedCriteriaCount,knownCriteriaCount,breakdown,weights,readiness,confidence,academicMargin:academicMinimum!==null&&studentGpa!==null&&studentGpa>=0&&studentGpa<=100?studentGpa-academicMinimum:null,admissionChance:admissionChance(program,options,asOf),warnings:unique([...(evaluation.warnings||[]),...issues]),evaluatedAt:asOf};
+        const academic=Core.academicComparison(program,prefs);
+        return {programId:program.id,institutionId:institution?.id||program.institutionId||null,program,institution,status:evaluation.status,fitScore,fitScoreLabel:'შესაბამისობის ქულა',conservativeScore,conservativeScoreLabel:'დადასტურებული ქულა ყველა მითითებული კრიტერიუმიდან',scoreRange:[conservativeScore,upperBoundScore],dataCoverage,dataCoverageLabel:'მითითებული კრიტერიუმების მონაცემთა დაფარვა',requestedWeight,knownWeight,earnedWeight,requestedCriteriaCount,knownCriteriaCount,breakdown,weights,readiness,confidence,academicMargin:academic.status==='unknown'?null:academic.student-academic.minimum,academicMarginScale:academic.status==='unknown'?null:academic.scale,admissionChance:admissionChance(program,options,asOf),warnings:unique([...(evaluation.warnings||[]),...issues]),evaluatedAt:asOf};
     }
     function compareScores(a,b) {
         const order={'matches':0,'needs-verification':1,'excluded':2};

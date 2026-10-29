@@ -5,9 +5,21 @@
 .funding-card{min-width:0;padding:23px;border:1px solid var(--border);border-radius:20px;background:var(--bg-light);overflow-wrap:anywhere;text-align:left}
 .funding-card h4{font-size:1.1rem;line-height:1.65;margin:13px 0}.funding-card-top{display:flex;gap:8px;justify-content:space-between;align-items:start;flex-wrap:wrap}
 .funding-provider{font-size:.8rem;font-weight:800;letter-spacing:.04em;color:var(--primary)}
-.funding-call{font-size:.76rem;padding:5px 9px;border-radius:8px;background:#efedf8;color:#544573}.funding-call.open{background:#e5f4e4;color:#256231}.funding-call.closed{background:#f7e9e6;color:#984f3d}.funding-call.not-yet-open{background:#fff2ce;color:#7a5b10}
+.funding-call{font-size:.76rem;padding:5px 9px;border-radius:8px;background:var(--surface-neutral);color:var(--on-neutral)}.funding-call.open{background:var(--surface-success);color:var(--on-success)}.funding-call.closed{background:var(--surface-danger);color:var(--on-danger)}.funding-call.not-yet-open{background:var(--surface-warning);color:var(--on-warning)}
 .funding-association{display:inline-block;font-size:.83rem;font-weight:700;color:var(--primary);margin-bottom:7px}.funding-benefits{padding-left:18px;font-size:.9rem;line-height:1.85}.funding-dates{font-size:.84rem;line-height:1.8}
 .funding-rules{border-top:1px solid var(--border);margin:15px 0;padding-top:13px;font-size:.88rem;line-height:1.8}.funding-rules summary{cursor:pointer;font-weight:700}.funding-rules ul{padding-left:20px}.funding-rules p{margin-top:10px}.funding-rules .source-links{padding-left:0}.funding-rules a{word-break:break-word}
 .funding-no-guarantee{display:block;font-size:.79rem;line-height:1.7;color:var(--text-muted);margin-top:15px}.funding-program-search{display:block;font-size:.9rem;font-weight:700}.funding-program-search input{display:block;width:100%;margin:10px 0 14px;padding:13px;border:1px solid var(--border);border-radius:12px;background:var(--bg-light);color:inherit;font:inherit;box-sizing:border-box}.funding-list-count{font-size:.86rem;margin:14px 0}.funding-pagination{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:18px 0}.funding-pagination button:disabled{opacity:.4;cursor:default}
 .funding-linked-programs{display:flex;flex-direction:column;gap:9px;margin:14px 0;font-size:.83rem}.funding-linked-programs .text-button{text-align:left;justify-content:start;font-size:.83rem}.funding-scope{font-size:.85rem;color:var(--text-muted);margin-top:8px}
 @media(max-width:700px){.funding-grid{grid-template-columns:minmax(0,1fr)}.funding-card{padding:18px}.funding-pagination .btn-secondary{padding:9px;font-size:.8rem}}
+
+.institution-funding-summary{padding:0 0 17px;margin-top:2px;line-height:1.7}
+.institution-funding-summary>strong{display:block;font-size:.83rem;margin-bottom:8px;color:var(--text-dark)}
+.institution-funding-summary>small{display:block;font-size:.78rem;color:var(--text-muted);margin-top:8px;line-height:1.7}
+.funding-card-badges{display:flex;flex-wrap:wrap;gap:7px;align-items:center}
+.funding-provider-badge{display:inline-flex;align-items:center;max-width:100%;gap:5px;padding:5px 8px;border:1px solid var(--border-success);border-radius:7px;background:var(--surface-success);color:var(--on-success);font-size:.76rem;line-height:1.65;font-weight:650;overflow-wrap:anywhere}
+.funding-provider-badge.potential{border-color:var(--border);background:var(--surface-neutral);color:var(--on-neutral);font-weight:500}
+.funding-more{font-size:.78rem;color:var(--primary);font-weight:650}
+.funding-summary-label{display:block;font-size:.83rem;font-weight:650;color:var(--text-dark);margin-bottom:8px}
+.funding-summary-empty,.funding-summary-note{display:block;font-size:.78rem;line-height:1.75;color:var(--text-muted);margin-top:8px}
+.funding-provider-badge{flex-direction:column;align-items:flex-start;text-align:left}
+.funding-provider-badge>small{font-size:.7rem;font-weight:400;color:inherit;line-height:1.6}

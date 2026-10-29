@@ -6,7 +6,7 @@ const {loadCatalog} = require('../Server/catalog-service');
 
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const PUBLIC_FILES = Object.freeze([
-    'index.html', 'style.css', 'ai-agent.css', 'script.js', 'catalog-core.js',
+    'index.html', 'i18n.js', 'style.css', 'ai-agent.css', 'script.js', 'catalog-core.js',
     'scoring-core.js', 'catalog-ui.js', 'discovery-ui.js', 'ai-agent-ui.js',
     'account-ui.js', 'preview-data.js', 'scholarships.js', 'funding-core.js', 'funding-ui.js', 'funding.css'
 ]);

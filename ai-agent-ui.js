@@ -9,7 +9,7 @@ const ChatAdvisor = (() => {
     let scope;
     let generation = 0;
     let initialized = false;
-    const profileKeys = ['countryCodes','regions','degrees','fields','subjectFields','languages','modes','budget','currency','budgetPeriod','requiresFullFunding','gpaPercent','languageLevel','languageTests','experienceYears','citizenshipCode','weights','weightPreset'];
+    const profileKeys = ['countryCodes','regions','degrees','fields','subjectFields','languages','modes','budget','currency','budgetPeriod','requiresFullFunding','gpa4','languageLevel','languageTests','experienceYears','citizenshipCode','weights','weightPreset'];
 
     function inputState() {
         const count = [...$('agentMessage').value].length;
@@ -36,7 +36,7 @@ const ChatAdvisor = (() => {
             ...(profile.degrees || []).map(value => optionLabel(CatalogCore.DEGREES,value)),
             ...(profile.fields || []).map(value => optionLabel(CatalogCore.FIELDS,value)),
             ...(profile.budget !== null && profile.budget !== undefined ? [`ბიუჯეტი: ${profile.budget} ${profile.currency} / წელი`] : []),
-            ...(profile.gpaPercent !== null && profile.gpaPercent !== undefined ? [`მოსწრება: ${profile.gpaPercent}%`] : [])
+            ...(profile.gpa4 !== null && profile.gpa4 !== undefined ? [`GPA: ${profile.gpa4} / 4`] : [])
         ];
         $('agentContextSummary').textContent = tags.length ? `გაიზიარება ფორმაში მითითებული ინტერესები და შედეგები: ${tags.slice(0,5).join(' · ')}${tags.length>5?'…':''}` : 'გაიზიარება შეფასების ფორმაში მითითებული პირობები. მათი შეცვლა პროფილის შეფასების ჩანართში შეგიძლია.';
     }
@@ -47,12 +47,13 @@ const ChatAdvisor = (() => {
         const heading = textElement('div','agent-message-heading','');
         if (message.role === 'assistant') { const avatar = textElement('span','agent-avatar','✧'); avatar.setAttribute('aria-hidden','true'); heading.append(avatar); }
         heading.append(textElement('span','',message.role === 'assistant' ? 'GlobalEdu AI' : 'შენ'));
-        item.append(heading,textElement('div','agent-message-body',message.content));
+        const body=textElement('div','agent-message-body',message.content);body.dataset.i18nIgnore='';
+        item.append(heading,body);
         if (message.sources?.length) {
             const sources = document.createElement('div'); sources.className = 'agent-message-sources'; sources.setAttribute('aria-label','პასუხთან დაკავშირებული წყაროები');
             message.sources.slice(0,8).forEach(source => {
                 const url = safeLink(source.url); if (!url) return;
-                const link = textElement('a','',`${source.title || new URL(url).hostname} ↗`); link.href = url; link.target = '_blank'; link.rel = 'noopener noreferrer'; sources.append(link);
+                const link = textElement('a','',`${source.title || new URL(url).hostname} ↗`);link.dataset.i18nIgnore=''; link.href = url; link.target = '_blank'; link.rel = 'noopener noreferrer'; sources.append(link);
             });
             item.append(sources);
         }
@@ -60,8 +61,8 @@ const ChatAdvisor = (() => {
             const matches = document.createElement('div'); matches.className = 'agent-matches'; matches.append(textElement('span','','საუბრისას მოძიებული ჩანაწერები'));
             message.matches.slice(0,6).forEach(match => {
                 const button = document.createElement('button'); button.type = 'button'; button.className = 'agent-match';
-                const copy = document.createElement('div'); copy.append(textElement('strong','',match.name));
-                if (match.title || match.countryCode) copy.append(textElement('small','',match.title || CatalogCore.COUNTRIES[match.countryCode]?.name || match.countryCode));
+                const copy = document.createElement('div'),name=textElement('strong','',match.name);name.dataset.i18nIgnore='';copy.append(name);
+                if (match.title || match.countryCode) {const title=textElement('small','',match.title || CatalogCore.COUNTRIES[match.countryCode]?.name || match.countryCode);if(match.title)title.dataset.i18nIgnore='';copy.append(title);}
                 button.append(copy,textElement('span','','↗'));
                 button.addEventListener('click',async() => {
                     if (!entityMap.has(match.id)) await fetchUniversities();
@@ -140,6 +141,7 @@ const ChatAdvisor = (() => {
     async function send(event) {
         event.preventDefault(); if (controller || !enabled) return;
         const content = $('agentMessage').value.trim(); if (!content || [...content].length > 2000) return;
+        if($('agentShareProfile').checked&&!$('gpa').checkValidity()){showError('GPA მიუთითე 0–4 სკალაზე. შეასწორე შედეგი პროფილის შეფასების ჩანართში.');return;}
         hideError(); const profile = getProfile();
         // Keep seven complete turns and the new question; no chat content enters localStorage.
         const history = messages.slice(-14).map(message => ({role:message.role,content:message.content}));
@@ -149,7 +151,7 @@ const ChatAdvisor = (() => {
         $('agentThinking').hidden = false; render(); scrollConversation();
         try {
             const signal = AbortSignal.any([requestController.signal,AbortSignal.timeout(55000)]);
-            const response = await api('/api/advisor-agent/chat',{method:'POST',headers:{'Content-Type':'application/json'},signal,body:JSON.stringify({messages:[...history,{role:'user',content}],profile})});
+            const response = await api('/api/advisor-agent/chat',{method:'POST',headers:{'Content-Type':'application/json'},signal,body:JSON.stringify({messages:[...history,{role:'user',content}],profile,locale:window.I18n?.getLanguage?.()||'ka'})});
             const data = await response.json(); if (turn !== generation) return;
             if (typeof data.reply !== 'string' || !data.reply.trim()) throw new Error('პასუხი ვერ მივიღეთ. სცადე ხელახლა.');
             messages.push({role:'assistant',content:data.reply,sources:Array.isArray(data.sources)?data.sources:[],matches:Array.isArray(data.matches)?data.matches:[]});

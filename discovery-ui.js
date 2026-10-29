@@ -113,6 +113,8 @@ const StudentDiscovery = (() => {
     function updateProfileSummary() {$('studentProfileState').textContent=Object.keys(profile).length?'შენახული პროფილის მიხედვით':'ქულა მიმდინარე ინტერესების მიხედვით';}
     function restoreProfile() {
         profile=readStored(profileKey(),{});if(!profile||typeof profile!=='object'||Array.isArray(profile))profile={};
+        const academicMigration=CatalogCore.migrateAcademicProfile(profile);profile=academicMigration.profile;
+        if(academicMigration.migrated){writeStored(profileKey(),profile);if(academicMigration.requiresGpaEntry)notify('GPA ახლა 0–4 სკალაზეა. ძველი პროცენტული შედეგი არ გადაგვიყვანია; ხელახლა მიუთითე შენი GPA.');}
         if(profile.weights){weights={...AdmissionScoring.DEFAULT_WEIGHTS,...profile.weights};preset=profile.weightPreset||'balanced';}
         else {weights={...AdmissionScoring.DEFAULT_WEIGHTS};preset='balanced';}
         $('priorityPreset').value=preset;
@@ -120,7 +122,7 @@ const StudentDiscovery = (() => {
         const mappings={advisorCountry:['countryCodes','countryCode'],regionSelect:['regions','region'],degreeSelect:['degrees','degree'],majorSelect:['fields','field'],advisorSubject:['subjectFields','subjectField'],studyLangSelect:['languages','language'],advisorMode:['modes','mode']};
         $('aiForm').reset();
         Object.entries(mappings).forEach(([id,[multiple,single]])=>setSelected(id,profile[multiple]||(profile[single]?[profile[single]]:[])));
-        $('gpa').value=profile.gpaPercent??'';$('langLevelSelect').value=profile.languageLevel||'';$('advisorBudget').value=profile.budget??'';$('advisorCurrency').value=profile.currency||'EUR';$('citizenshipSelect').value=profile.citizenshipCode||'GE';$('expSelect').value=profile.experienceYears??'';$('advisorFunding').checked=profile.requiresFullFunding===true;
+        $('gpa').value=profile.gpa4??'';$('langLevelSelect').value=profile.languageLevel||'';$('advisorBudget').value=profile.budget??'';$('advisorCurrency').value=profile.currency||'EUR';$('citizenshipSelect').value=profile.citizenshipCode||'GE';$('expSelect').value=profile.experienceYears??'';$('advisorFunding').checked=profile.requiresFullFunding===true;
         const test=profile.languageTests?.[0];$('hasCertSelect').value=test?'yes':'';toggleCertVisibility();
         if(test){const known=[...$('certNameSelect').options].some(o=>o.value===test.name);$('certNameSelect').value=known?test.name:'other';toggleCustomInput('certNameSelect','certNameCustom');if(!known)$('certNameCustom').value=test.name;$('certScore').value=test.score??'';$('certComponentScore').value=test.minComponentScore??'';syncCertificateBounds();}
         cache.clear();scorePreferences=effectivePreferences();updateProfileSummary();

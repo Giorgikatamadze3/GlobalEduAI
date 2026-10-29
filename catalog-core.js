@@ -19,8 +19,8 @@
     const COUNTRY_OVERRIDES = {
         US:'აშშ',GB:'დიდი ბრიტანეთი',GE:'საქართველო',DE:'გერმანია',IT:'იტალია',CA:'კანადა',NL:'ნიდერლანდები',BE:'ბელგია',EE:'ესტონეთი',FR:'საფრანგეთი',ES:'ესპანეთი',PT:'პორტუგალია',AT:'ავსტრია',CH:'შვეიცარია',IE:'ირლანდია',DK:'დანია',SE:'შვედეთი',NO:'ნორვეგია',FI:'ფინეთი',IS:'ისლანდია',PL:'პოლონეთი',CZ:'ჩეხეთი',HU:'უნგრეთი',GR:'საბერძნეთი',CY:'კვიპროსი',MT:'მალტა',RO:'რუმინეთი',BG:'ბულგარეთი',HR:'ხორვატია',SI:'სლოვენია',SK:'სლოვაკეთი',LT:'ლიტვა',LV:'ლატვია',LU:'ლუქსემბურგი',TR:'თურქეთი',AM:'სომხეთი',AZ:'აზერბაიჯანი',UA:'უკრაინა',MD:'მოლდოვა',RS:'სერბეთი',ME:'მონტენეგრო',AL:'ალბანეთი',MK:'ჩრდილოეთ მაკედონია',BA:'ბოსნია და ჰერცეგოვინა',AU:'ავსტრალია',NZ:'ახალი ზელანდია',JP:'იაპონია',KR:'სამხრეთ კორეა',CN:'ჩინეთი',TW:'ტაივანი',HK:'ჰონკონგი',SG:'სინგაპური',IN:'ინდოეთი',MY:'მალაიზია',TH:'ტაილანდი',ID:'ინდონეზია',VN:'ვიეტნამი',PH:'ფილიპინები',AE:'არაბთა გაერთიანებული საამიროები',QA:'კატარი',SA:'საუდის არაბეთი',IL:'ისრაელი',ZA:'სამხრეთ აფრიკა',EG:'ეგვიპტე',MA:'მაროკო',NG:'ნიგერია',KE:'კენია',GH:'განა',BR:'ბრაზილია',AR:'არგენტინა',CL:'ჩილე',CO:'კოლუმბია',PE:'პერუ',MX:'მექსიკა',CR:'კოსტა-რიკა',XK:'კოსოვო'
     };
-    let georgianNames, englishNames;
-    try { georgianNames = new Intl.DisplayNames(['ka'], {type:'region'}); englishNames = new Intl.DisplayNames(['en'], {type:'region'}); } catch (_) { /* Stable fallback labels remain available. */ }
+    let georgianNames, englishNames, russianNames;
+    try { georgianNames = new Intl.DisplayNames(['ka'], {type:'region'}); englishNames = new Intl.DisplayNames(['en'], {type:'region'}); russianNames=new Intl.DisplayNames(['ru'],{type:'region'}); } catch (_) { /* Stable fallback labels remain available. */ }
     const COUNTRIES = {};
     Object.entries(REGION_CODES).forEach(([region, codes]) => codes.split(' ').forEach(code => {
         const english = englishNames ? englishNames.of(code) : code;
@@ -191,6 +191,9 @@
         if (budget !== null && budget < 0) { issues.push('ბიუჯეტი უარყოფითი ვერ იქნება.'); budget = null; }
         let gpaPercent = numeric(input.gpaPercent ?? input.gpa,'აკადემიური მოსწრება');
         if (gpaPercent !== null && (gpaPercent < 0 || gpaPercent > 100)) { issues.push('აკადემიური მოსწრება მიუთითე 0–100 პროცენტულ სკალაზე.'); gpaPercent = null; }
+        let gpa4 = numeric(input.gpa4,'GPA');
+        if (gpa4 !== null && (gpa4 < 0 || gpa4 > 4)) { issues.push('GPA მიუთითე 0–4 სკალაზე.'); gpa4 = null; }
+        if (provided(input.gpa4) && provided(input.gpaPercent ?? input.gpa)) issues.push('აკადემიური მოსწრება მიუთითე მხოლოდ ერთ სკალაზე: GPA 0–4 ან ძველი პროცენტული მონაცემი.');
         let experienceYears = numeric(input.experienceYears,'სამუშაო გამოცდილება');
         if (experienceYears !== null && experienceYears < 0) { issues.push('გამოცდილების წლები უარყოფითი ვერ იქნება.'); experienceYears = null; }
         const regionAliases = {usa:'north-america',uk:'europe','north america':'north-america','south america':'south-america',any:'','ნებისმიერი':''};
@@ -272,8 +275,35 @@
             degree, field:normalizeField(input.field ?? input.major ?? input.category), language,
             mode, budget, currency, budgetPeriod:input.budgetPeriod === 'program' ? 'program' : 'year',
             requiresFullFunding:specifiedFunding === null ? budget === 0 : specifiedFunding,
-            gpaPercent, languageLevel, languageTests, experienceYears, citizenshipCode, ...advanced, filterIssues:[...new Set(filterIssues)], issues:[...new Set(issues)]
+            gpa4, gpaPercent, languageLevel, languageTests, experienceYears, citizenshipCode, ...advanced, filterIssues:[...new Set(filterIssues)], issues:[...new Set(issues)]
         };
+    }
+
+    // GPA and percentages describe different grading systems. Compare only a
+    // published minimum on the supplied scale; never invent a conversion.
+    function academicComparison(program, preferences = {}) {
+        const prefs = normalizePreferences(preferences), requirements = program?.requirements || {};
+        if (prefs.gpa4 !== null && prefs.gpaPercent !== null) return {status:'unknown',student:null,minimum:null,scale:null,max:null,detail:'აკადემიური მოსწრება მიუთითე მხოლოდ ერთ სკალაზე: GPA 0–4 ან ძველი პროცენტული მონაცემი.'};
+        const four = numberOrNull(requirements.gpaMin4), percent = numberOrNull(requirements.gpaMinPercent);
+        const validFour = four !== null && four >= 0 && four <= 4;
+        const validPercent = percent !== null && percent >= 0 && percent <= 100;
+        const usesFour = prefs.gpa4 !== null;
+        const student = usesFour ? prefs.gpa4 : prefs.gpaPercent;
+        const scale = usesFour ? 4 : student !== null ? 100 : null;
+        const minimum = usesFour ? validFour ? four : null : validPercent ? percent : null;
+        if (student === null) return {status:'unknown',student:null,minimum:null,scale:null,max:null,detail:validFour||validPercent?'აკადემიურ მოთხოვნასთან შესადარებლად მიუთითე შენი GPA 0–4 სკალაზე.':'პროგრამის აკადემიური მინიმუმი და შეფასების სკალის შესაბამისობა დასაზუსტებელია.'};
+        if (minimum === null) return {status:'unknown',student,minimum:null,scale,max:scale,detail:usesFour&&validPercent?'GPA 0–4 და პროგრამის პროცენტული მინიმუმი პირდაპირ არ შედარდება; ოფიციალური ეკვივალენტობა უნივერსიტეტთან გადაამოწმე.':!usesFour&&validFour?'პროცენტული მოსწრება და პროგრამის GPA 0–4 მინიმუმი პირდაპირ არ შედარდება; ოფიციალური ეკვივალენტობა უნივერსიტეტთან გადაამოწმე.':'პროგრამის აკადემიური მინიმუმი და შეფასების სკალის შესაბამისობა დასაზუსტებელია.'};
+        const suffix = scale === 4 ? `${minimum} / 4 GPA` : `${minimum}%`;
+        return {status:student < minimum?'below':'met',student,minimum,scale,max:scale,detail:student<minimum?`აკადემიური მოსწრება: მითითებული მინიმუმია ${suffix}.`:`აკადემიური მინიმუმი: მითითებული შედეგი აკმაყოფილებს ${suffix} გამოქვეყნებულ ზღვარს; დიპლომის ეკვივალენტობა უნივერსიტეტმა უნდა დაადასტუროს.`};
+    }
+
+    function migrateAcademicProfile(input) {
+        const profile = isRecord(input) ? {...input} : {};
+        if (!provided(profile.gpaPercent) && !provided(profile.gpa)) return {profile,migrated:false,requiresGpaEntry:false};
+        const legacy = numberOrNull(profile.gpaPercent ?? profile.gpa);
+        if (legacy !== null && legacy >= 0 && legacy <= 100) profile.legacyAcademicRecord = {gpaPercent:legacy,scale:100};
+        delete profile.gpaPercent; delete profile.gpa;
+        return {profile,migrated:true,requiresGpaEntry:!provided(profile.gpa4)};
     }
 
     function hostname(value) {
@@ -324,7 +354,8 @@
         let haystack = SEARCH_CACHE.get(institution);
         if (!haystack) {
             const info = countryInfo(institution.countryCode,institution.countryEnglish);
-            haystack = canonical([institution.name,institution.country,institution.countryEnglish,info.name,info.nameEnglish,institution.countryCode,institution.city,institution.stateProvince,institution.website,...(institution.domains || [])].filter(Boolean).join(' '));
+            let russianCountry='';try{russianCountry=russianNames?.of(institution.countryCode)||'';}catch(_){/* Unknown source codes retain their original labels. */}
+            haystack = canonical([institution.name,institution.country,institution.countryEnglish,info.name,info.nameEnglish,russianCountry,institution.countryCode,institution.city,institution.stateProvince,institution.website,...(institution.domains || [])].filter(Boolean).join(' '));
             SEARCH_CACHE.set(institution,haystack);
         }
         return tokens.every(token => haystack.includes(token));
@@ -559,12 +590,10 @@
         }
 
         const requirements = program.requirements || {};
-        const publishedGpa = numberOrNull(requirements.gpaMinPercent);
-        const gpaMinimum = publishedGpa !== null && publishedGpa >= 0 && publishedGpa <= 100 ? publishedGpa : null;
-        if (gpaMinimum === null) missingDetail('პროგრამის აკადემიური მინიმუმი და შეფასების სკალის შესაბამისობა დასაზუსტებელია.');
-        else if (prefs.gpaPercent === null) missingDetail('აკადემიურ მოთხოვნასთან შესადარებლად მიუთითე შენი მოსწრება პროცენტულ სკალაზე.');
-        else if (prefs.gpaPercent < gpaMinimum) exclusionReasons.push(`აკადემიური მოსწრება: მითითებული მინიმუმია ${gpaMinimum}%.`);
-        else reasons.push('აკადემიური მინიმუმი: მითითებული პროცენტული მონაცემი აკმაყოფილებს გამოქვეყნებულ ზღვარს; ეკვივალენტობა უნივერსიტეტმა უნდა დაადასტუროს.');
+        const academic = academicComparison(program,prefs);
+        if (academic.status === 'unknown') missingDetail(academic.detail);
+        else if (academic.status === 'below') exclusionReasons.push(academic.detail);
+        else reasons.push(academic.detail);
         const languageMinimum = text(requirements.languageLevel).toUpperCase();
         const test = requirements.languageTest;
         const acceptedTests = Array.isArray(requirements.languageTests) && requirements.languageTests.length ? requirements.languageTests : test ? [test] : [];
@@ -657,5 +686,5 @@
         const excluded = results.filter(result => result.status === 'excluded').sort(sort);
         return {matches:results.filter(result => result.status === 'matches').sort(sort),needsVerification:results.filter(result => result.status === 'needs-verification').sort(sort),excluded,excludedCount:excluded.length,totalPrograms:programs.length,preferences:prefs};
     }
-    return Object.freeze({COUNTRIES,REGIONS,DEGREES,LANGUAGES,FIELDS,SUBFIELDS,countryInfo,normalizePreferences,createInstitutionIndex,resolveInstitution,attachInstitutionPrograms,searchInstitution,filterInstitutions,filterPrograms,filterCatalogInstitutions,hasProgramFilters,programSubjectFields,evaluateProgram,recommendPrograms});
+    return Object.freeze({COUNTRIES,REGIONS,DEGREES,LANGUAGES,FIELDS,SUBFIELDS,countryInfo,normalizePreferences,academicComparison,migrateAcademicProfile,createInstitutionIndex,resolveInstitution,attachInstitutionPrograms,searchInstitution,filterInstitutions,filterPrograms,filterCatalogInstitutions,hasProgramFilters,programSubjectFields,evaluateProgram,recommendPrograms});
 }));
