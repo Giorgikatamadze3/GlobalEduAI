@@ -5364,6 +5364,17 @@
         ["დირექტორიაში ეკუთვნის წმინდა საყდრის განათლების სისტემას. სასწავლო კამპუსი რომში, იტალიაშია და არა ვატიკანის ტერიტორიაზე.","Directory affiliation: Holy See education system. The teaching campus is in Rome, Italy; this is not an on-site Vatican City campus.","Принадлежность в справочнике: система образования Святого Престола. Учебный кампус находится в Риме, Италия, а не на территории Ватикана."],
         ["ყაზახეთი ტრანსკონტინენტური ქვეყნების არეალშია შეტანილი. ამ პროგრამაზე სწავლა ასტანაში მიმდინარეობს; ეს ქვეყნის ევროპულ ნაწილში კამპუსს არ ნიშნავს.","Kazakhstan is included in the transcontinental-country scope. This programme is taught in Astana; inclusion does not imply a campus in the European part of the country.","Казахстан включён в перечень трансконтинентальных стран. Эта программа преподаётся в Астане; это не означает наличие кампуса в европейской части страны."]
     );
+    PHRASES.push(
+        ['სწავლის ფორმატი','Study format','Формат обучения'],
+        ['დამალვა','Hide','Скрыть'],
+        ['შერჩევის დამატებითი პირობები','Additional matching criteria','Дополнительные критерии подбора'],
+        ['ემთხვევა','Matches','Соответствует'],
+        ['არ ემთხვევა','Does not match','Не соответствует'],
+        ['არჩეულ ვარიანტს ემთხვევა.','Matches a selected option.','Соответствует выбранному варианту.'],
+        ['არჩეულ ვარიანტს არ ემთხვევა.','Does not match a selected option.','Не соответствует выбранному варианту.'],
+        ['ამ პროგრამის ინდივიდუალური მიღების პროცენტის გამოსათვლელად საკმარისი სტატისტიკა და შემოწმებული პროგნოზული მოდელი არ გვაქვს.','There are not enough statistics or a validated predictive model to calculate your individual admission probability for this programme.','Недостаточно статистики и проверенной прогнозной модели для расчёта личной вероятности поступления на эту программу.'],
+        ['ქულისთვის აირჩიე ინტერესები ან შეავსე პროფილი','Choose preferences or complete your profile to get a score','Выбери интересы или заполни профиль для оценки']
+    );
     const dictionaries = {en:new Map(), ru:new Map()};
     const normalize = value => String(value ?? '').replace(/\s+/g, ' ').trim();
     for (const [source,en,ru] of PHRASES) {
