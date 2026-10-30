@@ -97,3 +97,11 @@
 @media(max-width:850px){.auth-container {display:block}.auth-story {display:none}.auth-form-side {padding-top:80px}.auth-box {margin-top:25px}.workspace-checklist {grid-template-columns:1fr;gap:12px}.profile-header-panel {padding:25px}.europe-country-grid {grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:540px){.auth-form-side {padding:85px 16px 35px}.auth-form-side>.back-btn {left:18px}.auth-form-side>.language-switch {right:18px}.auth-box {padding:24px 19px;border-radius:20px}.auth-box h2 {font-size:24px}.auth-box>.eyebrow {letter-spacing:1px;font-size:9px}.auth-box .role-details {padding:14px}.auth-box .form-grid {grid-template-columns:1fr}.profile-header-panel {flex-direction:row;gap:12px}.profile-avatar-large {width:54px;height:54px;font-size:19px}.profile-welcome-label {flex-wrap:wrap}.profile-header-panel .eyebrow {font-size:9px}.profile-header-panel h2 {font-size:23px}.profile-header-panel p {font-size:14px}.workspace-card,.workspace-plan {padding:19px}.workspace-plan .form-grid {grid-template-columns:1fr}.workspace-plan-heading {flex-wrap:wrap}.workspace-plan-heading>.tag {margin-left:54px}.workspace-plan-footer .btn-secondary {width:100%;justify-content:center}.workspace-topline h3 {font-size:19px}.workspace-deadlines li {flex-direction:column;gap:5px}.workspace-toolbar>* {width:100%;justify-content:center}.europe-country-grid {grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.dashboard-stats>button {transition:none}.dashboard-stats>button:hover {transform:none}}
+
+.academic-profile-section {border:1px solid var(--border);border-radius:16px;padding:22px;margin:24px 0;min-width:0;background:var(--bg-page)}
+.academic-profile-section legend {font-size:17px;font-weight:700;padding:0 8px;color:var(--text-dark)}
+.academic-profile-section>.small-note {display:block;margin-bottom:18px}
+.academic-profile-section .form-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+.academic-profile-section textarea {resize:vertical}
+.score-probability-note {font-size:12px;line-height:1.7;color:var(--text-muted);margin:6px 0}
+@media(max-width:650px){.academic-profile-section {padding:17px}.academic-profile-section .form-grid {grid-template-columns:1fr}}

@@ -204,14 +204,16 @@ function modeLabel(mode){return {'full-time':'სრული დატვირ
 
 function readAdvisorPreferences() {
     const cert=$('hasCertSelect').value==='yes';
-    const testName=$('certNameSelect').value==='other'?$('certNameCustom').value.trim():$('certNameSelect').value;
-    return StudentDiscovery.advisorChoices({countryCode:$('advisorCountry').value,region:$('regionSelect').value,degree:$('degreeSelect').value,field:$('majorSelect').value,language:$('studyLangSelect').value,mode:$('advisorMode').value,budget:$('advisorBudget').value===''?null:Number($('advisorBudget').value),currency:$('advisorCurrency').value,budgetPeriod:'year',requiresFullFunding:$('advisorFunding').checked,gpa4:$('gpa').value===''?null:Number($('gpa').value),languageLevel:$('langLevelSelect').value,languageTests:cert&&testName&&$('certScore').value!==''?[{name:testName,score:Number($('certScore').value),...(testName==='TOEFL iBT'?{scoreScale:'0-120'}:{}),...( $('certComponentScore').value!=='' ? {minComponentScore:Number($('certComponentScore').value)} : {} )}]:[],experienceYears:$('expSelect').value===''?null:Number($('expSelect').value),citizenshipCode:$('citizenshipSelect').value});
+    const selectedTestName=$('certNameSelect').value==='other'?$('certNameCustom').value.trim():$('certNameSelect').value;
+    const testName=selectedTestName==='TOEFL iBT 1-6'?'TOEFL iBT':selectedTestName;
+    return StudentDiscovery.advisorChoices({countryCode:$('advisorCountry').value,region:$('regionSelect').value,degree:$('degreeSelect').value,field:$('majorSelect').value,language:$('studyLangSelect').value,mode:$('advisorMode').value,budget:$('advisorBudget').value===''?null:Number($('advisorBudget').value),currency:$('advisorCurrency').value,budgetPeriod:'year',requiresFullFunding:$('advisorFunding').checked,gpa4:$('gpa').value===''?null:Number($('gpa').value),languageLevel:$('langLevelSelect').value,languageTests:cert&&testName&&$('certScore').value!==''?[{name:testName,score:Number($('certScore').value),...(testName==='TOEFL iBT'?{scoreScale:selectedTestName==='TOEFL iBT 1-6'?'1-6':'0-120'}:{}),...( $('certComponentScore').value!=='' ? {minComponentScore:Number($('certComponentScore').value)} : {} )}]:[],experienceYears:$('expSelect').value===''?null:Number($('expSelect').value),citizenshipCode:$('citizenshipSelect').value});
 }
 function syncCertificateBounds() {
     const name=$('certNameSelect').value;
-    const ielts=name==='IELTS Academic',toefl=name==='TOEFL iBT';
-    $('certScore').max=ielts?'9':toefl?'120':'1000'; $('certScore').step=ielts?'0.5':'1';
-    $('certComponentScore').max=ielts?'9':toefl?'30':'1000'; $('certComponentScore').step=ielts?'0.5':'1';
+    const ielts=name==='IELTS Academic',toefl=name==='TOEFL iBT',newToefl=name==='TOEFL iBT 1-6';
+    $('certScore').min=newToefl?'1':'0';$('certComponentScore').min=newToefl?'1':'0';
+    $('certScore').max=ielts?'9':toefl?'120':newToefl?'6':'1000'; $('certScore').step=ielts||newToefl?'0.5':'1';
+    $('certComponentScore').max=ielts?'9':toefl?'30':newToefl?'6':'1000'; $('certComponentScore').step=ielts?'0.5':'1';
 }
 function openAdvisorDirectory() {
     closeAllModals();resetFilters(false);

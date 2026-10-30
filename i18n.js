@@ -5375,6 +5375,48 @@
         ['ამ პროგრამის ინდივიდუალური მიღების პროცენტის გამოსათვლელად საკმარისი სტატისტიკა და შემოწმებული პროგნოზული მოდელი არ გვაქვს.','There are not enough statistics or a validated predictive model to calculate your individual admission probability for this programme.','Недостаточно статистики и проверенной прогнозной модели для расчёта личной вероятности поступления на эту программу.'],
         ['ქულისთვის აირჩიე ინტერესები ან შეავსე პროფილი','Choose preferences or complete your profile to get a score','Выбери интересы или заполни профиль для оценки']
     );
+    PHRASES.push(
+        ['აკადემიური ბექგრაუნდი','Academic background','Академическое образование'],
+        ['შერჩევის პრეფერენციები გასუფთავდა. აკადემიური მონაცემები შენს ანგარიშში რჩება.','Matching preferences cleared. Academic details remain in your account.','Настройки подбора очищены. Данные об образовании остаются в аккаунте.'],
+        ['გაზიარებულ პროფილში აკადემიური ბექგრაუნდი და სასწავლო მიზანიც შედის.','The shared profile also includes your academic background and study goal.','В передаваемый профиль также входят предыдущее образование и учебная цель.'],
+        ['მონაცემები შეინახება შენს ანგარიშში და პროგრამების შესაბამისობის შეფასებაში გამოიყენება.','These details are saved to your account and used when assessing programme fit.','Данные сохраняются в аккаунте и используются для оценки соответствия программам.'],
+        ['უნივერსიტეტი, სადაც სწავლობდი','Your previous university','Твой предыдущий университет'],
+        ['ფაკულტეტი / სპეციალობა','Faculty / specialisation','Факультет / специальность'],
+        ['წინა განათლების მიმართულება','Previous subject area','Направление предыдущего образования'],
+        ['წინა ხარისხის საფეხური','Previous degree level','Уровень предыдущего диплома'],
+        ['ხარისხის სტატუსი','Degree status','Статус диплома'],
+        ['ჯერ ვსწავლობ','Still studying','Ещё учусь'],
+        ['მაგ. 3.50','e.g. 3.50','например, 3.50'],
+        ['ენის სერტიფიკატი','Language certificate','Языковой сертификат'],
+        ['გაქვს ენის სერტიფიკატი?','Do you have a language certificate?','Есть ли языковой сертификат?'],
+        ['სერტიფიკატის ტიპი და სკალა','Certificate type and scale','Тип сертификата и шкала'],
+        ['საერთო ქულა','Overall score','Общий балл'],
+        ['კომპონენტის მინიმალური ქულა','Lowest component score','Минимальный балл компонента'],
+        ['სერტიფიკატის ვალიდურობა და გამონაკლისები უნივერსიტეტთან ცალკე მოწმდება. განსხვავებული სკალები ავტომატურად არ გადაითვლება.','Certificate validity and exemptions require separate university verification. Different scales are not converted automatically.','Срок действия сертификата и исключения проверяются университетом отдельно. Разные шкалы автоматически не пересчитываются.'],
+        ['სამომავლო სასწავლო გეგმა','Future study plans','Планы дальнейшего обучения'],
+        ['სასურველი საფეხური','Target degree level','Желаемый уровень обучения'],
+        ['სასურველი მიმართულება','Target subject area','Желаемое направление'],
+        ['რას გეგმავ მომავალში?','What would you like to study next?','Что ты планируешь изучать дальше?'],
+        ['აღწერე შენი სასწავლო მიზანი','Describe your study goal','Опиши цель обучения'],
+        ['თავისუფალი ტექსტი კონტექსტს ამატებს; პროგრამასთან შესაბამისობა დადასტურებული მოთხოვნებით ითვლება.','Free text adds context; programme fit is calculated against verified requirements.','Свободный текст добавляет контекст; соответствие программе рассчитывается по подтверждённым требованиям.'],
+        ['პირადი მიღების ალბათობა: მონაცემები არასაკმარისია.','Personal admission probability: insufficient evidence.','Личная вероятность поступления: недостаточно данных.'],
+        ['აკადემიური ბექგრაუნდის ოფიციალური მოთხოვნები დასაზუსტებელია.','Official academic background requirements need verification.','Официальные требования к предыдущему образованию нужно уточнить.'],
+        ['ხარისხის დასრულება და დიპლომის შესაბამისობა გადასამოწმებელია.','Degree completion and qualification recognition need verification.','Завершение обучения и признание диплома нужно проверить.'],
+        ['წინა ხარისხის საფეხური გამოქვეყნებულ მინიმუმს შეესაბამება.','The previous degree level meets the published minimum.','Уровень предыдущего диплома соответствует опубликованному минимуму.'],
+        ['წინა ხარისხის საფეხური გამოქვეყნებულ მინიმუმს ვერ აკმაყოფილებს.','The previous degree level does not meet the published minimum.','Уровень предыдущего диплома не соответствует опубликованному минимуму.'],
+        ['წინა განათლების მიმართულება მიუთითე.','Provide your previous subject area.','Укажи направление предыдущего образования.'],
+        ['წინა განათლების მიმართულება უნივერსიტეტის დასახელებულ მიმართულებებს ემთხვევა.','Your previous subject matches an area named by the university.','Предыдущее направление совпадает с указанным университетом.'],
+        ['სხვა მიმართულების კანდიდატისთვის გავლილი საგნების ინდივიდუალური შეფასებაა საჭირო.','Applicants from other subjects require an individual review of prior courses.','Для кандидатов других направлений нужна индивидуальная оценка пройденных курсов.'],
+        ['წინა განათლების მიმართულება გამოქვეყნებულ მოთხოვნას არ ემთხვევა.','Your previous subject does not match the published requirement.','Предыдущее направление не соответствует опубликованному требованию.'],
+        ['საჭიროა გავლილი საგნების, კრედიტებისა და დიპლომის ოფიციალური შემოწმება.','An official review of prior courses, credits and the degree is required.','Нужна официальная проверка пройденных курсов, кредитов и диплома.'],
+        ['მონაცემი არასწორია ან ტექსტი ზედმეტად გრძელია.','The value is invalid or the text is too long.','Некорректные данные или слишком длинный текст.'],
+        ['აირჩიე მნიშვნელობა სიიდან.','Choose a value from the list.','Выбери значение из списка.'],
+        ['ენის სერტიფიკატის მონაცემები არასწორია.','The language certificate details are invalid.','Данные языкового сертификата некорректны.'],
+        ['სერტიფიკატის ქულა ან სკალა არასწორია.','The certificate score or scale is invalid.','Некорректный балл или шкала сертификата.'],
+        ['ქულა ნახევარქულიანი ნაბიჯით მიუთითე.','Use half-point increments for this score.','Укажи балл с шагом 0,5.'],
+        ['კომპონენტის ქულა არასწორია.','The component score is invalid.','Некорректный балл компонента.'],
+        ['მიუთითე სერტიფიკატის ტიპი და შედეგი.','Provide the certificate type and result.','Укажи тип сертификата и результат.']
+    );
     const dictionaries = {en:new Map(), ru:new Map()};
     const normalize = value => String(value ?? '').replace(/\s+/g, ' ').trim();
     for (const [source,en,ru] of PHRASES) {

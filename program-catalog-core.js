@@ -146,6 +146,7 @@ function normalizeProgramRecord(record,source,{checkedAt} = {}) {
     if (tuition.amount !== null && (!tuition.currency || !tuition.period || !tuition.applicantScope)) fail('INVALID_RECORD','A known fee needs its currency, period and applicant scope.');
     const requirementsInput = objectOrEmpty(record.requirements,'requirements');
     const requirements = {
+        ...(requirementsInput.academicBackground?{academicBackground:clone(requirementsInput.academicBackground)}:{}),
         ...(Object.hasOwn(requirementsInput,'gpaMin4')?{gpaMin4:optionalNumber(requirementsInput.gpaMin4,'gpaMin4',0,4)}:{}),
         gpaMinPercent:optionalNumber(requirementsInput.gpaMinPercent,'gpaMinPercent',0,100),
         languageLevel:optionalEnum(requirementsInput.languageLevel,new Set(['A1','A2','B1','B2','C1','C2']),'languageLevel'),

@@ -9,7 +9,7 @@ const ChatAdvisor = (() => {
     let scope;
     let generation = 0;
     let initialized = false;
-    const profileKeys = ['countryCodes','regions','degrees','fields','subjectFields','languages','modes','budget','currency','budgetPeriod','requiresFullFunding','gpa4','languageLevel','languageTests','experienceYears','citizenshipCode','weights','weightPreset'];
+    const profileKeys = ['priorDegree','priorSubject','degreeStatus','academicUniversity','academicFaculty','studyGoal','countryCodes','regions','degrees','fields','subjectFields','languages','modes','budget','currency','budgetPeriod','requiresFullFunding','gpa4','languageLevel','languageTests','experienceYears','citizenshipCode','weights','weightPreset'];
 
     function inputState() {
         const count = [...$('agentMessage').value].length;
@@ -39,6 +39,7 @@ const ChatAdvisor = (() => {
             ...(profile.gpa4 !== null && profile.gpa4 !== undefined ? [`GPA: ${profile.gpa4} / 4`] : [])
         ];
         $('agentContextSummary').textContent = tags.length ? `გაიზიარება ფორმაში მითითებული ინტერესები და შედეგები: ${tags.slice(0,5).join(' · ')}${tags.length>5?'…':''}` : 'გაიზიარება შეფასების ფორმაში მითითებული პირობები. მათი შეცვლა პროფილის შეფასების ჩანართში შეგიძლია.';
+        if(profile.priorDegree||profile.academicUniversity||profile.academicFaculty||profile.studyGoal)$('agentContextSummary').textContent+=' გაზიარებულ პროფილში აკადემიური ბექგრაუნდი და სასწავლო მიზანიც შედის.';
     }
     function scrollConversation() { const panel = $('agentConversation'); panel.scrollTop = panel.scrollHeight; }
     function textElement(tag,className,value) { const node = document.createElement(tag); if (className) node.className = className; node.textContent = value; return node; }

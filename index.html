@@ -228,7 +228,7 @@
             <div class="ai-input-group"><label for="studyLangSelect">სწავლების ენა</label><select id="studyLangSelect" multiple><option value="">ყველა ენა</option></select></div>
             <div class="ai-input-group"><label for="langLevelSelect">ენის ცოდნის დონე (CEFR)</label><select id="langLevelSelect"><option value="">არ არის მითითებული</option><option>B1</option><option>B2</option><option>C1</option><option>C2</option></select></div>
             <div class="ai-input-group"><label for="hasCertSelect">გაქვს ენის სერტიფიკატი?</label><select id="hasCertSelect" onchange="toggleCertVisibility()"><option value="">არ ვუთითებ</option><option value="yes">კი, მაქვს</option><option value="no">არა / ჯერ ვემზადები</option></select></div>
-            <div class="ai-input-group cert-fields" id="certNameWrapper" style="display:none"><label for="certNameSelect">სერტიფიკატი და ქულა</label><select id="certNameSelect" onchange="toggleCustomInput('certNameSelect','certNameCustom')"><option value="">აირჩიე...</option><option value="IELTS Academic">IELTS Academic (0–9)</option><option value="TOEFL iBT">TOEFL iBT (0–120 სკალა)</option><option value="other">სხვა სერტიფიკატი</option></select><input id="certNameCustom" class="custom-hidden-input" placeholder="სერტიფიკატის ზუსტი სახელი"><div class="certificate-scores"><label>საერთო ქულა<input type="number" id="certScore" min="0" max="120" step="0.5" placeholder="არ ვუთითებ"></label><label>კომპონენტის მინ. ქულა<input type="number" id="certComponentScore" min="0" max="120" step="0.5" placeholder="არ ვუთითებ"></label></div><small>TOEFL-ის სხვა სკალის შედეგები პირდაპირ არ შედარდება /120 მოთხოვნებს.</small></div>
+            <div class="ai-input-group cert-fields" id="certNameWrapper" style="display:none"><label for="certNameSelect">სერტიფიკატი და ქულა</label><select id="certNameSelect" onchange="toggleCustomInput('certNameSelect','certNameCustom')"><option value="">აირჩიე...</option><option value="IELTS Academic">IELTS Academic (0–9)</option><option value="TOEFL iBT">TOEFL iBT (0–120 სკალა)</option><option value="TOEFL iBT 1-6">TOEFL iBT (1–6)</option><option value="other">სხვა სერტიფიკატი</option></select><input id="certNameCustom" class="custom-hidden-input" placeholder="სერტიფიკატის ზუსტი სახელი"><div class="certificate-scores"><label>საერთო ქულა<input type="number" id="certScore" min="0" max="120" step="0.5" placeholder="არ ვუთითებ"></label><label>კომპონენტის მინ. ქულა<input type="number" id="certComponentScore" min="0" max="120" step="0.5" placeholder="არ ვუთითებ"></label></div><small>TOEFL-ის სხვა სკალის შედეგები პირდაპირ არ შედარდება /120 მოთხოვნებს.</small></div>
             <div class="ai-input-group"><label for="expSelect">სამუშაო გამოცდილება</label><select id="expSelect"><option value="">არ ვუთითებ</option><option value="0">ჯერ არ მაქვს</option><option value="1">1 წელი</option><option value="2">2 წელი</option><option value="3">3 ან მეტი წელი</option></select></div>
             <div class="ai-input-group"><label for="advisorBudget">წლიური სწავლის ბიუჯეტი</label><div class="budget-input"><input type="number" id="advisorBudget" min="0" step="100" placeholder="შეზღუდვის გარეშე"><select id="advisorCurrency" aria-label="ბიუჯეტის ვალუტა"><option>EUR</option><option>USD</option><option>GBP</option><option>CAD</option><option>CHF</option><option>AUD</option></select></div><small>მიუთითე იმავე ვალუტაში, რომელშიც საფასურია. 0 ნიშნავს სწავლის ნულოვან საფასურს; სრული დაფინანსება ცალკე აირჩიე.</small></div>
         </div><label class="catalog-check advisor-funding"><input type="checkbox" id="advisorFunding"> მჭირდება სრული დაფინანსება, სწავლისა და ცხოვრების ხარჯების ჩათვლით</label><p class="small-note">მოქალაქეობა მარტო არ განსაზღვრავს ბინადრობის სტატუსს, შეღავათს ან სასტიპენდიო უფლებას. ასეთი პირობები ცალკე დასაზუსტებელია.</p><button type="submit" class="ai-submit-btn">შეამოწმე ჩემი შესაძლებლობები <span>✧</span></button></form><div id="result-container" style="display:none" aria-live="polite"></div>
@@ -260,6 +260,7 @@
     <div id="previewBanner" class="preview-banner" hidden><span>✧ ანგარიშის დემო <span class="preview-detail">· უნივერსიტეტების რეალური კატალოგი</span></span><a href="/">რეალურ რეჟიმზე დაბრუნება ↗</a></div>
     <script src="i18n.js"></script>
     <script src="catalog-core.js"></script>
+    <script src="student-profile-core.js"></script>
     <script src="scoring-core.js"></script>
     <script src="funding-core.js"></script>
     <script src="funding-ui.js"></script>
@@ -269,6 +270,7 @@
     <script src="scholarships.js"></script>
     <script src="ai-agent-ui.js"></script>
     <script src="account-ui.js"></script>
+    <script src="academic-profile-ui.js"></script>
     <script src="student-workspace-core.js"></script>
     <script src="student-workspace.js"></script>
     <script src="script.js"></script>

@@ -57,6 +57,14 @@ function setup(t) {
     return { ...context, pool, store };
 }
 
+test('Postgres JSON profile persists academic background, certificates and partial updates',async t=>{
+    const {store}=setup(t);
+    const created=await store.createUser(user({studentProfile:{educationLevel:'bachelor',academicUniversity:'Tbilisi State University',academicFaculty:'Computer Science',academicSubject:'computer-science',completedDegree:'bachelor',degreeStatus:'completed',gpa4:3.6,certificateStatus:'provided',languageCertificate:{name:'IELTS Academic',score:7,minComponentScore:6},targetDegree:'master',targetSubject:'data-science',studyGoal:'Study data science'}}));
+    assert.equal((await store.findById(created.id)).studentProfile.gpa4,3.6);
+    await store.updateUser(created.id,{studentProfile:{studyGoal:'Study machine learning'}});
+    const updated=await store.findById(created.id);assert.equal(updated.studentProfile.languageCertificate.score,7);assert.equal(updated.studentProfile.academicSubject,'computer-science');assert.equal(updated.studentProfile.studyGoal,'Study machine learning');
+    await store.updateUser(created.id,{studentProfile:{certificateStatus:'none'}});assert.equal((await store.findById(created.id)).studentProfile.languageCertificate,null);
+});
 test('Postgres schema initializes lazily, is versioned and survives independent pool reopening', async t => {
     const { db, newPool } = database();
     const first = createPostgresAccountStore({ pool: newPool() });

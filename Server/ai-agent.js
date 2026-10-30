@@ -60,7 +60,7 @@ const TOOLS = [
 ];
 
 const PROFILE_FIELDS = new Set([
-    'query','countryCode','region','degree','field','language','mode','countryCodes','regions','degrees','fields','subjectFields','languages','modes',
+    'priorDegree','priorSubject','degreeStatus','academicUniversity','academicFaculty','studyGoal','query','countryCode','region','degree','field','language','mode','countryCodes','regions','degrees','fields','subjectFields','languages','modes',
     'budget','currency','budgetPeriod','requiresFullFunding','gpa4','gpaPercent','languageLevel','languageTests','experienceYears','citizenshipCode',
     'durationMinMonths','durationMaxMonths','deadlines','deadlineAfter','deadlineBefore','intakeCycle',
     'tuitionKnownOnly','freeTuitionOnly','hasScholarships','fundingScheme','sourceFreshOnly','hasPrograms','includeUnknownFees','includeExpired','weights','weightPreset'
@@ -115,7 +115,7 @@ function cleanProfile(raw) {
             if (value != null) clean[key] = value;
         } else {
             if (value !== null && !['string','number','boolean'].includes(typeof value)) throw invalid('გაზიარებულ პროფილში ველის ფორმატი არასწორია.');
-            if (typeof value === 'string' && value.length > (key === 'query' ? 200 : 100)) throw invalid('პროფილში მითითებული ველი ზედმეტად გრძელია.');
+            if (typeof value === 'string' && value.length > (key==='studyGoal'?1500:['academicUniversity','academicFaculty'].includes(key)?250:key==='query'?200:100)) throw invalid('პროფილში მითითებული ველი ზედმეტად გრძელია.');
             if (typeof value === 'number' && !Number.isFinite(value)) throw invalid('პროფილის რიცხვითი ველი არასწორია.');
             clean[key] = value;
         }
@@ -256,7 +256,7 @@ function createAdvisorAgent({catalog,apiKey=process.env.OPENAI_API_KEY,model=pro
                 degree:nullable(program.degree),field:nullable(program.field),category:nullable(program.category),language:nullable(program.language),languages:Array.isArray(program.languages)?boundedList(program.languages):null,mode:nullable(program.mode),durationMonths:nullable(program.durationMonths),
                 tuition:{amount:nullable(program.tuition?.amount),currency:nullable(program.tuition?.currency),period:nullable(program.tuition?.period),applicantScope:nullable(program.tuition?.applicantScope),note:short(program.tuition?.note,650)},
                 funding:{fullFunding:typeof program.funding?.fullFunding==='boolean'?program.funding.fullFunding:null,scholarships:boundedList(program.funding?.scholarships,8),opportunityIds:boundedList(program.funding?.opportunityIds,12),...fundingRecord('program',program.id)},
-                requirements:{gpaMin4:nullable(req.gpaMin4),gpaMinPercent:nullable(req.gpaMinPercent),languageLevel:nullable(req.languageLevel),languageTest:languageRequirement(req.languageTest),languageTests:Array.isArray(req.languageTests)?req.languageTests.slice(0,6).map(languageRequirement):null,experienceYears:nullable(req.experienceYears),note:short(req.note,850)},
+                requirements:{academicBackground:req.academicBackground?{minimumDegree:req.academicBackground.minimumDegree,preferredSubjects:req.academicBackground.preferredSubjects,otherFieldsConsidered:req.academicBackground.otherFieldsConsidered,transcriptReviewRequired:req.academicBackground.transcriptReviewRequired,sourceUrl:safeURL(req.academicBackground.sourceUrl),checkedAt:req.academicBackground.checkedAt}:null,gpaMin4:nullable(req.gpaMin4),gpaMinPercent:nullable(req.gpaMinPercent),languageLevel:nullable(req.languageLevel),languageTest:languageRequirement(req.languageTest),languageTests:Array.isArray(req.languageTests)?req.languageTests.slice(0,6).map(languageRequirement):null,experienceYears:nullable(req.experienceYears),note:short(req.note,850)},
                 deadline:{date:nullable(program.deadline?.date),cycle:nullable(program.deadline?.cycle),note:short(program.deadline?.note,600)},
                 verificationStatus:program.verificationStatus||null,updatedAt:nullable(program.updatedAt),sources:recordSources,
                 dataMeaning:'null = უცნობი/დასაზუსტებელი. სწავლის ნულოვანი საფასური არ ნიშნავს ცხოვრების ხარჯების დაფინანსებას.'

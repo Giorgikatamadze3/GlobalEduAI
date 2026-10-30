@@ -25,7 +25,7 @@ function showAccountError(form, errorId, error) {
     };
     let first;
     for (const field of Object.keys(error.fields || {})) {
-        const input = $(mappings[form.id]?.[field]);
+        const input = $(mappings[form.id]?.[field]||AcademicProfileUI.errorFields(form.id==='registerForm'?'reg':'profile')[field]);
         if (input) { input.setAttribute('aria-invalid','true'); input.setAttribute('aria-errormessage',errorId); first ||= input; }
     }
     if (first) first.focus(); else { box.tabIndex = -1; box.focus(); }
@@ -43,9 +43,11 @@ function setRegistrationRole(role) {
         group.querySelectorAll('input,select,textarea').forEach(input => { input.disabled = !active; });
     }
     $('regOrganization').required = registrationRole === 'advisor'; $('regPosition').required = registrationRole === 'advisor';
+    if(typeof AcademicProfileUI!=='undefined')AcademicProfileUI.syncCertificate('reg');
     clearAccountErrors($('registerForm'),'registerError');
 }
 function initAccountForms() {
+    AcademicProfileUI.init();
     const options = Object.values(CatalogCore.COUNTRIES).sort((a,b) => a.name.localeCompare(b.name,'ka'))
         .map(country => `<option value="${country.code}">${escapeHTML(country.name)}</option>`).join('');
     for (const id of ['regCitizenship','profileCitizenship']) $(id).innerHTML = '<option value="">არ ვუთითებ</option>' + options;
@@ -59,7 +61,7 @@ function initAccountForms() {
 }
 function readStudentFields(prefix) {
     const id = prefix === 'reg' ? {education:'regEducationLevel',citizenship:'regCitizenship',year:'regGraduationYear'} : {education:'profileEducationLevel',citizenship:'profileCitizenship',year:'profileGraduationYear'};
-    return {educationLevel:$(id.education).value,citizenshipCode:$(id.citizenship).value,graduationYear:$(id.year).value === '' ? null : Number($(id.year).value)};
+    return {educationLevel:$(id.education).value,citizenshipCode:$(id.citizenship).value,graduationYear:$(id.year).value === '' ? null : Number($(id.year).value),...AcademicProfileUI.read(prefix)};
 }
 function readAdvisorFields(prefix) {
     const register = prefix === 'reg';
@@ -85,6 +87,7 @@ function updateAccountUI() {
     const initials = parts.slice(0,2).map(word => word[0] || '').join('').toUpperCase();
     $('mainAvatar').textContent = initials; $('sidebarAvatar').textContent = initials;
     const student = currentUser.studentProfile || {};
+    AcademicProfileUI.populate(student);
     $('profileEducationLevel').value = student.educationLevel || ''; $('profileCitizenship').value = student.citizenshipCode || ''; $('profileGraduationYear').value = student.graduationYear ?? '';
     const profile = currentUser.advisorProfile || {};
     for (const [id,key] of [['advisorOrganization','organizationName'],['advisorPosition','position'],['advisorWebsite','website'],['advisorBio','bio']]) $(id).value = profile[key] || '';
@@ -105,12 +108,13 @@ function applyAccount(user) {
     const changed = currentUser?._id !== user._id;
     currentUser = user;
     if (changed) { uploadedFiles = []; renderDocuments(); $('pdf-preview').style.display = 'none'; }
-    restoreFavorites(); updateAccountUI(); renderFavorites(); renderFeatured();
+    restoreFavorites(); updateAccountUI(); renderFavorites(); renderFeatured(); if(catalogData)filterAndSortUnis(false);
 }
 function expireAccountSession() {
     const hadAccount = Boolean(currentUser); currentUser = null; uploadedFiles = [];
     restoreFavorites(); updateAccountUI(); renderDocuments(); renderFavorites(); renderFeatured();
     $('profileForm').reset(); $('advisorProfileForm').reset(); $('pdf-preview').style.display = 'none';
+    if(catalogData)filterAndSortUnis(false);
     if ($('page-dashboard').classList.contains('active')) { switchAuthTab('login'); navigateTo('page-register'); }
     if (hadAccount) notify('სესია დასრულდა. პირად სივრცეში შესასვლელად გაიარე ავტორიზაცია.');
 }

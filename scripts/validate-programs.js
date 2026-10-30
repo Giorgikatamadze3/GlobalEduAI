@@ -44,6 +44,10 @@ function validatePrograms(catalog, {sources=registeredSources}={}) {
         if (!validDate(p.updatedAt) || !['official-source','official-directory'].includes(p.verificationStatus)) errors.push(`${label}: source status/date missing`);
         if (!Array.isArray(p.sources) || !p.sources.length || p.sources.some(source=>!host(source.url)||!validDate(source.checkedAt)||!source.label)) errors.push(`${label}: dated HTTP(S) references required`);
         const base = host(p.institutionWebsite);
+        if(p.requirements?.academicBackground!==undefined){
+            const rule=p.requirements.academicBackground,allowed=['minimumDegree','preferredSubjects','otherFieldsConsidered','transcriptReviewRequired','sourceUrl','checkedAt'];
+            if(!rule||typeof rule!=='object'||Array.isArray(rule)||Object.keys(rule).some(k=>!allowed.includes(k))||!['bachelor','master','phd'].includes(rule.minimumDegree)||!Array.isArray(rule.preferredSubjects)||!rule.preferredSubjects.every(s=>Core.SUBFIELDS.some(f=>f.value===s))||typeof rule.otherFieldsConsidered!=='boolean'||typeof rule.transcriptReviewRequired!=='boolean'||!validDate(rule.checkedAt)||!Array.isArray(p.sources)||!p.sources.some(s=>s.url===rule.sourceUrl)||!(host(rule.sourceUrl)===base||host(rule.sourceUrl)?.endsWith('.'+base)))errors.push(`${label}: academic background rules require typed values and institution-owned, included source evidence`);
+        }
         if(p.verificationStatus==='official-directory'){
             const registry=sources.find(source=>source.id===p.provenance?.sourceId&&source.kind==='official-directory');
             const matches=value=>{try{const url=new URL(value),registered=new URL(registry.url);const prefix=registered.pathname.replace(/\/+$/,'');return host(value)===host(registry.url)&&(url.pathname===prefix||url.pathname.startsWith(prefix+'/'));}catch{return false;}};

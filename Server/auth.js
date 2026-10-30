@@ -32,7 +32,8 @@ function validatePassword(value){
 }
 function shortText(value,max,field){if(typeof value!=='string'||value.trim().length>max)fail(`ველი უნდა შეიცავდეს მაქსიმუმ ${max} სიმბოლოს.`,field);return value.trim();}
 function validateStudent(value={},partial=false){
-    onlyKeys(value,['educationLevel','citizenshipCode','graduationYear'],'სტუდენტის პროფილი');const result={};
+    onlyKeys(value,['educationLevel','citizenshipCode','graduationYear',...require('../student-profile-core').EXTRA_FIELDS],'სტუდენტის პროფილი');const result={};
+    try{Object.assign(result,require('../student-profile-core').normalizeExtras(value));}catch(error){fail(error.message,error.field);}
     if('educationLevel'in value){const level=text(value.educationLevel);if(level&&!EDUCATION_LEVELS.has(level))fail('აირჩიე განათლების სწორი საფეხური.','educationLevel');result.educationLevel=level;}
     if('citizenshipCode'in value){const code=text(value.citizenshipCode).toUpperCase();if(code&&!Core.COUNTRIES[code])fail('აირჩიე მოქალაქეობა სიიდან.','citizenshipCode');result.citizenshipCode=code;}
     if('graduationYear'in value){const year=value.graduationYear===''||value.graduationYear===null?null:value.graduationYear;if(year!==null&&(!Number.isInteger(year)||year<1950||year>new Date().getUTCFullYear()+20))fail('მიუთითე დასრულების სწორი წელი.','graduationYear');result.graduationYear=year;}

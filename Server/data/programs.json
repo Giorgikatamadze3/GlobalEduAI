@@ -1,7 +1,7 @@
 {
   "metadata": {
     "sourcePolicy": "University pages and explicitly registered authoritative programme directories. Source kind and dated provenance are retained; unpublished attributes remain null.",
-    "updatedAt": "2026-10-29",
+    "updatedAt": "2026-10-30",
     "programCount": 1927,
     "coverageNote": "Official-source programme records from registered catalogues and individually checked university pages. Worldwide and national coverage remain partial; a source listing is not proof of an open admission cycle.",
     "defaultApplicant": "Non-EU/international fee-paying applicant; citizenship/residence exemptions require individual verification.",
@@ -2275,7 +2275,19 @@
           }
         },
         "experienceYears": null,
-        "note": "შესაბამისი ბაკალავრი, პროგრამის სპეციფიკური შეფასება და დოკუმენტები. IELTS writing მინიმუმ 6.0; მიღებული ალტერნატიული მტკიცებულებები და ვალიდურობა ცალკე მოწმდება."
+        "note": "შესაბამისი ბაკალავრი, პროგრამის სპეციფიკური შეფასება და დოკუმენტები. IELTS writing მინიმუმ 6.0; მიღებული ალტერნატიული მტკიცებულებები და ვალიდურობა ცალკე მოწმდება.",
+        "academicBackground": {
+          "minimumDegree": "bachelor",
+          "preferredSubjects": [
+            "computer-science",
+            "software-engineering",
+            "engineering"
+          ],
+          "otherFieldsConsidered": true,
+          "transcriptReviewRequired": true,
+          "sourceUrl": "https://www.aalto.fi/en/study-options/computer-science-master-of-science-technology",
+          "checkedAt": "2026-10-30"
+        }
       },
       "deadline": {
         "date": "2027-01-05",
@@ -2292,10 +2304,15 @@
           "url": "https://www.aalto.fi/en/admission-services/language-requirements-in-masters-admissions",
           "label": "Master language requirements",
           "checkedAt": "2026-10-27"
+        },
+        {
+          "url": "https://www.aalto.fi/en/study-options/computer-science-master-of-science-technology",
+          "label": "Aalto Computer Science — 2027 prior-degree and relevant-study evaluation",
+          "checkedAt": "2026-10-30"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-10-27"
+      "updatedAt": "2026-10-30"
     },
     {
       "id": "program_helsinki-data-science-msc",

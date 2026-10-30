@@ -12,7 +12,7 @@ function scoringFixture(){
 test('matching disclosures start closed, preserve all explanations and have unique relationships for duplicate cards',()=>{
     const {ui}=scoringFixture(),entity={id:'program_same',program:{},institutionId:'inst_same'};
     const first=ui.scoreBadge(entity,{},[{status:'matched',explanation:'Additional <img src=x>'}]),second=ui.scoreBadge(entity,{});
-    assert.match(first,/aria-expanded="false"/);assert.match(first,/data-score-criteria hidden/);assert.match(first,/>75<small>\/100/);assert.match(first,/80%/);assert.match(first,/>60<small>\/100/);
+    assert.match(first,/aria-expanded="false"/);assert.match(first,/data-score-criteria hidden/);assert.match(first,/>75<small>%/);assert.match(first,/80%/);assert.match(first,/>60<small>\/100/);
     const panel=first.match(/aria-controls="([^"]+)"/)[1];assert.ok(first.includes(`id="${panel}"`));assert.notEqual(panel,second.match(/aria-controls="([^"]+)"/)[1]);
     for(let n=0;n<12;n++)assert.ok(first.includes(`Readiness ${n}`));
     assert.match(first,/data-status="not-matched"/);assert.match(first,/data-status="unknown"/);assert.match(first,/Language evidence is missing/);assert.match(first,/Additional &lt;img src=x&gt;/);assert.doesNotMatch(first,/<script>|<img src=x>/);
@@ -28,7 +28,7 @@ test('toggle changes only its own panel, ARIA state and label, then reverses wit
 test('unknown scores stay unknown and never become an invented match percentage',()=>{
     const {ui,data}=scoringFixture();data.fitScore=null;
     const html=ui.scoreBadge({id:'program_unknown',program:{}},{});
-    assert.match(html,/—<small>\/100/);assert.match(html,/ქულისთვის აირჩიე/);assert.match(html,/aria-expanded="false"/);
+    assert.match(html,/—<small>%/);assert.match(html,/ქულისთვის აირჩიე/);assert.match(html,/aria-expanded="false"/);
 });
 function cardsFixture(){
     const entity={id:'program_fixture',name:'University <script> & Partners',kind:'program',country:'Georgia',countryCode:'GE',program:{title:'Advanced <img src=x> Master with a very long programme title',mode:'part-time',degree:'master',language:'en',field:'computer-science',verificationStatus:'official-source',tuition:{amount:null},funding:{opportunityIds:[]}}};

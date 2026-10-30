@@ -54,6 +54,11 @@ async function serverFor(t,{replies=answer(),...options}={}){
     return {...mock,request,origin};
 }
 
+test('opt-in matching context includes bounded academic background and excludes personal account identity',async()=>{
+    const {agent,requests}=makeAgent(answer());
+    await agent.respond({messages:messages(),profile:{priorDegree:'bachelor',priorSubject:'computer-science',degreeStatus:'completed',academicUniversity:'Tbilisi State University',academicFaculty:'Computer Science',studyGoal:'Learn artificial intelligence',gpa4:3.7,name:'Private Name',email:'private@example.com',password:'never-share'}});
+    const instructions=requests[0].body.instructions;assert.ok(instructions.includes('Tbilisi State University'));assert.ok(instructions.includes('computer-science'));assert.ok(instructions.includes('Learn artificial intelligence'));assert.ok(!instructions.includes('Private Name'));assert.ok(!instructions.includes('private@example.com'));assert.ok(!instructions.includes('never-share'));
+});
 test('missing key reports disabled and never pretends to provide an offline AI reply',async t=>{
     const {agent,requests}=makeAgent(answer(),{apiKey:'   '});
     assert.deepEqual(agent.status(),{enabled:false,provider:'openai',model:null,reason:'not-configured'});

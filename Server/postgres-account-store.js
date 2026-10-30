@@ -34,14 +34,14 @@ function stringArray(value, label, maximum, itemMaximum) {
 function studentProfile(value) {
     if (value === null) return null;
     const input = object(value, 'studentProfile');
-    const allowed = new Set(['educationLevel', 'citizenshipCode', 'graduationYear']);
+    const allowed = new Set(['educationLevel', 'citizenshipCode', 'graduationYear', ...require('../student-profile-core').EXTRA_FIELDS]);
     if (Object.keys(input).some(key => !allowed.has(key))) throw failure('INVALID_INPUT', 'Unknown student profile field.');
     const educationLevel = input.educationLevel == null ? null : text(input.educationLevel, 'educationLevel', { max: 100 });
     const citizenshipCode = input.citizenshipCode == null || input.citizenshipCode === '' ? null : text(input.citizenshipCode, 'citizenshipCode', { required: true, max: 2 }).toUpperCase();
     if (citizenshipCode !== null && !/^[A-Z]{2}$/.test(citizenshipCode)) throw failure('INVALID_INPUT', 'citizenshipCode must be a two-letter code.');
     const graduationYear = input.graduationYear == null || input.graduationYear === '' ? null : input.graduationYear;
     if (graduationYear !== null && (!Number.isInteger(graduationYear) || graduationYear < 1900 || graduationYear > 2200)) throw failure('INVALID_INPUT', 'graduationYear must be a valid integer year.');
-    return { educationLevel, citizenshipCode, graduationYear };
+    return { educationLevel, citizenshipCode, graduationYear, ...require('../student-profile-core').normalizeExtras(input) };
 }
 function advisorProfile(value) {
     if (value === null) return null;

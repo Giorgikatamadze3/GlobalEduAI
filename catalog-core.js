@@ -275,12 +275,32 @@
             degree, field:normalizeField(input.field ?? input.major ?? input.category), language,
             mode, budget, currency, budgetPeriod:input.budgetPeriod === 'program' ? 'program' : 'year',
             requiresFullFunding:specifiedFunding === null ? budget === 0 : specifiedFunding,
-            gpa4, gpaPercent, languageLevel, languageTests, experienceYears, citizenshipCode, ...advanced, filterIssues:[...new Set(filterIssues)], issues:[...new Set(issues)]
+            gpa4, gpaPercent, languageLevel, languageTests, experienceYears, citizenshipCode,
+            priorDegree:text(input.priorDegree),priorSubject:text(input.priorSubject),degreeStatus:text(input.degreeStatus),academicUniversity:text(input.academicUniversity).slice(0,250),academicFaculty:text(input.academicFaculty).slice(0,250),studyGoal:text(input.studyGoal).slice(0,1500),
+            ...advanced, filterIssues:[...new Set(filterIssues)], issues:[...new Set(issues)]
         };
     }
 
     // GPA and percentages describe different grading systems. Compare only a
     // published minimum on the supplied scale; never invent a conversion.
+    function academicBackgroundComparison(program,preferences={}) {
+        const prefs=normalizePreferences(preferences),rules=program.requirements?.academicBackground;
+        if(!prefs.priorDegree&&!prefs.priorSubject&&!prefs.academicUniversity&&!prefs.academicFaculty)return [];
+        const unknown=detail=>({status:'unknown',detail});
+        if(!rules||!['bachelor','master','phd'].includes(rules.minimumDegree))return [unknown('აკადემიური ბექგრაუნდის ოფიციალური მოთხოვნები დასაზუსტებელია.')];
+        const checks=[],levels=['high-school','bachelor','master','phd'];
+        if(rules.minimumDegree){
+            if(prefs.degreeStatus!=='completed'||!levels.includes(prefs.priorDegree))checks.push(unknown('ხარისხის დასრულება და დიპლომის შესაბამისობა გადასამოწმებელია.'));
+            else checks.push({status:levels.indexOf(prefs.priorDegree)>=levels.indexOf(rules.minimumDegree)?'matched':'not-matched',detail:levels.indexOf(prefs.priorDegree)>=levels.indexOf(rules.minimumDegree)?'წინა ხარისხის საფეხური გამოქვეყნებულ მინიმუმს შეესაბამება.':'წინა ხარისხის საფეხური გამოქვეყნებულ მინიმუმს ვერ აკმაყოფილებს.'});
+        }
+        if(rules.preferredSubjects?.length){
+            if(!prefs.priorSubject)checks.push(unknown('წინა განათლების მიმართულება მიუთითე.'));
+            else if(rules.preferredSubjects.includes(prefs.priorSubject))checks.push({status:'matched',detail:'წინა განათლების მიმართულება უნივერსიტეტის დასახელებულ მიმართულებებს ემთხვევა.'});
+            else checks.push(rules.otherFieldsConsidered?unknown('სხვა მიმართულების კანდიდატისთვის გავლილი საგნების ინდივიდუალური შეფასებაა საჭირო.'):{status:'not-matched',detail:'წინა განათლების მიმართულება გამოქვეყნებულ მოთხოვნას არ ემთხვევა.'});
+        }
+        if(rules.transcriptReviewRequired)checks.push(unknown('საჭიროა გავლილი საგნების, კრედიტებისა და დიპლომის ოფიციალური შემოწმება.'));
+        return checks;
+    }
     function academicComparison(program, preferences = {}) {
         const prefs = normalizePreferences(preferences), requirements = program?.requirements || {};
         if (prefs.gpa4 !== null && prefs.gpaPercent !== null) return {status:'unknown',student:null,minimum:null,scale:null,max:null,detail:'აკადემიური მოსწრება მიუთითე მხოლოდ ერთ სკალაზე: GPA 0–4 ან ძველი პროცენტული მონაცემი.'};
@@ -591,6 +611,11 @@
 
         const requirements = program.requirements || {};
         const academic = academicComparison(program,prefs);
+        for(const check of academicBackgroundComparison(program,prefs)){
+            if(check.status==='unknown')missingDetail(check.detail);
+            else if(check.status==='not-matched')exclusionReasons.push(check.detail);
+            else reasons.push(check.detail);
+        }
         if (academic.status === 'unknown') missingDetail(academic.detail);
         else if (academic.status === 'below') exclusionReasons.push(academic.detail);
         else reasons.push(academic.detail);
@@ -686,5 +711,5 @@
         const excluded = results.filter(result => result.status === 'excluded').sort(sort);
         return {matches:results.filter(result => result.status === 'matches').sort(sort),needsVerification:results.filter(result => result.status === 'needs-verification').sort(sort),excluded,excludedCount:excluded.length,totalPrograms:programs.length,preferences:prefs};
     }
-    return Object.freeze({COUNTRIES,REGIONS,DEGREES,LANGUAGES,FIELDS,SUBFIELDS,countryInfo,normalizePreferences,academicComparison,migrateAcademicProfile,createInstitutionIndex,resolveInstitution,attachInstitutionPrograms,searchInstitution,filterInstitutions,filterPrograms,filterCatalogInstitutions,hasProgramFilters,programSubjectFields,evaluateProgram,recommendPrograms});
+    return Object.freeze({COUNTRIES,REGIONS,DEGREES,LANGUAGES,FIELDS,SUBFIELDS,countryInfo,normalizePreferences,academicBackgroundComparison,academicComparison,migrateAcademicProfile,createInstitutionIndex,resolveInstitution,attachInstitutionPrograms,searchInstitution,filterInstitutions,filterPrograms,filterCatalogInstitutions,hasProgramFilters,programSubjectFields,evaluateProgram,recommendPrograms});
 }));

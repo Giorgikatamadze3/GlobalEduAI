@@ -63,6 +63,13 @@ function noCredentials(value) {
     }
 }
 
+test('student academic background registers, survives login and validates updates',async t=>{
+    const context=await setup(t),payload=registration('student',{studentProfile:{academicUniversity:'Tbilisi State University',academicFaculty:'Computer Science',academicSubject:'computer-science',completedDegree:'bachelor',degreeStatus:'completed',gpa4:3.8,certificateStatus:'provided',languageCertificate:{name:'IELTS Academic',score:7,minComponentScore:6.5},targetDegree:'master',targetSubject:'data-science',studyGoal:'Study artificial intelligence'}});
+    const created=await register(context,payload);assert.equal(created.data.user.studentProfile.gpa4,3.8);
+    const updated=await context.request('/student/profile',{method:'PUT',cookie:created.cookie.value,body:{studentProfile:{academicFaculty:'Data Science'}}});assert.equal(updated.status,200);assert.equal(updated.data.user.studentProfile.languageCertificate.score,7);assert.equal(updated.data.user.studentProfile.academicUniversity,'Tbilisi State University');
+    const invalid=await context.request('/student/profile',{method:'PUT',cookie:created.cookie.value,body:{studentProfile:{gpa4:90}}});assert.equal(invalid.status,400);assert.ok(invalid.data.fields.gpa4);
+    const login=await context.request('/auth/login',{method:'POST',body:{email:payload.email,password:payload.password}});assert.equal(login.status,200);assert.equal(login.data.user.studentProfile.academicFaculty,'Data Science');
+});
 test('auth status reports SQLite readiness without exposing database paths',async t=>{
     const app=await setup(t);const result=await app.request('/auth/status');
     assert.equal(result.status,200);assert.equal(result.data.provider,'sqlite');assert.equal(result.data.ready,true);

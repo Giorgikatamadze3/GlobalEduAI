@@ -114,6 +114,7 @@
             push('interests',Core.searchInstitution(searchable,prefs.query)?match('ძიების სიტყვები პროგრამის აღწერას ემთხვევა.'):fail('ძიების სიტყვები პროგრამის აღწერაში ვერ მოიძებნა.'));
         }
         const requirements=program.requirements||{};
+        for(const check of Core.academicBackgroundComparison(program,prefs))push('academics',check.status==='matched'?match(check.detail):check.status==='not-matched'?fail(check.detail):unknown(check.detail));
         if(present(prefs.gpa4)||present(prefs.gpaPercent)){
             const academic=Core.academicComparison(program,prefs);
             push('academics',academic.status==='unknown'?unknown(academic.detail):academic.status==='below'?fail(academic.detail):match(academic.detail,academic.minimum===academic.max?1:0.6+0.4*(academic.student-academic.minimum)/(academic.max-academic.minimum)));
