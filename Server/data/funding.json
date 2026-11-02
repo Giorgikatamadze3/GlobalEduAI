@@ -1,8 +1,8 @@
 {
   "metadata": {
     "schemaVersion": 1,
-    "checkedAt": "2026-10-29",
-    "schemeCount": 20,
+    "checkedAt": "2026-11-02",
+    "schemeCount": 22,
     "sourcePolicy": "Manually researched summaries from official providers, participating universities and consortia. An official scheme is not an admission decision, individual eligibility ruling or scholarship award.",
     "coverageNote": "Curated official-source schemes with exact programme or institution scope where verified. European country coverage is not exhaustive scholarship coverage. Dates, eligibility and awards require separate confirmation.",
     "datePolicy": "Only explicitly published calendar-year calls receive exact dates. Recurring annual deadlines retain null dates. Closed and upcoming calls are shown separately; no automatic next-year rollover."
@@ -1864,6 +1864,145 @@
       ],
       "notes": [
         "პროგრამაზე მიღება და სტიპენდიის მინიჭება ცალკე გადაწყვეტილებებია. განაცხადამდე გადაამოწმე მიმდინარე კონკურსი და პირადი შესაბამისობა."
+      ]
+    },
+    {
+      "id": "funding_lund-global",
+      "title": "Lund University Global Scholarship",
+      "provider": "Lund University",
+      "relationship": "institution",
+      "scope": {
+        "countryCodes": [
+          "SE"
+        ],
+        "degrees": [
+          "master"
+        ],
+        "fields": [],
+        "programIds": [],
+        "institutionDomains": [
+          "lu.se"
+        ],
+        "institutionNames": [],
+        "programBindings": []
+      },
+      "conditions": {
+        "tuitionFeeLiable": true,
+        "excludeEuEeaSwiss": true,
+        "checks": [
+          {
+            "subject": "applicant",
+            "key": "lundFirstChoice",
+            "expected": true,
+            "label": "Lund პროგრამა University Admissions-ზე პირველი არჩევანი უნდა იყოს."
+          },
+          {
+            "subject": "applicant",
+            "key": "lundScholarshipApplicationComplete",
+            "expected": true,
+            "label": "სწავლის განაცხადი, განაცხადის საფასური და ცალკე სასტიპენდიო განაცხადი სრულად უნდა იყოს წარდგენილი."
+          },
+          {
+            "subject": "applicant",
+            "key": "lundLivingFundsSecured",
+            "expected": true,
+            "label": "ცხოვრების ხარჯების დასაფარად დამოუკიდებელი სახსრები საჭიროა."
+          }
+        ]
+      },
+      "coverage": {
+        "tuitionFull": null,
+        "livingSupport": false,
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "note": "კონკურსით გაიცემა სწავლის საფასურის ნაწილი ან სრული საფასური; ცხოვრების ხარჯები არ ფინანსდება. სრული დაფარვა ყველა გამარჯვებულისთვის არ არის გარანტირებული."
+      },
+      "call": {
+        "opensAt": null,
+        "deadline": "2026-02-16",
+        "cycle": "2026",
+        "deadlineScope": "applicant",
+        "observedStatus": "closed",
+        "note": "წყაროში ბოლო კონკურსი დახურულია, ვადა 16 თებერვალი 2026. მომდევნო წლის თარიღი არ არის გამოგონილი.",
+        "checkedAt": "2026-11-02"
+      },
+      "sources": [
+        {
+          "url": "https://www.lunduniversity.lu.se/node/83",
+          "label": "Lund University — Global Scholarship eligibility, tuition-only coverage and closed 2026 call",
+          "checkedAt": "2026-11-02"
+        }
+      ],
+      "notes": [
+        "არსებული ოფიციალური სქემა მიმდინარე ღია კონკურსს ან პირად სტიპენდიას არ ნიშნავს."
+      ]
+    },
+    {
+      "id": "funding_asml-groningen-computing",
+      "title": "ASML Technology Scholarship — Groningen Computing Science route",
+      "provider": "ASML",
+      "relationship": "listed-program",
+      "scope": {
+        "countryCodes": [
+          "NL"
+        ],
+        "degrees": [
+          "master"
+        ],
+        "fields": [],
+        "programIds": [],
+        "institutionDomains": [
+          "rug.nl"
+        ],
+        "institutionNames": [],
+        "programBindings": [
+          {
+            "institutionDomains": [
+              "rug.nl"
+            ],
+            "titles": [
+              "Computing Science (MSc)"
+            ],
+            "sourceUrl": "https://www.rug.nl/masters/computing-science/?lang=en"
+          }
+        ]
+      },
+      "conditions": {
+        "checks": [
+          {
+            "subject": "applicant",
+            "key": "asmlCurrentCallEligible",
+            "expected": true,
+            "label": "ASML-ის მოქმედი კონკურსის, შერჩევისა და კანდიდატის პირობები ცალკე გადაამოწმე."
+          }
+        ]
+      },
+      "coverage": {
+        "tuitionFull": false,
+        "livingSupport": null,
+        "amount": 5000,
+        "currency": "EUR",
+        "period": "year",
+        "note": "Groningen-ის ოფიციალური პროგრამის გვერდზე მითითებულია €5,000 წელიწადში. ეს არ არის სრული საფასურისა და ცხოვრების ხარჯების დაფარვის დაპირება."
+      },
+      "call": {
+        "opensAt": null,
+        "deadline": null,
+        "cycle": null,
+        "deadlineScope": null,
+        "observedStatus": "unknown",
+        "note": "მოქმედი კონკურსის ზუსტი ვადა პროგრამის გვერდზე არ დადასტურდა. სხვა უნივერსიტეტებზე ეს ჩანაწერი არ ვრცელდება."
+      },
+      "sources": [
+        {
+          "url": "https://www.rug.nl/masters/computing-science/?lang=en",
+          "label": "University of Groningen — programme-listed ASML scholarship association and amount",
+          "checkedAt": "2026-11-02"
+        }
+      ],
+      "notes": [
+        "წყაროში გამარჯვებულთა რაოდენობა არათანმიმდევრულად არის მოცემული; რაოდენობა კატალოგში არ არის გამეორებული."
       ]
     }
   ]

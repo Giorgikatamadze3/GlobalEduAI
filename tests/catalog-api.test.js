@@ -12,13 +12,14 @@ let server, base, accountStore;
 before(async()=>{
     process.env.AUTH_DB_DRIVER='sqlite';
     process.env.AUTH_DB_PATH=':memory:';
+    process.env.CMS_DB_PATH=':memory:';
     process.env.NODE_ENV='test';
     const app=require('../Server/server');
     accountStore=app.locals.accountStore;
     server=app.listen(0,'127.0.0.1');await once(server,'listening');
     base=`http://127.0.0.1:${server.address().port}`;
 });
-after(async()=>{server.closeAllConnections();await new Promise(resolve=>server.close(resolve));accountStore.close();});
+after(async()=>{server.closeAllConnections();await new Promise(resolve=>server.close(resolve));accountStore.close();await require('../Server/server').locals.contentStore.close();});
 
 test('worldwide catalog is usable with no MongoDB connection',async()=>{
     const response=await fetch(`${base}/api/catalog/meta`);assert.equal(response.status,200);
@@ -122,7 +123,7 @@ test('recommendations include score breakdown and distinguish cohort rates from 
 
 test('funding API publishes dated official rules and no award promises',async()=>{
     const response=await fetch(`${base}/api/funding`);assert.equal(response.status,200);
-    const data=await response.json();assert.equal(data.schemes.length,20);
+    const data=await response.json();assert.equal(data.schemes.length,require('../Server/data/funding.json').schemes.length);
     assert.ok(data.schemes.every(s=>s.sources.length&&s.sources.every(source=>source.url.startsWith('https://')&&source.checkedAt)));
     assert.ok(data.schemes.every(s=>s.awardGuaranteed!==true&&!('fullFunding' in s.coverage)));
 });

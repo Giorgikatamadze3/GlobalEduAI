@@ -75,9 +75,10 @@ function restoreFavorites() {
 // Navigation and dialogs
 function navigateTo(pageId, updateHash = true) {
     if (!$(pageId)?.classList.contains('app-page')) return;
+    if(pageId==='page-admin'&&!currentUser?.permissions?.admin){pendingAuthPage=authReady?null:'page-admin';pageId=currentUser?'page-dashboard':'page-register';}
     if (pageId === 'page-dashboard' && !currentUser) { pendingAuthPage = authReady ? null : 'page-dashboard'; pageId = 'page-register'; }
     document.querySelectorAll('.app-page').forEach(page => page.classList.toggle('active', page.id === pageId));
-    const privatePage = ['page-register', 'page-dashboard'].includes(pageId);
+    const privatePage = ['page-register', 'page-dashboard','page-admin'].includes(pageId);
     $('main-nav').style.display = privatePage ? 'none' : 'flex';
     $('main-footer').style.display = privatePage ? 'none' : 'block';
     document.querySelectorAll('.nav-links [data-page]').forEach(link => {
@@ -88,6 +89,7 @@ function navigateTo(pageId, updateHash = true) {
     $('navLinks').classList.remove('open'); $('menuToggle').setAttribute('aria-expanded', 'false');
     if (pageId === 'page-universities') filterAndSortUnis(false);
     if (pageId === 'page-dashboard') renderFavorites();
+    if(pageId==='page-admin')AdminUI.load();
     renderCompareBar();
     if (updateHash && location.hash !== `#${pageId.replace('page-', '')}`) history.pushState(null, '', `#${pageId.replace('page-', '')}`);
     window.scrollTo({ top:0, behavior:'instant' });
@@ -262,6 +264,7 @@ window.addEventListener('hashchange',() => navigateTo(`page-${location.hash.slic
 const savedTheme = readStored('globalEduTheme','light');
 document.documentElement.dataset.theme = savedTheme === 'dark' ? 'dark' : 'light'; syncThemeButtons();
 if (!DESIGN_PREVIEW) { try { localStorage.removeItem('globalEduToken'); localStorage.removeItem('globalEduUser'); } catch {} }
+ContentUI.init(); AdminUI.init();
 initAccountForms();
 ChatAdvisor.init();
 if (DESIGN_PREVIEW) { $('previewBanner').hidden = false; document.body.classList.add('preview-mode'); }

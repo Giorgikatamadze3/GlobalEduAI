@@ -6,15 +6,16 @@ const {validatePrograms}=require('./validate-programs');
 const {applyInstitutionOverrides}=require('./institution-overrides');
 const {applyInstitutionSupplements}=require('./institution-supplements');
 const ROOT=path.resolve(__dirname,'..');
-function syncEurope({write=false}={}){
-    const seed=JSON.parse(fs.readFileSync(path.join(ROOT,'Server/data/europe-programme-seeds.json'),'utf8'));
+function syncEurope({write=false,seedFile='europe-programme-seeds.json'}={}){
+    if(!/^[a-z0-9-]+\.json$/.test(seedFile))throw Error('Invalid seed filename');
+    const seed=JSON.parse(fs.readFileSync(path.join(ROOT,'Server/data',seedFile),'utf8'));
     const directory=applyInstitutionSupplements(applyInstitutionOverrides(JSON.parse(fs.readFileSync(path.join(ROOT,'Server/data/institutions.json'),'utf8'))));
     const registryFile=path.join(ROOT,'Server/data/program-source-registry.json'),registry=JSON.parse(fs.readFileSync(registryFile,'utf8'));
     const file=path.join(ROOT,'Server/data/programs.json'),existing=JSON.parse(fs.readFileSync(file,'utf8'));
     const groups=new Map();
     for(const row of seed.records){
         const host=new URL(row.institutionWebsite).hostname.replace(/^www\./,'');
-        const candidates=directory.institutions.filter(i=>i.countryCode===row.countryCode&&i.domains.includes(host));
+        const candidates=directory.institutions.filter(i=>i.countryCode===row.countryCode&&(i.domains.includes(host)||new URL(i.website).hostname.replace(/^www\./,'')===host));
         if(candidates.length!==1)throw Error(`Official institution link must be unique: ${row.countryCode} ${host}`);
         const field=row.field?Core.SUBFIELDS.find(f=>f.value===row.field):null;if(row.field&&!field)throw Error('Unknown verified discipline '+row.field);
         const sourceId=row.sourceId||'europe-'+host.replace(/\./g,'-');
@@ -30,7 +31,7 @@ function syncEurope({write=false}={}){
         const position=registry.sources.findIndex(s=>s.id===id);if(position<0)registry.sources.push(source);else registry.sources[position]=source;
     }
     const coverage=computeProgramCoverage(directory.institutions,programs,registry);
-    const catalog={metadata:{...existing.metadata,programCount:programs.length,updatedAt:seed.metadata.checkedAt,programCoverage:coverage,europeSeedCount:seed.records.length},programs};
+    const catalog={metadata:{...existing.metadata,programCount:programs.length,updatedAt:seed.metadata.checkedAt,programCoverage:coverage,...(seedFile==='europe-programme-seeds.json'?{europeSeedCount:seed.records.length}:{}),curatedSeedCounts:{...existing.metadata.curatedSeedCounts,[seedFile]:seed.records.length}},programs};
     const errors=validatePrograms(catalog,{sources:registry.sources});if(errors.length)throw Error('European programmes failed validation: '+errors.slice(0,4).join('; '));
     if(write){
         try{

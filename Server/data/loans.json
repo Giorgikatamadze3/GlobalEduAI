@@ -1,0 +1,123 @@
+{
+  "metadata": {
+    "checkedAt": "2026-11-02",
+    "coverage": "partial",
+    "sourcePolicy": "Official provider summaries. Country coverage does not establish personal loan eligibility."
+  },
+  "records": [
+    {
+      "id": "loan_england-postgraduate",
+      "title": "Postgraduate Master’s Loan — England",
+      "provider": "Student Finance England",
+      "countryCodes": [
+        "GB"
+      ],
+      "checkedAt": "2026-11-02",
+      "eligibility": {
+        "ka": "საჭიროა შესაბამისი სამაგისტრო კურსი, 60 წლამდე ასაკი კურსის დაწყებისას და ინგლისის დაფინანსების მოქალაქეობის/რეზიდენტობის წესების დაკმაყოფილება. მხოლოდ სასწავლებლად ინგლისში გადასვლა საკმარისი არ არის. უკვე მიღებული მაგისტრის ხარისხი, როგორც წესი, გამორიცხავს ამ სესხს.",
+        "en": "Requires an eligible master’s course, age under 60 at the start and qualifying nationality/residency under England’s rules. Moving to England solely to study is insufficient. Holding a master’s degree normally excludes eligibility.",
+        "ru": "Нужны подходящая магистратура, возраст до 60 лет на начало обучения и соответствие правилам гражданства/проживания для Англии. Переезда только ради учёбы недостаточно. Наличие степени магистра обычно исключает право на заём."
+      },
+      "interest": {
+        "type": "variable",
+        "annualPercent": null,
+        "note": {
+          "ka": "განაკვეთი ცვალებადია; მოქმედი პროცენტი გადაამოწმე Student Loans Company-ის წესებში. აქ ფიქსირებული განაკვეთი არ იგულისხმება.",
+          "en": "Variable interest: check the current Student Loans Company rate. No fixed rate is implied.",
+          "ru": "Ставка переменная: проверьте актуальную ставку Student Loans Company. Фиксированная ставка не предполагается."
+        }
+      },
+      "repayment": {
+        "ka": "Postgraduate Loan-ის მიმდინარე წესით იფარება £21,000 წლიურ ზღვარზე მეტი შემოსავლის 6%. სხვა სასწავლო სესხის გადასახადი შეიძლება ცალკეც დაგერიცხოს; საზღვარგარეთ ზღვრები განსხვავდება.",
+        "en": "Current Postgraduate Loan repayments are 6% of income above £21,000 a year. Other student loan repayments may apply separately; overseas thresholds differ.",
+        "ru": "По текущим правилам Postgraduate Loan платёж составляет 6% дохода выше £21 000 в год. Платежи по другим учебным займам могут начисляться отдельно; за рубежом пороги отличаются."
+      },
+      "sources": [
+        {
+          "url": "https://www.gov.uk/masters-loan/eligibility",
+          "label": "GOV.UK — eligibility"
+        },
+        {
+          "url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+          "label": "GOV.UK — repayment and interest"
+        }
+      ]
+    },
+    {
+      "id": "loan_us-direct-unsubsidized-graduate",
+      "title": "Direct Unsubsidized Loan — Graduate / Professional",
+      "provider": "U.S. Department of Education",
+      "countryCodes": [
+        "US"
+      ],
+      "checkedAt": "2026-11-02",
+      "eligibility": {
+        "ka": "აშშ-ის ფედერალური სტუდენტური დახმარების პირობები მოქმედებს: აშშ-ის მოქალაქეობა ან შესაბამისი არამოქალაქის სტატუსი, FAFSA და შესაბამის პროგრამაზე მინიმუმ ნახევარი დატვირთვით ჩარიცხვა. საერთაშორისო სტუდენტის ვიზა თავისთავად საკმარისი არ არის.",
+        "en": "Federal aid eligibility applies: U.S. citizenship or eligible noncitizen status, FAFSA and at least half-time enrolment in an eligible programme. An international student visa alone is insufficient.",
+        "ru": "Действуют требования федеральной помощи: гражданство США или подходящий статус негражданина, FAFSA и обучение минимум с половинной нагрузкой на подходящей программе. Одна лишь студенческая виза недостаточна."
+      },
+      "interest": {
+        "type": "fixed",
+        "annualPercent": 8.07,
+        "note": {
+          "ka": "8.07% ეხება პირველად 2026-07-01–2027-06-30 პერიოდში გაცემულ graduate/professional Direct Unsubsidized სესხებს. სხვა გაცემის თარიღზე განაკვეთი განსხვავდება; საკომისიო ცალკეა.",
+          "en": "8.07% applies to graduate/professional Direct Unsubsidized loans first disbursed from 1 July 2026 through 30 June 2027. Other disbursement dates have different rates; fees are separate.",
+          "ru": "8,07% относится к graduate/professional Direct Unsubsidized, впервые выданным с 1 июля 2026 по 30 июня 2027. Для других дат ставка отличается; комиссии учитываются отдельно."
+        }
+      },
+      "repayment": {
+        "ka": "ეს დაბრუნებადი სესხია; პროცენტი სწავლის პერიოდშიც გროვდება. გადახდის გეგმა, დაწყების თარიღი და ლიმიტები ფედერალური სერვისის პირობებით გადაამოწმე.",
+        "en": "This loan must be repaid and interest accrues during study. Confirm the repayment plan, start date and borrowing limits with the federal servicer.",
+        "ru": "Заём подлежит возврату; проценты начисляются и во время учёбы. План, дату начала погашения и лимиты уточните у федерального оператора."
+      },
+      "sources": [
+        {
+          "url": "https://fsapartners.ed.gov/knowledge-center/library/electronic-announcements/2026-06-04/interest-rates-federal-direct-loans-first-disbursed-between-july-1-2026-and-june-30-2027",
+          "label": "Federal Student Aid — 2026/27 rates"
+        },
+        {
+          "url": "https://studentaid.gov/understand-aid/eligibility/requirements",
+          "label": "Federal Student Aid — eligibility"
+        },
+        {
+          "url": "https://studentaid.gov/understand-aid/types/loans/subsidized-unsubsidized",
+          "label": "Federal Student Aid — loan terms"
+        }
+      ]
+    },
+    {
+      "id": "loan_kfw-174",
+      "title": "KfW-Studienkredit (174)",
+      "provider": "KfW",
+      "countryCodes": [
+        "DE"
+      ],
+      "checkedAt": "2026-11-02",
+      "eligibility": {
+        "ka": "გერმანიაში შესაბამისი სწავლა და პროგრამის დაწყებისას 18–44 წლის ასაკი. დასაშვები ჯგუფებია გერმანიის მოქალაქეები, გარკვეული ოჯახის წევრები, გერმანიაში მინიმუმ 3 წლით მუდმივად მცხოვრები EU მოქალაქეები და გერმანიაში განათლებამიღებული შესაბამისი რეზიდენტები. ქართველი საერთაშორისო სტუდენტი ავტომატურად არ არის უფლებამოსილი.",
+        "en": "Eligible study in Germany and age 18–44 at commencement. Eligible groups include German citizens, qualifying family members, EU citizens continuously resident in Germany for at least three years and qualifying German-educated residents. Georgian international students are not automatically eligible.",
+        "ru": "Подходящее обучение в Германии и возраст 18–44 года на начало. Допускаются граждане Германии, определённые члены семьи, граждане ЕС с непрерывным проживанием в Германии минимум три года и подходящие резиденты с немецким образованием. Грузинский иностранный студент не получает право автоматически."
+      },
+      "interest": {
+        "type": "variable",
+        "annualPercent": null,
+        "note": {
+          "ka": "განაკვეთი ცვალებადია და 1 აპრილსა და 1 ოქტომბერს ახლდება. მიმდინარე პროცენტი KfW-ის გვერდზე გადაამოწმე.",
+          "en": "Variable rate, reset on 1 April and 1 October. Check KfW for the current percentage.",
+          "ru": "Переменная ставка пересматривается 1 апреля и 1 октября. Актуальный процент смотрите на сайте KfW."
+        }
+      },
+      "repayment": {
+        "ka": "სესხი ცხოვრების ხარჯებისთვისაა და დაბრუნებას მოითხოვს. გაცემის, საშეღავათო და დაფარვის პერიოდების ინდივიდუალური გრაფიკი KfW-სთან გადაამოწმე.",
+        "en": "A repayable loan for living costs. Confirm the individual disbursement, grace and repayment schedule with KfW.",
+        "ru": "Возвратный заём на расходы проживания. Индивидуальный график выдачи, льготного периода и погашения уточните в KfW."
+      },
+      "sources": [
+        {
+          "url": "https://www.kfw.de/inlandsfoerderung/Privatpersonen/Studieren-Qualifizieren/F%C3%B6rderprodukte/KfW-Studienkredit-(174)/",
+          "label": "KfW — official product and eligibility"
+        }
+      ]
+    }
+  ]
+}

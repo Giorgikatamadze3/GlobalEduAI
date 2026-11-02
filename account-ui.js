@@ -68,6 +68,7 @@ function readAdvisorFields(prefix) {
     return {organizationName:$(register?'regOrganization':'advisorOrganization').value.trim(),position:$(register?'regPosition':'advisorPosition').value.trim(),website:$(register?'regWebsite':'advisorWebsite').value.trim(),bio:$(register?'regBio':'advisorBio').value.trim(),specialties:[...$(register?'regSpecialties':'advisorSpecialties').querySelectorAll('input:checked')].map(input => input.value)};
 }
 function updateAccountUI() {
+    if(typeof AdminUI!=='undefined')AdminUI.navState();
     if (typeof StudentWorkspace !== 'undefined') StudentWorkspace.render();
     if (typeof ChatAdvisor !== 'undefined') ChatAdvisor.accountChanged();
     if (typeof StudentDiscovery !== 'undefined') StudentDiscovery.restoreProfile();
@@ -115,7 +116,7 @@ function expireAccountSession() {
     restoreFavorites(); updateAccountUI(); renderDocuments(); renderFavorites(); renderFeatured();
     $('profileForm').reset(); $('advisorProfileForm').reset(); $('pdf-preview').style.display = 'none';
     if(catalogData)filterAndSortUnis(false);
-    if ($('page-dashboard').classList.contains('active')) { switchAuthTab('login'); navigateTo('page-register'); }
+    if ($('page-dashboard').classList.contains('active')||$('page-admin')?.classList.contains('active')) { switchAuthTab('login'); navigateTo('page-register'); }
     if (hadAccount) notify('სესია დასრულდა. პირად სივრცეში შესასვლელად გაიარე ავტორიზაცია.');
 }
 async function refreshAccountSession() {

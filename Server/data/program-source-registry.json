@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "updatedAt": "2026-10-29",
+    "updatedAt": "2026-11-02",
     "scope": "Source registry for incremental, attributed imports of real study-programme listings. The worldwide institution directory is not evidence of worldwide programme coverage.",
     "matchingPolicy": "Match each imported programme to a unique existing institution using an institution-owned domain verified by the official source. Quarantine missing, unmatched or ambiguous domains; never distribute a country's programmes across all its institutions.",
     "unknownDataPolicy": "Keep unpublished degree, primary teaching language, mode, fees, deadlines, entry requirements and funding unknown. Multiple teaching languages do not prove an English-only route. Funding schemes require their own eligibility and deadline evidence.",
@@ -867,6 +867,214 @@
         "nu.edu.kz"
       ],
       "checkedAt": "2026-10-29",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "sprint1-stanford-edu",
+      "name": "Stanford University — verified official programme sources",
+      "kind": "institution",
+      "url": "https://stanford.edu/",
+      "countryCodes": [
+        "US"
+      ],
+      "institutionDomains": [
+        "stanford.edu"
+      ],
+      "checkedAt": "2026-11-02",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "sprint1-harvard-edu",
+      "name": "Harvard University — verified official programme sources",
+      "kind": "institution",
+      "url": "https://harvard.edu/",
+      "countryCodes": [
+        "US"
+      ],
+      "institutionDomains": [
+        "harvard.edu"
+      ],
+      "checkedAt": "2026-11-02",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "sprint1-gatech-edu",
+      "name": "Georgia Institute of Technology — verified official programme sources",
+      "kind": "institution",
+      "url": "https://gatech.edu/",
+      "countryCodes": [
+        "US"
+      ],
+      "institutionDomains": [
+        "gatech.edu"
+      ],
+      "checkedAt": "2026-11-02",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "sprint1-berkeley-edu",
+      "name": "University of California, Berkeley — verified official programme sources",
+      "kind": "institution",
+      "url": "https://berkeley.edu/",
+      "countryCodes": [
+        "US"
+      ],
+      "institutionDomains": [
+        "berkeley.edu"
+      ],
+      "checkedAt": "2026-11-02",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "sprint1-cmu-edu",
+      "name": "Carnegie Mellon University — verified official programme sources",
+      "kind": "institution",
+      "url": "https://cmu.edu/",
+      "countryCodes": [
+        "US"
+      ],
+      "institutionDomains": [
+        "cmu.edu"
+      ],
+      "checkedAt": "2026-11-02",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "sprint1-uu-nl",
+      "name": "Utrecht University — verified official programme sources",
+      "kind": "institution",
+      "url": "https://uu.nl/",
+      "countryCodes": [
+        "NL"
+      ],
+      "institutionDomains": [
+        "uu.nl"
+      ],
+      "checkedAt": "2026-11-02",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "sprint1-rug-nl",
+      "name": "University of Groningen — verified official programme sources",
+      "kind": "institution",
+      "url": "https://rug.nl/",
+      "countryCodes": [
+        "NL"
+      ],
+      "institutionDomains": [
+        "rug.nl"
+      ],
+      "checkedAt": "2026-11-02",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "sprint1-lu-se",
+      "name": "Lund University — verified official programme sources",
+      "kind": "institution",
+      "url": "https://lu.se/",
+      "countryCodes": [
+        "SE"
+      ],
+      "institutionDomains": [
+        "lu.se"
+      ],
+      "checkedAt": "2026-11-02",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "sprint1-kth-se",
+      "name": "KTH Royal Institute of Technology — verified official programme sources",
+      "kind": "institution",
+      "url": "https://kth.se/",
+      "countryCodes": [
+        "SE"
+      ],
+      "institutionDomains": [
+        "kth.se"
+      ],
+      "checkedAt": "2026-11-02",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "sprint1-nus-edu-sg",
+      "name": "National University of Singapore — verified official programme sources",
+      "kind": "institution",
+      "url": "https://nus.edu.sg/",
+      "countryCodes": [
+        "SG"
+      ],
+      "institutionDomains": [
+        "nus.edu.sg"
+      ],
+      "checkedAt": "2026-11-02",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "sprint1-ntu-edu-sg",
+      "name": "Nanyang Technological University — verified official programme sources",
+      "kind": "institution",
+      "url": "https://ntu.edu.sg/",
+      "countryCodes": [
+        "SG"
+      ],
+      "institutionDomains": [
+        "ntu.edu.sg"
+      ],
+      "checkedAt": "2026-11-02",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "sprint1-hkust-edu-hk",
+      "name": "The Hong Kong University of Science and Technology — verified official programme sources",
+      "kind": "institution",
+      "url": "https://hkust.edu.hk/",
+      "countryCodes": [
+        "HK"
+      ],
+      "institutionDomains": [
+        "hkust.edu.hk"
+      ],
+      "checkedAt": "2026-11-02",
+      "enabled": false,
+      "status": "curated-official-snapshot",
+      "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "sprint1-u-tokyo-ac-jp",
+      "name": "University of Tokyo — verified official programme sources",
+      "kind": "institution",
+      "url": "https://u-tokyo.ac.jp/",
+      "countryCodes": [
+        "JP"
+      ],
+      "institutionDomains": [
+        "u-tokyo.ac.jp"
+      ],
+      "checkedAt": "2026-11-02",
       "enabled": false,
       "status": "curated-official-snapshot",
       "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."

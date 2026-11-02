@@ -22,8 +22,8 @@ function assess(id, program, applicant = null, options = {}) {
     return Funding.fundingForProgram(program, program ? institution(program) : null, catalog, applicant, { asOf, ...options }).find(result => result.id === id);
 }
 
-test('all 20 sourced schemes validate in CommonJS and browser UMD without network', () => {
-    assert.deepEqual(Funding.validateFundingCatalog(catalog), { valid: true, issues: [], schemeCount: 20 });
+test('all sourced schemes validate in CommonJS and browser UMD without network', () => {
+    assert.deepEqual(Funding.validateFundingCatalog(catalog), { valid: true, issues: [], schemeCount: catalog.schemes.length });
     const context = { URL };
     vm.runInNewContext(fs.readFileSync(path.resolve(__dirname, '../funding-core.js'), 'utf8'), context);
     assert.equal(typeof context.FundingCore.fundingForProgram, 'function');

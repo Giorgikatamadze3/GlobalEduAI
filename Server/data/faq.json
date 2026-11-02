@@ -1,0 +1,217 @@
+{
+  "metadata": {
+    "updatedAt": "2026-11-02"
+  },
+  "categories": [
+    {
+      "id": "faqcat_account",
+      "title": {
+        "ka": "ანგარიში",
+        "en": "Account",
+        "ru": "Аккаунт"
+      }
+    },
+    {
+      "id": "faqcat_programmes",
+      "title": {
+        "ka": "პროგრამები",
+        "en": "Programmes",
+        "ru": "Программы"
+      }
+    },
+    {
+      "id": "faqcat_admissions",
+      "title": {
+        "ka": "მიღება",
+        "en": "Admissions",
+        "ru": "Поступление"
+      }
+    },
+    {
+      "id": "faqcat_finance",
+      "title": {
+        "ka": "დაფინანსება",
+        "en": "Funding",
+        "ru": "Финансирование"
+      }
+    },
+    {
+      "id": "faqcat_ai",
+      "title": {
+        "ka": "AI მრჩეველი",
+        "en": "AI advisor",
+        "ru": "AI-консультант"
+      }
+    }
+  ],
+  "records": [
+    {
+      "id": "faq_register",
+      "categoryId": "faqcat_account",
+      "question": {
+        "ka": "როგორ შევქმნა ანგარიში?",
+        "en": "How do I create an account?",
+        "ru": "Как создать аккаунт?"
+      },
+      "answer": {
+        "ka": "შესვლის გვერდზე აირჩიე რეგისტრაცია, მიუთითე სტუდენტის ან მრჩეველის როლი და შეავსე აუცილებელი ველები. ადმინისტრატორის წვდომა ამ ფორმით არ გაიცემა.",
+        "en": "Choose Register on the sign-in page, select Student or Advisor and complete the required fields. This form does not grant administrator access.",
+        "ru": "На странице входа выберите регистрацию, роль студента или консультанта и заполните обязательные поля. Права администратора через эту форму не выдаются."
+      }
+    },
+    {
+      "id": "faq_academic",
+      "categoryId": "faqcat_account",
+      "question": {
+        "ka": "სად შევავსო აკადემიური ბექგრაუნდი?",
+        "en": "Where do I add my academic background?",
+        "ru": "Где указать академическое образование?"
+      },
+      "answer": {
+        "ka": "რეგისტრაციისას ან პროფილში მიუთითე უნივერსიტეტი, ფაკულტეტი, დასრულებული ხარისხი, GPA 0–4, ენის სერტიფიკატი და სამომავლო სასწავლო მიმართულება. შეინახე ცვლილებები.",
+        "en": "In registration or your profile, enter your university, faculty, completed degree, GPA from 0 to 4, language certificate and study goals. Save your changes.",
+        "ru": "При регистрации или в профиле укажите вуз, факультет, степень, GPA от 0 до 4, языковой сертификат и учебные цели. Сохраните изменения."
+      }
+    },
+    {
+      "id": "faq_planner",
+      "categoryId": "faqcat_account",
+      "question": {
+        "ka": "სხვა მოწყობილობაზე ჩემი გეგმა გამოჩნდება?",
+        "en": "Will my plan appear on another device?",
+        "ru": "Будет ли план виден на другом устройстве?"
+      },
+      "answer": {
+        "ka": "პირადი გეგმის ჩანაწერები ამ ბრაუზერში ინახება. სხვა მოწყობილობაზე არ სინქრონდება; ასლისთვის გამოიყენე გეგმის ჩამოტვირთვა. პროფილის ველები ანგარიშის ბაზაში ინახება.",
+        "en": "Planner entries are stored in this browser and do not sync across devices. Use Export plan to keep a copy. Profile fields are stored in the account database.",
+        "ru": "Записи планировщика хранятся в этом браузере и не синхронизируются между устройствами. Скачайте план для сохранения копии. Поля профиля сохраняются в базе аккаунтов."
+      }
+    },
+    {
+      "id": "faq_coverage",
+      "categoryId": "faqcat_programmes",
+      "question": {
+        "ka": "ყველა უნივერსიტეტის ყველა პროგრამა ჩანს?",
+        "en": "Are all programmes of every university listed?",
+        "ru": "Представлены ли все программы всех вузов?"
+      },
+      "answer": {
+        "ka": "დირექტორია და პროგრამების დაფარვა განსხვავდება. უნივერსიტეტის არსებობა არ ნიშნავს მისი ყველა პროგრამის აღწერას. დაფარვა ნაწილობრივია; ოფიციალური ბმულით სრული კატალოგი გადაამოწმე.",
+        "en": "The institution directory and programme coverage differ. An institution listing does not mean all its programmes are described. Coverage is partial; check the official catalogue.",
+        "ru": "Каталог вузов и охват программ различаются. Наличие вуза не означает, что описаны все его программы. Охват частичный; проверьте официальный каталог."
+      }
+    },
+    {
+      "id": "faq_unknown",
+      "categoryId": "faqcat_programmes",
+      "question": {
+        "ka": "რას ნიშნავს „დასაზუსტებელია“?",
+        "en": "What does “to be confirmed” mean?",
+        "ru": "Что означает «уточняется»?"
+      },
+      "answer": {
+        "ka": "წყაროში შესაბამისი მნიშვნელობა ვერ დადასტურდა ან ინდივიდუალურ პირობებზეა დამოკიდებული. უცნობი საფასური უფასო სწავლას არ ნიშნავს და უცნობი ვადა ღია მიღებას არ ადასტურებს.",
+        "en": "The value was not verified in the source or depends on individual conditions. Unknown tuition does not mean free study, and an unknown deadline does not imply an open intake.",
+        "ru": "Значение не подтверждено источником или зависит от индивидуальных условий. Неизвестная стоимость не означает бесплатное обучение, а неизвестный срок — открытый приём."
+      }
+    },
+    {
+      "id": "faq_fit",
+      "categoryId": "faqcat_admissions",
+      "question": {
+        "ka": "შესაბამისობის ქულა მიღების ალბათობაა?",
+        "en": "Is the fit score an admission probability?",
+        "ru": "Является ли балл соответствия вероятностью поступления?"
+      },
+      "answer": {
+        "ka": "არა. ქულა აჯამებს ინტერესებისა და დადასტურებული მოთხოვნების შესაბამისობას და ცალკე აჩვენებს ინფორმაციის დაფარვას. პირადი მიღების ალბათობა სანდო სტატისტიკური მოდელის გარეშე არ გამოითვლება.",
+        "en": "No. The score summarises alignment with your interests and verified requirements, with data coverage shown separately. Personal admission probability is not calculated without a reliable statistical model.",
+        "ru": "Нет. Балл отражает соответствие интересам и подтверждённым требованиям; полнота данных показана отдельно. Личная вероятность поступления без надёжной статистической модели не рассчитывается."
+      }
+    },
+    {
+      "id": "faq_apply",
+      "categoryId": "faqcat_admissions",
+      "question": {
+        "ka": "განაცხადი საიტიდან იგზავნება?",
+        "en": "Does the site submit my application?",
+        "ru": "Отправляет ли сайт мою заявку?"
+      },
+      "answer": {
+        "ka": "პროგრამის ოფიციალურ ბმულზე გადადი და განაცხადი უნივერსიტეტის ან შესაბამისი მიმღები სისტემის წესით შეავსე. ფავორიტებში შენახვა და PDF პაკეტის მომზადება განაცხადის გაგზავნას არ ნიშნავს.",
+        "en": "Follow the official programme link and apply through the university or its admission system. Saving a favourite or preparing a PDF package does not submit an application.",
+        "ru": "Перейдите по официальной ссылке и подайте заявку через вуз или его систему приёма. Сохранение в избранное и подготовка PDF не являются подачей заявки."
+      }
+    },
+    {
+      "id": "faq_deadlines",
+      "categoryId": "faqcat_admissions",
+      "question": {
+        "ka": "რატომ არის ზოგიერთ პროგრამაზე ძველი თარიღი?",
+        "en": "Why do some programmes show an older date?",
+        "ru": "Почему у некоторых программ указана прошлая дата?"
+      },
+      "answer": {
+        "ka": "ვაჩვენებთ წყაროში გამოქვეყნებულ კონკრეტულ მიღების ციკლს. ძველ ვადას ავტომატურად მომდევნო წელზე არ გადავიტანთ. ახალი ციკლი უნივერსიტეტთან გადაამოწმე.",
+        "en": "We show the specific intake cycle published by the source. Past deadlines are not automatically rolled over to the next year. Confirm the next intake with the university.",
+        "ru": "Мы показываем конкретный цикл приёма, опубликованный источником. Старые сроки автоматически на следующий год не переносятся. Уточните новый набор у вуза."
+      }
+    },
+    {
+      "id": "faq_scholarship",
+      "categoryId": "faqcat_finance",
+      "question": {
+        "ka": "დამფინანსებლის გამოჩენა სტიპენდიას მპირდება?",
+        "en": "Does a funding badge guarantee a scholarship?",
+        "ru": "Гарантирует ли значок финансирования стипендию?"
+      },
+      "answer": {
+        "ka": "არა. ეს შესაძლო დაფინანსების გზაა. მოქალაქეობა, რეზიდენტობა, პროგრამის მონაწილეობა, კონკურსი და ცალკე განაცხადის ვადა დამოუკიდებლად მოწმდება. სწავლისა და ცხოვრების ხარჯების დაფარვაც განსხვავდება.",
+        "en": "No. It identifies a possible funding route. Citizenship, residency, programme participation, selection and the separate application deadline must be checked. Tuition and living-cost coverage also differ.",
+        "ru": "Нет. Это возможный путь финансирования. Гражданство, проживание, участие программы, конкурс и отдельный срок подачи проверяются независимо. Покрытие обучения и проживания также различается."
+      }
+    },
+    {
+      "id": "faq_loans",
+      "categoryId": "faqcat_finance",
+      "question": {
+        "ka": "შერჩეულ ქვეყანაში ყველა სესხი ხელმისაწვდომია ჩემთვის?",
+        "en": "Am I eligible for every loan in the selected country?",
+        "ru": "Доступен ли мне любой заём в выбранной стране?"
+      },
+      "answer": {
+        "ka": "არა. ქვეყნის ფილტრი მხოლოდ კატალოგს არჩევს. სესხებს შეიძლება მოქალაქეობის, რეზიდენტობის, ასაკისა და კურსის შეზღუდვები ჰქონდეს. საბოლოო პირობები ოფიციალურ გამსესხებელთან გადაამოწმე; სესხი დაბრუნებას მოითხოვს.",
+        "en": "No. The country filter only narrows the catalogue. Loans may have citizenship, residency, age and course restrictions. Confirm final terms with the official lender; a loan must be repaid.",
+        "ru": "Нет. Фильтр страны только сужает каталог. Возможны ограничения по гражданству, проживанию, возрасту и программе. Итоговые условия уточните у кредитора; заём нужно возвращать."
+      }
+    },
+    {
+      "id": "faq_privacy",
+      "categoryId": "faqcat_ai",
+      "question": {
+        "ka": "რა ინფორმაციას იღებს AI მრჩეველი?",
+        "en": "What information does the AI advisor receive?",
+        "ru": "Какие данные получает AI-консультант?"
+      },
+      "answer": {
+        "ka": "საუბრის შეტყობინებები AI სერვისში იგზავნება. სასწავლო პროფილის გაზიარება ჩატში შესაბამისი არჩევანით ჩაირთვება. პაროლი და პირადი დოკუმენტები არ გააზიარო.",
+        "en": "Chat messages are sent to the AI service. Educational profile sharing is enabled through the corresponding chat option. Do not share passwords or personal documents.",
+        "ru": "Сообщения чата отправляются AI-сервису. Передача учебного профиля включается соответствующей опцией в чате. Не отправляйте пароли и личные документы."
+      }
+    },
+    {
+      "id": "faq_availability",
+      "categoryId": "faqcat_ai",
+      "question": {
+        "ka": "თუ AI ჩატი არ მუშაობს, რა გავაკეთო?",
+        "en": "What can I do when AI chat is unavailable?",
+        "ru": "Что делать, если AI-чат недоступен?"
+      },
+      "answer": {
+        "ka": "გამოიყენე ხელახლა შემოწმება. მანამდე უნივერსიტეტების ფილტრი, პროფილის წესებზე დაფუძნებული შეფასება და ოფიციალური ბმულები ხელმისაწვდომია. AI-ის პასუხიც ოფიციალურ წყაროს შეადარე.",
+        "en": "Use Check again. Meanwhile, university filters, rule-based profile assessment and official links remain available. Check AI answers against official sources too.",
+        "ru": "Нажмите повторную проверку. Фильтры вузов, оценка профиля по правилам и официальные ссылки остаются доступны. Ответы AI также сверяйте с официальными источниками."
+      }
+    }
+  ]
+}

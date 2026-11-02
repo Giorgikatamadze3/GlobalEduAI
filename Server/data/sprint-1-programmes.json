@@ -1,0 +1,340 @@
+{
+  "metadata": {
+    "checkedAt": "2026-11-02",
+    "scope": "19 individually verified official master programme records: six USA, seven Europe, six Asia; 18 additions and one refresh. Partial coverage; unsupported attributes remain unknown."
+  },
+  "records": [
+    {
+      "countryCode": "US",
+      "institutionWebsite": "https://stanford.edu/",
+      "title": "Computer Science (MS)",
+      "programUrl": "https://bulletin.stanford.edu/programs/CS-MS",
+      "sourceUrl": "https://bulletin.stanford.edu/programs/CS-MS",
+      "degree": "master",
+      "field": "computer-science",
+      "language": null,
+      "durationMonths": null,
+      "checkedAt": "2026-11-02",
+      "sourceId": "sprint1-stanford-edu"
+    },
+    {
+      "countryCode": "US",
+      "institutionWebsite": "https://harvard.edu/",
+      "title": "Master of Science in Data Science",
+      "programUrl": "https://seas.harvard.edu/masters-data-science",
+      "sourceUrl": "https://seas.harvard.edu/masters-data-science",
+      "degree": "master",
+      "field": "data-science",
+      "language": null,
+      "durationMonths": 18,
+      "checkedAt": "2026-11-02",
+      "sourceId": "sprint1-harvard-edu",
+      "mode": "full-time"
+    },
+    {
+      "countryCode": "US",
+      "institutionWebsite": "https://gatech.edu/",
+      "title": "Master of Science in Computer Science",
+      "programUrl": "https://www.cc.gatech.edu/degree-programs/master-science-computer-science",
+      "sourceUrl": "https://www.cc.gatech.edu/degree-programs/master-science-computer-science",
+      "degree": "master",
+      "field": "computer-science",
+      "language": null,
+      "durationMonths": null,
+      "checkedAt": "2026-11-02",
+      "sourceId": "sprint1-gatech-edu"
+    },
+    {
+      "countryCode": "US",
+      "institutionWebsite": "https://gatech.edu/",
+      "title": "M.S. Computational Science and Engineering",
+      "programUrl": "https://www.cc.gatech.edu/degree-programs/ms-computational-science-and-engineering",
+      "sourceUrl": "https://www.cc.gatech.edu/degree-programs/ms-computational-science-and-engineering",
+      "degree": "master",
+      "field": "computer-science",
+      "language": null,
+      "durationMonths": null,
+      "checkedAt": "2026-11-02",
+      "sourceId": "sprint1-gatech-edu"
+    },
+    {
+      "countryCode": "US",
+      "institutionWebsite": "https://berkeley.edu/",
+      "title": "Master of Engineering in Electrical Engineering and Computer Sciences",
+      "programUrl": "https://eecs.berkeley.edu/academics/graduate/industry-programs/meng/",
+      "sourceUrl": "https://eecs.berkeley.edu/academics/graduate/industry-programs/meng/",
+      "degree": "master",
+      "field": "computer-science",
+      "language": null,
+      "durationMonths": 12,
+      "checkedAt": "2026-11-02",
+      "sourceId": "sprint1-berkeley-edu",
+      "mode": "full-time"
+    },
+    {
+      "countryCode": "US",
+      "institutionWebsite": "https://cmu.edu/",
+      "title": "M.S. in Machine Learning",
+      "programUrl": "https://ml.cmu.edu/academics/",
+      "sourceUrl": "https://ml.cmu.edu/academics/",
+      "degree": "master",
+      "field": "artificial-intelligence",
+      "language": null,
+      "durationMonths": 16,
+      "checkedAt": "2026-11-02",
+      "sourceId": "sprint1-cmu-edu",
+      "mode": "full-time"
+    },
+    {
+      "countryCode": "NL",
+      "institutionWebsite": "https://uu.nl/",
+      "title": "Computing Science (MSc)",
+      "programUrl": "https://www.uu.nl/en/masters/computing-science",
+      "sourceUrl": "https://www.uu.nl/en/masters/computing-science",
+      "degree": "master",
+      "field": "computer-science",
+      "language": "en",
+      "durationMonths": 24,
+      "checkedAt": "2026-11-02",
+      "sourceId": "sprint1-uu-nl",
+      "mode": "full-time",
+      "tuition": {
+        "amount": 25306,
+        "currency": "EUR",
+        "period": "year",
+        "applicantScope": "non-eu",
+        "note": "Published non-EU/EEA fee for 2026–27; not a confirmed 2027–28 quotation."
+      }
+    },
+    {
+      "countryCode": "NL",
+      "institutionWebsite": "https://uu.nl/",
+      "title": "Artificial Intelligence (MSc)",
+      "programUrl": "https://www.uu.nl/en/masters/artificial-intelligence",
+      "sourceUrl": "https://www.uu.nl/en/masters/artificial-intelligence",
+      "degree": "master",
+      "field": "artificial-intelligence",
+      "language": "en",
+      "durationMonths": 24,
+      "checkedAt": "2026-11-02",
+      "sourceId": "sprint1-uu-nl",
+      "mode": "full-time",
+      "tuition": {
+        "amount": 25306,
+        "currency": "EUR",
+        "period": "year",
+        "applicantScope": "non-eu",
+        "note": "Published non-EU/EEA fee for 2026–27; not a confirmed 2027–28 quotation."
+      }
+    },
+    {
+      "countryCode": "NL",
+      "institutionWebsite": "https://rug.nl/",
+      "title": "Computing Science (MSc)",
+      "programUrl": "https://www.rug.nl/masters/computing-science/?lang=en",
+      "sourceUrl": "https://www.rug.nl/masters/computing-science/?lang=en",
+      "degree": "master",
+      "field": "computer-science",
+      "language": "en",
+      "durationMonths": 24,
+      "checkedAt": "2026-11-02",
+      "sourceId": "sprint1-rug-nl",
+      "mode": "full-time",
+      "tuition": {
+        "amount": 24900,
+        "currency": "EUR",
+        "period": "year",
+        "applicantScope": "non-eu",
+        "note": "Published 2027–28 non-EU/EEA fee."
+      },
+      "deadline": {
+        "date": "2027-05-01",
+        "cycle": "2027",
+        "note": "September 2027 intake; published for Dutch, EU/EEA and non-EU/EEA applicants."
+      },
+      "requirements": {
+        "note": "A bachelor’s background in Computing Science is indicative; the admissions board reviews specific course content and may require a bridging programme. No numeric GPA threshold inferred."
+      }
+    },
+    {
+      "countryCode": "SE",
+      "institutionWebsite": "https://lu.se/",
+      "title": "Machine Learning, Systems and Control (MSc)",
+      "programUrl": "https://www.lunduniversity.lu.se/study/machine-learning-systems-and-control-masters-programme-TAMSR?LU=18935",
+      "sourceUrl": "https://www.lunduniversity.lu.se/study/machine-learning-systems-and-control-masters-programme-TAMSR?LU=18935",
+      "degree": "master",
+      "field": "artificial-intelligence",
+      "language": "en",
+      "durationMonths": 24,
+      "checkedAt": "2026-11-02",
+      "sourceId": "sprint1-lu-se",
+      "mode": "full-time",
+      "tuition": {
+        "amount": 370000,
+        "currency": "SEK",
+        "period": "program",
+        "applicantScope": "non-eu",
+        "note": "Total published programme fee, not an annual amount. Fee liability and exemptions require confirmation."
+      },
+      "requirements": {
+        "note": "Bachelor’s in engineering, physics, mathematics, computer science or equivalent; programme specifies mathematics and subject prerequisites. Transcript review is required."
+      }
+    },
+    {
+      "countryCode": "SE",
+      "institutionWebsite": "https://kth.se/",
+      "title": "Machine Learning (MSc)",
+      "programUrl": "https://www.kth.se/en/studies/master/machine-learning/1.615257",
+      "sourceUrl": "https://www.kth.se/en/studies/master/machine-learning/1.615257",
+      "degree": "master",
+      "field": "artificial-intelligence",
+      "language": "en",
+      "durationMonths": 24,
+      "checkedAt": "2026-11-02",
+      "sourceId": "sprint1-kth-se",
+      "mode": "full-time",
+      "deadline": {
+        "date": "2027-01-15",
+        "cycle": "2027",
+        "note": "August 2027 intake; supporting-document deadline is separate."
+      }
+    },
+    {
+      "countryCode": "SE",
+      "institutionWebsite": "https://lu.se/",
+      "title": "Data Analytics and Business Economics (MSc)",
+      "programUrl": "https://www.lunduniversity.lu.se/study/data-analytics-and-business-economics-masters-programme-EAGDA",
+      "sourceUrl": "https://www.lunduniversity.lu.se/study/data-analytics-and-business-economics-masters-programme-EAGDA",
+      "degree": "master",
+      "field": "data-science",
+      "language": "en",
+      "durationMonths": 12,
+      "checkedAt": "2026-11-02",
+      "sourceId": "sprint1-lu-se",
+      "mode": "full-time",
+      "deadline": {
+        "date": "2027-01-15",
+        "cycle": "2027",
+        "note": "Autumn 2027 full-time intake."
+      }
+    },
+    {
+      "countryCode": "SG",
+      "institutionWebsite": "https://nus.edu.sg/",
+      "title": "Master of Computing — General Track",
+      "programUrl": "https://www.comp.nus.edu.sg/programmes/pg/mcomp-gen/",
+      "sourceUrl": "https://www.comp.nus.edu.sg/programmes/pg/mcomp-gen/",
+      "degree": "master",
+      "field": "computer-science",
+      "language": null,
+      "durationMonths": null,
+      "checkedAt": "2026-11-02",
+      "sourceId": "sprint1-nus-edu-sg"
+    },
+    {
+      "countryCode": "SG",
+      "institutionWebsite": "https://nus.edu.sg/",
+      "title": "Master of Computing — Computer Science Specialisation",
+      "programUrl": "https://www.comp.nus.edu.sg/programmes/pg/mcs/",
+      "sourceUrl": "https://www.comp.nus.edu.sg/programmes/pg/mcs/",
+      "degree": "master",
+      "field": "computer-science",
+      "language": null,
+      "durationMonths": null,
+      "checkedAt": "2026-11-02",
+      "sourceId": "sprint1-nus-edu-sg"
+    },
+    {
+      "countryCode": "SG",
+      "institutionWebsite": "https://ntu.edu.sg/",
+      "title": "Master of Science in Artificial Intelligence",
+      "programUrl": "https://www.ntu.edu.sg/education/graduate-programme/master-of-science-in-artificial-intelligence",
+      "sourceUrl": "https://www.ntu.edu.sg/education/graduate-programme/master-of-science-in-artificial-intelligence",
+      "degree": "master",
+      "field": "artificial-intelligence",
+      "language": null,
+      "durationMonths": 12,
+      "checkedAt": "2026-11-02",
+      "sourceId": "sprint1-ntu-edu-sg",
+      "mode": "full-time",
+      "tuition": {
+        "amount": 65748.8,
+        "currency": "SGD",
+        "period": "program",
+        "applicantScope": "all",
+        "note": "AY2027/28 published full programme fee including 9% GST. Conditional rebates/grants are separate. Deposit is credited towards tuition."
+      },
+      "requirements": {
+        "note": "Alternative academic/experience admission routes exist. Two years of experience is not imposed on every applicant by this record; consult the official route criteria."
+      }
+    },
+    {
+      "countryCode": "HK",
+      "institutionWebsite": "https://hkust.edu.hk/",
+      "title": "MSc in Information Technology",
+      "programUrl": "https://seng.hkust.edu.hk/academics/taught-postgraduate/msc-it",
+      "sourceUrl": "https://seng.hkust.edu.hk/academics/taught-postgraduate/msc-it",
+      "degree": "master",
+      "field": "computer-science",
+      "language": null,
+      "durationMonths": null,
+      "checkedAt": "2026-11-02",
+      "sourceId": "sprint1-hkust-edu-hk",
+      "mode": "full-time",
+      "tuition": {
+        "amount": 320000,
+        "currency": "HKD",
+        "period": "program",
+        "applicantScope": "all",
+        "note": "2027/28 full-time route; part-time fee differs."
+      },
+      "deadline": {
+        "date": "2027-03-01",
+        "cycle": "2027",
+        "note": "Fall 2027, second application round. First round closes 1 December 2026; verify remaining places."
+      }
+    },
+    {
+      "countryCode": "HK",
+      "institutionWebsite": "https://hkust.edu.hk/",
+      "title": "MSc in Big Data Technology",
+      "programUrl": "https://seng.hkust.edu.hk/academics/taught-postgraduate/msc-bdt",
+      "sourceUrl": "https://seng.hkust.edu.hk/academics/taught-postgraduate/msc-bdt",
+      "degree": "master",
+      "field": "data-science",
+      "language": null,
+      "durationMonths": null,
+      "checkedAt": "2026-11-02",
+      "sourceId": "sprint1-hkust-edu-hk"
+    },
+    {
+      "countryCode": "JP",
+      "institutionWebsite": "https://u-tokyo.ac.jp/",
+      "title": "Master’s Programme in Computer Science",
+      "programUrl": "https://www.i.u-tokyo.ac.jp/edu/entra/entra_e.shtml",
+      "sourceUrl": "https://www.i.u-tokyo.ac.jp/edu/entra/entra_e.shtml",
+      "degree": "master",
+      "field": "computer-science",
+      "language": null,
+      "durationMonths": null,
+      "checkedAt": "2026-11-02",
+      "sourceId": "sprint1-u-tokyo-ac-jp",
+      "requirements": {
+        "note": "Graduate School of Information Science and Technology master’s admission route. Check department-specific examination and language rules; an English webpage does not establish English-only instruction."
+      }
+    },
+    {
+      "countryCode": "NL",
+      "institutionWebsite": "https://uu.nl/",
+      "title": "Business Informatics (MSc)",
+      "programUrl": "https://www.uu.nl/en/masters/business-informatics",
+      "sourceUrl": "https://www.uu.nl/en/masters/business-informatics",
+      "degree": "master",
+      "field": "computer-science",
+      "language": null,
+      "durationMonths": null,
+      "checkedAt": "2026-11-02",
+      "sourceId": "sprint1-uu-nl"
+    }
+  ]
+}

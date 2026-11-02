@@ -1,8 +1,8 @@
 {
   "metadata": {
     "sourcePolicy": "University pages and explicitly registered authoritative programme directories. Source kind and dated provenance are retained; unpublished attributes remain null.",
-    "updatedAt": "2026-10-30",
-    "programCount": 1927,
+    "updatedAt": "2026-11-02",
+    "programCount": 1945,
     "coverageNote": "Official-source programme records from registered catalogues and individually checked university pages. Worldwide and national coverage remain partial; a source listing is not proof of an open admission cycle.",
     "defaultApplicant": "Non-EU/international fee-paying applicant; citizenship/residence exemptions require individual verification.",
     "unknownValuePolicy": "Unverified or applicant-dependent numeric values are null, never zero. No generic GPA conversion, currency conversion, annualisation, scholarship award or recurring-deadline year has been invented.",
@@ -232,8 +232,8 @@
           {
             "countryCode": "NL",
             "institutionCount": 48,
-            "institutionsWithPrograms": 2,
-            "programCount": 2
+            "institutionsWithPrograms": 3,
+            "programCount": 5
           },
           {
             "countryCode": "NO",
@@ -274,8 +274,8 @@
           {
             "countryCode": "SE",
             "institutionCount": 37,
-            "institutionsWithPrograms": 3,
-            "programCount": 12
+            "institutionsWithPrograms": 4,
+            "programCount": 15
           },
           {
             "countryCode": "SI",
@@ -323,12 +323,12 @@
         "completeness": "partial"
       },
       "institutionCount": 10270,
-      "institutionsWithPrograms": 181,
-      "institutionsWithoutPrograms": 10089,
-      "programCount": 1927,
-      "linkedProgramCount": 1927,
+      "institutionsWithPrograms": 191,
+      "institutionsWithoutPrograms": 10079,
+      "programCount": 1945,
+      "linkedProgramCount": 1945,
       "unmatchedProgramCount": 0,
-      "coveragePercent": 1.76,
+      "coveragePercent": 1.86,
       "sources": [
         {
           "id": "daad-international-programmes",
@@ -718,6 +718,110 @@
           "id": "europe-nu-edu-kz",
           "kind": "institution",
           "checkedAt": "2026-10-29",
+          "programCount": 1,
+          "status": "partial",
+          "complete": false
+        },
+        {
+          "id": "sprint1-stanford-edu",
+          "kind": "institution",
+          "checkedAt": "2026-11-02",
+          "programCount": 1,
+          "status": "partial",
+          "complete": false
+        },
+        {
+          "id": "sprint1-harvard-edu",
+          "kind": "institution",
+          "checkedAt": "2026-11-02",
+          "programCount": 1,
+          "status": "partial",
+          "complete": false
+        },
+        {
+          "id": "sprint1-gatech-edu",
+          "kind": "institution",
+          "checkedAt": "2026-11-02",
+          "programCount": 2,
+          "status": "partial",
+          "complete": false
+        },
+        {
+          "id": "sprint1-berkeley-edu",
+          "kind": "institution",
+          "checkedAt": "2026-11-02",
+          "programCount": 1,
+          "status": "partial",
+          "complete": false
+        },
+        {
+          "id": "sprint1-cmu-edu",
+          "kind": "institution",
+          "checkedAt": "2026-11-02",
+          "programCount": 1,
+          "status": "partial",
+          "complete": false
+        },
+        {
+          "id": "sprint1-uu-nl",
+          "kind": "institution",
+          "checkedAt": "2026-11-02",
+          "programCount": 3,
+          "status": "partial",
+          "complete": false
+        },
+        {
+          "id": "sprint1-rug-nl",
+          "kind": "institution",
+          "checkedAt": "2026-11-02",
+          "programCount": 1,
+          "status": "partial",
+          "complete": false
+        },
+        {
+          "id": "sprint1-lu-se",
+          "kind": "institution",
+          "checkedAt": "2026-11-02",
+          "programCount": 2,
+          "status": "partial",
+          "complete": false
+        },
+        {
+          "id": "sprint1-kth-se",
+          "kind": "institution",
+          "checkedAt": "2026-11-02",
+          "programCount": 1,
+          "status": "partial",
+          "complete": false
+        },
+        {
+          "id": "sprint1-nus-edu-sg",
+          "kind": "institution",
+          "checkedAt": "2026-11-02",
+          "programCount": 2,
+          "status": "partial",
+          "complete": false
+        },
+        {
+          "id": "sprint1-ntu-edu-sg",
+          "kind": "institution",
+          "checkedAt": "2026-11-02",
+          "programCount": 1,
+          "status": "partial",
+          "complete": false
+        },
+        {
+          "id": "sprint1-hkust-edu-hk",
+          "kind": "institution",
+          "checkedAt": "2026-11-02",
+          "programCount": 2,
+          "status": "partial",
+          "complete": false
+        },
+        {
+          "id": "sprint1-u-tokyo-ac-jp",
+          "kind": "institution",
+          "checkedAt": "2026-11-02",
           "programCount": 1,
           "status": "partial",
           "complete": false
@@ -1177,8 +1281,8 @@
         {
           "countryCode": "HK",
           "institutionCount": 15,
-          "institutionsWithPrograms": 0,
-          "programCount": 0
+          "institutionsWithPrograms": 1,
+          "programCount": 2
         },
         {
           "countryCode": "HN",
@@ -1267,8 +1371,8 @@
         {
           "countryCode": "JP",
           "institutionCount": 572,
-          "institutionsWithPrograms": 0,
-          "programCount": 0
+          "institutionsWithPrograms": 1,
+          "programCount": 1
         },
         {
           "countryCode": "KE",
@@ -1537,8 +1641,8 @@
         {
           "countryCode": "NL",
           "institutionCount": 48,
-          "institutionsWithPrograms": 2,
-          "programCount": 2
+          "institutionsWithPrograms": 3,
+          "programCount": 5
         },
         {
           "countryCode": "NO",
@@ -1693,14 +1797,14 @@
         {
           "countryCode": "SE",
           "institutionCount": 37,
-          "institutionsWithPrograms": 3,
-          "programCount": 12
+          "institutionsWithPrograms": 4,
+          "programCount": 15
         },
         {
           "countryCode": "SG",
           "institutionCount": 18,
-          "institutionsWithPrograms": 0,
-          "programCount": 0
+          "institutionsWithPrograms": 2,
+          "programCount": 3
         },
         {
           "countryCode": "SI",
@@ -1849,8 +1953,8 @@
         {
           "countryCode": "US",
           "institutionCount": 2349,
-          "institutionsWithPrograms": 1,
-          "programCount": 1
+          "institutionsWithPrograms": 5,
+          "programCount": 7
         },
         {
           "countryCode": "UY",
@@ -1999,7 +2103,10 @@
         "lookupFailures": 0
       }
     },
-    "europeSeedCount": 54
+    "europeSeedCount": 54,
+    "curatedSeedCounts": {
+      "sprint-1-programmes.json": 19
+    }
   },
   "programs": [
     {
@@ -2511,7 +2618,24 @@
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-10-27"
+      "updatedAt": "2026-10-27",
+      "languages": [
+        "en"
+      ],
+      "programUrl": "https://www.uu.nl/en/masters/artificial-intelligence",
+      "subject": null,
+      "city": null,
+      "sourceLanguages": [],
+      "imports": [
+        {
+          "sourceId": "sprint1-uu-nl",
+          "sourceRecordId": "https://www.uu.nl/en/masters/artificial-intelligence",
+          "kind": "institution",
+          "recordUrl": "https://www.uu.nl/en/masters/artificial-intelligence",
+          "listingSourceUrl": null,
+          "checkedAt": "2026-11-02"
+        }
+      ]
     },
     {
       "id": "program_oxford-advanced-computer-science-msc",
@@ -147133,6 +147257,1294 @@
           "recordUrl": "https://nu.edu.kz/sprogram/master-of-science-in-computer-science/",
           "listingSourceUrl": null,
           "checkedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "program_f66f4ff7aa28d3e26c35b333",
+      "institutionId": "inst_0e979b04a7ae47288637c75b",
+      "institutionName": "Stanford University",
+      "institutionWebsite": "https://stanford.edu/",
+      "countryCode": "US",
+      "title": "Computer Science (MS)",
+      "field": "computer-science",
+      "category": "tech",
+      "degree": "master",
+      "language": null,
+      "languages": [],
+      "mode": null,
+      "durationMonths": null,
+      "programUrl": "https://bulletin.stanford.edu/programs/CS-MS",
+      "subject": null,
+      "city": null,
+      "sourceLanguages": [],
+      "tuition": {
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "applicantScope": null,
+        "note": ""
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": ""
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": ""
+      },
+      "sources": [
+        {
+          "url": "https://bulletin.stanford.edu/programs/CS-MS",
+          "label": "Stanford University — verified official programme sources",
+          "checkedAt": "2026-11-02",
+          "kind": "institution",
+          "sourceId": "sprint1-stanford-edu"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-11-02",
+      "provenance": {
+        "sourceId": "sprint1-stanford-edu",
+        "sourceRecordId": "https://bulletin.stanford.edu/programs/CS-MS",
+        "kind": "institution",
+        "recordUrl": "https://bulletin.stanford.edu/programs/CS-MS",
+        "listingSourceUrl": null,
+        "checkedAt": "2026-11-02"
+      },
+      "imports": [
+        {
+          "sourceId": "sprint1-stanford-edu",
+          "sourceRecordId": "https://bulletin.stanford.edu/programs/CS-MS",
+          "kind": "institution",
+          "recordUrl": "https://bulletin.stanford.edu/programs/CS-MS",
+          "listingSourceUrl": null,
+          "checkedAt": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "id": "program_1aa8a9a8cb69b7ded92d2df2",
+      "institutionId": "inst_221320187ba2a46deb18a15d",
+      "institutionName": "Harvard University",
+      "institutionWebsite": "https://harvard.edu/",
+      "countryCode": "US",
+      "title": "Master of Science in Data Science",
+      "field": "data-science",
+      "category": "tech",
+      "degree": "master",
+      "language": null,
+      "languages": [],
+      "mode": "full-time",
+      "durationMonths": 18,
+      "programUrl": "https://seas.harvard.edu/masters-data-science",
+      "subject": null,
+      "city": null,
+      "sourceLanguages": [],
+      "tuition": {
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "applicantScope": null,
+        "note": ""
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": ""
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": ""
+      },
+      "sources": [
+        {
+          "url": "https://seas.harvard.edu/masters-data-science",
+          "label": "Harvard University — verified official programme sources",
+          "checkedAt": "2026-11-02",
+          "kind": "institution",
+          "sourceId": "sprint1-harvard-edu"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-11-02",
+      "provenance": {
+        "sourceId": "sprint1-harvard-edu",
+        "sourceRecordId": "https://seas.harvard.edu/masters-data-science",
+        "kind": "institution",
+        "recordUrl": "https://seas.harvard.edu/masters-data-science",
+        "listingSourceUrl": null,
+        "checkedAt": "2026-11-02"
+      },
+      "imports": [
+        {
+          "sourceId": "sprint1-harvard-edu",
+          "sourceRecordId": "https://seas.harvard.edu/masters-data-science",
+          "kind": "institution",
+          "recordUrl": "https://seas.harvard.edu/masters-data-science",
+          "listingSourceUrl": null,
+          "checkedAt": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "id": "program_8e345c66188ce048613e80df",
+      "institutionId": "inst_598d8b74a2f7997167f0bac1",
+      "institutionName": "Georgia Institute of Technology",
+      "institutionWebsite": "https://gatech.edu/",
+      "countryCode": "US",
+      "title": "Master of Science in Computer Science",
+      "field": "computer-science",
+      "category": "tech",
+      "degree": "master",
+      "language": null,
+      "languages": [],
+      "mode": null,
+      "durationMonths": null,
+      "programUrl": "https://www.cc.gatech.edu/degree-programs/master-science-computer-science",
+      "subject": null,
+      "city": null,
+      "sourceLanguages": [],
+      "tuition": {
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "applicantScope": null,
+        "note": ""
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": ""
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": ""
+      },
+      "sources": [
+        {
+          "url": "https://www.cc.gatech.edu/degree-programs/master-science-computer-science",
+          "label": "Georgia Institute of Technology — verified official programme sources",
+          "checkedAt": "2026-11-02",
+          "kind": "institution",
+          "sourceId": "sprint1-gatech-edu"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-11-02",
+      "provenance": {
+        "sourceId": "sprint1-gatech-edu",
+        "sourceRecordId": "https://www.cc.gatech.edu/degree-programs/master-science-computer-science",
+        "kind": "institution",
+        "recordUrl": "https://www.cc.gatech.edu/degree-programs/master-science-computer-science",
+        "listingSourceUrl": null,
+        "checkedAt": "2026-11-02"
+      },
+      "imports": [
+        {
+          "sourceId": "sprint1-gatech-edu",
+          "sourceRecordId": "https://www.cc.gatech.edu/degree-programs/master-science-computer-science",
+          "kind": "institution",
+          "recordUrl": "https://www.cc.gatech.edu/degree-programs/master-science-computer-science",
+          "listingSourceUrl": null,
+          "checkedAt": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "id": "program_d551d90fde843464b382b24c",
+      "institutionId": "inst_598d8b74a2f7997167f0bac1",
+      "institutionName": "Georgia Institute of Technology",
+      "institutionWebsite": "https://gatech.edu/",
+      "countryCode": "US",
+      "title": "M.S. Computational Science and Engineering",
+      "field": "computer-science",
+      "category": "tech",
+      "degree": "master",
+      "language": null,
+      "languages": [],
+      "mode": null,
+      "durationMonths": null,
+      "programUrl": "https://www.cc.gatech.edu/degree-programs/ms-computational-science-and-engineering",
+      "subject": null,
+      "city": null,
+      "sourceLanguages": [],
+      "tuition": {
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "applicantScope": null,
+        "note": ""
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": ""
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": ""
+      },
+      "sources": [
+        {
+          "url": "https://www.cc.gatech.edu/degree-programs/ms-computational-science-and-engineering",
+          "label": "Georgia Institute of Technology — verified official programme sources",
+          "checkedAt": "2026-11-02",
+          "kind": "institution",
+          "sourceId": "sprint1-gatech-edu"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-11-02",
+      "provenance": {
+        "sourceId": "sprint1-gatech-edu",
+        "sourceRecordId": "https://www.cc.gatech.edu/degree-programs/ms-computational-science-and-engineering",
+        "kind": "institution",
+        "recordUrl": "https://www.cc.gatech.edu/degree-programs/ms-computational-science-and-engineering",
+        "listingSourceUrl": null,
+        "checkedAt": "2026-11-02"
+      },
+      "imports": [
+        {
+          "sourceId": "sprint1-gatech-edu",
+          "sourceRecordId": "https://www.cc.gatech.edu/degree-programs/ms-computational-science-and-engineering",
+          "kind": "institution",
+          "recordUrl": "https://www.cc.gatech.edu/degree-programs/ms-computational-science-and-engineering",
+          "listingSourceUrl": null,
+          "checkedAt": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "id": "program_bc99e00b168499e926a9d9df",
+      "institutionId": "inst_89ebc6760846d32a7067f52d",
+      "institutionName": "University of California, Berkeley",
+      "institutionWebsite": "https://berkeley.edu/",
+      "countryCode": "US",
+      "title": "Master of Engineering in Electrical Engineering and Computer Sciences",
+      "field": "computer-science",
+      "category": "tech",
+      "degree": "master",
+      "language": null,
+      "languages": [],
+      "mode": "full-time",
+      "durationMonths": 12,
+      "programUrl": "https://eecs.berkeley.edu/academics/graduate/industry-programs/meng/",
+      "subject": null,
+      "city": null,
+      "sourceLanguages": [],
+      "tuition": {
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "applicantScope": null,
+        "note": ""
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": ""
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": ""
+      },
+      "sources": [
+        {
+          "url": "https://eecs.berkeley.edu/academics/graduate/industry-programs/meng/",
+          "label": "University of California, Berkeley — verified official programme sources",
+          "checkedAt": "2026-11-02",
+          "kind": "institution",
+          "sourceId": "sprint1-berkeley-edu"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-11-02",
+      "provenance": {
+        "sourceId": "sprint1-berkeley-edu",
+        "sourceRecordId": "https://eecs.berkeley.edu/academics/graduate/industry-programs/meng/",
+        "kind": "institution",
+        "recordUrl": "https://eecs.berkeley.edu/academics/graduate/industry-programs/meng/",
+        "listingSourceUrl": null,
+        "checkedAt": "2026-11-02"
+      },
+      "imports": [
+        {
+          "sourceId": "sprint1-berkeley-edu",
+          "sourceRecordId": "https://eecs.berkeley.edu/academics/graduate/industry-programs/meng/",
+          "kind": "institution",
+          "recordUrl": "https://eecs.berkeley.edu/academics/graduate/industry-programs/meng/",
+          "listingSourceUrl": null,
+          "checkedAt": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "id": "program_3e834edf079c470931727f6e",
+      "institutionId": "inst_fd7b6d4b1e8935939d744581",
+      "institutionName": "Carnegie Mellon University",
+      "institutionWebsite": "https://cmu.edu/",
+      "countryCode": "US",
+      "title": "M.S. in Machine Learning",
+      "field": "artificial-intelligence",
+      "category": "tech",
+      "degree": "master",
+      "language": null,
+      "languages": [],
+      "mode": "full-time",
+      "durationMonths": 16,
+      "programUrl": "https://ml.cmu.edu/academics/",
+      "subject": null,
+      "city": null,
+      "sourceLanguages": [],
+      "tuition": {
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "applicantScope": null,
+        "note": ""
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": ""
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": ""
+      },
+      "sources": [
+        {
+          "url": "https://ml.cmu.edu/academics/",
+          "label": "Carnegie Mellon University — verified official programme sources",
+          "checkedAt": "2026-11-02",
+          "kind": "institution",
+          "sourceId": "sprint1-cmu-edu"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-11-02",
+      "provenance": {
+        "sourceId": "sprint1-cmu-edu",
+        "sourceRecordId": "https://ml.cmu.edu/academics/",
+        "kind": "institution",
+        "recordUrl": "https://ml.cmu.edu/academics/",
+        "listingSourceUrl": null,
+        "checkedAt": "2026-11-02"
+      },
+      "imports": [
+        {
+          "sourceId": "sprint1-cmu-edu",
+          "sourceRecordId": "https://ml.cmu.edu/academics/",
+          "kind": "institution",
+          "recordUrl": "https://ml.cmu.edu/academics/",
+          "listingSourceUrl": null,
+          "checkedAt": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "id": "program_d6c404d6875c1299bb9634fc",
+      "institutionId": "inst_6bb9284a8954da79a2a4d247",
+      "institutionName": "Utrecht University",
+      "institutionWebsite": "https://uu.nl/",
+      "countryCode": "NL",
+      "title": "Computing Science (MSc)",
+      "field": "computer-science",
+      "category": "tech",
+      "degree": "master",
+      "language": "en",
+      "languages": [
+        "en"
+      ],
+      "mode": "full-time",
+      "durationMonths": 24,
+      "programUrl": "https://www.uu.nl/en/masters/computing-science",
+      "subject": null,
+      "city": null,
+      "sourceLanguages": [],
+      "tuition": {
+        "amount": 25306,
+        "currency": "EUR",
+        "period": "year",
+        "applicantScope": "non-eu",
+        "note": "Published non-EU/EEA fee for 2026–27; not a confirmed 2027–28 quotation."
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": ""
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": ""
+      },
+      "sources": [
+        {
+          "url": "https://www.uu.nl/en/masters/computing-science",
+          "label": "Utrecht University — verified official programme sources",
+          "checkedAt": "2026-11-02",
+          "kind": "institution",
+          "sourceId": "sprint1-uu-nl"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-11-02",
+      "provenance": {
+        "sourceId": "sprint1-uu-nl",
+        "sourceRecordId": "https://www.uu.nl/en/masters/computing-science",
+        "kind": "institution",
+        "recordUrl": "https://www.uu.nl/en/masters/computing-science",
+        "listingSourceUrl": null,
+        "checkedAt": "2026-11-02"
+      },
+      "imports": [
+        {
+          "sourceId": "sprint1-uu-nl",
+          "sourceRecordId": "https://www.uu.nl/en/masters/computing-science",
+          "kind": "institution",
+          "recordUrl": "https://www.uu.nl/en/masters/computing-science",
+          "listingSourceUrl": null,
+          "checkedAt": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "id": "program_1863a4fed80a686d97ea0dd0",
+      "institutionId": "inst_7bfe0b931e706740608257a6",
+      "institutionName": "University of Groningen",
+      "institutionWebsite": "https://rug.nl/",
+      "countryCode": "NL",
+      "title": "Computing Science (MSc)",
+      "field": "computer-science",
+      "category": "tech",
+      "degree": "master",
+      "language": "en",
+      "languages": [
+        "en"
+      ],
+      "mode": "full-time",
+      "durationMonths": 24,
+      "programUrl": "https://www.rug.nl/masters/computing-science/?lang=en",
+      "subject": null,
+      "city": null,
+      "sourceLanguages": [],
+      "tuition": {
+        "amount": 24900,
+        "currency": "EUR",
+        "period": "year",
+        "applicantScope": "non-eu",
+        "note": "Published 2027–28 non-EU/EEA fee."
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": "A bachelor’s background in Computing Science is indicative; the admissions board reviews specific course content and may require a bridging programme. No numeric GPA threshold inferred."
+      },
+      "deadline": {
+        "date": "2027-05-01",
+        "cycle": "2027",
+        "note": "September 2027 intake; published for Dutch, EU/EEA and non-EU/EEA applicants."
+      },
+      "sources": [
+        {
+          "url": "https://www.rug.nl/masters/computing-science/?lang=en",
+          "label": "University of Groningen — verified official programme sources",
+          "checkedAt": "2026-11-02",
+          "kind": "institution",
+          "sourceId": "sprint1-rug-nl"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-11-02",
+      "provenance": {
+        "sourceId": "sprint1-rug-nl",
+        "sourceRecordId": "https://www.rug.nl/masters/computing-science/?lang=en",
+        "kind": "institution",
+        "recordUrl": "https://www.rug.nl/masters/computing-science/?lang=en",
+        "listingSourceUrl": null,
+        "checkedAt": "2026-11-02"
+      },
+      "imports": [
+        {
+          "sourceId": "sprint1-rug-nl",
+          "sourceRecordId": "https://www.rug.nl/masters/computing-science/?lang=en",
+          "kind": "institution",
+          "recordUrl": "https://www.rug.nl/masters/computing-science/?lang=en",
+          "listingSourceUrl": null,
+          "checkedAt": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "id": "program_3ed3c465ca740ad91f1722db",
+      "institutionId": "inst_834f638a025b8a70d83aa05c",
+      "institutionName": "Lund University",
+      "institutionWebsite": "https://lu.se/",
+      "countryCode": "SE",
+      "title": "Data Analytics and Business Economics (MSc)",
+      "field": "data-science",
+      "category": "tech",
+      "degree": "master",
+      "language": "en",
+      "languages": [
+        "en"
+      ],
+      "mode": "full-time",
+      "durationMonths": 12,
+      "programUrl": "https://www.lunduniversity.lu.se/study/data-analytics-and-business-economics-masters-programme-EAGDA",
+      "subject": null,
+      "city": null,
+      "sourceLanguages": [],
+      "tuition": {
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "applicantScope": null,
+        "note": ""
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": ""
+      },
+      "deadline": {
+        "date": "2027-01-15",
+        "cycle": "2027",
+        "note": "Autumn 2027 full-time intake."
+      },
+      "sources": [
+        {
+          "url": "https://www.lunduniversity.lu.se/study/data-analytics-and-business-economics-masters-programme-EAGDA",
+          "label": "Lund University — verified official programme sources",
+          "checkedAt": "2026-11-02",
+          "kind": "institution",
+          "sourceId": "sprint1-lu-se"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-11-02",
+      "provenance": {
+        "sourceId": "sprint1-lu-se",
+        "sourceRecordId": "https://www.lunduniversity.lu.se/study/data-analytics-and-business-economics-masters-programme-EAGDA",
+        "kind": "institution",
+        "recordUrl": "https://www.lunduniversity.lu.se/study/data-analytics-and-business-economics-masters-programme-EAGDA",
+        "listingSourceUrl": null,
+        "checkedAt": "2026-11-02"
+      },
+      "imports": [
+        {
+          "sourceId": "sprint1-lu-se",
+          "sourceRecordId": "https://www.lunduniversity.lu.se/study/data-analytics-and-business-economics-masters-programme-EAGDA",
+          "kind": "institution",
+          "recordUrl": "https://www.lunduniversity.lu.se/study/data-analytics-and-business-economics-masters-programme-EAGDA",
+          "listingSourceUrl": null,
+          "checkedAt": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "id": "program_cd17957a6d56f35ee98bf865",
+      "institutionId": "inst_834f638a025b8a70d83aa05c",
+      "institutionName": "Lund University",
+      "institutionWebsite": "https://lu.se/",
+      "countryCode": "SE",
+      "title": "Machine Learning, Systems and Control (MSc)",
+      "field": "artificial-intelligence",
+      "category": "tech",
+      "degree": "master",
+      "language": "en",
+      "languages": [
+        "en"
+      ],
+      "mode": "full-time",
+      "durationMonths": 24,
+      "programUrl": "https://www.lunduniversity.lu.se/study/machine-learning-systems-and-control-masters-programme-TAMSR?LU=18935",
+      "subject": null,
+      "city": null,
+      "sourceLanguages": [],
+      "tuition": {
+        "amount": 370000,
+        "currency": "SEK",
+        "period": "program",
+        "applicantScope": "non-eu",
+        "note": "Total published programme fee, not an annual amount. Fee liability and exemptions require confirmation."
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": "Bachelor’s in engineering, physics, mathematics, computer science or equivalent; programme specifies mathematics and subject prerequisites. Transcript review is required."
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": ""
+      },
+      "sources": [
+        {
+          "url": "https://www.lunduniversity.lu.se/study/machine-learning-systems-and-control-masters-programme-TAMSR?LU=18935",
+          "label": "Lund University — verified official programme sources",
+          "checkedAt": "2026-11-02",
+          "kind": "institution",
+          "sourceId": "sprint1-lu-se"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-11-02",
+      "provenance": {
+        "sourceId": "sprint1-lu-se",
+        "sourceRecordId": "https://www.lunduniversity.lu.se/study/machine-learning-systems-and-control-masters-programme-TAMSR?LU=18935",
+        "kind": "institution",
+        "recordUrl": "https://www.lunduniversity.lu.se/study/machine-learning-systems-and-control-masters-programme-TAMSR?LU=18935",
+        "listingSourceUrl": null,
+        "checkedAt": "2026-11-02"
+      },
+      "imports": [
+        {
+          "sourceId": "sprint1-lu-se",
+          "sourceRecordId": "https://www.lunduniversity.lu.se/study/machine-learning-systems-and-control-masters-programme-TAMSR?LU=18935",
+          "kind": "institution",
+          "recordUrl": "https://www.lunduniversity.lu.se/study/machine-learning-systems-and-control-masters-programme-TAMSR?LU=18935",
+          "listingSourceUrl": null,
+          "checkedAt": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "id": "program_2eba7ad2eae7896ac7a8ce64",
+      "institutionId": "inst_e634b2f3c7f804f4af694624",
+      "institutionName": "KTH Royal Institute of Technology",
+      "institutionWebsite": "https://kth.se/",
+      "countryCode": "SE",
+      "title": "Machine Learning (MSc)",
+      "field": "artificial-intelligence",
+      "category": "tech",
+      "degree": "master",
+      "language": "en",
+      "languages": [
+        "en"
+      ],
+      "mode": "full-time",
+      "durationMonths": 24,
+      "programUrl": "https://www.kth.se/en/studies/master/machine-learning/1.615257",
+      "subject": null,
+      "city": null,
+      "sourceLanguages": [],
+      "tuition": {
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "applicantScope": null,
+        "note": ""
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": ""
+      },
+      "deadline": {
+        "date": "2027-01-15",
+        "cycle": "2027",
+        "note": "August 2027 intake; supporting-document deadline is separate."
+      },
+      "sources": [
+        {
+          "url": "https://www.kth.se/en/studies/master/machine-learning/1.615257",
+          "label": "KTH Royal Institute of Technology — verified official programme sources",
+          "checkedAt": "2026-11-02",
+          "kind": "institution",
+          "sourceId": "sprint1-kth-se"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-11-02",
+      "provenance": {
+        "sourceId": "sprint1-kth-se",
+        "sourceRecordId": "https://www.kth.se/en/studies/master/machine-learning/1.615257",
+        "kind": "institution",
+        "recordUrl": "https://www.kth.se/en/studies/master/machine-learning/1.615257",
+        "listingSourceUrl": null,
+        "checkedAt": "2026-11-02"
+      },
+      "imports": [
+        {
+          "sourceId": "sprint1-kth-se",
+          "sourceRecordId": "https://www.kth.se/en/studies/master/machine-learning/1.615257",
+          "kind": "institution",
+          "recordUrl": "https://www.kth.se/en/studies/master/machine-learning/1.615257",
+          "listingSourceUrl": null,
+          "checkedAt": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "id": "program_a955ad5f2d25ec1b49b2a735",
+      "institutionId": "inst_31cfa24d8c7e53c7b2bcb5be",
+      "institutionName": "National University of Singapore",
+      "institutionWebsite": "https://nus.edu.sg/",
+      "countryCode": "SG",
+      "title": "Master of Computing — General Track",
+      "field": "computer-science",
+      "category": "tech",
+      "degree": "master",
+      "language": null,
+      "languages": [],
+      "mode": null,
+      "durationMonths": null,
+      "programUrl": "https://www.comp.nus.edu.sg/programmes/pg/mcomp-gen/",
+      "subject": null,
+      "city": null,
+      "sourceLanguages": [],
+      "tuition": {
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "applicantScope": null,
+        "note": ""
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": ""
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": ""
+      },
+      "sources": [
+        {
+          "url": "https://www.comp.nus.edu.sg/programmes/pg/mcomp-gen/",
+          "label": "National University of Singapore — verified official programme sources",
+          "checkedAt": "2026-11-02",
+          "kind": "institution",
+          "sourceId": "sprint1-nus-edu-sg"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-11-02",
+      "provenance": {
+        "sourceId": "sprint1-nus-edu-sg",
+        "sourceRecordId": "https://www.comp.nus.edu.sg/programmes/pg/mcomp-gen/",
+        "kind": "institution",
+        "recordUrl": "https://www.comp.nus.edu.sg/programmes/pg/mcomp-gen/",
+        "listingSourceUrl": null,
+        "checkedAt": "2026-11-02"
+      },
+      "imports": [
+        {
+          "sourceId": "sprint1-nus-edu-sg",
+          "sourceRecordId": "https://www.comp.nus.edu.sg/programmes/pg/mcomp-gen/",
+          "kind": "institution",
+          "recordUrl": "https://www.comp.nus.edu.sg/programmes/pg/mcomp-gen/",
+          "listingSourceUrl": null,
+          "checkedAt": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "id": "program_e9e3c4c77d36b42f2ace0ffe",
+      "institutionId": "inst_31cfa24d8c7e53c7b2bcb5be",
+      "institutionName": "National University of Singapore",
+      "institutionWebsite": "https://nus.edu.sg/",
+      "countryCode": "SG",
+      "title": "Master of Computing — Computer Science Specialisation",
+      "field": "computer-science",
+      "category": "tech",
+      "degree": "master",
+      "language": null,
+      "languages": [],
+      "mode": null,
+      "durationMonths": null,
+      "programUrl": "https://www.comp.nus.edu.sg/programmes/pg/mcs/",
+      "subject": null,
+      "city": null,
+      "sourceLanguages": [],
+      "tuition": {
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "applicantScope": null,
+        "note": ""
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": ""
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": ""
+      },
+      "sources": [
+        {
+          "url": "https://www.comp.nus.edu.sg/programmes/pg/mcs/",
+          "label": "National University of Singapore — verified official programme sources",
+          "checkedAt": "2026-11-02",
+          "kind": "institution",
+          "sourceId": "sprint1-nus-edu-sg"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-11-02",
+      "provenance": {
+        "sourceId": "sprint1-nus-edu-sg",
+        "sourceRecordId": "https://www.comp.nus.edu.sg/programmes/pg/mcs/",
+        "kind": "institution",
+        "recordUrl": "https://www.comp.nus.edu.sg/programmes/pg/mcs/",
+        "listingSourceUrl": null,
+        "checkedAt": "2026-11-02"
+      },
+      "imports": [
+        {
+          "sourceId": "sprint1-nus-edu-sg",
+          "sourceRecordId": "https://www.comp.nus.edu.sg/programmes/pg/mcs/",
+          "kind": "institution",
+          "recordUrl": "https://www.comp.nus.edu.sg/programmes/pg/mcs/",
+          "listingSourceUrl": null,
+          "checkedAt": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "id": "program_e448c906ffd63705e139f822",
+      "institutionId": "inst_9ffdd5a612353da1bdb42003",
+      "institutionName": "Nanyang Technological University",
+      "institutionWebsite": "https://ntu.edu.sg/",
+      "countryCode": "SG",
+      "title": "Master of Science in Artificial Intelligence",
+      "field": "artificial-intelligence",
+      "category": "tech",
+      "degree": "master",
+      "language": null,
+      "languages": [],
+      "mode": "full-time",
+      "durationMonths": 12,
+      "programUrl": "https://www.ntu.edu.sg/education/graduate-programme/master-of-science-in-artificial-intelligence",
+      "subject": null,
+      "city": null,
+      "sourceLanguages": [],
+      "tuition": {
+        "amount": 65748.8,
+        "currency": "SGD",
+        "period": "program",
+        "applicantScope": "all",
+        "note": "AY2027/28 published full programme fee including 9% GST. Conditional rebates/grants are separate. Deposit is credited towards tuition."
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": "Alternative academic/experience admission routes exist. Two years of experience is not imposed on every applicant by this record; consult the official route criteria."
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": ""
+      },
+      "sources": [
+        {
+          "url": "https://www.ntu.edu.sg/education/graduate-programme/master-of-science-in-artificial-intelligence",
+          "label": "Nanyang Technological University — verified official programme sources",
+          "checkedAt": "2026-11-02",
+          "kind": "institution",
+          "sourceId": "sprint1-ntu-edu-sg"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-11-02",
+      "provenance": {
+        "sourceId": "sprint1-ntu-edu-sg",
+        "sourceRecordId": "https://www.ntu.edu.sg/education/graduate-programme/master-of-science-in-artificial-intelligence",
+        "kind": "institution",
+        "recordUrl": "https://www.ntu.edu.sg/education/graduate-programme/master-of-science-in-artificial-intelligence",
+        "listingSourceUrl": null,
+        "checkedAt": "2026-11-02"
+      },
+      "imports": [
+        {
+          "sourceId": "sprint1-ntu-edu-sg",
+          "sourceRecordId": "https://www.ntu.edu.sg/education/graduate-programme/master-of-science-in-artificial-intelligence",
+          "kind": "institution",
+          "recordUrl": "https://www.ntu.edu.sg/education/graduate-programme/master-of-science-in-artificial-intelligence",
+          "listingSourceUrl": null,
+          "checkedAt": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "id": "program_2a0b82f5ebcbccdc00637d06",
+      "institutionId": "inst_ff1dbc2f215e8df8d29c0141",
+      "institutionName": "The Hong Kong University of Science and Technology",
+      "institutionWebsite": "https://hkust.edu.hk/",
+      "countryCode": "HK",
+      "title": "MSc in Information Technology",
+      "field": "computer-science",
+      "category": "tech",
+      "degree": "master",
+      "language": null,
+      "languages": [],
+      "mode": "full-time",
+      "durationMonths": null,
+      "programUrl": "https://seng.hkust.edu.hk/academics/taught-postgraduate/msc-it",
+      "subject": null,
+      "city": null,
+      "sourceLanguages": [],
+      "tuition": {
+        "amount": 320000,
+        "currency": "HKD",
+        "period": "program",
+        "applicantScope": "all",
+        "note": "2027/28 full-time route; part-time fee differs."
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": ""
+      },
+      "deadline": {
+        "date": "2027-03-01",
+        "cycle": "2027",
+        "note": "Fall 2027, second application round. First round closes 1 December 2026; verify remaining places."
+      },
+      "sources": [
+        {
+          "url": "https://seng.hkust.edu.hk/academics/taught-postgraduate/msc-it",
+          "label": "The Hong Kong University of Science and Technology — verified official programme sources",
+          "checkedAt": "2026-11-02",
+          "kind": "institution",
+          "sourceId": "sprint1-hkust-edu-hk"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-11-02",
+      "provenance": {
+        "sourceId": "sprint1-hkust-edu-hk",
+        "sourceRecordId": "https://seng.hkust.edu.hk/academics/taught-postgraduate/msc-it",
+        "kind": "institution",
+        "recordUrl": "https://seng.hkust.edu.hk/academics/taught-postgraduate/msc-it",
+        "listingSourceUrl": null,
+        "checkedAt": "2026-11-02"
+      },
+      "imports": [
+        {
+          "sourceId": "sprint1-hkust-edu-hk",
+          "sourceRecordId": "https://seng.hkust.edu.hk/academics/taught-postgraduate/msc-it",
+          "kind": "institution",
+          "recordUrl": "https://seng.hkust.edu.hk/academics/taught-postgraduate/msc-it",
+          "listingSourceUrl": null,
+          "checkedAt": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "id": "program_9024af3e8ab862c62612d26a",
+      "institutionId": "inst_ff1dbc2f215e8df8d29c0141",
+      "institutionName": "The Hong Kong University of Science and Technology",
+      "institutionWebsite": "https://hkust.edu.hk/",
+      "countryCode": "HK",
+      "title": "MSc in Big Data Technology",
+      "field": "data-science",
+      "category": "tech",
+      "degree": "master",
+      "language": null,
+      "languages": [],
+      "mode": null,
+      "durationMonths": null,
+      "programUrl": "https://seng.hkust.edu.hk/academics/taught-postgraduate/msc-bdt",
+      "subject": null,
+      "city": null,
+      "sourceLanguages": [],
+      "tuition": {
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "applicantScope": null,
+        "note": ""
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": ""
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": ""
+      },
+      "sources": [
+        {
+          "url": "https://seng.hkust.edu.hk/academics/taught-postgraduate/msc-bdt",
+          "label": "The Hong Kong University of Science and Technology — verified official programme sources",
+          "checkedAt": "2026-11-02",
+          "kind": "institution",
+          "sourceId": "sprint1-hkust-edu-hk"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-11-02",
+      "provenance": {
+        "sourceId": "sprint1-hkust-edu-hk",
+        "sourceRecordId": "https://seng.hkust.edu.hk/academics/taught-postgraduate/msc-bdt",
+        "kind": "institution",
+        "recordUrl": "https://seng.hkust.edu.hk/academics/taught-postgraduate/msc-bdt",
+        "listingSourceUrl": null,
+        "checkedAt": "2026-11-02"
+      },
+      "imports": [
+        {
+          "sourceId": "sprint1-hkust-edu-hk",
+          "sourceRecordId": "https://seng.hkust.edu.hk/academics/taught-postgraduate/msc-bdt",
+          "kind": "institution",
+          "recordUrl": "https://seng.hkust.edu.hk/academics/taught-postgraduate/msc-bdt",
+          "listingSourceUrl": null,
+          "checkedAt": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "id": "program_23545bafde898e40f22113e3",
+      "institutionId": "inst_c9e48811ec8be84663c4ba12",
+      "institutionName": "University of Tokyo",
+      "institutionWebsite": "https://u-tokyo.ac.jp/",
+      "countryCode": "JP",
+      "title": "Master’s Programme in Computer Science",
+      "field": "computer-science",
+      "category": "tech",
+      "degree": "master",
+      "language": null,
+      "languages": [],
+      "mode": null,
+      "durationMonths": null,
+      "programUrl": "https://www.i.u-tokyo.ac.jp/edu/entra/entra_e.shtml",
+      "subject": null,
+      "city": null,
+      "sourceLanguages": [],
+      "tuition": {
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "applicantScope": null,
+        "note": ""
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": "Graduate School of Information Science and Technology master’s admission route. Check department-specific examination and language rules; an English webpage does not establish English-only instruction."
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": ""
+      },
+      "sources": [
+        {
+          "url": "https://www.i.u-tokyo.ac.jp/edu/entra/entra_e.shtml",
+          "label": "University of Tokyo — verified official programme sources",
+          "checkedAt": "2026-11-02",
+          "kind": "institution",
+          "sourceId": "sprint1-u-tokyo-ac-jp"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-11-02",
+      "provenance": {
+        "sourceId": "sprint1-u-tokyo-ac-jp",
+        "sourceRecordId": "https://www.i.u-tokyo.ac.jp/edu/entra/entra_e.shtml",
+        "kind": "institution",
+        "recordUrl": "https://www.i.u-tokyo.ac.jp/edu/entra/entra_e.shtml",
+        "listingSourceUrl": null,
+        "checkedAt": "2026-11-02"
+      },
+      "imports": [
+        {
+          "sourceId": "sprint1-u-tokyo-ac-jp",
+          "sourceRecordId": "https://www.i.u-tokyo.ac.jp/edu/entra/entra_e.shtml",
+          "kind": "institution",
+          "recordUrl": "https://www.i.u-tokyo.ac.jp/edu/entra/entra_e.shtml",
+          "listingSourceUrl": null,
+          "checkedAt": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "id": "program_eabdda25c19d461d780d3f84",
+      "institutionId": "inst_6bb9284a8954da79a2a4d247",
+      "institutionName": "Utrecht University",
+      "institutionWebsite": "https://uu.nl/",
+      "countryCode": "NL",
+      "title": "Business Informatics (MSc)",
+      "field": "computer-science",
+      "category": "tech",
+      "degree": "master",
+      "language": null,
+      "languages": [],
+      "mode": null,
+      "durationMonths": null,
+      "programUrl": "https://www.uu.nl/en/masters/business-informatics",
+      "subject": null,
+      "city": null,
+      "sourceLanguages": [],
+      "tuition": {
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "applicantScope": null,
+        "note": ""
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": ""
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": ""
+      },
+      "sources": [
+        {
+          "url": "https://www.uu.nl/en/masters/business-informatics",
+          "label": "Utrecht University — verified official programme sources",
+          "checkedAt": "2026-11-02",
+          "kind": "institution",
+          "sourceId": "sprint1-uu-nl"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-11-02",
+      "provenance": {
+        "sourceId": "sprint1-uu-nl",
+        "sourceRecordId": "https://www.uu.nl/en/masters/business-informatics",
+        "kind": "institution",
+        "recordUrl": "https://www.uu.nl/en/masters/business-informatics",
+        "listingSourceUrl": null,
+        "checkedAt": "2026-11-02"
+      },
+      "imports": [
+        {
+          "sourceId": "sprint1-uu-nl",
+          "sourceRecordId": "https://www.uu.nl/en/masters/business-informatics",
+          "kind": "institution",
+          "recordUrl": "https://www.uu.nl/en/masters/business-informatics",
+          "listingSourceUrl": null,
+          "checkedAt": "2026-11-02"
         }
       ]
     }

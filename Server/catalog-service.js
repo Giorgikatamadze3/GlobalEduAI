@@ -13,8 +13,8 @@ const { validatePrograms } = require('../scripts/validate-programs');
 const {applyInstitutionOverrides} = require('../scripts/institution-overrides');
 const {applyInstitutionSupplements} = require('../scripts/institution-supplements');
 
-function createCatalog({ directory, programCatalog, admissionStatistics = {records:[]}, fundingCatalog = {metadata:{checkedAt:'2026-10-28',schemeCount:0,coverageNote:'No funding snapshot supplied.'},schemes:[]}, programSourceRegistry = {sources:[]} }) {
-    directory=applyInstitutionSupplements(applyInstitutionOverrides(directory));
+function createCatalog({ directory, programCatalog, admissionStatistics = {records:[]}, fundingCatalog = {metadata:{checkedAt:'2026-10-28',schemeCount:0,coverageNote:'No funding snapshot supplied.'},schemes:[]}, programSourceRegistry = {sources:[]}, applySourceCorrections=true }) {
+    if(applySourceCorrections)directory=applyInstitutionSupplements(applyInstitutionOverrides(directory));
     const errors = [...validateDirectory(directory), ...validatePrograms(programCatalog)];
     errors.push(...Funding.validateFundingCatalog(fundingCatalog).issues);
     if (errors.length) throw new Error(`Catalog validation failed: ${errors.slice(0,8).join('; ')}`);

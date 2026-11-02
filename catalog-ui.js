@@ -76,6 +76,7 @@ async function fetchUniversities() {
         } catch { universitiesStatus = 'error'; }
         finally { catalogRequest = null; }
         filterAndSortUnis(false); renderFeatured(); renderFavorites();
+        if(typeof ContentUI!=='undefined')ContentUI.refresh(true);
     })();
     return catalogRequest;
 }

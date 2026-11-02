@@ -9,12 +9,19 @@ const { loadCatalog } = require('./catalog-service');
 const { createConfiguredAccountStore } = require('./account-store-config');
 const { createAuthRouter } = require('./auth');
 const { createAdvisorRouter } = require('./ai-agent');
-const catalog = loadCatalog();
+const baseCatalog = loadCatalog();
+const {createContentStore}=require('./content-store');
+const {createContentService}=require('./content-service');
+const {createAdminRouter}=require('./admin-router');
+const contentStore=createContentStore();
+const content=createContentService({baseCatalog,store:contentStore});
+const catalog=new Proxy({},{get:(_target,key)=>content.catalog[key]});
 const accountStore = createConfiguredAccountStore();
 
 const app = express();
 if(process.env.VERCEL==='1')app.set('trust proxy',1);
 app.locals.accountStore = accountStore;
+app.locals.contentStore = contentStore;
 app.use(cors((req,callback) => {
     const origin = req.get('origin');
     let allowed = false;
@@ -32,11 +39,13 @@ app.use(cors((req,callback) => {
     }
     callback(null,{origin:allowed?origin:false,credentials:true,methods:['GET','POST','PUT','OPTIONS'],allowedHeaders:['Content-Type','Authorization']});
 }));
+app.use('/api',async(req,res,next)=>{await content.refresh();next();});
+app.get('/api/content',(req,res)=>{res.set('Cache-Control','no-store');res.json(content.publicChanges());});
 app.use('/api/advisor-agent',express.json({limit:'128kb'}),createAdvisorRouter({catalog}));
 app.use(express.json({limit:'64kb'}));
 app.get('/assets/vendor/pdf-lib.min.js',(req,res)=>res.sendFile(require.resolve('pdf-lib/dist/pdf-lib.min.js')));
 app.use('/assets', express.static(path.join(__dirname, '../assets')));
-for (const filename of ['index.html','i18n.js','style.css','ai-agent.css','funding.css','script.js','catalog-core.js','scoring-core.js','funding-core.js','funding-ui.js','catalog-ui.js','discovery-ui.js','ai-agent-ui.js','account-ui.js', 'student-profile-core.js', 'academic-profile-ui.js', 'account-workspace.css', 'student-workspace-core.js', 'student-workspace.js','preview-data.js','scholarships.js']) {
+for (const filename of ['content-ui.js','admin-ui.js','content.css','index.html','i18n.js','style.css','ai-agent.css','funding.css','script.js','catalog-core.js','scoring-core.js','funding-core.js','funding-ui.js','catalog-ui.js','discovery-ui.js','ai-agent-ui.js','account-ui.js', 'student-profile-core.js', 'academic-profile-ui.js', 'account-workspace.css', 'student-workspace-core.js', 'student-workspace.js','preview-data.js','scholarships.js']) {
     app.get(`/${filename}`, (req,res) => res.sendFile(path.join(__dirname, '..', filename)));
 }
 app.get('/', (req,res) => res.sendFile(path.join(__dirname, '../index.html')));
@@ -76,7 +85,7 @@ app.get('/api/programs/:id', (req,res) => {
 });
 app.get('/api/funding', (req,res) => res.json(catalog.payload.funding));
 
-app.use('/api',createAuthRouter({store:accountStore,cookieSecure:process.env.NODE_ENV==='production'||process.env.VERCEL==='1'}));
+app.use('/api',createAuthRouter({store:accountStore,adminRouter:createAdminRouter({content}),cookieSecure:process.env.NODE_ENV==='production'||process.env.VERCEL==='1'}));
 
 // Compatibility endpoint: real institutions only; the former synthetic collection is not served.
 app.get('/api/universities', (req,res) => res.json(catalog.payload.institutions));
