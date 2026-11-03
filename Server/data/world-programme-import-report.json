@@ -1,0 +1,183 @@
+{
+  "checkedAt": "2026-11-02",
+  "total": 4378,
+  "coverage": "partial",
+  "reports": [
+    {
+      "sourceId": "world-valencia-masters",
+      "countryCode": "ES",
+      "pages": 1,
+      "records": 115,
+      "accepted": 0,
+      "updated": 4,
+      "duplicates": 111
+    },
+    {
+      "sourceId": "world-boston-masters",
+      "countryCode": "US",
+      "pages": 1,
+      "records": 243,
+      "accepted": 0,
+      "updated": 0,
+      "duplicates": 243
+    },
+    {
+      "sourceId": "world-illinois-masters",
+      "countryCode": "US",
+      "pages": 1,
+      "records": 152,
+      "accepted": 0,
+      "updated": 2,
+      "duplicates": 150
+    },
+    {
+      "sourceId": "world-wisconsin-masters",
+      "countryCode": "US",
+      "pages": 1,
+      "records": 143,
+      "accepted": 0,
+      "updated": 0,
+      "duplicates": 143
+    },
+    {
+      "sourceId": "world-gwu-masters",
+      "countryCode": "US",
+      "pages": 1,
+      "records": 189,
+      "accepted": 1,
+      "updated": 0,
+      "duplicates": 188
+    },
+    {
+      "sourceId": "world-ubc-masters",
+      "countryCode": "CA",
+      "pages": 4,
+      "records": 217,
+      "accepted": 0,
+      "updated": 10,
+      "duplicates": 207
+    },
+    {
+      "sourceId": "world-edinburgh-masters",
+      "countryCode": "GB",
+      "pages": 1,
+      "records": 220,
+      "accepted": 0,
+      "updated": 0,
+      "duplicates": 220
+    },
+    {
+      "sourceId": "world-auckland-masters",
+      "countryCode": "NZ",
+      "pages": 1,
+      "records": 94,
+      "accepted": 0,
+      "updated": 0,
+      "duplicates": 94
+    },
+    {
+      "sourceId": "world-chile-masters",
+      "countryCode": "CL",
+      "pages": 1,
+      "records": 125,
+      "accepted": 0,
+      "updated": 0,
+      "duplicates": 125
+    },
+    {
+      "sourceId": "world-twente-masters",
+      "countryCode": "NL",
+      "pages": 1,
+      "records": 32,
+      "accepted": 0,
+      "updated": 0,
+      "duplicates": 32
+    },
+    {
+      "sourceId": "world-cape-town-humanities-masters",
+      "countryCode": "ZA",
+      "pages": 1,
+      "records": 122,
+      "accepted": 0,
+      "updated": 0,
+      "duplicates": 122
+    },
+    {
+      "sourceId": "world-trinity-dublin-masters",
+      "countryCode": "IE",
+      "pages": 1,
+      "records": 136,
+      "accepted": 0,
+      "updated": 0,
+      "duplicates": 136
+    },
+    {
+      "sourceId": "world-lund-masters-index",
+      "countryCode": "SE",
+      "pages": 1,
+      "records": 18,
+      "accepted": 0,
+      "updated": 0,
+      "duplicates": 18
+    },
+    {
+      "sourceId": "world-catholic-chile-masters",
+      "countryCode": "CL",
+      "pages": 1,
+      "records": 9,
+      "accepted": 0,
+      "updated": 0,
+      "duplicates": 9
+    },
+    {
+      "sourceId": "world-leiden-masters-index",
+      "countryCode": "NL",
+      "pages": 14,
+      "records": 260,
+      "accepted": 1,
+      "updated": 0,
+      "duplicates": 259
+    },
+    {
+      "sourceId": "world-bologna-masters",
+      "countryCode": "IT",
+      "pages": 1,
+      "records": 143,
+      "accepted": 1,
+      "updated": 0,
+      "duplicates": 142
+    },
+    {
+      "sourceId": "world-hku-taught-masters",
+      "countryCode": "HK",
+      "pages": 1,
+      "records": 154,
+      "accepted": 0,
+      "updated": 0,
+      "duplicates": 154
+    },
+    {
+      "sourceId": "world-strasbourg-masters",
+      "error": "Automated collection disallowed by published robots policy; excluded from release.",
+      "excludedFromRelease": true
+    },
+    {
+      "sourceId": "world-sorbonne-science-masters",
+      "countryCode": "FR",
+      "pages": 1,
+      "records": 18,
+      "accepted": 18,
+      "updated": 0,
+      "duplicates": 0
+    },
+    {
+      "sourceId": "world-lyon1-masters",
+      "countryCode": "FR",
+      "pages": 1,
+      "records": 54,
+      "accepted": 54,
+      "updated": 0,
+      "duplicates": 0
+    }
+  ]
+}

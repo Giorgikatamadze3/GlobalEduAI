@@ -162,11 +162,12 @@ function normalizeProgramRecord(record,source,{checkedAt} = {}) {
     const sourceRecordId = record.sourceRecordId == null ? null : shortText(String(record.sourceRecordId),'sourceRecordId',200,true);
     const provenance = {sourceId:registry.id,sourceRecordId,kind:registry.kind,recordUrl:sourceUrl,
         listingSourceUrl:record.listingSourceUrl ? safeURL(record.listingSourceUrl,'listingSourceUrl').href : null,checkedAt:registry.checkedAt};
-    const identity = `${countryCode}|${institutionHost}|${canonicalProgramURL(programUrl)}`;
+    const listingRecordKey=source.recordIdentity==='published-code'?shortText(record.sourceRecordId,'published programme code',200,true):null;
+    const identity = `${countryCode}|${institutionHost}|${canonicalProgramURL(programUrl)}${listingRecordKey?'|'+registry.id+'|'+listingRecordKey:''}`;
     const sources = [{url:sourceUrl,label:registry.label,checkedAt:registry.checkedAt,kind:registry.kind,sourceId:registry.id}];
     if (canonicalProgramURL(programUrl) !== canonicalProgramURL(sourceUrl)) sources.push({url:programUrl,label:title,checkedAt:registry.checkedAt,kind:registry.kind,sourceId:registry.id});
     return {
-        id:`program_${createHash('sha256').update(identity).digest('hex').slice(0,24)}`,institutionId:null,institutionName,institutionWebsite,countryCode,title,
+        id:`program_${createHash('sha256').update(identity).digest('hex').slice(0,24)}`,institutionId:null,institutionName,institutionWebsite,countryCode,title,...(listingRecordKey?{listingRecordKey}:{}),
         field,category,degree,language,languages:[...new Set(languages)].sort(),mode:optionalEnum(record.mode,MODES,'mode'),
         durationMonths:record.durationMonths == null ? null : optionalNumber(record.durationMonths,'durationMonths',Number.MIN_VALUE,1200),
         programUrl,subject:shortText(record.subject,'subject',500),city:shortText(record.city,'city',200),
@@ -210,7 +211,7 @@ function programURLs(program) {
     // Curated records predate programUrl; only their first programme reference
     // is an identity. Shared fee/language-policy pages must never merge courses.
     const urls = [program.programUrl || program.sources?.[0]?.url].filter(Boolean);
-    return [...new Set(urls.flatMap(value => { try { return [canonicalProgramURL(value)]; } catch { return []; } }))];
+    return [...new Set(urls.flatMap(value => { try { return [canonicalProgramURL(value)+(program.listingRecordKey?'|'+program.provenance.sourceId+'|'+program.listingRecordKey:'')]; } catch { return []; } }))];
 }
 function sourceUnion(left,right) {
     const result = clone(left || []);
@@ -358,7 +359,8 @@ function computeProgramCoverage(institutions,programs,sources = {}) {
     });
     const europeCodes='AL AD AT BA BE BG BY CH CZ DE DK EE ES FI FR GB GR HR HU IE IS IT LI LT LU LV MC MD ME MK MT NL NO PL PT RO RS RU SE SI SK SM UA VA XK AM AZ CY GE TR KZ'.split(' ');
     const europeCountries=europeCodes.map(countryCode=>countries.find(row=>row.countryCode===countryCode)||{countryCode,institutionCount:0,institutionsWithPrograms:0,programCount:0}).sort((a,b)=>a.countryCode.localeCompare(b.countryCode));
-    return {europe:{scope:'51 European countries and education systems, including transcontinental/Caucasus systems, Kazakhstan and Kosovo. This is institutional affiliation, not a guarantee of an on-site campus in every country. All programme coverage remains partial.',countryCount:europeCodes.length,countriesWithPrograms:europeCountries.filter(row=>row.programCount>0).length,countries:europeCountries,completeness:'partial'},institutionCount:index.institutions.length,institutionsWithPrograms:linked.size,institutionsWithoutPrograms:index.institutions.length - linked.size,
+    const regions=Core.REGIONS.map(region=>{const rows=countries.filter(row=>Core.countryInfo(row.countryCode).region===region.value);return {region:region.value,programCount:rows.reduce((n,row)=>n+row.programCount,0),countriesWithPrograms:rows.filter(row=>row.programCount>0).length};});
+    return {regions,europe:{scope:'51 European countries and education systems, including transcontinental/Caucasus systems, Kazakhstan and Kosovo. This is institutional affiliation, not a guarantee of an on-site campus in every country. All programme coverage remains partial.',countryCount:europeCodes.length,countriesWithPrograms:europeCountries.filter(row=>row.programCount>0).length,countries:europeCountries,completeness:'partial'},institutionCount:index.institutions.length,institutionsWithPrograms:linked.size,institutionsWithoutPrograms:index.institutions.length - linked.size,
         programCount:programs.length,linkedProgramCount,unmatchedProgramCount:programs.length - linkedProgramCount,
         coveragePercent:index.institutions.length ? Math.round(linked.size / index.institutions.length * 10000) / 100 : 0,
         sources:sourceList.map(source => ({id:source.id,kind:source.kind || null,checkedAt:source.checkedAt || null,programCount:sourceCounts.get(source.id) || 0,

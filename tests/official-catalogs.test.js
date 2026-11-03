@@ -180,5 +180,5 @@ test('registry separates the enabled limited-scope source from unimplemented can
     assert.match(source.coverageNote, /not all programmes/);
     assert.equal(source.license.status, 'copyright-stated-no-open-data-licence-confirmed');
     assert.ok(registry.sources.filter(item => !item.enabled&&item.status!=='curated-official-snapshot').every(item => item.adapter === null));
-    assert.equal(registry.sources.filter(item=>item.enabled&&['NO','AT','SE','DK'].includes(item.countryCodes[0])).length,4);
+    assert.equal(registry.sources.filter(item=>item.enabled&&['oslo-masters','vienna-masters','uppsala-masters','copenhagen-masters'].includes(item.adapter)).length,4);
 });

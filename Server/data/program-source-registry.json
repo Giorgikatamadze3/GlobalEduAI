@@ -1078,6 +1078,667 @@
       "enabled": false,
       "status": "curated-official-snapshot",
       "scope": "Individually verified programme entries, not all programmes of a university or country. Unpublished attributes remain unknown."
+    },
+    {
+      "id": "world-boston-masters",
+      "cacheId": "world-bu",
+      "countryCodes": [
+        "US"
+      ],
+      "institutionDomains": [
+        "bu.edu"
+      ],
+      "institutionWebsite": "https://bu.edu/",
+      "institutionName": "Boston University",
+      "name": "Boston University — official master programme index",
+      "url": "https://www.bu.edu/academics/degree-programs/",
+      "format": "bu-degrees",
+      "minRecords": 100,
+      "robots": {
+        "url": "https://www.bu.edu/robots.txt",
+        "checkedAt": "2026-11-02",
+        "httpStatus": 200,
+        "allowed": true,
+        "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
+      },
+      "checkedAt": "2026-11-02",
+      "kind": "institution",
+      "enabled": true,
+      "adapter": "world-official-index",
+      "scope": "Master-level factual titles and institution-owned links from the explicitly configured listing, not all programmes of the country. Unpublished fees, entry requirements, languages and funding remain unknown.",
+      "status": "verified-official-index",
+      "license": {
+        "status": "factual-metadata-and-links-only-no-open-licence-claimed",
+        "note": "No descriptions, images or private data imported. Recheck robots and reuse terms before scheduled collection."
+      }
+    },
+    {
+      "id": "world-illinois-masters",
+      "cacheId": "world-illinois",
+      "countryCodes": [
+        "US"
+      ],
+      "institutionDomains": [
+        "illinois.edu"
+      ],
+      "institutionWebsite": "https://illinois.edu/",
+      "institutionName": "University of Illinois Urbana-Champaign",
+      "name": "University of Illinois Urbana-Champaign — official master programme index",
+      "url": "https://catalog.illinois.edu/graduate/",
+      "format": "masters-links",
+      "minRecords": 80,
+      "selector": "a[href]",
+      "pathPattern": "^/graduate/",
+      "titleSelector": null,
+      "robots": {
+        "url": "https://catalog.illinois.edu/robots.txt",
+        "checkedAt": "2026-11-02",
+        "httpStatus": 200,
+        "allowed": true,
+        "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
+      },
+      "checkedAt": "2026-11-02",
+      "kind": "institution",
+      "enabled": true,
+      "adapter": "world-official-index",
+      "scope": "Master-level factual titles and institution-owned links from the explicitly configured listing, not all programmes of the country. Unpublished fees, entry requirements, languages and funding remain unknown.",
+      "status": "verified-official-index",
+      "license": {
+        "status": "factual-metadata-and-links-only-no-open-licence-claimed",
+        "note": "No descriptions, images or private data imported. Recheck robots and reuse terms before scheduled collection."
+      }
+    },
+    {
+      "id": "world-wisconsin-masters",
+      "cacheId": "world-wisconsin",
+      "countryCodes": [
+        "US"
+      ],
+      "institutionDomains": [
+        "wisc.edu"
+      ],
+      "institutionWebsite": "https://wisc.edu/",
+      "institutionName": "University of Wisconsin - Madison",
+      "name": "University of Wisconsin - Madison — official master programme index",
+      "url": "https://guide.wisc.edu/graduate/",
+      "format": "masters-links",
+      "minRecords": 100,
+      "selector": "a[href]",
+      "pathPattern": "^/graduate/[^/]+/[^/]+/$",
+      "titleSelector": ".title.visual h3",
+      "robots": {
+        "url": "https://guide.wisc.edu/robots.txt",
+        "checkedAt": "2026-11-02",
+        "httpStatus": 200,
+        "allowed": true,
+        "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
+      },
+      "checkedAt": "2026-11-02",
+      "kind": "institution",
+      "enabled": true,
+      "adapter": "world-official-index",
+      "scope": "Master-level factual titles and institution-owned links from the explicitly configured listing, not all programmes of the country. Unpublished fees, entry requirements, languages and funding remain unknown.",
+      "status": "verified-official-index",
+      "license": {
+        "status": "factual-metadata-and-links-only-no-open-licence-claimed",
+        "note": "No descriptions, images or private data imported. Recheck robots and reuse terms before scheduled collection."
+      }
+    },
+    {
+      "id": "world-gwu-masters",
+      "cacheId": "world-gwu",
+      "countryCodes": [
+        "US"
+      ],
+      "institutionDomains": [
+        "gwu.edu"
+      ],
+      "institutionWebsite": "https://gwu.edu/",
+      "institutionName": "George Washington University",
+      "name": "George Washington University — official master programme index",
+      "url": "https://bulletin.gwu.edu/find-your-program/",
+      "format": "gwu-masters",
+      "minRecords": 100,
+      "robots": {
+        "url": "https://bulletin.gwu.edu/robots.txt",
+        "checkedAt": "2026-11-02",
+        "httpStatus": 200,
+        "allowed": true,
+        "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
+      },
+      "checkedAt": "2026-11-02",
+      "kind": "institution",
+      "enabled": true,
+      "adapter": "world-official-index",
+      "scope": "Master-level factual titles and institution-owned links from the explicitly configured listing, not all programmes of the country. Unpublished fees, entry requirements, languages and funding remain unknown.",
+      "status": "verified-official-index",
+      "license": {
+        "status": "factual-metadata-and-links-only-no-open-licence-claimed",
+        "note": "No descriptions, images or private data imported. Recheck robots and reuse terms before scheduled collection."
+      }
+    },
+    {
+      "id": "world-ubc-masters",
+      "cacheId": "world-ubc",
+      "countryCodes": [
+        "CA"
+      ],
+      "institutionDomains": [
+        "ubc.ca"
+      ],
+      "institutionWebsite": "https://ubc.ca/",
+      "institutionName": "University of British Columbia",
+      "name": "University of British Columbia — official master programme index",
+      "url": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs",
+      "format": "masters-links",
+      "minRecords": 1,
+      "pathPattern": "^/prospective-students/graduate-degree-programs/master-of-",
+      "paginate": true,
+      "robots": {
+        "url": "https://www.grad.ubc.ca/robots.txt",
+        "checkedAt": "2026-11-02",
+        "httpStatus": 200,
+        "allowed": true,
+        "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
+      },
+      "checkedAt": "2026-11-02",
+      "kind": "institution",
+      "enabled": true,
+      "adapter": "world-official-index",
+      "scope": "Master-level factual titles and institution-owned links from the explicitly configured listing, not all programmes of the country. Unpublished fees, entry requirements, languages and funding remain unknown.",
+      "status": "verified-official-index",
+      "license": {
+        "status": "factual-metadata-and-links-only-no-open-licence-claimed",
+        "note": "No descriptions, images or private data imported. Recheck robots and reuse terms before scheduled collection."
+      }
+    },
+    {
+      "id": "world-edinburgh-masters",
+      "cacheId": "world-edinburgh",
+      "countryCodes": [
+        "GB"
+      ],
+      "institutionDomains": [
+        "ed.ac.uk"
+      ],
+      "institutionWebsite": "https://ed.ac.uk/",
+      "institutionName": "University of Edinburgh",
+      "name": "University of Edinburgh — official master programme index",
+      "url": "https://study.ed.ac.uk/programmes/postgraduate-taught-a-z",
+      "format": "masters-links",
+      "minRecords": 150,
+      "pathPattern": "^/programmes/postgraduate-taught/",
+      "robots": {
+        "url": "https://study.ed.ac.uk/robots.txt",
+        "checkedAt": "2026-11-02",
+        "httpStatus": 200,
+        "allowed": true,
+        "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
+      },
+      "checkedAt": "2026-11-02",
+      "kind": "institution",
+      "enabled": true,
+      "adapter": "world-official-index",
+      "scope": "Master-level factual titles and institution-owned links from the explicitly configured listing, not all programmes of the country. Unpublished fees, entry requirements, languages and funding remain unknown.",
+      "status": "verified-official-index",
+      "license": {
+        "status": "factual-metadata-and-links-only-no-open-licence-claimed",
+        "note": "No descriptions, images or private data imported. Recheck robots and reuse terms before scheduled collection."
+      }
+    },
+    {
+      "id": "world-auckland-masters",
+      "cacheId": "world-auckland",
+      "countryCodes": [
+        "NZ"
+      ],
+      "institutionDomains": [
+        "auckland.ac.nz"
+      ],
+      "institutionWebsite": "https://auckland.ac.nz/",
+      "institutionName": "University of Auckland",
+      "name": "University of Auckland — official master programme index",
+      "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
+      "format": "auckland-masters",
+      "minRecords": 70,
+      "robots": {
+        "url": "https://www.auckland.ac.nz/robots.txt",
+        "checkedAt": "2026-11-02",
+        "httpStatus": 200,
+        "allowed": true,
+        "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
+      },
+      "checkedAt": "2026-11-02",
+      "kind": "institution",
+      "enabled": true,
+      "adapter": "world-official-index",
+      "scope": "Master-level factual titles and institution-owned links from the explicitly configured listing, not all programmes of the country. Unpublished fees, entry requirements, languages and funding remain unknown.",
+      "status": "verified-official-index",
+      "license": {
+        "status": "factual-metadata-and-links-only-no-open-licence-claimed",
+        "note": "No descriptions, images or private data imported. Recheck robots and reuse terms before scheduled collection."
+      }
+    },
+    {
+      "id": "world-chile-masters",
+      "cacheId": "world-uchileall",
+      "countryCodes": [
+        "CL"
+      ],
+      "institutionDomains": [
+        "uchile.cl"
+      ],
+      "institutionWebsite": "https://uchile.cl/",
+      "institutionName": "Universidad de Chile",
+      "name": "Universidad de Chile — official master programme index",
+      "url": "https://uchile.cl/postgrados",
+      "format": "masters-links",
+      "minRecords": 80,
+      "pathPattern": "^/postgrados/[0-9]+/",
+      "robots": {
+        "url": "https://uchile.cl/robots.txt",
+        "checkedAt": "2026-11-02",
+        "httpStatus": 200,
+        "allowed": true,
+        "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
+      },
+      "checkedAt": "2026-11-02",
+      "kind": "institution",
+      "enabled": true,
+      "adapter": "world-official-index",
+      "scope": "Master-level factual titles and institution-owned links from the explicitly configured listing, not all programmes of the country. Unpublished fees, entry requirements, languages and funding remain unknown.",
+      "status": "verified-official-index",
+      "license": {
+        "status": "factual-metadata-and-links-only-no-open-licence-claimed",
+        "note": "No descriptions, images or private data imported. Recheck robots and reuse terms before scheduled collection."
+      }
+    },
+    {
+      "id": "world-twente-masters",
+      "cacheId": "world-twente",
+      "countryCodes": [
+        "NL"
+      ],
+      "institutionDomains": [
+        "utwente.nl"
+      ],
+      "institutionWebsite": "https://utwente.nl/",
+      "institutionName": "University of Twente",
+      "name": "University of Twente — official master programme index",
+      "url": "https://www.utwente.nl/en/education/master/programmes/",
+      "format": "twente-masters",
+      "minRecords": 20,
+      "robots": {
+        "url": "https://www.utwente.nl/robots.txt",
+        "checkedAt": "2026-11-02",
+        "httpStatus": 200,
+        "allowed": true,
+        "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
+      },
+      "checkedAt": "2026-11-02",
+      "kind": "institution",
+      "enabled": true,
+      "adapter": "world-official-index",
+      "scope": "Master-level factual titles and institution-owned links from the explicitly configured listing, not all programmes of the country. Unpublished fees, entry requirements, languages and funding remain unknown.",
+      "status": "verified-official-index",
+      "license": {
+        "status": "factual-metadata-and-links-only-no-open-licence-claimed",
+        "note": "No descriptions, images or private data imported. Recheck robots and reuse terms before scheduled collection."
+      }
+    },
+    {
+      "id": "world-cape-town-humanities-masters",
+      "cacheId": "world-ucthumanities2",
+      "countryCodes": [
+        "ZA"
+      ],
+      "institutionDomains": [
+        "uct.ac.za"
+      ],
+      "institutionWebsite": "https://uct.ac.za/",
+      "institutionName": "University of Cape Town",
+      "name": "University of Cape Town — official master programme index",
+      "url": "https://humanities.uct.ac.za/hum/postgraduate/studies/findprogramme",
+      "format": "uct-masters-codes",
+      "minRecords": 30,
+      "recordIdentity": "published-code",
+      "robots": {
+        "url": "https://humanities.uct.ac.za/robots.txt",
+        "checkedAt": "2026-11-02",
+        "httpStatus": 200,
+        "allowed": true,
+        "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
+      },
+      "checkedAt": "2026-11-02",
+      "kind": "institution",
+      "enabled": true,
+      "adapter": "world-official-index",
+      "scope": "Master-level factual titles and institution-owned links from the explicitly configured listing, not all programmes of the country. Unpublished fees, entry requirements, languages and funding remain unknown.",
+      "status": "verified-official-index",
+      "license": {
+        "status": "factual-metadata-and-links-only-no-open-licence-claimed",
+        "note": "No descriptions, images or private data imported. Recheck robots and reuse terms before scheduled collection."
+      }
+    },
+    {
+      "id": "world-trinity-dublin-masters",
+      "cacheId": "world-tcdall",
+      "countryCodes": [
+        "IE"
+      ],
+      "institutionDomains": [
+        "tcd.ie"
+      ],
+      "institutionWebsite": "https://tcd.ie/",
+      "institutionName": "University of Dublin, Trinity College",
+      "name": "University of Dublin, Trinity College — official master programme index",
+      "url": "https://www.tcd.ie/courses/postgraduate/a-z-of-pg-courses/",
+      "format": "masters-links",
+      "minRecords": 50,
+      "pathPattern": "^/courses/postgraduate/courses/",
+      "robots": {
+        "url": "https://www.tcd.ie/robots.txt",
+        "checkedAt": "2026-11-02",
+        "httpStatus": 200,
+        "allowed": true,
+        "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
+      },
+      "checkedAt": "2026-11-02",
+      "kind": "institution",
+      "enabled": true,
+      "adapter": "world-official-index",
+      "scope": "Master-level factual titles and institution-owned links from the explicitly configured listing, not all programmes of the country. Unpublished fees, entry requirements, languages and funding remain unknown.",
+      "status": "verified-official-index",
+      "license": {
+        "status": "factual-metadata-and-links-only-no-open-licence-claimed",
+        "note": "No descriptions, images or private data imported. Recheck robots and reuse terms before scheduled collection."
+      }
+    },
+    {
+      "id": "world-lund-masters-index",
+      "cacheId": "world-lundall",
+      "countryCodes": [
+        "SE"
+      ],
+      "institutionDomains": [
+        "lu.se"
+      ],
+      "institutionWebsite": "https://lu.se/",
+      "institutionName": "Lund University",
+      "name": "Lund University — official master programme index",
+      "url": "https://www.lunduniversity.lu.se/study/courses-programmes",
+      "format": "masters-links",
+      "minRecords": 10,
+      "pathPattern": "^https://www\\.lunduniversity\\.lu\\.se/study/.*(?:masters?-programme|master-of|master-programme)",
+      "paginate": true,
+      "robots": {
+        "url": "https://www.lunduniversity.lu.se/robots.txt",
+        "checkedAt": "2026-11-02",
+        "httpStatus": 200,
+        "allowed": true,
+        "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
+      },
+      "checkedAt": "2026-11-02",
+      "kind": "institution",
+      "enabled": true,
+      "adapter": "world-official-index",
+      "scope": "Master-level factual titles and institution-owned links from the explicitly configured listing, not all programmes of the country. Unpublished fees, entry requirements, languages and funding remain unknown.",
+      "status": "verified-official-index",
+      "license": {
+        "status": "factual-metadata-and-links-only-no-open-licence-claimed",
+        "note": "No descriptions, images or private data imported. Recheck robots and reuse terms before scheduled collection."
+      }
+    },
+    {
+      "id": "world-catholic-chile-masters",
+      "cacheId": "world-ucmasters",
+      "countryCodes": [
+        "CL"
+      ],
+      "institutionDomains": [
+        "uc.cl"
+      ],
+      "institutionWebsite": "https://uc.cl/",
+      "institutionName": "Pontificia Universidad Católica de Chile",
+      "name": "Pontificia Universidad Católica de Chile — official master programme index",
+      "url": "https://admision.uc.cl/postgrado/magister/",
+      "format": "masters-links",
+      "minRecords": 5,
+      "pathPattern": "^https://admision\\.uc\\.cl/postgrado/magister/[^/]+/$",
+      "paginate": true,
+      "robots": {
+        "url": "https://admision.uc.cl/robots.txt",
+        "checkedAt": "2026-11-02",
+        "httpStatus": 404,
+        "allowed": true,
+        "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
+      },
+      "checkedAt": "2026-11-02",
+      "kind": "institution",
+      "enabled": true,
+      "adapter": "world-official-index",
+      "scope": "Master-level factual titles and institution-owned links from the explicitly configured listing, not all programmes of the country. Unpublished fees, entry requirements, languages and funding remain unknown.",
+      "status": "verified-official-index",
+      "license": {
+        "status": "factual-metadata-and-links-only-no-open-licence-claimed",
+        "note": "No descriptions, images or private data imported. Recheck robots and reuse terms before scheduled collection."
+      }
+    },
+    {
+      "id": "world-bologna-masters",
+      "cacheId": "world-bologna-grouped",
+      "countryCodes": [
+        "IT"
+      ],
+      "institutionDomains": [
+        "unibo.it"
+      ],
+      "institutionWebsite": "https://unibo.it/",
+      "institutionName": "University of Bologna",
+      "name": "University of Bologna — official second-cycle catalogue",
+      "url": "https://www.unibo.it/en/study/second-cycle-degree",
+      "format": "bologna-cards",
+      "minRecords": 100,
+      "checkedAt": "2026-11-02",
+      "kind": "institution",
+      "enabled": true,
+      "adapter": "world-official-index",
+      "scope": "Master-level factual titles and institution-owned links from the explicitly configured listing, not all programmes of the country. Unpublished fees, entry requirements, languages and funding remain unknown.",
+      "status": "verified-official-index",
+      "license": {
+        "status": "factual-metadata-and-links-only-no-open-licence-claimed",
+        "note": "No descriptions, images or private data imported. Recheck robots and reuse terms before scheduled collection."
+      },
+      "robots": {
+        "url": "https://www.unibo.it/robots.txt",
+        "checkedAt": "2026-11-02",
+        "httpStatus": 200,
+        "allowed": true,
+        "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
+      }
+    },
+    {
+      "id": "world-hku-taught-masters",
+      "cacheId": "world-hku-public",
+      "countryCodes": [
+        "HK"
+      ],
+      "institutionDomains": [
+        "hku.hk"
+      ],
+      "institutionWebsite": "https://hku.hk/",
+      "institutionName": "The University of Hong Kong",
+      "name": "University of Hong Kong — public taught programme search",
+      "url": "https://portal.hku.hk/tpg-admissions/programme-listing",
+      "format": "hku-json",
+      "apiUrls": [
+        "https://portal.hku.hk/SavedQueryService/Execute/any-faculty-programmes/%25/629270000/1/10/hkutgp_feefornonlocalstudent/0/1000000",
+        "https://portal.hku.hk/SavedQueryService/Execute/any-faculty-programmes-without-fee/%25/629270000/1/10",
+        "https://portal.hku.hk/SavedQueryService/Execute/any-faculty-closed-programmes/%25/629270000/1/10",
+        "https://portal.hku.hk/SavedQueryService/Execute/any-faculty-opening-programmes/%25/629270000/1/10",
+        "https://portal.hku.hk/SavedQueryService/Execute/any-faculty-programmes/%25/629270001/1/10/hkutgp_feefornonlocalstudent/0/1000000",
+        "https://portal.hku.hk/SavedQueryService/Execute/any-faculty-programmes-without-fee/%25/629270001/1/10",
+        "https://portal.hku.hk/SavedQueryService/Execute/any-faculty-closed-programmes/%25/629270001/1/10",
+        "https://portal.hku.hk/SavedQueryService/Execute/any-faculty-opening-programmes/%25/629270001/1/10"
+      ],
+      "minRecords": 30,
+      "checkedAt": "2026-11-02",
+      "kind": "institution",
+      "enabled": true,
+      "adapter": "world-official-index",
+      "scope": "Master-level factual titles and institution-owned links from the explicitly configured listing, not all programmes of the country. Unpublished fees, entry requirements, languages and funding remain unknown.",
+      "status": "verified-official-index",
+      "license": {
+        "status": "factual-metadata-and-links-only-no-open-licence-claimed",
+        "note": "No descriptions, images or private data imported. Recheck robots and reuse terms before scheduled collection."
+      },
+      "robots": {
+        "url": "https://portal.hku.hk/robots.txt",
+        "checkedAt": "2026-11-02",
+        "httpStatus": 404,
+        "allowed": true,
+        "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
+      }
+    },
+    {
+      "id": "world-leiden-masters-index",
+      "cacheId": "world-leidenall",
+      "countryCodes": [
+        "NL"
+      ],
+      "institutionDomains": [
+        "universiteitleiden.nl"
+      ],
+      "institutionWebsite": "https://universiteitleiden.nl/",
+      "institutionName": "Universiteit Leiden",
+      "name": "Universiteit Leiden — official master programme index",
+      "url": "https://www.universiteitleiden.nl/en/education/study-programmes?type=master&pageNumber=1",
+      "format": "masters-links",
+      "minRecords": 1,
+      "pathPattern": "^/en/education/study-programmes/master/",
+      "removeLeadingMaster": true,
+      "paginate": true,
+      "robots": {
+        "url": "https://www.universiteitleiden.nl/robots.txt",
+        "checkedAt": "2026-11-02",
+        "httpStatus": 200,
+        "allowed": true,
+        "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
+      },
+      "checkedAt": "2026-11-02",
+      "kind": "institution",
+      "enabled": true,
+      "adapter": "world-official-index",
+      "scope": "Master-level factual titles and institution-owned links from the explicitly configured listing, not all programmes of the country. Unpublished fees, entry requirements, languages and funding remain unknown.",
+      "status": "verified-official-index",
+      "license": {
+        "status": "factual-metadata-and-links-only-no-open-licence-claimed",
+        "note": "No descriptions, images or private data imported. Recheck robots and reuse terms before scheduled collection."
+      }
+    },
+    {
+      "id": "world-valencia-masters",
+      "cacheId": "world-valencia",
+      "countryCodes": [
+        "ES"
+      ],
+      "institutionDomains": [
+        "uv.es"
+      ],
+      "institutionWebsite": "https://uv.es/",
+      "institutionName": "Universidad de Valencia",
+      "name": "Universidad de Valencia — official master catalogue",
+      "url": "https://www.uv.es/uvweb/information-service-sedi/en/postgraduate-courses/official-master-s-degrees/official-master-s-degrees-offered/master-s-degrees-alphabetical-order-1286013102594.html",
+      "format": "masters-links",
+      "pathPattern": "Titulacio\\.html\\?id=",
+      "minRecords": 70,
+      "checkedAt": "2026-11-02",
+      "kind": "institution",
+      "enabled": true,
+      "adapter": "world-official-index",
+      "scope": "Master-level factual titles and institution-owned links from the explicitly configured listing, not all programmes of the country. Unpublished fees, entry requirements, languages and funding remain unknown.",
+      "status": "verified-official-index",
+      "license": {
+        "status": "factual-metadata-and-links-only-no-open-licence-claimed",
+        "note": "No descriptions, images or private data imported. Recheck robots and reuse terms before scheduled collection."
+      },
+      "robots": {
+        "url": "https://www.uv.es/robots.txt",
+        "checkedAt": "2026-11-02",
+        "httpStatus": 200,
+        "allowed": true,
+        "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
+      }
+    },
+    {
+      "id": "world-sorbonne-science-masters",
+      "cacheId": "world-sorbonne-science-masters",
+      "countryCodes": [
+        "FR"
+      ],
+      "institutionDomains": [
+        "sorbonne-universite.fr"
+      ],
+      "institutionWebsite": "https://sorbonne-universite.fr/",
+      "institutionName": "Sorbonne Université - Faculté des Sciences (Paris VI)",
+      "name": "Sorbonne Université - Faculté des Sciences (Paris VI) — official master catalogue",
+      "url": "https://sciences.sorbonne-universite.fr/formation-sciences/offre-de-formation/masters",
+      "format": "masters-links",
+      "pathPattern": "^/formation-sciences/offre-de-formation/masters/[^/]+$",
+      "minRecords": 15,
+      "robots": {
+        "url": "https://sciences.sorbonne-universite.fr/robots.txt",
+        "checkedAt": "2026-11-02",
+        "httpStatus": 200,
+        "allowed": true,
+        "scope": "Catalogue path checked against published wildcard rules; factual titles and links only."
+      },
+      "checkedAt": "2026-11-02",
+      "kind": "institution",
+      "enabled": true,
+      "adapter": "world-official-index",
+      "scope": "Master-level factual titles and institution-owned links from the explicitly configured listing, not all programmes of the country. Unpublished fees, entry requirements, languages and funding remain unknown.",
+      "status": "verified-official-index",
+      "license": {
+        "status": "factual-metadata-and-links-only-no-open-licence-claimed",
+        "note": "No descriptions, images or private data imported. Recheck robots and reuse terms before scheduled collection."
+      }
+    },
+    {
+      "id": "world-lyon1-masters",
+      "cacheId": "world-lyon1-masters",
+      "countryCodes": [
+        "FR"
+      ],
+      "institutionDomains": [
+        "univ-lyon1.fr"
+      ],
+      "institutionWebsite": "https://univ-lyon1.fr/",
+      "institutionName": "Université Claude Bernard (Lyon I)",
+      "name": "Université Claude Bernard (Lyon I) — official master catalogue",
+      "url": "https://offre-de-formations.univ-lyon1.fr/mentions-diplome-m.html",
+      "format": "masters-links",
+      "pathPattern": "^/mention-[0-9]+/[^/]+\\.html$",
+      "minRecords": 30,
+      "masterContext": true,
+      "titlePrefix": "Master — ",
+      "robots": {
+        "url": "https://offre-de-formations.univ-lyon1.fr/robots.txt",
+        "checkedAt": "2026-11-02",
+        "httpStatus": 200,
+        "allowed": true,
+        "scope": "Catalogue path checked against published wildcard rules; factual titles and links only."
+      },
+      "checkedAt": "2026-11-02",
+      "kind": "institution",
+      "enabled": true,
+      "adapter": "world-official-index",
+      "scope": "Master-level factual titles and institution-owned links from the explicitly configured listing, not all programmes of the country. Unpublished fees, entry requirements, languages and funding remain unknown.",
+      "status": "verified-official-index",
+      "license": {
+        "status": "factual-metadata-and-links-only-no-open-licence-claimed",
+        "note": "No descriptions, images or private data imported. Recheck robots and reuse terms before scheduled collection."
+      }
     }
   ]
 }
