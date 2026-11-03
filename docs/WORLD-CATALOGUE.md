@@ -56,7 +56,7 @@ The catalogue now shows a global coverage panel with continent and country count
 
 Validation: 306 automated tests passed; production asset build passed. Chrome checks covered global-country filters, North America filtering, 1440/390/320px layouts and dark-mode readability, with no JavaScript exception. New development-only Cheerio parser dependencies had no npm audit advisory at the time of the check.
 
-The separate CMS production activation remains an owner-authenticated operation, documented in `SPRINT-1-STATUS.md`. Public programme discovery works independently of that migration.
+The CMS production store is activated: `/api/content` reports `available: true`. The one-time migration gate has been removed. Branch and local write tests, production read verification and their limits are documented in `SPRINT-1-STATUS.md`.
 
 ## Official sources
 
