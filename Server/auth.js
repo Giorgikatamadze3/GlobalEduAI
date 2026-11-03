@@ -59,7 +59,7 @@ function cookieToken(req){
     if(!pair)return null;try{const token=decodeURIComponent(pair.slice(COOKIE_NAME.length+1));return /^[a-f0-9]{64}$/.test(token)?token:null;}catch{return null;}
 }
 
-function createAuthRouter({store,cookieSecure=process.env.NODE_ENV==='production',clock=()=>Date.now(),rateLimitOptions={},adminRouter=null,adminPolicy=require('./admin-access').adminAccess}={}){
+function createAuthRouter({store,cookieSecure=process.env.NODE_ENV==='production',clock=()=>Date.now(),rateLimitOptions={},adminRouter=null,adminPolicy=require('./admin-access').adminAccess,billingStore=null,billingRouter=null}={}){
     if(!store)throw new Error('Authentication requires an account store.');
     const publicAccount=user=>({...publicUser(user),permissions:{admin:adminPolicy(user)}});
     const router=express.Router();const buckets=new Map();
@@ -123,7 +123,7 @@ function createAuthRouter({store,cookieSecure=process.env.NODE_ENV==='production
         const advisorProfile=body.role==='advisor'?{...validateAdvisor(body.advisorProfile||{}),verificationStatus:'pending'}:null;
         if(await store.findByEmail(email))return res.status(409).json({message:'ეს ელ. ფოსტა უკვე რეგისტრირებულია.',fields:{email:'გამოიყენე სხვა ელ. ფოსტა ან შედი ანგარიშში.'}});
         const user=await store.createUser({id:crypto.randomUUID(),name,email,phone,passwordHash:await bcrypt.hash(password,12),role:body.role,studentProfile,advisorProfile,favorites:[],createdAt:now(),updatedAt:now(),termsAcceptedAt:now(),termsVersion:TERMS_VERSION});
-        await issueSession(req,res,user,false);res.status(201).json({message:'ანგარიში წარმატებით შეიქმნა.',user:publicAccount(user)});
+        await issueSession(req,res,user,false);if(billingStore)await billingStore.touch(user,'registration').catch(()=>{});res.status(201).json({message:'ანგარიში წარმატებით შეიქმნა.',user:publicAccount(user)});
     }));
     router.post('/auth/login',originAllowed,rateLimit,wrap(async(req,res)=>{
         onlyKeys(req.body,['email','password','rememberMe']);const email=validateEmail(req.body.email);
@@ -131,15 +131,15 @@ function createAuthRouter({store,cookieSecure=process.env.NODE_ENV==='production
         if(req.body.rememberMe!==undefined&&typeof req.body.rememberMe!=='boolean')fail('დამახსოვრების არჩევანი არასწორია.','rememberMe');
         const user=await store.findByEmail(email);const matches=await bcrypt.compare(req.body.password,user?.passwordHash||dummyHash);
         if(!user||!matches||user.accountStatus!=='active')return res.status(401).json({message:'ელ. ფოსტა ან პაროლი არასწორია.'});
-        await issueSession(req,res,user,req.body.rememberMe===true);res.json({user:publicAccount(user)});
+        await issueSession(req,res,user,req.body.rememberMe===true);if(billingStore)await billingStore.touch(user,'login').catch(()=>{});res.json({user:publicAccount(user)});
     }));
-    router.get('/auth/me',authenticated,(req,res)=>res.json({user:publicAccount(req.account)}));
+    router.get('/auth/me',authenticated,wrap(async(req,res)=>{if(billingStore)await billingStore.touch(req.account).catch(()=>{});res.json({user:publicAccount(req.account)});}));
     router.post('/auth/logout',originAllowed,wrap(async(req,res)=>{const token=cookieToken(req);if(token)await store.deleteSession(hashToken(token));res.clearCookie(COOKIE_NAME,cookieOptions);res.json({message:'ანგარიშიდან გამოხვედი.'});}));
     const sendProfile=(req,res)=>res.json({user:publicAccount(req.account)});
     async function updateProfile(req,res){
         const body=req.body;onlyKeys(body,['name','phone','favorites','studentProfile','advisorProfile']);const patch={};
         if('name'in body)patch.name=validateName(body.name);if('phone'in body)patch.phone=validatePhone(body.phone);
-        if('favorites'in body){if(!Array.isArray(body.favorites)||body.favorites.length>200||body.favorites.some(id=>typeof id!=='string'||!id||id.length>200))fail('ფავორიტების სია არასწორია.','favorites');patch.favorites=[...new Set(body.favorites)];}
+        if('favorites'in body){if(!Array.isArray(body.favorites)||body.favorites.length>200||body.favorites.some(id=>typeof id!=='string'||!id||id.length>200))fail('ფავორიტების სია არასწორია.','favorites');patch.favorites=[...new Set(body.favorites)];if(billingStore&&patch.favorites.length>(req.account.favorites||[]).length){const limit=await billingStore.transaction(async q=>(await billingStore.entitlement(q,req.account)).plan.features.favorites);if(patch.favorites.length>limit)return res.status(403).json({code:'UPGRADE_REQUIRED',message:'ფავორიტების ლიმიტი ამოიწურა. განაახლე პაკეტი.'});}}
         if('studentProfile'in body){if(req.account.role!=='student')fail('სტუდენტის პროფილის შეცვლა ამ როლისთვის დაუშვებელია.','studentProfile');patch.studentProfile={...req.account.studentProfile,...validateStudent(body.studentProfile,true)};}
         if('advisorProfile'in body){if(req.account.role!=='advisor')fail('მრჩეველის პროფილის შეცვლა ამ როლისთვის დაუშვებელია.','advisorProfile');patch.advisorProfile={...req.account.advisorProfile,...validateAdvisor(body.advisorProfile,true),verificationStatus:req.account.advisorProfile?.verificationStatus||'pending'};}
         if(!Object.keys(patch).length)fail('შესაცვლელი მონაცემი არ არის მითითებული.');
@@ -148,6 +148,7 @@ function createAuthRouter({store,cookieSecure=process.env.NODE_ENV==='production
     router.get('/user/profile',authenticated,sendProfile);router.put('/user/profile',originAllowed,authenticated,wrap(updateProfile));
     router.get('/student/profile',authenticated,role('student'),sendProfile);router.put('/student/profile',originAllowed,authenticated,role('student'),wrap(updateProfile));
     router.get('/advisor/profile',authenticated,role('advisor'),sendProfile);router.put('/advisor/profile',originAllowed,authenticated,role('advisor'),wrap(updateProfile));
+    if(billingRouter)router.use('/billing',originAllowed,authenticated,billingRouter);
     if(adminRouter)router.use('/admin',originAllowed,authenticated,(req,res,next)=>adminPolicy(req.account)?next():res.status(403).json({message:'ადმინისტრატორის წვდომაა საჭირო.'}),adminRouter);
     router.use((error,req,res,next)=>{
         if(error instanceof ValidationError)return res.status(400).json({message:error.message,fields:error.fields});
@@ -155,6 +156,7 @@ function createAuthRouter({store,cookieSecure=process.env.NODE_ENV==='production
         if(error.code==='EMAIL_EXISTS')return res.status(409).json({message:'ეს ელ. ფოსტა უკვე რეგისტრირებულია.',fields:{email:'ელ. ფოსტა უკვე გამოყენებულია.'}});
         console.error('Account request failed:',error.code||error.name);res.status(500).json({message:'ანგარიშის მოთხოვნა ვერ შესრულდა. სცადე ხელახლა.'});
     });
+    router.authenticated=authenticated;router.originAllowed=originAllowed;
     return router;
 }
 module.exports={createAuthRouter,publicUser,validatePassword,COOKIE_NAME};

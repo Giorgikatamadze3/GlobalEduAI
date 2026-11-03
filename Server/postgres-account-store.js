@@ -268,6 +268,12 @@ function createPostgresAccountStore({ connectionString, pool: injectedPool } = {
             if (typeof idHash !== 'string' || !/^[a-f0-9]{64}$/.test(idHash)) return false;
             return (await query('DELETE FROM globaledu_sessions WHERE id_hash=$1', [idHash])).rowCount > 0;
         },
+        async listUsers({limit=50,offset=0,search=''}={}) {
+            const needle='%'+search.toLowerCase()+'%';
+            const items=(await query('SELECT id,name,email,role,account_status AS status,created_at AS "createdAt" FROM globaledu_users WHERE lower(email) LIKE $1 OR lower(name) LIKE $2 ORDER BY created_at DESC LIMIT $3 OFFSET $4',[needle,needle,limit,offset])).rows;
+            return {items,total:Number((await query('SELECT COUNT(*) AS total FROM globaledu_users WHERE lower(email) LIKE $1 OR lower(name) LIKE $2',[needle,needle])).rows[0].total)};
+        },
+        async setAccountStatus(id,status) {if(!['active','suspended'].includes(status))throw failure('INVALID_STATUS','Invalid account status.');await query('UPDATE globaledu_users SET account_status=$1,updated_at=$2 WHERE id=$3',[status,new Date().toISOString(),id]);return this.findById(id);},
         async deleteUserSessions(userId) {
             if (typeof userId !== 'string') return 0;
             return (await query('DELETE FROM globaledu_sessions WHERE user_id=$1', [userId])).rowCount;

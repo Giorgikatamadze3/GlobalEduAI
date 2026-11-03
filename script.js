@@ -60,7 +60,8 @@ async function api(path, options = {}) {
     if (!response.ok) {
         const body = await response.json().catch(() => ({}));
         const error = new Error(body.message || 'მოთხოვნა ვერ შესრულდა. სცადე ხელახლა.');
-        error.status = response.status; error.fields = body.fields || {};
+        error.status = response.status; error.fields = body.fields || {}; error.code=body.code;
+        if(body.code==='UPGRADE_REQUIRED'&&typeof BillingUI!=='undefined')BillingUI.upgrade();
         if (response.status === 401 && !path.startsWith('/api/auth/')) expireAccountSession();
         throw error;
     }
@@ -75,10 +76,10 @@ function restoreFavorites() {
 // Navigation and dialogs
 function navigateTo(pageId, updateHash = true) {
     if (!$(pageId)?.classList.contains('app-page')) return;
-    if(pageId==='page-admin'&&!currentUser?.permissions?.admin){pendingAuthPage=authReady?null:'page-admin';pageId=currentUser?'page-dashboard':'page-register';}
+    if(['page-admin','page-business'].includes(pageId)&&!currentUser?.permissions?.admin){pendingAuthPage=authReady?null:pageId;pageId=currentUser?'page-dashboard':'page-register';}
     if (pageId === 'page-dashboard' && !currentUser) { pendingAuthPage = authReady ? null : 'page-dashboard'; pageId = 'page-register'; }
     document.querySelectorAll('.app-page').forEach(page => page.classList.toggle('active', page.id === pageId));
-    const privatePage = ['page-register', 'page-dashboard','page-admin'].includes(pageId);
+    const privatePage = ['page-register', 'page-dashboard','page-admin','page-business','page-billing'].includes(pageId);
     $('main-nav').style.display = privatePage ? 'none' : 'flex';
     $('main-footer').style.display = privatePage ? 'none' : 'block';
     document.querySelectorAll('.nav-links [data-page]').forEach(link => {
@@ -90,6 +91,9 @@ function navigateTo(pageId, updateHash = true) {
     if (pageId === 'page-universities') filterAndSortUnis(false);
     if (pageId === 'page-dashboard') renderFavorites();
     if(pageId==='page-admin')AdminUI.load();
+    if(pageId==='page-business')BusinessUI.load();
+    if(pageId==='page-billing')BillingUI.refresh();
+    if(pageId==='page-universities')BillingUI.track('discovery');
     renderCompareBar();
     if (updateHash && location.hash !== `#${pageId.replace('page-', '')}`) history.pushState(null, '', `#${pageId.replace('page-', '')}`);
     window.scrollTo({ top:0, behavior:'instant' });
@@ -177,20 +181,18 @@ function loadPdfLibrary() {
     return pdfLibraryRequest;
 }
 async function generatePDF() {
+    if(!BillingUI.requireFeature('pdf'))return;
     if (!uploadedFiles.length) { notify('ჯერ შეარჩიე PDF დოკუმენტები.'); switchDashTab('documents'); return; }
     const button = $('generate-btn'); button.disabled = true; $('pdf-loading').style.display = 'block'; $('pdf-preview').style.display = 'none'; $('pdf-progress').style.width = '45%';
     const selectedFiles=[...uploadedFiles];
     try {
-        const {PDFDocument}=await loadPdfLibrary();const merged=await PDFDocument.create();
-        for(const [index,{file}]of selectedFiles.entries()){
-            const source=await PDFDocument.load(await file.arrayBuffer());
-            const pages=await merged.copyPages(source,source.getPageIndices());pages.forEach(page=>merged.addPage(page));
-            $('pdf-progress').style.width=`${Math.round(10+80*(index+1)/selectedFiles.length)}%`;
-        }
-        const blob=new Blob([await merged.save()],{type:'application/pdf'});const url = URL.createObjectURL(blob);
+        if(selectedFiles.reduce((sum,{file})=>sum+file.size,0)>4*1024*1024)throw Error('ერთ პაკეტში აირჩიე მაქსიმუმ 4 MB დოკუმენტები.');
+        const data=new FormData();for(const {file}of selectedFiles)data.append('documents',file);
+        const response=await api('/api/generate-pdf',{method:'POST',body:data,signal:AbortSignal.timeout(60000)});
+        const blob=await response.blob();const url = URL.createObjectURL(blob);
         const link = document.createElement('a'); link.href = url; link.download = 'GlobalEdu_Application.pdf'; document.body.append(link); link.click(); link.remove();
         setTimeout(() => URL.revokeObjectURL(url), 30000);
-        $('pdf-progress').style.width = '100%'; $('pdf-preview').style.display = 'block'; notify('შენი PDF პაკეტი მზადაა.');
+        $('pdf-progress').style.width = '100%'; $('pdf-preview').style.display = 'block'; notify('შენი PDF პაკეტი მზადაა.');BillingUI.refresh();
     } catch (error) { notify(error.message || 'ფაილების გაერთიანება ვერ მოხერხდა.', true); }
     finally { $('pdf-loading').style.display = 'none'; button.disabled = false; }
 }
@@ -264,7 +266,7 @@ window.addEventListener('hashchange',() => navigateTo(`page-${location.hash.slic
 const savedTheme = readStored('globalEduTheme','light');
 document.documentElement.dataset.theme = savedTheme === 'dark' ? 'dark' : 'light'; syncThemeButtons();
 if (!DESIGN_PREVIEW) { try { localStorage.removeItem('globalEduToken'); localStorage.removeItem('globalEduUser'); } catch {} }
-ContentUI.init(); AdminUI.init();
+ContentUI.init(); AdminUI.init(); BillingUI.init(); BusinessUI.init();
 initAccountForms();
 ChatAdvisor.init();
 if (DESIGN_PREVIEW) { $('previewBanner').hidden = false; document.body.classList.add('preview-mode'); }

@@ -68,6 +68,7 @@ function readAdvisorFields(prefix) {
     return {organizationName:$(register?'regOrganization':'advisorOrganization').value.trim(),position:$(register?'regPosition':'advisorPosition').value.trim(),website:$(register?'regWebsite':'advisorWebsite').value.trim(),bio:$(register?'regBio':'advisorBio').value.trim(),specialties:[...$(register?'regSpecialties':'advisorSpecialties').querySelectorAll('input:checked')].map(input => input.value)};
 }
 function updateAccountUI() {
+    if(typeof BillingUI!=='undefined')BillingUI.accountChanged();
     if(typeof AdminUI!=='undefined')AdminUI.navState();
     if (typeof StudentWorkspace !== 'undefined') StudentWorkspace.render();
     if (typeof ChatAdvisor !== 'undefined') ChatAdvisor.accountChanged();
@@ -95,6 +96,7 @@ function updateAccountUI() {
     $('advisorSpecialties').querySelectorAll('input').forEach(input => input.checked = (profile.specialties || []).includes(input.value));
 }
 function switchDashTab(tab) {
+    if(tab==='planner'&&currentUser&&typeof BillingUI!=='undefined')BillingUI.track('planner');
     const titles = {profile:'ჩემი პროფილი',planner:'ჩემი გეგმა',documents:'დოკუმენტები',application:'PDF გენერაცია',favorites:'ჩემი ფავორიტები',organization:'პროფესიული პროფილი'};
     if (!currentUser || !titles[tab]) return;
     if ((tab === 'organization' && currentUser.role !== 'advisor') || (['documents','application','planner'].includes(tab) && currentUser.role !== 'student')) tab = 'profile';
@@ -108,6 +110,7 @@ function applyAccount(user) {
     if (!user || !['student','advisor'].includes(user.role) || !user.id && !user._id) throw new Error('სერვერმა ანგარიშის არასწორი მონაცემები დააბრუნა.');
     const changed = currentUser?._id !== user._id;
     currentUser = user;
+    window.dispatchEvent(new CustomEvent('globaledu:accountchange'));
     if (changed) { uploadedFiles = []; renderDocuments(); $('pdf-preview').style.display = 'none'; }
     restoreFavorites(); updateAccountUI(); renderFavorites(); renderFeatured(); if(catalogData)filterAndSortUnis(false);
 }
@@ -116,7 +119,7 @@ function expireAccountSession() {
     restoreFavorites(); updateAccountUI(); renderDocuments(); renderFavorites(); renderFeatured();
     $('profileForm').reset(); $('advisorProfileForm').reset(); $('pdf-preview').style.display = 'none';
     if(catalogData)filterAndSortUnis(false);
-    if ($('page-dashboard').classList.contains('active')||$('page-admin')?.classList.contains('active')) { switchAuthTab('login'); navigateTo('page-register'); }
+    if ($('page-dashboard').classList.contains('active')||$('page-admin')?.classList.contains('active')||$('page-business')?.classList.contains('active')||$('page-billing')?.classList.contains('active')) { switchAuthTab('login'); navigateTo('page-register'); }
     if (hadAccount) notify('სესია დასრულდა. პირად სივრცეში შესასვლელად გაიარე ავტორიზაცია.');
 }
 async function refreshAccountSession() {

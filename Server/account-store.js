@@ -182,6 +182,11 @@ function createAccountStore({ filename = path.join(__dirname, 'data', 'accounts.
             }
             return unpackUser(statements.findById.get(id));
         },
+        listUsers({limit=50,offset=0,search=''}={}) {
+            const needle='%'+search.toLowerCase()+'%';
+            return {items:db.prepare('SELECT id,name,email,role,account_status AS status,created_at AS "createdAt" FROM users WHERE lower(email) LIKE ? OR lower(name) LIKE ? ORDER BY created_at DESC LIMIT ? OFFSET ?').all(needle,needle,limit,offset),total:db.prepare('SELECT COUNT(*) AS total FROM users WHERE lower(email) LIKE ? OR lower(name) LIKE ?').get(needle,needle).total};
+        },
+        setAccountStatus(id,status) {if(!['active','suspended'].includes(status))throw failure('INVALID_STATUS','Invalid account status.');db.prepare('UPDATE users SET account_status=?,updated_at=? WHERE id=?').run(status,new Date().toISOString(),id);return unpackUser(statements.findById.get(id));},
         findByEmail(email) { return unpackUser(statements.findByEmail.get(normalizedEmail(email))); },
         findById(id) { return typeof id === 'string' ? unpackUser(statements.findById.get(id)) : null; },
         updateUser(id, patch) {

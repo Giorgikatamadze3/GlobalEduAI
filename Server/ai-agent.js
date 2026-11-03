@@ -411,14 +411,16 @@ function createAdvisorRouter(options = {}) {
         req.once('aborted',cancelled);res.once('close',closed);
         try {
             const request = validateRequest(req.body);
+            if(options.billingStore)req.billingTicket=await options.billingStore.consume(req.account,'ai');
             const result = await agent.respond({...request,signal:controller.signal});
+            req.billingCompleted=true;
             if (!res.destroyed && !res.writableEnded) res.json(result);
         } catch (error) {
             if (res.destroyed || res.writableEnded || res.headersSent) return;
-            const safe = error instanceof AdvisorError ? error : new AdvisorError(502,'AI_PROVIDER_ERROR','AI მრჩეველმა პასუხის მომზადება ვერ შეძლო.');
+            const safe = error instanceof AdvisorError ? error : error.code==='UPGRADE_REQUIRED'||error.code==='BILLING_SETUP_REQUIRED'?error:new AdvisorError(502,'AI_PROVIDER_ERROR','AI მრჩეველმა პასუხის მომზადება ვერ შეძლო.');
             if (safe.retryAfter)res.set('Retry-After',String(safe.retryAfter));
             res.status(safe.status).json({code:safe.code,message:safe.message});
-        } finally {req.removeListener('aborted',cancelled);res.removeListener('close',closed);}
+        } finally {if(req.billingTicket&&!req.billingCompleted)await options.billingStore.release(req.billingTicket).catch(()=>{});req.removeListener('aborted',cancelled);res.removeListener('close',closed);}
     });
     return router;
 }

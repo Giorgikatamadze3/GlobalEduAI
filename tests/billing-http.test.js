@@ -1,0 +1,30 @@
+'use strict';
+const {test}=require('node:test'),assert=require('node:assert/strict'),express=require('express'),{once}=require('node:events'),{randomUUID,generateKeyPairSync,sign}=require('node:crypto');
+test('billing HTTP enforces real sessions, admin permissions, ownership, origin and signed raw callbacks',async t=>{
+ const accounts=require('../Server/account-store').createAccountStore({filename:':memory:'}),store=require('../Server/billing-store').createBillingStore({environment:{BILLING_DB_PATH:':memory:'}});
+ const {publicKey,privateKey}=generateKeyPairSync('rsa',{modulusLength:2048}),verify=require('../Server/bog-payments').createBogProvider({environment:{},publicKey}).verify;
+ let receipt;const provider={configured:true,recurringEnabled:false,verify,async create(p){receipt={order_id:'bank-order',external_order_id:p.id,order_status:{key:'completed'},purchase_units:{currency_code:'GEL',request_amount:'19.00',transfer_amount:'19.00',refund_amount:'0.00'}};return {id:'bank-order',redirectUrl:'https://payment.bog.ge/?order_id=bank-order'};},async details(){return receipt;}};
+ const service=require('../Server/billing-service').createBillingService({store,provider,origin:'https://example.com'}),{createBillingRouter,createBillingPublicRouter}=require('../Server/billing-router');
+ const adminPolicy=user=>user.email==='owner@example.com'&&user.accountStatus==='active';
+ const app=express();app.use('/api/billing',createBillingPublicRouter({store,service,provider,accountStore:accounts,environment:{CRON_SECRET:'test-cron-secret'}}));app.use(express.json());
+ app.use('/api',require('../Server/auth').createAuthRouter({store:accounts,billingStore:store,billingRouter:createBillingRouter({store,service,accountStore:accounts,adminPolicy}),adminPolicy,cookieSecure:false}));
+ const server=app.listen(0,'127.0.0.1');await once(server,'listening');t.after(async()=>{server.closeAllConnections();await new Promise(r=>server.close(r));await accounts.close();await store.close();});
+ const origin='http://127.0.0.1:'+server.address().port;
+ async function request(path,{method='GET',body,cookie,headers={}}={}){const r=await fetch(origin+'/api'+path,{method,headers:{...(body?{'Content-Type':'application/json'}:{}),...(cookie?{Cookie:cookie}:{}),...headers},...(body?{body:typeof body==='string'?body:JSON.stringify(body)}:{})});return {status:r.status,body:await r.json(),cookie:r.headers.get('set-cookie')?.split(';')[0]};}
+ const register=async email=>request('/auth/register',{method:'POST',body:{name:'Test Account',email,phone:'+995555123456',password:'TestPassword123',passwordConfirm:'TestPassword123',role:'student',termsAccepted:true}});
+ const owner=await register('owner@example.com'),student=await register('student@example.com');assert.equal(owner.status,201);assert.equal(student.status,201);
+ assert.equal((await request('/billing/me')).status,401);assert.equal((await request('/billing/admin/overview',{cookie:student.cookie})).status,403);
+ assert.equal((await request('/billing/checkout',{method:'POST',cookie:student.cookie,headers:{Origin:'https://evil.example'},body:{planId:'pro'}})).status,403);
+ const plans=await request('/billing/plans');assert.equal(plans.body.items.length,4);assert.equal(plans.body.items[1].monthlyPrice,1900);
+ const invoice=await request('/billing/checkout',{method:'POST',cookie:student.cookie,body:{planId:'student',period:'monthly',idempotencyKey:randomUUID()}});assert.equal(invoice.status,200);
+ assert.equal((await request('/billing/payments/'+invoice.body.paymentId+'/check',{method:'POST',cookie:owner.cookie,body:{}})).status,404);
+ const raw=JSON.stringify({event:'order_payment',body:{external_order_id:invoice.body.paymentId,order_id:'bank-order'}}),signature=sign('RSA-SHA256',Buffer.from(raw),privateKey).toString('base64');
+ assert.equal((await request('/billing/webhook/bog',{method:'POST',body:raw})).status,401);
+ assert.equal((await request('/billing/webhook/bog',{method:'POST',body:raw,headers:{'Callback-Signature':signature}})).status,200);
+ assert.equal((await request('/billing/me',{cookie:student.cookie})).body.plan.id,'student');
+ const overview=await request('/billing/admin/overview',{cookie:owner.cookie});assert.equal(overview.status,200,JSON.stringify(overview.body));assert.equal(overview.body.grossRevenue,1900);assert.equal(overview.body.activePaidSubscriptions,1);assert.equal(overview.body.dau,2);assert.ok(overview.body.activityByMonth.length);
+ const users=await request('/billing/admin/users?q=student',{cookie:owner.cookie});assert.equal(users.body.total,1);assert.equal(users.body.items[0].email,'student@example.com');assert.equal('passwordHash' in users.body.items[0],false);
+ const self=await request('/billing/admin/users/'+owner.body.user.id+'/status',{method:'POST',cookie:owner.cookie,body:{status:'suspended'}});assert.equal(self.status,403);
+ const suspend=await request('/billing/admin/users/'+student.body.user.id+'/status',{method:'POST',cookie:owner.cookie,body:{status:'suspended'}});assert.equal(suspend.status,200);assert.equal((await request('/billing/me',{cookie:student.cookie})).status,401);
+ assert.equal((await request('/billing/cron')).status,401);assert.equal((await request('/billing/cron',{headers:{Authorization:'Bearer test-cron-secret'}})).status,200);
+});

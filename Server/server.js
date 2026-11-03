@@ -17,11 +17,17 @@ const contentStore=createContentStore();
 const content=createContentService({baseCatalog,store:contentStore});
 const catalog=new Proxy({},{get:(_target,key)=>content.catalog[key]});
 const accountStore = createConfiguredAccountStore();
+const billingStore=require('./billing-store').createBillingStore();
+const paymentProvider=require('./bog-payments').createBogProvider();
+const billingService=require('./billing-service').createBillingService({store:billingStore,provider:paymentProvider,origin:process.env.BILLING_PUBLIC_ORIGIN||'https://globaleduai.vercel.app'});
+const {createBillingRouter,createBillingPublicRouter,billingError}=require('./billing-router');
+const authRouter=createAuthRouter({store:accountStore,billingStore,billingRouter:createBillingRouter({store:billingStore,service:billingService,accountStore}),adminRouter:createAdminRouter({content}),cookieSecure:process.env.NODE_ENV==='production'||process.env.VERCEL==='1'});
 
 const app = express();
 if(process.env.VERCEL==='1')app.set('trust proxy',1);
 app.locals.accountStore = accountStore;
 app.locals.contentStore = contentStore;
+app.locals.billingStore=billingStore;
 app.use(cors((req,callback) => {
     const origin = req.get('origin');
     let allowed = false;
@@ -41,11 +47,13 @@ app.use(cors((req,callback) => {
 }));
 app.use('/api',async(req,res,next)=>{await content.refresh();next();});
 app.get('/api/content',(req,res)=>{res.set('Cache-Control','no-store');res.json(content.publicChanges());});
-app.use('/api/advisor-agent',express.json({limit:'128kb'}),createAdvisorRouter({catalog}));
+// Signed callbacks must receive the raw bytes before the JSON parser.
+app.use('/api/billing',createBillingPublicRouter({store:billingStore,service:billingService,provider:paymentProvider,accountStore}));
+app.use('/api/advisor-agent',express.json({limit:'128kb'}),(req,res,next)=>req.path.replace(/\/+$/,'').toLowerCase()==='/chat'?authRouter.originAllowed(req,res,()=>authRouter.authenticated(req,res,next)):next(),createAdvisorRouter({catalog,billingStore}));
 app.use(express.json({limit:'64kb'}));
 app.get('/assets/vendor/pdf-lib.min.js',(req,res)=>res.sendFile(require.resolve('pdf-lib/dist/pdf-lib.min.js')));
 app.use('/assets', express.static(path.join(__dirname, '../assets')));
-for (const filename of ['content-ui.js','admin-ui.js','content.css','index.html','i18n.js','style.css','ai-agent.css','funding.css','script.js','catalog-core.js','scoring-core.js','funding-core.js','funding-ui.js','catalog-ui.js','discovery-ui.js','ai-agent-ui.js','account-ui.js', 'student-profile-core.js', 'academic-profile-ui.js', 'account-workspace.css', 'student-workspace-core.js', 'student-workspace.js','preview-data.js','scholarships.js']) {
+for (const filename of ['billing-ui.js','business-ui.js','billing.css','content-ui.js','admin-ui.js','content.css','index.html','i18n.js','style.css','ai-agent.css','funding.css','script.js','catalog-core.js','scoring-core.js','funding-core.js','funding-ui.js','catalog-ui.js','discovery-ui.js','ai-agent-ui.js','account-ui.js', 'student-profile-core.js', 'academic-profile-ui.js', 'account-workspace.css', 'student-workspace-core.js', 'student-workspace.js','preview-data.js','scholarships.js']) {
     app.get(`/${filename}`, (req,res) => res.sendFile(path.join(__dirname, '..', filename)));
 }
 app.get('/', (req,res) => res.sendFile(path.join(__dirname, '../index.html')));
@@ -85,7 +93,7 @@ app.get('/api/programs/:id', (req,res) => {
 });
 app.get('/api/funding', (req,res) => res.json(catalog.payload.funding));
 
-app.use('/api',createAuthRouter({store:accountStore,adminRouter:createAdminRouter({content}),cookieSecure:process.env.NODE_ENV==='production'||process.env.VERCEL==='1'}));
+app.use('/api',authRouter);
 
 // Compatibility endpoint: real institutions only; the former synthetic collection is not served.
 app.get('/api/universities', (req,res) => res.json(catalog.payload.institutions));
@@ -105,10 +113,12 @@ app.get('/api/agencies', (req, res) => {
     } catch (error) { res.status(500).json({ message: "შეცდომა სააგენტოების ჩატვირთვისას." }); }
 });
 
-const upload = multer({storage:multer.memoryStorage(),limits:{files:20,fileSize:20*1024*1024}});
-app.post('/api/generate-pdf', upload.array('documents'), async (req, res) => {
+const upload = multer({storage:multer.memoryStorage(),limits:{files:20,fileSize:4*1024*1024}});
+const paidFeature=feature=>[authRouter.originAllowed,authRouter.authenticated,async(req,res,next)=>{try{req.billingTicket=await billingStore.consume(req.account,feature);res.once('finish',()=>{if(res.statusCode>=400)billingStore.release(req.billingTicket).catch(()=>{});});next();}catch(e){billingError(e,req,res,next);}}];
+app.post('/api/generate-pdf', ...paidFeature('pdf'),upload.array('documents'), async (req, res) => {
     try {
         if (!req.files || req.files.length === 0) return res.status(400).json({ message: "ფაილები არ არის." });
+        if(req.files.reduce((sum,file)=>sum+file.size,0)>4*1024*1024)return res.status(400).json({message:'PDF პაკეტის საერთო ზომა მაქსიმუმ 4 MB უნდა იყოს.'});
         const mergedPdf = await PDFDocument.create();
         for (const file of req.files) {
             const pdf = await PDFDocument.load(file.buffer);

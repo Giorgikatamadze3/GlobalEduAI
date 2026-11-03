@@ -169,6 +169,8 @@ function openCompareModal() {
 function toggleFavorite(id) {
     const added=!favoritesList.includes(id);
     if(added&&!entityMap.has(id))return;
+    if(added&&currentUser&&typeof BillingUI!=='undefined'&&(!BillingUI.state||favoritesList.length>=BillingUI.state.plan.features.favorites)){BillingUI.upgrade();return;}
+    if(currentUser)BillingUI.track('favorites');
     if(added&&favoritesList.length>=200){notify('შენი სია უკვე შეიცავს 200 ჩანაწერს. ჯერ წაშალე არასაჭირო არჩევანი.');return;}
     favoritesList=added?[...favoritesList,id]:favoritesList.filter(item=>item!==id); writeStored(favoriteKey(),favoritesList);
     document.querySelectorAll('[data-action="favorite"]').forEach(button=>{if(button.dataset.id!==id)return;button.classList.toggle('active',added);button.textContent=added?'♥':'♡';button.setAttribute('aria-pressed',String(added));button.setAttribute('aria-label',added?'ფავორიტებიდან წაშლა':'ფავორიტებში დამატება');});
@@ -238,6 +240,7 @@ async function analyzeProfile(event) {
     const prefs=readAdvisorPreferences();
     if(prefs.gpa4!==null&&(!Number.isFinite(prefs.gpa4)||prefs.gpa4<0||prefs.gpa4>4)){notify('მიუთითე GPA 0–4 სკალაზე.',true);return;}
     lastAdvisorPreferences=prefs;
+    if(currentUser&&typeof BillingUI!=='undefined')BillingUI.track('matching');
     $('aiForm').style.display='none';$('result-container').style.display='block';
     $('result-container').innerHTML='<div class="advisor-loading"><span>✧</span><h3>ვამოწმებთ შენს პირობებს.</h3><p>ოფიციალური პროგრამების მონაცემების მიხედვით.</p></div>';
     advisorTimer=setTimeout(()=>{

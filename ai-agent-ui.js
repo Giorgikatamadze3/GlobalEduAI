@@ -141,6 +141,7 @@ const ChatAdvisor = (() => {
     }
     async function send(event) {
         event.preventDefault(); if (controller || !enabled) return;
+        if(typeof BillingUI!=='undefined'&&!BillingUI.requireFeature('ai'))return;
         const content = $('agentMessage').value.trim(); if (!content || [...content].length > 2000) return;
         if($('agentShareProfile').checked&&!$('gpa').checkValidity()){showError('GPA მიუთითე 0–4 სკალაზე. შეასწორე შედეგი პროფილის შეფასების ჩანართში.');return;}
         hideError(); const profile = getProfile();
@@ -164,7 +165,7 @@ const ChatAdvisor = (() => {
             showError(['AbortError','TimeoutError'].includes(error.name) ? 'პასუხის მიღებას მეტი დრო დასჭირდა. შენი კითხვა შენახულია — სცადე ხელახლა.' : error.name === 'TypeError' ? 'სერვერთან კავშირი გაწყდა. სცადე ხელახლა.' : error.message);
             if (error.status === 503) { checkedAt = 0; $('agentStatusLabel').textContent = 'სერვისი ამჟამად მიუწვდომელია'; $('agentStatusDot').dataset.state = 'unavailable'; }
         } finally {
-            if (turn === generation) { controller = null; $('agentThinking').hidden = true; render(); scrollConversation(); }
+            if (turn === generation) { controller = null; $('agentThinking').hidden = true; render(); scrollConversation();if(typeof BillingUI!=='undefined')BillingUI.refresh(); }
         }
     }
     function init() {

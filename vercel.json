@@ -8,9 +8,10 @@
   "functions": {
     "app.js": {
       "maxDuration": 60,
-      "includeFiles": "{Server/data/*.json,Server/content-schema.sql,index.html,*.css,*.js}"
+      "includeFiles": "{Server/data/*.json,Server/*-schema.sql,index.html,*.css,*.js}"
     }
   },
+  "crons": [{"path":"/api/billing/cron","schedule":"0 3 * * *"}],
   "headers": [
     {
       "source": "/catalog.json",

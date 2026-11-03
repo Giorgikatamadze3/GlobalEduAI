@@ -257,3 +257,7 @@ test('migration preflight refuses credential or ID conflicts before inserting an
     assert.equal(await store.findById(fresh.id), null);
     assert.deepEqual(await store.findById(cloud.id), cloud);
 });
+test('Postgres admin account directory paginates safe fields and suspension revokes session access',async()=>{
+    const db=database(),store=createPostgresAccountStore({pool:db.newPool()});
+    try{const record=user({email:'billing-admin-test@example.com'});await store.createUser(record);const page=await store.listUsers({limit:1,offset:0,search:'billing-admin-test'});assert.equal(page.total,1);assert.equal(page.items[0].email,record.email);assert.equal('password_hash' in page.items[0],false);await store.setAccountStatus(record.id,'suspended');assert.equal((await store.findById(record.id)).accountStatus,'suspended');await store.setAccountStatus(record.id,'active');assert.equal((await store.findById(record.id)).accountStatus,'active');}finally{await store.close();}
+});
