@@ -12,11 +12,13 @@ function unavailableStore(provider) {
 
 function createConfiguredAccountStore(environment = process.env) {
     const cloud = environment.VERCEL === '1';
-    const driver = (environment.AUTH_DB_DRIVER || (cloud?'postgres':'sqlite')).trim().toLowerCase();
+    const config=require('./database-config').databaseConfig(environment);
+    const driver = (environment.AUTH_DB_DRIVER || (cloud||config.provider==='supabase'?'postgres':'sqlite')).trim().toLowerCase();
+    if(config.provider==='supabase'&&driver!=='postgres')throw new Error('Supabase requires AUTH_DB_DRIVER=postgres for all account data.');
     if(driver==='postgres') {
-        const connectionString = environment.DATABASE_URL || environment.POSTGRES_URL;
+        const connectionString = config.connectionString;
         if(!connectionString?.trim())return unavailableStore('postgres');
-        return require('./postgres-account-store').createPostgresAccountStore({connectionString:connectionString.trim()});
+        return require('./postgres-account-store').createPostgresAccountStore({connectionString:connectionString.trim(),schema:config.schema,ca:config.ca});
     }
     if(driver!=='sqlite')throw new Error('AUTH_DB_DRIVER must be sqlite or postgres.');
     // A serverless function's disk cannot provide durable shared accounts.

@@ -4,11 +4,11 @@ const {DEFAULT_PLANS,fail}=require('./billing-core');
 const SCHEMA=fs.readFileSync(path.join(__dirname,'billing-schema.sql'),'utf8');
 const SCHEMA_HASH=createHash('sha256').update(SCHEMA).digest('hex');
 function createBillingStore({environment=process.env,pool:injectedPool,sqlite,clock=()=>Date.now()}={}){
- const postgres=!!injectedPool||environment.VERCEL==='1'||environment.AUTH_DB_DRIVER==='postgres';
+ const postgres=!!injectedPool||environment.VERCEL==='1'||environment.AUTH_DB_DRIVER==='postgres'||require('./database-config').databaseConfig(environment).provider==='supabase';
  let pool=injectedPool,db=sqlite,readiness,queue=Promise.resolve();
  const now=()=>new Date(clock()).toISOString();
  function database(){if(!db){const {DatabaseSync}=require('node:sqlite');const file=environment.BILLING_DB_PATH||path.join(__dirname,'data/billing.sqlite');if(file!==':memory:')fs.mkdirSync(path.dirname(file),{recursive:true});db=new DatabaseSync(file);db.exec('PRAGMA busy_timeout=5000');db.exec(SCHEMA);}return db;}
- function getPool(){if(!pool){const {Pool}=require('pg'),{connectionOptions}=require('./postgres-account-store');pool=new Pool(connectionOptions(environment.DATABASE_URL||environment.POSTGRES_URL));pool.on('error',()=>{});}return pool;}
+ function getPool(){if(!pool){pool=require('./database-config').createDatabasePool(environment);}return pool;}
  async function query(sql,params=[],client){if(postgres)return(await(client||getPool()).query(sql,params)).rows;return database().prepare(sql.replace(/\$\d+/g,'?')).all(...params);}
  async function ready(){if(!readiness)readiness=(async()=>{if(postgres)await query('SELECT id FROM billing_plans LIMIT 1');else database();for(const p of DEFAULT_PLANS)await query('INSERT INTO billing_plans(id,payload,revision) VALUES($1,$2,1) ON CONFLICT(id) DO NOTHING',[p.id,JSON.stringify(p)]);})();try{await readiness;}catch{readiness=null;throw fail(503,'BILLING_SETUP_REQUIRED','პაკეტების სისტემა ჯერ მზადდება. გადახდა არ შესრულებულა.');}}
  async function transaction(work){

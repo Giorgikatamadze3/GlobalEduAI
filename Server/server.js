@@ -45,6 +45,7 @@ app.use(cors((req,callback) => {
     }
     callback(null,{origin:allowed?origin:false,credentials:true,methods:['GET','POST','PUT','OPTIONS'],allowedHeaders:['Content-Type','Authorization']});
 }));
+app.use('/api',require('./database-config').migrationMaintenance());
 app.use('/api',async(req,res,next)=>{await content.refresh();next();});
 app.get('/api/content',(req,res)=>{res.set('Cache-Control','no-store');res.json(content.publicChanges());});
 // Signed callbacks must receive the raw bytes before the JSON parser.

@@ -119,7 +119,7 @@ function mappedError(error) {
     if (error.code === '23503' && error.constraint === 'globaledu_sessions_user_id_fkey') return failure('USER_NOT_FOUND', 'A session requires an existing user.');
     return error;
 }
-function connectionOptions(connectionString) {
+function connectionOptions(connectionString,{ca}={}) {
     if (typeof connectionString !== 'string' || !connectionString.trim()) throw failure('DATABASE_NOT_CONFIGURED', 'A Postgres connection string is required.');
     let url;
     try { url = new URL(connectionString); } catch { throw failure('INVALID_DATABASE_CONFIG', 'Invalid Postgres connection string.'); }
@@ -129,41 +129,10 @@ function connectionOptions(connectionString) {
     // pg parses connection-string TLS parameters after pool options. Strip these so
     // neither sslmode=require nor a URL flag can turn certificate verification off.
     for (const key of ['sslmode', 'ssl', 'sslcert', 'sslkey', 'sslrootcert', 'uselibpqcompat']) url.searchParams.delete(key);
-    return { connectionString: url.toString(), ssl: { rejectUnauthorized: true }, max: 5, idleTimeoutMillis: 10000, connectionTimeoutMillis: 10000 };
+    return { connectionString: url.toString(), ssl: { rejectUnauthorized: true,...(ca?{ca}:{}) }, max: 5, idleTimeoutMillis: 10000, connectionTimeoutMillis: 10000 };
 }
 
-function createPostgresAccountStore({ connectionString, pool: injectedPool } = {}) {
-    if (injectedPool && (typeof injectedPool.query !== 'function' || typeof injectedPool.connect !== 'function' || typeof injectedPool.end !== 'function')) throw failure('INVALID_DATABASE_CONFIG', 'A compatible Postgres pool is required.');
-    const options = injectedPool ? null : connectionOptions(connectionString);
-    let pool = injectedPool || null;
-    let readiness = null;
-    let closed = false;
-    let closing = null;
-    const info = Object.freeze({ provider: 'postgres', persistent: true, schemaVersion: SCHEMA_VERSION });
-    function getPool() {
-        if (!pool) {
-            const { Pool } = require('pg');
-            pool = new Pool(options);
-            // Idle connection failures are handled by the pool replacing the client;
-            // in-flight operations still reject and the application reports failure.
-            pool.on('error', () => {});
-        }
-        return pool;
-    }
-    async function transaction(work) {
-        const client = await getPool().connect();
-        try {
-            await client.query('BEGIN');
-            const result = await work(client);
-            await client.query('COMMIT');
-            return result;
-        } catch (error) {
-            try { await client.query('ROLLBACK'); } catch { /* Preserve the initiating failure. */ }
-            throw mappedError(error);
-        } finally { client.release(); }
-    }
-    async function migrate() {
-        await transaction(async client => {
+async function applyAccountSchema(client) {
             await client.query('SELECT pg_advisory_xact_lock($1)', [MIGRATION_LOCK]);
             await client.query(`CREATE TABLE IF NOT EXISTS globaledu_schema_migrations (
                 version INTEGER PRIMARY KEY CHECK(version > 0), applied_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
@@ -201,9 +170,40 @@ function createPostgresAccountStore({ connectionString, pool: injectedPool } = {
                 await client.query('CREATE INDEX globaledu_sessions_expires_at ON globaledu_sessions(expires_at)');
                 await client.query('INSERT INTO globaledu_schema_migrations (version) VALUES ($1)', [SCHEMA_VERSION]);
             }
-        });
-        return info;
+
+}
+
+function createPostgresAccountStore({ connectionString, pool: injectedPool,schema=null,ca } = {}) {
+    if (injectedPool && (typeof injectedPool.query !== 'function' || typeof injectedPool.connect !== 'function' || typeof injectedPool.end !== 'function')) throw failure('INVALID_DATABASE_CONFIG', 'A compatible Postgres pool is required.');
+    const options = injectedPool ? null : connectionOptions(connectionString,{ca});
+    let pool = injectedPool || null;
+    let readiness = null;
+    let closed = false;
+    let closing = null;
+    const info = Object.freeze({ provider: 'postgres', persistent: true, schemaVersion: SCHEMA_VERSION });
+    function getPool() {
+        if (!pool) {
+            const { Pool } = require('pg');
+            pool = require('./database-config').scopePool(new Pool(options),schema);
+            // Idle connection failures are handled by the pool replacing the client;
+            // in-flight operations still reject and the application reports failure.
+            pool.on('error', () => {});
+        }
+        return pool;
     }
+    async function transaction(work) {
+        const client = await getPool().connect();
+        try {
+            await client.query('BEGIN');
+            const result = await work(client);
+            await client.query('COMMIT');
+            return result;
+        } catch (error) {
+            try { await client.query('ROLLBACK'); } catch { /* Preserve the initiating failure. */ }
+            throw mappedError(error);
+        } finally { client.release(); }
+    }
+    async function migrate() { await transaction(applyAccountSchema); return info; }
     function ready() {
         if (closed) return Promise.reject(failure('STORE_CLOSED', 'The account store is closed.'));
         if (!readiness) readiness = migrate();
@@ -294,4 +294,4 @@ function createPostgresAccountStore({ connectionString, pool: injectedPool } = {
     };
 }
 
-module.exports = { createPostgresAccountStore, normalizeUser, userValues, INSERT_USER, connectionOptions };
+module.exports = { applyAccountSchema, createPostgresAccountStore, normalizeUser, userValues, INSERT_USER, connectionOptions };
