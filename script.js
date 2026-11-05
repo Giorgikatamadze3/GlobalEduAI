@@ -75,9 +75,10 @@ function restoreFavorites() {
 
 // Navigation and dialogs
 function navigateTo(pageId, updateHash = true) {
+    if (['page-scholarships','page-loans'].includes(pageId)) pageId='page-funding';
     if (!$(pageId)?.classList.contains('app-page')) return;
     if(['page-admin','page-business'].includes(pageId)&&!currentUser?.permissions?.admin){pendingAuthPage=authReady?null:pageId;pageId=currentUser?'page-dashboard':'page-register';}
-    if (pageId === 'page-dashboard' && !currentUser) { pendingAuthPage = authReady ? null : 'page-dashboard'; pageId = 'page-register'; }
+    if (['page-dashboard','page-billing'].includes(pageId) && !currentUser) { pendingAuthPage = authReady ? null : pageId; pageId = 'page-register'; }
     document.querySelectorAll('.app-page').forEach(page => page.classList.toggle('active', page.id === pageId));
     const privatePage = ['page-register', 'page-dashboard','page-admin','page-business','page-billing'].includes(pageId);
     $('main-nav').style.display = privatePage ? 'none' : 'flex';
@@ -266,11 +267,14 @@ window.addEventListener('hashchange',() => navigateTo(`page-${location.hash.slic
 const savedTheme = readStored('globalEduTheme','light');
 document.documentElement.dataset.theme = savedTheme === 'dark' ? 'dark' : 'light'; syncThemeButtons();
 if (!DESIGN_PREVIEW) { try { localStorage.removeItem('globalEduToken'); localStorage.removeItem('globalEduUser'); } catch {} }
+const catalogMobile=matchMedia('(max-width:760px)');
+const syncCatalogDrawer=()=>{$('catalogFilterDrawer').open=!catalogMobile.matches;};
+syncCatalogDrawer();catalogMobile.addEventListener('change',syncCatalogDrawer);
 ContentUI.init(); AdminUI.init(); BillingUI.init(); BusinessUI.init();
 initAccountForms();
 ChatAdvisor.init();
 if (DESIGN_PREVIEW) { $('previewBanner').hidden = false; document.body.classList.add('preview-mode'); }
 restoreFavorites(); updateAccountUI(); renderDocuments(); renderFavorites();
-navigateTo($( `page-${location.hash.slice(1)}` ) ? `page-${location.hash.slice(1)}` : 'page-home',false);
+navigateTo(`page-${location.hash.slice(1)||'home'}`,false);
 fetchUniversities(); fetchAgencies();
 bootstrapAccount();

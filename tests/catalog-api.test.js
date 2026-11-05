@@ -10,9 +10,11 @@ const expectedPrograms=JSON.parse(fs.readFileSync(path.join(__dirname,'../Server
 let server, base, accountStore;
 
 before(async()=>{
+    process.env.DATABASE_PROVIDER='postgres';
     process.env.AUTH_DB_DRIVER='sqlite';
     process.env.AUTH_DB_PATH=':memory:';
     process.env.CMS_DB_PATH=':memory:';
+    process.env.BILLING_DB_PATH=':memory:';
     process.env.NODE_ENV='test';
     const app=require('../Server/server');
     accountStore=app.locals.accountStore;

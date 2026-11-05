@@ -77,13 +77,27 @@ const FundingUI = (() => {
         summaryCache.clear();
         const select=$('filterFundingScheme');
         select.innerHTML=optionsHTML(catalogData.funding.schemes.map(s=>({value:s.id,label:s.title})),'ყველა შესაძლებლობა');
-        const grid=document.querySelector('#page-scholarships .scholarship-grid');
-        if(grid){
-            const assessments=FundingCore.fundingForProgram(null,null,catalogData.funding,null,{asOf:todayISO()});
-            grid.className='funding-grid scholarship-grid';
-            grid.innerHTML=assessments.map(a=>assessmentCard(a,true)).join('');
-            document.querySelector('#page-scholarships .heading-meta').textContent=`${assessments.length} სქემა · გერმანია და ევროპა · შემოწმდა ${catalogData.funding.metadata.checkedAt}`;
-        }
+        renderDirectory();
+    }
+    // Classification is explicit: fee waivers are not cash grants or loans.
+    const directoryType=s=>s.id==='funding_tum-international-grant'?'grant':
+        ['funding_helsinki-master-waiver','funding_aalto-master-excellence','funding_ku-leuven-ai-waiver','funding_lund-global'].includes(s.id)?'other':'scholarship';
+    function renderDirectory(){
+        const select=$('fundingCountry');if(!select)return;
+        const schemes=catalogData?.funding?.schemes||[],loans=typeof ContentUI==='undefined'?[]:ContentUI.getLoans();
+        const country=select.value,type=$('fundingType').value;
+        const codes=[...new Set([...schemes.flatMap(s=>s.scope.countryCodes),...loans.flatMap(r=>r.countryCodes)])].sort();
+        select.innerHTML='<option value="">ყველა ქვეყანა</option>'+codes.map(code=>
+            '<option value="'+esc(code)+'">'+esc(CatalogCore.countryInfo(code).name)+'</option>').join('');
+        select.value=codes.includes(country)?country:'';
+        const matches=(kind,countries)=>(!type||type===kind)&&(!select.value||countries.includes(select.value));
+        const assessments=catalogData?FundingCore.fundingForProgram(null,null,catalogData.funding,null,{asOf:todayISO()}):[];
+        const cards=assessments.filter(a=>matches(directoryType(a),a.scope.countryCodes)).map(a=>assessmentCard(a,true));
+        cards.push(...loans.filter(r=>matches('loan',r.countryCodes)).map(ContentUI.loanCard));
+        const label={ka:'შესაძლებლობა',en:'opportunities',ru:'возможностей'}[I18n.getLanguage()];
+        const state=ContentUI.getLoanLoadState();
+        $('fundingStatus').textContent=cards.length+' '+label+(state==='error'?' · სესხების განახლება ვერ მოხერხდა. სცადე ხელახლა.':state==='loading'?' · სესხები იტვირთება…':'');
+        $('fundingResults').innerHTML=cards.join('')||'<div class="empty-state"><h3>შესაბამისი დაფინანსება ვერ მოიძებნა.</h3><p>შეცვალე ფილტრები ან გაასუფთავე არჩევანი.</p></div>';
     }
     document.addEventListener('input',event=>{
         if(!event.target.matches('[data-program-query]'))return;
@@ -96,5 +110,5 @@ const FundingUI = (() => {
         const filter=event.target.closest('[data-funding-filter]');
         if(filter){resetFilters();$('filterFundingScheme').value=filter.dataset.fundingFilter;setCatalogView('programs',true);navigateTo('page-universities');}
     });
-    return {init,section,programList,summary};
+    return {init,section,programList,summary,renderDirectory};
 })();

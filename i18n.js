@@ -5422,6 +5422,24 @@
     PHRASES.push(['კონტენტის საცავის გააქტიურება','Activate content storage','Активировать хранилище контента']);
     PHRASES.push(['პროგრამები','Programmes','Программы'],['იტვირთება…','Loading…','Загрузка…']);
     PHRASES.push(['მსოფლიოს პროგრამები','Programmes worldwide','Программы по всему миру'],['კატალოგი მოიცავს სხვადასხვა კონტინენტის პროგრამებს; დაფარვა ნაწილობრივია.','The catalogue includes programmes across continents; coverage is partial.','Каталог включает программы разных континентов; охват частичный.'],['რიცხვები ჩვენს კატალოგში აღწერილ პროგრამებს აჩვენებს. აირჩიე კონტინენტი ან ქვეყანა; ეს არ არის უნივერსიტეტების რეიტინგი ან ქვეყნის ყველა პროგრამის სრული სია.','Counts show programme records in our catalogue. Choose a continent or country; these are not university rankings or complete national programme lists.','Числа показывают записи программ в нашем каталоге. Выберите континент или страну; это не рейтинг вузов и не полный национальный список программ.']);
+    PHRASES.push(
+        ['დაფინანსებები','Funding','Финансирование'],
+        ['სტიპენდიები, სტუდენტური სესხები, გრანტები და სწავლის საფასურის შეღავათები ერთ სივრცეში.','Scholarships, student loans, grants and tuition waivers in one place.','Стипендии, студенческие кредиты, гранты и льготы по оплате обучения в одном месте.'],
+        ['დაფინანსების ტიპი','Funding type','Тип финансирования'],
+        ['სესხების განახლება ვერ მოხერხდა. სცადე ხელახლა.','Unable to refresh loans. Please try again.','Не удалось обновить кредиты. Попробуй ещё раз.'],
+        ['სესხები იტვირთება…','Loading loans…','Загрузка кредитов…'],
+        ['განახლება ↻','Refresh ↻','Обновить ↻'],
+        ['ყველა ტიპი','All types','Все типы'],
+        ['გრანტები','Grants','Гранты'],
+        ['სხვა დაფინანსება','Other funding','Другое финансирование'],
+        ['შესაბამისი დაფინანსება ვერ მოიძებნა.','No matching funding found.','Подходящее финансирование не найдено.'],
+        ['შეცვალე ფილტრები ან გაასუფთავე არჩევანი.','Change the filters or clear your selection.','Измени фильтры или сбрось выбор.'],
+        ['ძიების ტიპი და მდებარეობა','Search type and location','Тип поиска и расположение'],
+        ['ძიების ტიპი','Search type','Тип поиска'],
+        ['პროგრამები','Programmes','Программы'],
+        ['ფილტრები','Filters','Фильтры'],
+        ['სწავლის შესაძლებლობები მსოფლიოში','Study opportunities worldwide','Возможности обучения по всему миру']
+    );
     const dictionaries = {en:new Map(), ru:new Map()};
     const normalize = value => String(value ?? '').replace(/\s+/g, ' ').trim();
     for (const [source,en,ru] of PHRASES) {

@@ -158,7 +158,7 @@ const StudentDiscovery = (() => {
     }
     document.addEventListener('change',event=>{
         const input=event.target;
-        if(input.matches('[data-multi-value]')){const select=$(input.dataset.selectId);[...select.options].find(o=>o.value===input.dataset.multiValue).selected=input.checked;refreshMulti(select.id);if(select.id.startsWith('filter'))filterAndSortUnis();}
+        if(input.matches('[data-multi-value]')){const select=$(input.dataset.selectId);[...select.options].find(o=>o.value===input.dataset.multiValue).selected=input.checked;refreshMulti(select.id);const box=input.closest('.multi-select');box.open=false;box.querySelector('summary').focus();if(select.id.startsWith('filter'))filterAndSortUnis();}
         if(input.matches('[data-weight]')){weights[input.dataset.weight]=Number(input.value);$('weight-'+input.dataset.weight).value=input.value;invalidate();filterAndSortUnis(false);}
         if(input.id==='priorityPreset'){preset=input.value;weights={...AdmissionScoring.WEIGHT_PRESETS[preset]};document.querySelectorAll('[data-weight]').forEach(i=>{i.value=weights[i.dataset.weight];$('weight-'+i.dataset.weight).value=i.value;});filterAndSortUnis(false);}
     });
