@@ -1,6 +1,6 @@
 # GlobalEduAI → Supabase
 
-მდგომარეობა: მომხმარებელმა დაამატა Supabase-ის ორივე პირადი DB კავშირი. Session/Transaction pooler კავშირები რეალური read-only ტრანზაქციებით შემოწმებულია; აპის სამიზნე სქემა ცარიელია. Supabase-ის ოფიციალური dashboard-ის წყაროში მითითებული Root CA დაემატა პირად გარემოს; TLS-ისა და hostname-ის შემოწმება ჩართულია. რეალური copy და live გადართვა ჯერ არ შესრულებულა; არსებული საიტი თავის მოქმედ ბაზას იყენებს.
+მდგომარეობა: მიგრაცია დასრულებულია 2026-11-05. Production და პირადი ლოკალური კონფიგურაცია იყენებს Supabase PostgreSQL-ს, `globaledu_private` სქემას. 13-ვე ცხრილი რეალურად დაკოპირდა და დამოუკიდებლად გადამოწმდა. არსებული ოთხი მომხმარებელი, პაროლის ჰეშები, ორი სესია და ადმინისტრატორის ID-ები შენარჩუნებულია. ძველი Neon ბაზა დარჩა სარეზერვო ასლად; მოქმედი აპი მას აღარ ირჩევს.
 
 ## 1. შექმენი პროექტი
 
@@ -68,7 +68,7 @@ node scripts/migrate-to-supabase.js --rehearse
 
 ## 5. Live გადატანის თანმიმდევრობა
 
-ეს ნაბიჯები სრულდება მას შემდეგ, რაც ახალი პროექტის კავშირები შემოწმდება. მოქმედი production საიტი ჯერ არ გადართულა.
+ქვემოთ აღწერილი თანმიმდევრობა ამ მიგრაციაზე უკვე შესრულდა; ის რჩება ოპერაციულ ინსტრუქციად მომავალი გადატანისთვის.
 
 1. შეამოწმე source და destination პროექტების იდენტურობა და ანგარიშების მოსალოდნელი რაოდენობა. პირველი რეალური ასლი გამოიყენე საცდელად; გადაამოწმე student/advisor login, ძველი cookie, ადმინისტრატორი, CMS და billing. ძველი ბაზა შეინარჩუნე.
 2. Vercel-ში მხოლოდ server Secrets-ის სახით დაამატე Supabase-ის DB URI-ები და საჭირო CA. ძველი კავშირის საიდუმლოებები ლოკალურად არ ჩამოტვირთო. სამიზნე მისამართების დასამატებლად `Server/.env`-ის პირადი მნიშვნელობები შეიძლება გამოიყენო; ისინი არ უნდა დაიბეჭდოს.
@@ -80,8 +80,39 @@ node scripts/migrate-to-supabase.js --rehearse
 
 ## 6. ამ ეტაპზე შესრულებული შემოწმებები
 
-351 ავტომატური ტესტი წარმატებით დასრულდა, მათ შორის private-schema store ინტეგრაცია PostgreSQL ემულატორზე, პაროლის/სესიის იდენტურობა, provider-ის აშკარა არჩევა, TLS, მიგრაციის read-only preflight, შევსებული სამიზნის დაცვა, ბოლო ცხრილზე შეცდომისას rollback, უცხო აპის ცხრილების დაცვა და შიგთავსის განსხვავების აღმოჩენა. შემოწმებულია maintenance რეჟიმში პირადი GET-ების, ავტორიზაციისა და ფინანსური ჩაწერის შეჩერება საჯარო კატალოგის შენარჩუნებით. Build/კატალოგის/სინტაქსის შემოწმება წარმატებულია.
+352 ავტომატური ტესტი წარმატებით დასრულდა, მათ შორის private-schema store ინტეგრაცია PostgreSQL ემულატორზე, პაროლის/სესიის იდენტურობა, provider-ის აშკარა არჩევა, TLS, მიგრაციის read-only preflight, შევსებული სამიზნის დაცვა, ბოლო ცხრილზე შეცდომისას rollback, უცხო აპის ცხრილების დაცვა და შიგთავსის განსხვავების აღმოჩენა. შემოწმებულია maintenance რეჟიმში პირადი GET-ების, ავტორიზაციისა და ფინანსური ჩაწერის შეჩერება საჯარო კატალოგის შენარჩუნებით. Build/კატალოგის/სინტაქსის შემოწმება წარმატებულია.
 
-ტესტის transport fixture არ ადასტურებს რეალურ Supabase grants-ს ან ქსელურ წვდომას. რეალური destination-ის ACL/RLS შემოწმება, რეალური მონაცემების copy/verify და live smoke tests პროექტის კავშირების მიღების შემდეგ უნდა შესრულდეს. ამ ეტაპზე migration preflight სწორად ჩერდება `MIGRATION_CONNECTIONS_REQUIRED`-ით.
+ტესტის transport fixture მხოლოდ ლოგიკის შემოწმებაა. დამატებით შესრულდა რეალური ქსელური კავშირი, native Supabase grants/RLS შემოწმება, rollback-only rehearsal, რეალური copy და ცალკე verify. სტუდენტის/მრჩევლის დროებითი ანგარიშებით პაროლით შესვლა, HttpOnly სესიები, პროფილი, billing, კრედიტის დაკავება/დაბრუნება და დამალული CMS ჩანაწერის ჩაწერა/წაკითხვა რეალურ Supabase-ზე შემოწმდა. ყველა სატესტო ჩანაწერი წაიშალა.
 
 ოფიციალური წყაროები: [Postgres კავშირები](https://supabase.com/docs/guides/database/connecting-to-postgres), [Postgres → Supabase](https://supabase.com/kb/guides/migrate-from-postgres), [Data API-ის დაცვა](https://supabase.com/docs/guides/api/securing-your-api), [Row Level Security](https://supabase.com/docs/guides/database/postgres/row-level-security).
+
+## 7. დასრულების მტკიცებულება — 2026-11-05
+
+- Rehearsal: `globaleduai-oq2ni9cp5-georges-projects-97451956.vercel.app`, mode=rehearse, verified=true, copied=false; სამიზნე ROLLBACK-ის შემდეგ ცარიელი დარჩა.
+- Copy: `globaleduai-20kq47alq-georges-projects-97451956.vercel.app`, 2026-11-05T19:17:55Z, mode=copy, verified=true, copied=true.
+- დამოუკიდებელი შედარება საცდელი ჩანაწერების გასუფთავების შემდეგ: `globaleduai-ilcl7amcz-georges-projects-97451956.vercel.app`, 2026-11-05T19:20:52Z, mode=verify, verified=true; 13-ვე ცხრილი თანხვედრაშია.
+- Live cutover: `globaleduai-gbu3os7kq-georges-projects-97451956.vercel.app`, Ready; alias https://globaleduai.vercel.app. `DATABASE_PROVIDER=supabase`; ერთჯერადი migration და maintenance flags წაშლილია.
+- საჯარო საიტმა წარმატებით დააბრუნა მხოლოდ Supabase-ში არსებული დროებითი სატესტო ანგარიშის `/api/auth/me` და `/api/billing/me` (200), ხოლო ადმინის მაჩვენებლები უარყო (403). ეს ადასტურებს live მარშრუტს Supabase-მდე. სატესტო ანგარიში და ყველა დაკავშირებული ჩანაწერი წაიშალა; დარჩა ოთხი რეალური მომხმარებელი.
+- საჯარო auth/status: ready=true; CMS: available=true; კატალოგი: 4,378 პროგრამა; ოთხივე პაკეტი ხელმისაწვდომია; ბანკის გადახდები კვლავ გამორთულია.
+- Root CA ჩამოტვირთულია Supabase dashboard-ის ოფიციალური source-ის მიერ მითითებული HTTPS მისამართიდან. Fingerprint SHA-256: `80:70:25:AD:50:D4:ED:21:9D:2C:9C:7D:29:9C:00:4F:82:4E:B0:0C:F7:F6:5A:FE:F6:07:D0:7B:72:E6:CA:FA`. TLS სერტიფიკატისა და hostname-ის შემოწმება არ გამორთულა.
+- Supabase-ის ორივე SQL URI და CA გადატანილია Vercel Production Secrets-ში მომხმარებლის აშკარა თანხმობით. ძველი source credentials ლოკალურად არ ჩამოტვირთულა. პირადი .env არ დაკომიტებულა.
+
+კოპირების snapshot-ის რაოდენობები:
+
+| ცხრილი | ჩანაწერი |
+| --- | ---: |
+| globaledu_schema_migrations | 1 |
+| globaledu_users | 4 |
+| globaledu_sessions | 2 |
+| globaledu_content | 0 |
+| globaledu_content_audit | 0 |
+| billing_plans | 4 |
+| billing_members | 2 |
+| billing_payments | 0 |
+| billing_usage | 4 |
+| billing_activity | 4 |
+| billing_events | 2 |
+| billing_consultations | 0 |
+| billing_refunds | 0 |
+
+ეს არის cutover-მდე შედარებული snapshot. საიტის გამოყენების განახლების შემდეგ აქტივობისა და სესიების რაოდენობები ბუნებრივად შეიძლება შეიცვალოს.
