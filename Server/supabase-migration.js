@@ -42,21 +42,22 @@ async function checkSecurity(target){
     for(const role of ['anon','authenticated','service_role'])for(const table of TABLES){const r=await target.query('SELECT has_table_privilege($1,$2,$3) AS allowed',[role,PRIVATE_SCHEMA+'.'+table,'SELECT,INSERT,UPDATE,DELETE']);if(r.rows[0]?.allowed!==false)throw failure('SUPABASE_TABLE_GRANT_UNSAFE');}
 }
 async function runMigration({source,target,mode='check',writesPaused=false}={}){
-    if(!['check','copy','verify'].includes(mode))throw failure('INVALID_MIGRATION_MODE');
+    if(!['check','copy','verify','rehearse'].includes(mode))throw failure('INVALID_MIGRATION_MODE');
     if(mode==='copy'&&!writesPaused)throw failure('PAUSE_SOURCE_WRITES_FIRST');
+    const copying=mode==='copy'||mode==='rehearse';
     let sourceBegun=false,targetBegun=false;
     try{
         await source.query('BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY');sourceBegun=true;await source.query("SET LOCAL TIME ZONE 'UTC'");
-        await target.query(mode==='copy'?'BEGIN':'BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY');targetBegun=true;await target.query("SET LOCAL TIME ZONE 'UTC'");
-        if(mode==='copy'){
+        await target.query(copying?'BEGIN':'BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY');targetBegun=true;await target.query("SET LOCAL TIME ZONE 'UTC'");
+        if(copying){
             await target.query('SELECT pg_advisory_xact_lock($1)',[1195721796]);
             const existing=(await target.query('SELECT table_name FROM information_schema.tables WHERE table_schema=$1 AND table_type=$2',[PRIVATE_SCHEMA,'BASE TABLE'])).rows;
             if(existing.some(row=>!TABLES.includes(row.table_name)))throw failure('TARGET_SCHEMA_NOT_DEDICATED');
         }
         const sourceColumns={},before={};
-        for(const table of TABLES){sourceColumns[table]=await columns(source,'public',table);if(!sourceColumns[table].length)throw failure('SOURCE_SCHEMA_INCOMPLETE');const existing=await columns(target,PRIVATE_SCHEMA,table);before[table]=existing.length?await count(target,PRIVATE_SCHEMA,table):0;if(mode==='copy'&&before[table]&&(table!=='globaledu_schema_migrations'||before[table]!==1))throw failure('TARGET_NOT_EMPTY');}
+        for(const table of TABLES){sourceColumns[table]=await columns(source,'public',table);if(!sourceColumns[table].length)throw failure('SOURCE_SCHEMA_INCOMPLETE');const existing=await columns(target,PRIVATE_SCHEMA,table);before[table]=existing.length?await count(target,PRIVATE_SCHEMA,table):0;if(copying&&before[table]&&(table!=='globaledu_schema_migrations'||before[table]!==1))throw failure('TARGET_NOT_EMPTY');}
         const version=await source.query('SELECT MAX(version) AS version FROM public.globaledu_schema_migrations');if(Number(version.rows[0].version)!==1)throw failure('UNSUPPORTED_SOURCE_SCHEMA');
-        if(mode==='copy'){
+        if(copying){
             await target.query(`CREATE SCHEMA IF NOT EXISTS ${PRIVATE_SCHEMA}`);
             await applyAccountSchema(scopeClient(target,PRIVATE_SCHEMA));
             await target.query(qualifySQL(require('./content-store').SCHEMA,PRIVATE_SCHEMA));
@@ -71,7 +72,7 @@ async function runMigration({source,target,mode='check',writesPaused=false}={}){
             const cols=sourceColumns[table],dest=await columns(target,PRIVATE_SCHEMA,table);
             if(mode==='check'){tables.push({table,sourceCount:await count(source,'public',table),targetCount:before[table],targetExists:!!dest.length});continue;}
             if(cols.length!==dest.length||cols.some(c=>!dest.some(d=>d.column_name===c.column_name&&d.data_type===c.data_type)))throw failure('COLUMN_MISMATCH');
-            const actual=await readTable(source,'public',table,cols,mode==='copy'?async rows=>{
+            const actual=await readTable(source,'public',table,cols,copying?async rows=>{
                 const values=[],groups=rows.map(row=>'('+cols.map(col=>{let value=row[col.column_name];if(col.data_type==='json'||col.data_type==='jsonb')value=JSON.stringify(value);values.push(value);return '$'+values.length;}).join(',')+')');
                 await target.query(`INSERT INTO ${identifier(PRIVATE_SCHEMA)}.${identifier(table)} (${cols.map(c=>identifier(c.column_name)).join(',')}) VALUES ${groups.join(',')}`,values);
             }:null);
@@ -80,7 +81,7 @@ async function runMigration({source,target,mode='check',writesPaused=false}={}){
         }
         if(mode!=='check')await checkSecurity(target);
         await source.query('ROLLBACK');sourceBegun=false;await target.query(mode==='copy'?'COMMIT':'ROLLBACK');targetBegun=false;
-        return {mode,verified:mode!=='check',copied:mode==='copy',schema:PRIVATE_SCHEMA,tables};
+        return {mode,verified:mode!=='check',copied:mode==='copy',rehearsed:mode==='rehearse',schema:PRIVATE_SCHEMA,tables};
     }catch(e){if(targetBegun)await target.query('ROLLBACK').catch(()=>{});if(sourceBegun)await source.query('ROLLBACK').catch(()=>{});throw e;}
 }
 async function migrateSupabase(environment=process.env,mode='check'){
