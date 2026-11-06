@@ -35,7 +35,7 @@ function createBillingStore({environment=process.env,pool:injectedPool,sqlite,cl
   async touch(user,kind='session'){return transaction(async q=>{await member(q,user);if(kind==='login'||kind==='registration')await event(q,user.id,kind);});},
   async consume(user,feature){return transaction(async q=>{const ticket=await take(q,user,feature);await event(q,user.id,feature+'_requested');return ticket;});},
   async release(ticket){if(!ticket)return;await transaction(q=>q('UPDATE billing_usage SET amount=CASE WHEN amount>0 THEN amount-1 ELSE 0 END WHERE user_id=$1 AND day=$2 AND feature=$3',[ticket.userId,ticket.day,ticket.feature]));},
-  async track(user,feature){if(!['discovery','matching','planner','favorites'].includes(feature))throw fail(400,'INVALID_EVENT','აქტივობა არასწორია.');return transaction(async q=>{await member(q,user);await q('INSERT INTO billing_usage(user_id,day,feature,amount) VALUES($1,$2,$3,1) ON CONFLICT(user_id,day,feature) DO UPDATE SET amount=billing_usage.amount+1',[user.id,now().slice(0,10),feature]);});},
+  async track(user,feature){if(!['discovery','matching','planner','favorites','program_open','official_source'].includes(feature))throw fail(400,'INVALID_EVENT','აქტივობა არასწორია.');return transaction(async q=>{await member(q,user);await q('INSERT INTO billing_usage(user_id,day,feature,amount) VALUES($1,$2,$3,1) ON CONFLICT(user_id,day,feature) DO UPDATE SET amount=billing_usage.amount+1',[user.id,now().slice(0,10),feature]);});},
   async close(){if(pool)await pool.end();if(db)db.close();}
  };
 }

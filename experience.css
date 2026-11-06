@@ -1,0 +1,101 @@
+.field-error { display:block; color:var(--on-danger); font-size:13px; margin-top:6px; }
+.registration-more { border:1px solid var(--border); border-radius:12px; padding:14px; margin:14px 0; }
+.registration-more>summary { cursor:pointer; color:var(--primary); font-size:14px; font-weight:650; min-height:32px; }
+.registration-more .role-details { margin-bottom:0; }
+.password-rules { padding:0; margin:8px 0 0; display:flex; flex-wrap:wrap; gap:6px 14px; list-style:none; font-size:12px; color:var(--text-muted); }
+.password-rules .is-complete { color:var(--on-success); }
+.forgot-password { display:block; margin:0 0 18px auto; min-height:44px; }
+.password-field .password-toggle { width:auto; min-width:74px; min-height:44px; padding:6px; font-size:12px; }
+.password-field input { padding-right:90px; }
+.recovery-section { max-width:560px; min-height:80vh; }
+.recovery-section h1 { font-size:32px; margin:28px 0 16px; }
+.recovery-section form { display:grid; gap:16px; margin-top:28px; }
+.onboarding-box { max-width:620px; padding:34px; }
+.onboarding-box form>div:not(.onboarding-actions) { display:grid; gap:10px; }
+.onboarding-box [hidden] { display:none!important; }
+.onboarding-actions { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-top:24px; }
+.search-share { min-height:44px; margin-bottom:12px; }
+#showFilterResults { display:none; }
+.menu-theme { display:none; }
+.advisor-start { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin:20px 0; }
+.advisor-start button { border:1px solid var(--control-border); background:var(--bg-page); color:var(--text-dark); border-radius:12px; padding:14px; text-align:left; font-size:14px; min-height:60px; }
+.advisor-start button:hover { border-color:var(--primary); background:var(--primary-light); }
+.advisor-data-note { border-left:3px solid var(--primary); padding-left:14px; margin-bottom:22px; }
+.agency-contact-details { padding:18px; border:1px solid var(--border); border-radius:12px; background:var(--bg-page); margin-top:20px; }
+.agency-contact-details dt { font-weight:650; margin-top:12px; }
+.agency-contact-details dd { margin:4px 0 12px; color:var(--text-muted); }
+body:has(#page-register.active) .agent-launcher,body:has(#page-billing.active) .agent-launcher,body:has(#page-dashboard.active) .agent-launcher,body:has(#page-reset-password.active) .agent-launcher,body:has(#page-admin.active) .agent-launcher,body:has(#page-business.active) .agent-launcher { display:none; }
+.catalog-coverage>p { grid-column:1/-1; }
+.public-data-page { max-width:860px; }
+.public-data-page h2 { margin-top:28px; }
+.public-data-page p { line-height:1.9; margin-top:14px; }
+.public-program-facts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin:28px 0; }
+.public-program-facts>div,.public-funding { padding:18px; border:1px solid var(--border); border-radius:12px; margin-bottom:12px; background:var(--bg-light); }
+.public-program-facts dt { color:var(--text-muted); font-size:14px; }
+.public-program-facts dd { margin:8px 0 0; font-size:17px; overflow-wrap:anywhere; }
+@media(max-width:1024px) {
+ .destination-sticker { display:none; }
+ .floating-match { max-width:80%; left:12px; bottom:16px; }
+ .hero-photo .photo-caption { bottom:100px; }
+}
+@media(max-width:760px) {
+ .auth-box>.eyebrow { display:none; }
+ .auth-box { margin-top:16px; padding:20px; }
+ .auth-box .auth-tabs { margin-bottom:22px; }
+ .auth-box h2 { font-size:25px; line-height:1.4; margin-bottom:12px; }
+ .auth-box .auth-description { font-size:14px; line-height:1.7; margin-bottom:20px; }
+ .account-role-picker { margin:16px 0; }
+ .account-role-picker legend { font-size:13px; margin-bottom:8px; }
+ .role-option-body { padding:10px 12px; min-height:44px; }
+ .role-option-body small,.role-option-body .role-option-icon { display:none; }
+ .role-option-body strong { font-size:15px; margin:0; }
+ .account-role-option input { top:12px; right:10px; }
+ #registerForm .form-group { margin-bottom:16px; }
+ #registerForm .account-consent { margin-top:16px; }
+ .public-program-facts { grid-template-columns:1fr; }
+ #page-home.active { display:flex; flex-direction:column; }
+ #page-home .hero { display:contents; }
+ #page-home .hero-content { order:0; padding:24px 18px 18px; }
+ #page-home .hero-content h1 { font-size:29px; line-height:1.3; letter-spacing:-.7px; margin:0 0 14px; }
+ #page-home .hero-content .hero-description { font-size:15px; line-height:1.75; margin:0; }
+ #page-home .hero-actions { margin:10px 0 0; }
+ #page-home .hero-actions>.btn-main { display:none; }
+ #page-home .hero-note,#page-home .eyebrow-pill { display:none; }
+ #page-home .quick-search { order:1; margin:0 14px 20px; padding:20px; width:auto; display:block; }
+ #page-home .quick-search>div { margin-bottom:16px; }
+ #page-home .quick-search-intro>.eyebrow { display:none; }
+ #page-home .quick-search form { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+ #page-home .quick-search form>button { grid-column:1/-1; min-height:46px; }
+ #page-home .featured-section { order:2; padding-top:24px; }
+ #page-home .hero-visual { order:3; height:260px; min-height:260px; width:calc(100% - 28px); margin:0 14px 24px; }
+ #page-home .hero-photo { height:100%; }
+ #page-home .hero-photo .photo-caption { bottom:20px; }
+ #page-home .hero-visual .floating-match,#page-home .hero-visual .orbit-sticker,#page-home .hero-visual .destination-sticker { display:none; }
+ #page-home .home-catalog-summary { order:4; }
+ #page-home>.section:not(.hero,.featured-section,.home-catalog-summary,.quick-search) { order:5; }
+ #page-home .explore-section { padding-top:24px; }
+ #main-nav .theme-toggle { display:none; }
+ #main-nav .menu-toggle { width:44px; height:44px; min-width:44px; min-height:44px; }
+ #main-nav .language-select,#main-nav .register-btn { min-height:44px; }
+ #main-nav .controls { gap:6px; }
+ .nav-links.open .menu-theme { display:block; text-align:left; min-height:44px; }
+ #showFilterResults { display:flex; justify-content:center; position:sticky; bottom:12px; margin-top:18px; }
+ .advisor-start { grid-template-columns:1fr; gap:8px; }
+ .advisor-start button { min-height:44px; padding:10px 12px; }
+ .ai-modal-premium .ai-modal-header { padding-bottom:12px; }
+ .ai-modal-premium .ai-modal-header>.eyebrow,.ai-modal-premium .ai-modal-symbol { display:none; }
+ .advisor-data-note { font-size:12px; line-height:1.65; }
+ /* Keep programme scanning concise; full evidence remains in its detail view. */
+ #page-universities .program-card:not(.institution-card) .program-cover { height:auto; min-height:0; padding:12px 58px 12px 14px; background:var(--bg-page); }
+ #page-universities .program-card:not(.institution-card) .program-cover img,#page-universities .program-card:not(.institution-card) .program-cover:after { display:none; }
+ #page-universities .program-card:not(.institution-card) .program-location { position:static; color:var(--text-muted); font-size:13px; }
+ #page-universities .program-card:not(.institution-card) .program-body { padding:14px; }
+ #page-universities .program-card:not(.institution-card) .program-category,#page-universities .program-card:not(.institution-card) .funding-summary-note,#page-universities .program-card:not(.institution-card) .score-disclosure,#page-universities .program-card:not(.institution-card) .score-unavailable { display:none; }
+ #page-universities .program-card:not(.institution-card) .institution-funding-summary { padding:8px 0; }
+ #page-universities .program-card:not(.institution-card) .funding-summary-label { display:none; }
+ #page-universities .program-card:not(.institution-card) .funding-provider-badge:not(:first-child),#page-universities .program-card:not(.institution-card) .funding-more { display:none; }
+ #page-universities .program-card:not(.institution-card) .program-bottom { gap:12px; margin-top:10px; }
+ #page-universities .program-card:not(.institution-card) .program-heading { font-size:18px; }
+ .onboarding-box { padding:26px 20px; }
+}
+@media(max-width:360px) { #main-nav .logo { font-size:0; } #main-nav .logo-light,#main-nav .logo-dot { display:none; } #main-nav .logo-mark { margin:0; } #page-home .quick-search form { grid-template-columns:1fr; } }

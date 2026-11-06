@@ -1,0 +1,9 @@
+(function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;else root.ExperienceCore=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
+ 'use strict';
+ const multi={country:'filterCountry',region:'filterRegion',field:'filterField',subject:'filterSubject',degree:'filterDegree',language:'filterLang',mode:'filterMode'};
+ const single={query:'programSearch',sort:'sortOption',budget:'filterBudget',currency:'filterCurrency',durationMin:'filterDurationMin',durationMax:'filterDurationMax',deadline:'filterDeadline',after:'filterDeadlineAfter',before:'filterDeadlineBefore',intake:'filterIntake',scheme:'filterFundingScheme',eligibility:'filterEligibility',score:'filterMinScore'};
+ const checks={funding:'filterFunding',unknown:'filterUnknown',programmes:'filterHasPrograms',free:'filterFree',fees:'filterKnownFees',scholarships:'filterScholarships',fresh:'filterFresh'};
+ function parse(hash){const [route,query='']=String(hash).replace(/^#/,'').split('?');const p=new URLSearchParams(query.slice(0,8000));return {route:route||'home',view:p.get('type')==='programs'?'programs':'institutions',page:Math.max(1,Math.min(1000,Number.parseInt(p.get('page'),10)||1)),values:Object.fromEntries([...Object.keys(multi),...Object.keys(single),...Object.keys(checks)].map(k=>[k,p.getAll(k).filter(v=>v.length<=300)]))};}
+ function hash({view='institutions',page=1,values={}}){const p=new URLSearchParams({type:view==='programs'?'programs':'institutions'});for(const k of [...Object.keys(multi),...Object.keys(single),...Object.keys(checks)])for(const v of values[k]||[])if(String(v).length<=300)p.append(k,String(v));if(page>1)p.set('page',String(Math.min(1000,page)));return '#universities?'+p.toString();}
+ return Object.freeze({multi,single,checks,parse,hash});
+});

@@ -33,12 +33,12 @@ function safeLink(value) {
     try { const url = new URL(value); return ['https:', 'http:'].includes(url.protocol) ? url.href : null; }
     catch { return null; }
 }
-function formatPrice(value) { return value == null ? 'დასაზუსტებელია' : `${Number(value).toLocaleString('en-US')}`; }
+function formatPrice(value) { return value == null ? 'დასაზუსტებელია' : `${Number(value).toLocaleString(I18n.getLanguage()==='ka'?'ka-GE':I18n.getLanguage()==='ru'?'ru-RU':'en-GB')}`; }
 function formatDate(value) {
     if (!value) return 'დასაზუსტებელია';
     const date = new Date(value);
     const locale={ka:'ka-GE',en:'en-GB',ru:'ru-RU'}[globalThis.I18n?.getLanguage?.()||'ka'];
-    return Number.isNaN(date.getTime()) ? 'დასაზუსტებელია' : date.toLocaleDateString(locale,/^\d{4}-\d{2}-\d{2}$/.test(value)?{timeZone:'UTC'}:{});
+    return Number.isNaN(date.getTime()) ? 'დასაზუსტებელია' : date.toLocaleDateString(locale,{day:'numeric',month:'long',year:'numeric',...(/^\d{4}-\d{2}-\d{2}$/.test(value)?{timeZone:'UTC'}:{})});
 }
 function notify(message, error = false) {
     const toast = document.createElement('div');
@@ -75,12 +75,19 @@ function restoreFavorites() {
 
 // Navigation and dialogs
 function navigateTo(pageId, updateHash = true) {
+    pageId=pageId.split('?')[0];
+    if(updateHash)Experience.saveScroll();
+    if(['page-admin','page-business'].includes(pageId)&&!$(pageId)){
+        if(currentUser?.permissions?.admin){Experience.loadAdmin(pageId,updateHash).catch(()=>{});return;}
+        pendingAuthPage=authReady?null:pageId;pageId=currentUser?'page-dashboard':'page-register';
+    }
+    if(!updateHash&&pageId==='page-universities')Experience.restoreSearch();
     if (['page-scholarships','page-loans'].includes(pageId)) pageId='page-funding';
-    if (!$(pageId)?.classList.contains('app-page')) return;
+    if (!$(pageId)?.classList.contains('app-page')) return navigateTo('page-home',false);
     if(['page-admin','page-business'].includes(pageId)&&!currentUser?.permissions?.admin){pendingAuthPage=authReady?null:pageId;pageId=currentUser?'page-dashboard':'page-register';}
     if (['page-dashboard','page-billing'].includes(pageId) && !currentUser) { pendingAuthPage = authReady ? null : pageId; pageId = 'page-register'; }
     document.querySelectorAll('.app-page').forEach(page => page.classList.toggle('active', page.id === pageId));
-    const privatePage = ['page-register', 'page-dashboard','page-admin','page-business','page-billing'].includes(pageId);
+    const privatePage = ['page-register', 'page-dashboard','page-admin','page-business','page-billing','page-reset-password'].includes(pageId);
     $('main-nav').style.display = privatePage ? 'none' : 'flex';
     $('main-footer').style.display = privatePage ? 'none' : 'block';
     document.querySelectorAll('.nav-links [data-page]').forEach(link => {
@@ -89,6 +96,8 @@ function navigateTo(pageId, updateHash = true) {
         if (active) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current');
     });
     $('navLinks').classList.remove('open'); $('menuToggle').setAttribute('aria-expanded', 'false');
+    if(['page-home','page-universities','page-funding','page-dashboard'].includes(pageId)&&!catalogData&&!catalogRequest)fetchUniversities();
+    if(pageId==='page-agencies'&&!agencies.length)fetchAgencies();
     if (pageId === 'page-universities') filterAndSortUnis(false);
     if (pageId === 'page-dashboard') renderFavorites();
     if(pageId==='page-admin')AdminUI.load();
@@ -96,8 +105,9 @@ function navigateTo(pageId, updateHash = true) {
     if(pageId==='page-billing')BillingUI.refresh();
     if(pageId==='page-universities')BillingUI.track('discovery');
     renderCompareBar();
-    if (updateHash && location.hash !== `#${pageId.replace('page-', '')}`) history.pushState(null, '', `#${pageId.replace('page-', '')}`);
-    window.scrollTo({ top:0, behavior:'instant' });
+    if (updateHash && location.hash !== `#${pageId.replace('page-', '')}`) history.pushState(null, '', pageId==='page-universities'?Experience.searchHash():`#${pageId.replace('page-', '')}`);
+    Experience.focusPage(pageId);
+    window.scrollTo({top:!updateHash&&pageId==='page-universities'?history.state?.catalogScroll||0:0,behavior:'instant'});
 }
 function openModal(id) {
     if (id !== 'aiModal') ChatAdvisor.onClose();
@@ -145,12 +155,14 @@ async function fetchAgencies() {
     try {
         const response = await api('/api/agencies'); agencies = await response.json();
         if (!Array.isArray(agencies)) throw new Error('Unexpected agencies response');
-        $('agenciesGrid').innerHTML = agencies.length ? agencies.map((agency,i) => `<article class="agency-card"><div class="agency-card-top"><span class="agency-avatar">${escapeHTML(agency.name.split(' ').slice(0,2).map(word => word[0]).join(''))}</span><span class="mini-label">განათლების კონსულტაცია</span></div><h3>${escapeHTML(agency.name)}</h3><p>${escapeHTML(agency.desc)}</p><div class="agency-tags"><span class="tag tag-neutral">პროგრამის შერჩევა</span><span class="tag tag-neutral">აპლიკაცია</span></div><button class="btn-secondary" data-action="agency" data-index="${i}">გაიცანი კონსულტანტი <span>↗</span></button></article>`).join('') : emptyState('კონსულტანტების სია მზადდება', 'მანამდე შეგიძლია უნივერსიტეტები და სტიპენდიები შეისწავლო.');
+        $('agenciesGrid').innerHTML = agencies.length ? agencies.map((agency,i) => `<article class="agency-card"><div class="agency-card-top"><span class="agency-avatar">${escapeHTML(agency.name.split(' ').slice(0,2).map(word => word[0]).join(''))}</span><span class="mini-label">განათლების კონსულტაცია</span></div><h3>${escapeHTML(agency.name)}</h3><p>${escapeHTML(agency.desc)}</p><div class="agency-tags"><span class="tag tag-neutral">პროგრამის შერჩევა</span><span class="tag tag-neutral">აპლიკაცია</span></div><button class="btn-secondary" data-action="agency" data-index="${i}">ნახე პროფილი და კონტაქტი <span>↗</span></button></article>`).join('') : emptyState('კონსულტანტების სია მზადდება', 'მანამდე შეგიძლია უნივერსიტეტები და სტიპენდიები შეისწავლო.');
     } catch { $('agenciesGrid').innerHTML = emptyState('კონსულტანტების სია ვერ ჩაიტვირთა', 'შეამოწმე სერვერთან კავშირი და სცადე ხელახლა.', 'ხელახლა ცდა', 'retry-agencies'); }
 }
 function openAgency(index) {
     const agency = agencies[index]; if (!agency) return;
-    $('agencyModalTitle').textContent = agency.name; $('agencyModalDescription').textContent = agency.desc; openModal('agencyModal');
+    $('agencyModalTitle').textContent = agency.name; $('agencyModalDescription').textContent = agency.desc;
+    const old=$('agencyContactDetails');old?.remove();const details=document.createElement('div');details.id='agencyContactDetails';details.className='agency-contact-details';const website=safeLink(agency.website);
+    details.innerHTML=`<p>კატალოგში ყოფნა პარტნიორობას ან გადამოწმებას არ ნიშნავს.</p><dl><dt>მომსახურების ენა და ფორმატი</dt><dd>${escapeHTML(agency.languages?.join(', ')||'დასაზუსტებელია')}</dd><dt>ფასი და პასუხის დრო</dt><dd>${escapeHTML(agency.pricingNote||'დასაზუსტებელია უშუალოდ კონსულტანტთან')}</dd></dl>${website?`<a class="btn-main" href="${escapeHTML(website)}" target="_blank" rel="noopener noreferrer">ოფიციალური ვებსაიტი ↗</a>`:'<p>ამ ჩანაწერის მოქმედი კონტაქტი ჯერ დადასტურებული არ არის. მანამდე შეგიძლია პროგრამები და მათი ოფიციალური წყაროები შეისწავლო.</p><button class="btn-secondary" data-discover-programs>პროგრამების ძიება</button>'}`;$('agencyModalDescription').after(details);openModal('agencyModal');
 }
 
 // Documents and PDF packet
@@ -250,8 +262,8 @@ $('advisorProfileForm').addEventListener('submit',saveAdvisorAccount);
 $('certNameSelect').addEventListener('change',syncCertificateBounds);
 let searchTimer;
 $('programSearch').addEventListener('input',() => { clearTimeout(searchTimer); searchTimer=setTimeout(()=>filterAndSortUnis(),120); });
-$('heroSearch').addEventListener('submit', event => { event.preventDefault(); resetFilters(false); $('filterCountry').value=$('heroCountry').value; $('filterDegree').value=$('heroDegree').value; StudentDiscovery.refreshMulti('filterCountry');StudentDiscovery.refreshMulti('filterDegree');setCatalogView($('heroDegree').value?'programs':'institutions'); navigateTo('page-universities'); });
-document.querySelectorAll('.password-toggle').forEach(button => button.addEventListener('click',() => { const input = $(button.dataset.input); const show = input.type === 'password'; input.type = show ? 'text' : 'password'; button.setAttribute('aria-label', show ? 'პაროლის დამალვა' : 'პაროლის ჩვენება'); button.setAttribute('aria-pressed',String(show)); }));
+$('heroSearch').addEventListener('submit', async event => { event.preventDefault();await fetchUniversities(); resetFilters(false); $('filterCountry').value=$('heroCountry').value; $('filterDegree').value=$('heroDegree').value; StudentDiscovery.refreshMulti('filterCountry');StudentDiscovery.refreshMulti('filterDegree');setCatalogView('programs'); navigateTo('page-universities');Experience.results(); });
+document.querySelectorAll('.password-toggle').forEach(button => button.addEventListener('click',() => { const input = $(button.dataset.input); const show = input.type === 'password'; input.type = show ? 'text' : 'password'; button.setAttribute('aria-label', show ? 'პაროლის დამალვა' : 'პაროლის ჩვენება'); button.setAttribute('aria-pressed',String(show));button.textContent=I18n.t(show?'დამალვა':'ჩვენება'); }));
 $('dragDropZone').addEventListener('click',() => $('docInput').click());
 $('docInput').addEventListener('change',event => { handleFiles(event.target.files); event.target.value = ''; });
 ['dragenter','dragover'].forEach(type => $('dragDropZone').addEventListener(type,event => { event.preventDefault(); $('dragDropZone').classList.add('dragover'); }));
@@ -270,11 +282,10 @@ if (!DESIGN_PREVIEW) { try { localStorage.removeItem('globalEduToken'); localSto
 const catalogMobile=matchMedia('(max-width:760px)');
 const syncCatalogDrawer=()=>{$('catalogFilterDrawer').open=!catalogMobile.matches;};
 syncCatalogDrawer();catalogMobile.addEventListener('change',syncCatalogDrawer);
-ContentUI.init(); AdminUI.init(); BillingUI.init(); BusinessUI.init();
+ContentUI.init(); BillingUI.init();
 initAccountForms();
-ChatAdvisor.init();
+ChatAdvisor.init();Experience.init();
 if (DESIGN_PREVIEW) { $('previewBanner').hidden = false; document.body.classList.add('preview-mode'); }
 restoreFavorites(); updateAccountUI(); renderDocuments(); renderFavorites();
 navigateTo(`page-${location.hash.slice(1)||'home'}`,false);
-fetchUniversities(); fetchAgencies();
 bootstrapAccount();

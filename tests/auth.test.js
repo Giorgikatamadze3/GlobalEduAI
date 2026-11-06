@@ -9,6 +9,48 @@ const path = require('node:path');
 const express = require('express');
 
 let sequence = 0;
+test('short student registration accepts an omitted phone and optional profile',async t=>{
+    const context=await setup(t),body=registration();delete body.phone;delete body.studentProfile;
+    const result=await register(context,body);assert.equal(result.data.user.phone,'');assert.equal(result.data.user.studentProfile.educationLevel,'');
+});
+test('account workspace sync is isolated, revision checked and cannot bypass profile validation',async t=>{
+    const context=await setup(t),owner=await register(context),other=await register(context);
+    const workspace={version:1,tasks:{shortlist:true},plans:{program_test:{stage:'preparing',targetDate:'2027-01-10',note:'Private plan'}}};
+    const saved=await context.request('/user/workspace',{method:'PUT',cookie:owner.cookie.value,body:{workspace,revision:0}});assert.equal(saved.status,200);assert.equal(saved.data.workspace.revision,1);
+    assert.equal((await context.request('/user/workspace',{cookie:other.cookie.value})).data.workspace.plans.program_test,undefined);
+    assert.equal((await context.request('/user/workspace',{method:'PUT',cookie:owner.cookie.value,body:{workspace,revision:0}})).status,409);
+    assert.equal((await context.request('/user/profile',{method:'PUT',cookie:owner.cookie.value,body:{studentProfile:{workspace:{...workspace,revision:1}}}})).status,400);
+    assert.equal((await context.request('/user/workspace',{method:'PUT',cookie:owner.cookie.value,body:{workspace:{plans:{program_x:{note:'x'.repeat(1001)}},tasks:{}},revision:1}})).status,400);
+    await context.request('/user/profile',{method:'PUT',cookie:owner.cookie.value,body:{studentProfile:{gpa4:3.5}}});
+    assert.equal((await context.request('/user/workspace',{cookie:owner.cookie.value})).data.workspace.plans.program_test.note,'Private plan');
+});
+test('password recovery has generic requests, expiring tokens, atomic single use and session revocation',async t=>{
+    const sent=[],mailer={configured:true,signingSecret:'a'.repeat(48),minimumDurationMs:0,send:async(email,token)=>sent.push({email,token})};let time=Date.now();
+    const context=await setup(t,{recoveryMailer:mailer,clock:()=>time}),owner=await register(context);
+    const known=await context.request('/auth/password-reset/request',{method:'POST',body:{email:owner.payload.email}}),unknown=await context.request('/auth/password-reset/request',{method:'POST',body:{email:'absent@example.com'}});
+    assert.equal(known.status,202);assert.deepEqual(known.data,unknown.data);assert.equal(sent.length,1);assert.equal(known.data.token,undefined);
+    const confirm=token=>context.request('/auth/password-reset/confirm',{method:'POST',body:{token,password:'NewPassword456',passwordConfirm:'NewPassword456'}});
+    assert.equal((await confirm(sent[0].token.slice(0,-3)+'abc')).status,400);
+    const outcomes=await Promise.all([confirm(sent[0].token),confirm(sent[0].token)]);assert.deepEqual(outcomes.map(r=>r.status).sort(),[200,400]);
+    assert.equal((await context.request('/auth/me',{cookie:owner.cookie.value})).status,401);
+    assert.equal((await context.request('/auth/login',{method:'POST',body:{email:owner.payload.email,password:owner.payload.password}})).status,401);
+    assert.equal((await context.request('/auth/login',{method:'POST',body:{email:owner.payload.email,password:'NewPassword456'}})).status,200);
+    await context.request('/auth/password-reset/request',{method:'POST',body:{email:owner.payload.email}});time+=21*60000;assert.equal((await confirm(sent[1].token)).status,400);
+});
+test('unconfigured recovery never claims to have delivered a message or accepts a token',async t=>{
+    const context=await setup(t,{recoveryMailer:{configured:false}});
+    assert.equal((await context.request('/auth/recovery/status')).data.available,false);
+    assert.equal((await context.request('/auth/password-reset/request',{method:'POST',body:{email:'student@example.com'}})).status,503);
+    assert.equal((await context.request('/auth/password-reset/confirm',{method:'POST',body:{token:'anything',password:'Password1234',passwordConfirm:'Password1234'}})).status,503);
+});
+test('recovery request limits persist across router instances without storing raw email or IP',async t=>{
+    const billing=require('../Server/billing-store').createBillingStore({environment:{AUTH_DB_DRIVER:'sqlite',BILLING_DB_PATH:':memory:'}});t.after(()=>billing.close());
+    const sent=[],mailer={configured:true,signingSecret:'b'.repeat(48),minimumDurationMs:0,send:async(email,token)=>sent.push(token)};
+    const first=await setup(t,{billingStore:billing,recoveryMailer:mailer}),second=await setup(t,{billingStore:billing,recoveryMailer:mailer});
+    const email='rate-test@example.com';for(const c of [first,second,first])assert.equal((await c.request('/auth/password-reset/request',{method:'POST',body:{email}})).status,202);
+    assert.equal((await second.request('/auth/password-reset/request',{method:'POST',body:{email}})).status,429);
+    const rows=await billing.query("SELECT detail FROM billing_events WHERE kind='password_recovery_request'");assert.equal(rows.length,3);for(const row of rows){assert.ok(!row.detail.includes(email));assert.ok(!row.detail.includes('127.0.0.1'));}
+});
 function registration(role = 'student', patch = {}) {
     const identity = ++sequence;
     const shared = {

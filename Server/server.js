@@ -51,13 +51,20 @@ app.get('/api/content',(req,res)=>{res.set('Cache-Control','no-store');res.json(
 // Signed callbacks must receive the raw bytes before the JSON parser.
 app.use('/api/billing',createBillingPublicRouter({store:billingStore,service:billingService,provider:paymentProvider,accountStore}));
 app.use('/api/advisor-agent',express.json({limit:'128kb'}),(req,res,next)=>req.path.replace(/\/+$/,'').toLowerCase()==='/chat'?authRouter.originAllowed(req,res,()=>authRouter.authenticated(req,res,next)):next(),createAdvisorRouter({catalog,billingStore}));
+app.use('/api/user/workspace',express.json({limit:'1mb'}));
 app.use(express.json({limit:'64kb'}));
 app.get('/assets/vendor/pdf-lib.min.js',(req,res)=>res.sendFile(require.resolve('pdf-lib/dist/pdf-lib.min.js')));
 app.use('/assets', express.static(path.join(__dirname, '../assets')));
-for (const filename of ['billing-ui.js','business-ui.js','billing.css','content-ui.js','admin-ui.js','content.css','index.html','i18n.js','style.css','ai-agent.css','funding.css','script.js','catalog-core.js','scoring-core.js','funding-core.js','funding-ui.js','catalog-ui.js','discovery-ui.js','ai-agent-ui.js','account-ui.js', 'student-profile-core.js', 'academic-profile-ui.js', 'account-workspace.css', 'student-workspace-core.js', 'student-workspace.js','preview-data.js','scholarships.js']) {
+for (const filename of ['experience-core.js','experience-ui.js','experience.css','billing-ui.js','business-ui.js','billing.css','content-ui.js','admin-ui.js','content.css','index.html','i18n.js','style.css','ai-agent.css','funding.css','script.js','catalog-core.js','scoring-core.js','funding-core.js','funding-ui.js','catalog-ui.js','discovery-ui.js','ai-agent-ui.js','account-ui.js', 'student-profile-core.js', 'academic-profile-ui.js', 'account-workspace.css', 'student-workspace-core.js', 'student-workspace.js','preview-data.js','scholarships.js']) {
     app.get(`/${filename}`, (req,res) => res.sendFile(path.join(__dirname, '..', filename)));
 }
 app.get('/', (req,res) => res.sendFile(path.join(__dirname, '../index.html')));
+const publicPages=require('./public-pages').createPublicPages({catalog});
+app.get('/:lang/programs/:id',(req,res,next)=>['ka','en','ru'].includes(req.params.lang)?publicPages.program(req,res):next());
+app.get('/:lang/countries/:code',(req,res,next)=>['ka','en','ru'].includes(req.params.lang)?publicPages.country(req,res):next());
+app.get('/sitemap.xml',publicPages.sitemap);
+app.get('/sitemap-:lang.xml',publicPages.sitemap);
+app.get('/robots.txt',publicPages.robots);
 
 // Public discovery works from the versioned local catalog, independently of MongoDB.
 function serveCatalog(req,res) {

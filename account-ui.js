@@ -13,6 +13,7 @@ function accountErrorMessage(error) {
 }
 function clearAccountErrors(form, errorId) {
     const box = $(errorId); box.hidden = true; box.textContent = '';
+    form.querySelectorAll('.field-error').forEach(e=>e.remove());
     form.querySelectorAll('[aria-invalid]').forEach(input => { input.removeAttribute('aria-invalid'); input.removeAttribute('aria-errormessage'); });
 }
 function showAccountError(form, errorId, error) {
@@ -26,7 +27,7 @@ function showAccountError(form, errorId, error) {
     let first;
     for (const field of Object.keys(error.fields || {})) {
         const input = $(mappings[form.id]?.[field]||AcademicProfileUI.errorFields(form.id==='registerForm'?'reg':'profile')[field]);
-        if (input) { input.setAttribute('aria-invalid','true'); input.setAttribute('aria-errormessage',errorId); first ||= input; }
+        if (input) { input.setAttribute('aria-invalid','true'); const message=document.createElement('span');message.className='field-error';message.id=input.id+'-error';message.textContent=typeof error.fields[field]==='string'?error.fields[field]:error.message;input.closest('.form-group')?.append(message);input.setAttribute('aria-errormessage',message.id);input.closest('details')?.setAttribute('open','');first ||= input; }
     }
     if (first) first.focus(); else { box.tabIndex = -1; box.focus(); }
 }
@@ -34,6 +35,7 @@ function switchAuthTab(tab) {
     const login = tab === 'login';
     $('loginForm').style.display = login ? 'block' : 'none'; $('registerForm').style.display = login ? 'none' : 'block';
     document.querySelectorAll('.auth-tab-btn').forEach((button,i) => { const active = i === (login ? 0 : 1); button.classList.toggle('active',active); button.setAttribute('aria-pressed',String(active)); });
+    if($('page-register').classList.contains('active'))Experience.focusPage('page-register');
 }
 function setRegistrationRole(role) {
     registrationRole = role === 'advisor' ? 'advisor' : 'student';
@@ -70,6 +72,7 @@ function readAdvisorFields(prefix) {
 function updateAccountUI() {
     if(typeof BillingUI!=='undefined')BillingUI.accountChanged();
     if(typeof AdminUI!=='undefined')AdminUI.navState();
+    if(currentUser?.permissions?.admin)Experience.loadAdmin().catch(()=>{});
     if (typeof StudentWorkspace !== 'undefined') StudentWorkspace.render();
     if (typeof ChatAdvisor !== 'undefined') ChatAdvisor.accountChanged();
     if (typeof StudentDiscovery !== 'undefined') StudentDiscovery.restoreProfile();
@@ -165,19 +168,20 @@ async function submitAuth(event, register = false) {
     event.preventDefault(); if (!authReady) return;
     const form = event.currentTarget; const errorId = register ? 'registerError' : 'loginError';
     clearAccountErrors(form,errorId);
-    if (register && $('regPassword').value !== $('regPasswordConfirm').value) {
+    if (register && !$('regPasswordConfirm').closest('.form-group').hidden && $('regPassword').value !== $('regPasswordConfirm').value) {
         showAccountError(form,errorId,{message:'პაროლები ერთმანეთს არ ემთხვევა.',fields:{passwordConfirm:true}}); return;
     }
     const button = form.querySelector('[type="submit"]'); const original = button.innerHTML;
     button.disabled = true; button.textContent = register ? 'იქმნება შენი ანგარიში…' : 'შევდივართ…';
     const phone = register ? $('regPhone').value.trim() : '';
     const payload = register
-        ? {name:$('regName').value.trim(),email:$('regEmail').value.trim(),phone:phone.startsWith('+') ? phone : `${$('countryCode').value}${phone}`,password:$('regPassword').value,passwordConfirm:$('regPasswordConfirm').value,role:registrationRole,termsAccepted:$('regTerms').checked,...(registrationRole === 'student' ? {studentProfile:readStudentFields('reg')} : {advisorProfile:readAdvisorFields('reg')})}
+        ? {name:$('regName').value.trim(),email:$('regEmail').value.trim(),phone:!phone?'':phone.startsWith('+') ? phone : `${$('countryCode').value}${phone}`,password:$('regPassword').value,passwordConfirm:$('regPassword').value,role:registrationRole,termsAccepted:$('regTerms').checked,...(registrationRole === 'student' ? {studentProfile:readStudentFields('reg')} : {advisorProfile:readAdvisorFields('reg')})}
         : {email:$('loginEmail').value.trim(),password:$('loginPassword').value,rememberMe:$('loginRemember').checked};
     try {
         const response = await api(`/api/auth/${register?'register':'login'}`,{method:'POST',headers:authHeaders(),body:JSON.stringify(payload)});
         applyAccount((await response.json()).user); switchDashTab('profile'); navigateTo('page-dashboard');
         form.reset(); $('authServiceStatus').textContent = 'შენი პირადი სივრცე მზადაა'; delete $('authServiceStatus').dataset.error;
+        if(register&&currentUser?.role==='student')Experience.onboarding();
         notify(register ? 'შენი ანგარიში შექმნილია. კეთილი იყოს შენი მობრძანება!' : 'კეთილი იყოს შენი დაბრუნება!');
     } catch (error) { showAccountError(form,errorId,error); }
     finally { button.disabled = false; button.innerHTML = original; }

@@ -28,7 +28,7 @@ test('toggle changes only its own panel, ARIA state and label, then reverses wit
 test('unknown scores stay unknown and never become an invented match percentage',()=>{
     const {ui,data}=scoringFixture();data.fitScore=null;
     const html=ui.scoreBadge({id:'program_unknown',program:{}},{});
-    assert.match(html,/—<small>%/);assert.match(html,/ქულისთვის აირჩიე/);assert.match(html,/aria-expanded="false"/);
+    assert.match(html,/შეავსე პროფილი შესაბამისობის სანახავად/);assert.doesNotMatch(html,/%/);assert.doesNotMatch(html,/score-compact-value/);
 });
 function cardsFixture(){
     const entity={id:'program_fixture',name:'University <script> & Partners',kind:'program',country:'Georgia',countryCode:'GE',program:{title:'Advanced <img src=x> Master with a very long programme title',mode:'part-time',degree:'master',language:'en',field:'computer-science',verificationStatus:'official-source',tuition:{amount:null},funding:{opportunityIds:[]}}};

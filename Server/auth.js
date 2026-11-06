@@ -27,11 +27,13 @@ function validateName(value){const name=text(value);if(name.length<2||name.lengt
 function validateEmail(value){const email=normalizedEmail(value);if(email.length>254||!/^[^\s@]+@[^\s@.]+(?:\.[^\s@.]+)+$/.test(email))fail('მიუთითე სწორი ელ. ფოსტა.','email');return email;}
 function validatePhone(value){const raw=text(value);if(!/^[+\d\s().-]+$/.test(raw))fail('მიუთითე სწორი ტელეფონის ნომერი.','phone');const phone=raw.replace(/[\s().-]/g,'');if(!/^\+?\d{7,15}$/.test(phone))fail('ტელეფონი უნდა შეიცავდეს 7–15 ციფრს.','phone');return phone;}
 function validatePassword(value){
-    if(typeof value!=='string'||[...value].length<10||Buffer.byteLength(value,'utf8')>72||!/[\p{L}]/u.test(value)||!/[\p{N}]/u.test(value))fail('პაროლი უნდა შეიცავდეს მინიმუმ 10 სიმბოლოს, ერთ ასოსა და ერთ ციფრს; მაქსიმუმ 72 UTF-8 ბაიტი.','password');
+    if(typeof value!=='string'||[...value].length<10||!/[\p{L}]/u.test(value)||!/[\p{N}]/u.test(value))fail('პაროლი უნდა შეიცავდეს მინიმუმ 10 სიმბოლოს, ერთ ასოსა და ერთ ციფრს.','password');
+    if(Buffer.byteLength(value,'utf8')>72)fail('პაროლი ზედმეტად გრძელია. გამოიყენე უფრო მოკლე პაროლი, განსაკუთრებით ქართული ასოების შემთხვევაში.','password');
     return value;
 }
 function shortText(value,max,field){if(typeof value!=='string'||value.trim().length>max)fail(`ველი უნდა შეიცავდეს მაქსიმუმ ${max} სიმბოლოს.`,field);return value.trim();}
 function validateStudent(value={},partial=false){
+    if(isObject(value)&&Object.hasOwn(value,'workspace'))fail('გეგმა შეინახე პირადი გეგმის განყოფილებიდან.','workspace');
     onlyKeys(value,['educationLevel','citizenshipCode','graduationYear',...require('../student-profile-core').EXTRA_FIELDS],'სტუდენტის პროფილი');const result={};
     try{Object.assign(result,require('../student-profile-core').normalizeExtras(value));}catch(error){fail(error.message,error.field);}
     if('educationLevel'in value){const level=text(value.educationLevel);if(level&&!EDUCATION_LEVELS.has(level))fail('აირჩიე განათლების სწორი საფეხური.','educationLevel');result.educationLevel=level;}
@@ -59,7 +61,7 @@ function cookieToken(req){
     if(!pair)return null;try{const token=decodeURIComponent(pair.slice(COOKIE_NAME.length+1));return /^[a-f0-9]{64}$/.test(token)?token:null;}catch{return null;}
 }
 
-function createAuthRouter({store,cookieSecure=process.env.NODE_ENV==='production',clock=()=>Date.now(),rateLimitOptions={},adminRouter=null,adminPolicy=require('./admin-access').adminAccess,billingStore=null,billingRouter=null}={}){
+function createAuthRouter({store,cookieSecure=process.env.NODE_ENV==='production',clock=()=>Date.now(),rateLimitOptions={},adminRouter=null,adminPolicy=require('./admin-access').adminAccess,billingStore=null,billingRouter=null,recoveryMailer=require('./recovery-mailer').createRecoveryMailer()}={}){
     if(!store)throw new Error('Authentication requires an account store.');
     const publicAccount=user=>({...publicUser(user),permissions:{admin:adminPolicy(user)}});
     const router=express.Router();const buckets=new Map();
@@ -114,7 +116,7 @@ function createAuthRouter({store,cookieSecure=process.env.NODE_ENV==='production
     router.post('/auth/register',originAllowed,rateLimit,wrap(async(req,res)=>{
         const body=req.body;onlyKeys(body,['name','email','phone','password','passwordConfirm','role','termsAccepted','studentProfile','advisorProfile']);
         if(!['student','advisor'].includes(body.role))fail('აირჩიე სტუდენტის ან მრჩეველის ანგარიში.','role');
-        const name=validateName(body.name),email=validateEmail(body.email),phone=validatePhone(body.phone),password=validatePassword(body.password);
+        const name=validateName(body.name),email=validateEmail(body.email),phone=body.phone==null||body.phone===''?'':validatePhone(body.phone),password=validatePassword(body.password);
         if(typeof body.passwordConfirm!=='string'||password!==body.passwordConfirm)fail('პაროლები ერთმანეთს არ ემთხვევა.','passwordConfirm');
         if(body.termsAccepted!==true)fail('ანგარიშის შესაქმნელად წესებზე თანხმობა აუცილებელია.','termsAccepted');
         if(body.role==='student'&&body.advisorProfile!==undefined)fail('სტუდენტის ანგარიშს მრჩეველის პროფილი ვერ მიენიჭება.','advisorProfile');
@@ -134,11 +136,35 @@ function createAuthRouter({store,cookieSecure=process.env.NODE_ENV==='production
         await issueSession(req,res,user,req.body.rememberMe===true);if(billingStore)await billingStore.touch(user,'login').catch(()=>{});res.json({user:publicAccount(user)});
     }));
     router.get('/auth/me',authenticated,wrap(async(req,res)=>{if(billingStore)await billingStore.touch(req.account).catch(()=>{});res.json({user:publicAccount(req.account)});}));
+    const reserveRecovery=billingStore?async(email,ip)=>billingStore.transaction(async q=>{
+        const digest=value=>crypto.createHmac('sha256',recoveryMailer.signingSecret).update(value).digest('hex');
+        const ipHash=digest('ip:'+ip),emailHash=digest('email:'+email),stamp=now();
+        const count=async(key,value,since)=>Number((await q("SELECT COUNT(*) AS total FROM billing_events WHERE kind='password_recovery_request' AND detail LIKE $1 AND created_at >= $2",['%"'+key+'":"'+value+'"%',new Date(clock()-since).toISOString()]))[0].total);
+        if(await count('ipHash',ipHash,15*60000)>=10||await count('emailHash',emailHash,60*60000)>=3)return false;
+        await q("DELETE FROM billing_events WHERE kind='password_recovery_request' AND created_at < $1",[new Date(clock()-86400000).toISOString()]);
+        await billingStore.event(q,'system:recovery','password_recovery_request',{ipHash,emailHash,requestedAt:stamp});return true;
+    }):null;
+    require('./password-recovery').attachRecoveryRoutes({router,store,originAllowed,rateLimit,wrap,validatePassword,validateEmail,onlyKeys,clock,mailer:recoveryMailer,reserveRecovery,cookieOptions,cookieName:COOKIE_NAME});
+    router.get('/user/workspace',authenticated,role('student'),(req,res)=>res.json({workspace:req.account.studentProfile?.workspace||{...require('../student-workspace-core').normalize(null),revision:0}}));
+    router.put('/user/workspace',originAllowed,authenticated,wrap(async(req,res)=>{
+        onlyKeys(req.body,['workspace','revision']);if(req.account.role!=='student')return res.status(403).json({message:'გეგმა სტუდენტის ანგარიშისთვისაა.'});
+        let workspace;try{workspace=require('../student-profile-core').normalizeExtras({workspace:{...req.body.workspace,revision:req.body.revision}}).workspace;}catch(error){fail(error.message,'workspace');}
+        const saved=await store.updateWorkspace(req.account.id,workspace,req.body.revision);
+        if(!saved)return res.status(409).json({message:'გეგმა სხვა ფანჯარაში შეიცვალა. განაახლე და სცადე ხელახლა.',code:'WORKSPACE_CONFLICT'});
+        res.json({workspace:saved});
+    }));
+    if(billingStore)router.post('/user/reports',originAllowed,rateLimit,authenticated,wrap(async(req,res)=>{
+        onlyKeys(req.body,['entityId','message']);const {entityId,message}=req.body;
+        if(typeof entityId!=='string'||entityId.length>200||!/[a-z0-9]/.test(entityId)||!/^[a-z0-9_-]+$/i.test(entityId))fail('ჩანაწერი არასწორია.','entityId');
+        if(typeof message!=='string'||message.trim().length<10||message.length>1000)fail('აღწერე უზუსტობა 10–1000 სიმბოლოთი.','message');
+        await billingStore.transaction(q=>billingStore.event(q,req.account.id,'data_issue',{entityId,message:message.trim()}));
+        res.status(201).json({message:'შეტყობინება ადმინისტრატორს გადაეცა.'});
+    }));
     router.post('/auth/logout',originAllowed,wrap(async(req,res)=>{const token=cookieToken(req);if(token)await store.deleteSession(hashToken(token));res.clearCookie(COOKIE_NAME,cookieOptions);res.json({message:'ანგარიშიდან გამოხვედი.'});}));
     const sendProfile=(req,res)=>res.json({user:publicAccount(req.account)});
     async function updateProfile(req,res){
         const body=req.body;onlyKeys(body,['name','phone','favorites','studentProfile','advisorProfile']);const patch={};
-        if('name'in body)patch.name=validateName(body.name);if('phone'in body)patch.phone=validatePhone(body.phone);
+        if('name'in body)patch.name=validateName(body.name);if('phone'in body)patch.phone=body.phone===''?'':validatePhone(body.phone);
         if('favorites'in body){if(!Array.isArray(body.favorites)||body.favorites.length>200||body.favorites.some(id=>typeof id!=='string'||!id||id.length>200))fail('ფავორიტების სია არასწორია.','favorites');patch.favorites=[...new Set(body.favorites)];if(billingStore&&patch.favorites.length>(req.account.favorites||[]).length){const limit=await billingStore.transaction(async q=>(await billingStore.entitlement(q,req.account)).plan.features.favorites);if(patch.favorites.length>limit)return res.status(403).json({code:'UPGRADE_REQUIRED',message:'ფავორიტების ლიმიტი ამოიწურა. განაახლე პაკეტი.'});}}
         if('studentProfile'in body){if(req.account.role!=='student')fail('სტუდენტის პროფილის შეცვლა ამ როლისთვის დაუშვებელია.','studentProfile');patch.studentProfile={...req.account.studentProfile,...validateStudent(body.studentProfile,true)};}
         if('advisorProfile'in body){if(req.account.role!=='advisor')fail('მრჩეველის პროფილის შეცვლა ამ როლისთვის დაუშვებელია.','advisorProfile');patch.advisorProfile={...req.account.advisorProfile,...validateAdvisor(body.advisorProfile,true),verificationStatus:req.account.advisorProfile?.verificationStatus||'pending'};}

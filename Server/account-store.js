@@ -152,6 +152,20 @@ function createAccountStore({ filename = path.join(__dirname, 'data', 'accounts.
 
     return {
         info: Object.freeze({ provider: 'sqlite', persistent: !memory, schemaVersion: SCHEMA_VERSION }),
+        changePassword(id,expectedHash,passwordHash){
+            db.exec('BEGIN IMMEDIATE');try{
+                const result=db.prepare("UPDATE users SET password_hash=?,updated_at=? WHERE id=? AND password_hash=? AND account_status='active'").run(passwordHash,new Date().toISOString(),id,expectedHash);
+                if(result.changes)statements.deleteUserSessions.run(id);db.exec('COMMIT');return result.changes===1;
+            }catch(error){db.exec('ROLLBACK');throw error;}
+        },
+        updateWorkspace(id,workspace,revision){
+            db.exec('BEGIN IMMEDIATE');try{
+                const user=unpackUser(statements.findById.get(id));
+                if(!user||user.role!=='student'||(user.studentProfile?.workspace?.revision||0)!==revision){db.exec('ROLLBACK');return null;}
+                const saved={...workspace,revision:revision+1},profile={...user.studentProfile,workspace:saved};
+                db.prepare('UPDATE users SET student_profile=?,updated_at=? WHERE id=?').run(JSON.stringify(profile),new Date().toISOString(),id);db.exec('COMMIT');return saved;
+            }catch(error){db.exec('ROLLBACK');throw error;}
+        },
         createUser(record) {
             object(record, 'user');
             const role = record.role;

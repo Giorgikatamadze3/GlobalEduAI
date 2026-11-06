@@ -5440,6 +5440,52 @@
         ['ფილტრები','Filters','Фильтры'],
         ['სწავლის შესაძლებლობები მსოფლიოში','Study opportunities worldwide','Возможности обучения по всему миру']
     );
+    PHRASES.push(
+      ['იპოვე შენს პროფილსა და ბიუჯეტზე მორგებული','Find study options for your profile and budget:','Найди обучение под свой профиль и бюджет:'],
+      ['სასწავლო პროგრამა.','your next programme.','твоя следующая программа.'],
+      ['შეადარე სწავლის საფასური, დაფინანსება და მიღების პირობები ქართულად. კატალოგის დათვალიერება უფასოა; განაცხადს უნივერსიტეტის ოფიციალურ გვერდზე აგზავნი.','Compare tuition, funding and admission requirements. Browsing is free; submit applications on the university’s official website.','Сравни стоимость, финансирование и требования. Просмотр бесплатный; заявки подаются на официальном сайте университета.'],
+      ['მოძებნე პროგრამა','Find a programme','Найти программу'],
+      ['შეადარე საფასური, დაფინანსება და მიღების პირობები. დათვალიერება უფასოა; განაცხადს უნივერსიტეტის საიტზე აგზავნი.','Compare tuition, funding and entry requirements. Browsing is free; apply on the university’s website.','Сравни стоимость, финансирование и требования. Просмотр бесплатный; подавай заявку на сайте университета.'],
+      ['დამეხმარე არჩევაში','Help me choose','Помогите с выбором'],
+      ['შექმენი ანგარიში','Create an account','Создать аккаунт'],
+      ['პირადი ინფორმაცია — სურვილისამებრ','Personal information — optional','Личная информация — по желанию'],
+      ['ამ ველების შევსება ანგარიშის შექმნის შემდეგაც შეგიძლია.','You can complete these fields after creating your account.','Эти поля можно заполнить после создания аккаунта.'],
+      ['მინიმუმ 10 სიმბოლო, ერთი ასო და ერთი ციფრი.','At least 10 characters, one letter and one number.','Минимум 10 символов, одна буква и одна цифра.'],
+      ['მინიმუმ 10 სიმბოლო','At least 10 characters','Минимум 10 символов'],
+      ['ერთი ასო','One letter','Одна буква'],['ერთი ციფრი','One number','Одна цифра'],['ჩვენება','Show','Показать'],
+      ['დაგავიწყდა პაროლი?','Forgot password?','Забыли пароль?'],['პაროლის აღდგენა','Password recovery','Восстановление пароля'],
+      ['აღდგენის ბმულს მიიღებ ანგარიშის ელფოსტაზე.','Receive a reset link at your account email address.','Получи ссылку для восстановления на почту аккаунта.'],
+      ['ბმულის მიღება','Request a link','Получить ссылку'],['ახალი პაროლი','New password','Новый пароль'],['პაროლის შეცვლა','Change password','Сменить пароль'],['ახალი აღდგენის ბმული','Request a new reset link','Получить новую ссылку'],
+      ['ელფოსტით აღდგენა ჯერ არ არის ჩართული. ახალი ანგარიშის შექმნის ნაცვლად მოგვიანებით სცადე.','Email recovery is not enabled yet. Please try again later instead of creating another account.','Восстановление по почте пока не подключено. Попробуй позже вместо создания нового аккаунта.'],
+      ['ელფოსტით აღდგენა ჯერ არ არის ჩართული.','Email recovery is not enabled yet.','Восстановление по почте пока не подключено.'],
+      ['თუ ასეთი ანგარიში არსებობს, აღდგენის ბმულს ელფოსტით მიიღებ. ბმული 20 წუთი მოქმედებს.','If the account exists, a reset link will arrive by email. It is valid for 20 minutes.','Если аккаунт существует, ссылка придёт по почте. Она действует 20 минут.'],
+      ['აღდგენის ბმული არასწორია, ვადა გაუვიდა ან უკვე გამოყენებულია.','The reset link is invalid, expired or already used.','Ссылка недействительна, просрочена или уже использована.'],
+      ['პაროლი შეიცვალა. შედი ახალი პაროლით.','Password changed. Sign in with your new password.','Пароль изменён. Войди с новым паролем.'],
+      ['შენი მიზანი','Your goal','Твоя цель'],['შენი პროფილი','Your profile','Твой профиль'],['სურვილისამებრ','Optional','По желанию'],
+      ['სასურველი საფეხური','Preferred degree','Желаемая степень'],['წლიური სწავლის ბიუჯეტი','Annual tuition budget','Годовой бюджет на обучение'],
+      ['ენის სერტიფიკატსა და აკადემიურ ბექგრაუნდს პროფილში დაამატებ.','Add your language certificate and academic background in your profile.','Добавь языковой сертификат и образование в профиле.'],
+      ['მოგვიანებით შევავსებ','Complete later','Заполню позже'],['შემდეგი ნაბიჯი','Next step','Следующий шаг'],
+      ['ძიების გაზიარება','Share search','Поделиться поиском'],['კატალოგის დაფარვა','Catalogue coverage','Охват каталога'],
+      ['შეავსე პროფილი შესაბამისობის სანახავად','Complete your profile to see your match','Заполни профиль для оценки соответствия'],
+      ['პროგრამის დამოუკიდებელი გვერდი','Programme page','Страница программы'],['პროგრამების შედარება','Compare programmes','Сравнить программы'],['პროგრამა ვერ მოიძებნა','Programme not found','Программа не найдена'],['ოფიციალური წყაროები','Official sources','Официальные источники'],['დაფარვა ნაწილობრივია.','Coverage is partial.','Охват частичный.'],
+      ['შეგვატყობინე უზუსტობა','Report an inaccuracy','Сообщить о неточности'],['რა საჭიროებს შესწორებას?','What needs correcting?','Что нужно исправить?'],['შეტყობინების გაგზავნა','Send report','Отправить сообщение'],
+      ['შეტყობინებას ადმინისტრატორი ნახავს. პირადი დოკუმენტები არ გამოაგზავნო.','An administrator will review your report. Do not send personal documents.','Администратор рассмотрит сообщение. Не отправляй личные документы.'],
+      ['შეტყობინება ადმინისტრატორს გადაეცა.','Your report was sent to the administrator.','Сообщение передано администратору.'],
+      ['ჯერ არ ვიცი, სად მინდა სწავლა','I am still exploring','Пока не знаю, где учиться'],['უკვე ვიცი ქვეყანა ან მიმართულება','I know my country or subject','Уже знаю страну или направление'],['მთავარია დაფინანსება','Funding comes first','Главное — финансирование'],
+      ['პროფილის შეფასება წესებსა და ცნობილ მოთხოვნებს ადარებს. AI საუბარი ცალკე სერვისია: შენი შეტყობინებები და, მხოლოდ თანხმობისას, აკადემიური პროფილი იგზავნება OpenAI-სთან. სახელი, ტელეფონი და ელფოსტა შეფასებისთვის საჭირო არ არის.','Profile matching compares rules and known requirements. AI chat is a separate service: messages and, only with your consent, your academic profile are sent to OpenAI. Your name, phone and email are not needed for matching.','Оценка профиля сравнивает правила и известные требования. Чат ИИ — отдельный сервис: сообщения и, только с согласия, учебный профиль отправляются OpenAI. Имя, телефон и почта для оценки не нужны.'],
+      ['ნახე პროფილი და კონტაქტი','View profile and contact','Профиль и контакты'],['კატალოგში ყოფნა პარტნიორობას ან გადამოწმებას არ ნიშნავს.','A directory listing does not imply partnership or verification.','Присутствие в каталоге не означает партнёрство или проверку.'],
+      ['მომსახურების ენა და ფორმატი','Service language and format','Язык и формат услуги'],['ფასი და პასუხის დრო','Price and response time','Цена и время ответа'],['დასაზუსტებელია უშუალოდ კონსულტანტთან','Confirm directly with the consultant','Уточни непосредственно у консультанта'],
+      ['ამ ჩანაწერის მოქმედი კონტაქტი ჯერ დადასტურებული არ არის. მანამდე შეგიძლია პროგრამები და მათი ოფიციალური წყაროები შეისწავლო.','Contact details for this listing have not been confirmed yet. You can explore programmes and their official sources in the meantime.','Контактные данные пока не подтверждены. Тем временем можно изучить программы и официальные источники.'],
+      ['გეგმა ინახება შენს ანგარიშში და სხვა მოწყობილობაზეც ხელმისაწვდომია. შენახვას ინტერნეტი სჭირდება; ადგილობრივი ასლისთვის გამოიყენე ჩამოტვირთვა.','Your plan is saved to your account and available on other devices. Saving needs an internet connection; export a local backup.','План сохраняется в аккаунте и доступен на других устройствах. Для сохранения нужен интернет; скачай локальную копию.'],
+      ['მონიშნე შესრულებული ნაბიჯები შენს ანგარიშში.','Track completed steps in your account.','Отмечай выполненные шаги в аккаунте.'],['ძველი ბრაუზერის გეგმის შემოტანა','Import an older browser plan','Импорт прежнего плана браузера'],
+      ['შენი მონაცემები','Your data','Твои данные'],['რა ინახება ანგარიშში','What your account stores','Что хранится в аккаунте'],['პირადი გეგმა და დოკუმენტები','Personal plan and documents','Личный план и документы'],['აქტივობა და გადახდა','Activity and payments','Активность и оплата'],['ჩემი მონაცემების ჩამოტვირთვა','Download my data','Скачать мои данные'],
+      ['აკადემიური მინიმუმი','Academic minimum','Академический минимум'],['მიღების პირობები','Admission requirements','Требования при поступлении'],['პროფილისა და გეგმის ჩამოტვირთვა','Download profile and plan','Скачать профиль и план'],
+      ['პირველ ეტაპზე ნაჩვენებია მაქსიმუმ 3 ვარიანტი.','Up to three options are shown initially.','Сначала показано до трёх вариантов.'],
+      ['რეგისტრაციის მონაცემები, აკადემიური პროფილი, ფავორიტები და პირადი გეგმა ინახება სერვერულ მონაცემთა ბაზაში. პაროლი ინახება დაცული ჰეშის სახით; შესვლის სესია იყენებს დაცულ HttpOnly cookie-ს.','Registration details, academic profile, favourites and your plan are stored in the server database. Passwords are stored as secure hashes; sign-in sessions use protected HttpOnly cookies.','Регистрационные данные, учебный профиль, избранное и план хранятся в серверной базе. Пароли хранятся как защищённые хеши; сессия использует защищённый HttpOnly cookie.'],
+      ['ანგარიშის პირადი გეგმა სინქრონდება შენს მოწყობილობებს შორის. ბრაუზერში შეიძლება დარჩეს ადგილობრივი ასლი. PDF დოკუმენტები ირჩევა შენს მოწყობილობაზე; პაკეტის შექმნისას ისინი დროებით იგზავნება სერვერზე დასამუშავებლად და ფაილურ არქივში არ ინახება.','Your account plan syncs between devices. A local copy may remain in the browser. PDF files are selected on your device and temporarily sent to the server to build a package; they are not kept in a file archive.','План аккаунта синхронизируется между устройствами. Локальная копия может оставаться в браузере. PDF выбираются на устройстве и временно отправляются на сервер для сборки пакета; файловый архив не сохраняется.'],
+      ['შენი შეტყობინებები იგზავნება OpenAI-სთან. აკადემიური პროფილი ემატება მხოლოდ მაშინ, როცა მის გაზიარებას მონიშნავ. ჩატის ტექსტი ბრაუზერის მუდმივ საცავში არ ინახება. არ გაგზავნო პაროლები, საბანკო ბარათი ან პირადობის დოკუმენტი.','Your messages are sent to OpenAI. Your academic profile is added only when you choose to share it. Chat text is not kept in persistent browser storage. Do not send passwords, payment card details or identity documents.','Сообщения отправляются OpenAI. Учебный профиль добавляется только при выборе его передачи. Чат не сохраняется в постоянном хранилище браузера. Не отправляй пароли, данные карты или документы личности.'],
+      ['ანგარიშისთვის აღირიცხება ფუნქციების გამოყენება და პაკეტის ლიმიტები. გადახდის ჩართვისას ბარათის მონაცემები მუშავდება ბანკის გვერდზე; GlobalEdu ბარათის ნომერსა და უსაფრთხოების კოდს არ ინახავს.','Feature usage and plan limits are recorded for your account. When payments are enabled, card details are processed on the bank’s page; GlobalEdu does not store card numbers or security codes.','Для аккаунта учитываются использование функций и лимиты тарифа. При включении оплаты данные карты обрабатываются на странице банка; GlobalEdu не хранит номер карты и код безопасности.']
+    );
     const dictionaries = {en:new Map(), ru:new Map()};
     const normalize = value => String(value ?? '').replace(/\s+/g, ' ').trim();
     for (const [source,en,ru] of PHRASES) {
@@ -5447,7 +5493,7 @@
         if (ru) dictionaries.ru.set(normalize(source),ru);
     }
     let language='ka', documentRef=null, windowRef=null, observer=null, scheduled=false;
-    const originals=new WeakMap(), attributes=new WeakMap(), countryDictionaries={en:new Map(),ru:new Map()};
+    const originals=new WeakMap(), attributes=new WeakMap(), countryDictionaries={ka:new Map(),en:new Map(),ru:new Map()};
     let countriesLoaded=false;
     const fragmentMatchers={en:null,ru:null};
     const ignored='script,style,noscript,textarea,input,code,pre,svg,[contenteditable="true"],[data-i18n-ignore],.agent-message-body,.agent-message-sources,.file-name,#profileTopName,#sidebarName,#mainAvatar,#sidebarAvatar';
@@ -5498,10 +5544,11 @@
     addTemplate("რატომ გამოირიცხა {0} პროგრამა?","Why were {0} programs excluded?","Почему исключены {0} программ?");
     function loadCountries() {
         if(countriesLoaded)return;
-        for(const lang of ['en','ru']){
+        const englishNames=new Intl.DisplayNames(['en'],{type:'region'});
+        for(const lang of ['ka','en','ru']){
             const names=new Intl.DisplayNames([lang],{type:'region'});
             for(const [code,name] of COUNTRY_LABELS){
-                try{countryDictionaries[lang].set(normalize(name),names.of(code));}catch{}
+                try{const label=lang==='ka'&&/[ა-ჰ]/.test(name)?name:names.of(code);countryDictionaries[lang].set(normalize(name),label);countryDictionaries[lang].set(normalize(englishNames.of(code)),label);}catch{}
             }
         }
         countriesLoaded=true;
@@ -5509,7 +5556,8 @@
     }
     function translate(value,requestedLanguage=language) {
         const source=String(value??'');
-        if(requestedLanguage==='ka'||!LANGUAGES.includes(requestedLanguage))return source;
+        if(!LANGUAGES.includes(requestedLanguage))return source;
+        if(requestedLanguage==='ka'){loadCountries();return countryDictionaries.ka.get(normalize(source))||source;}
         const key=normalize(source);
         let result=dictionaries[requestedLanguage].get(key);
         if(!result){loadCountries();result=countryDictionaries[requestedLanguage].get(key);}
@@ -5566,6 +5614,7 @@
         const previous=language;language=value;
         if(documentRef)documentRef.documentElement.lang=value;
         if(persist&&windowRef)try{windowRef.localStorage.setItem(STORAGE_KEY,value);}catch{}
+        if(persist&&windowRef)try{const url=new URL(windowRef.location.href);if(url.searchParams.has('lang')){url.searchParams.set('lang',value);windowRef.history.replaceState(windowRef.history.state,'',url.href);}}catch{}
         apply();
         if(windowRef&&previous!==value)windowRef.dispatchEvent(new windowRef.CustomEvent('globaledu:languagechange',{detail:{language:value,previous}}));
         return true;
@@ -5579,6 +5628,7 @@
         documentRef=doc;windowRef=win;
         let stored;try{stored=win.localStorage.getItem(STORAGE_KEY);}catch{}
         language=LANGUAGES.includes(stored)?stored:'ka';doc.documentElement.lang=language;
+        try{const requested=new URL(win.location.href).searchParams.get('lang');if(LANGUAGES.includes(requested)){language=requested;doc.documentElement.lang=language;}}catch{}
         doc.addEventListener('change',event=>{if(event.target.matches?.('[data-language-selector],#siteLanguage'))setLanguage(event.target.value);});
         const start=()=>{
             apply();

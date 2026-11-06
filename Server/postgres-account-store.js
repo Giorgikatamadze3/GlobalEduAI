@@ -215,6 +215,20 @@ function createPostgresAccountStore({ connectionString, pool: injectedPool,schem
     }
     return {
         info, ready,
+        async changePassword(id,expectedHash,passwordHash){
+            await ready();return transaction(async client=>{
+                const result=await client.query("UPDATE globaledu_users SET password_hash=$1,updated_at=CURRENT_TIMESTAMP WHERE id=$2 AND password_hash=$3 AND account_status='active' RETURNING id",[passwordHash,id,expectedHash]);
+                if(result.rows.length)await client.query('DELETE FROM globaledu_sessions WHERE user_id=$1',[id]);return result.rows.length===1;
+            });
+        },
+        async updateWorkspace(id,workspace,revision){
+            await ready();return transaction(async client=>{
+                const user=unpackUser((await client.query('SELECT * FROM globaledu_users WHERE id=$1 FOR UPDATE',[id])).rows[0]);
+                if(!user||user.role!=='student'||(user.studentProfile?.workspace?.revision||0)!==revision)return null;
+                const saved={...workspace,revision:revision+1};
+                await client.query('UPDATE globaledu_users SET student_profile=$1::jsonb,updated_at=CURRENT_TIMESTAMP WHERE id=$2',[JSON.stringify({...user.studentProfile,workspace:saved}),id]);return saved;
+            });
+        },
         async createUser(record) {
             const user = normalizeUser(record);
             const result = await query(INSERT_USER, userValues(user));

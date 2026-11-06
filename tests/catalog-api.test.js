@@ -8,6 +8,13 @@ const path = require('node:path');
 const {validatePrograms} = require('../scripts/validate-programs');
 const expectedPrograms=JSON.parse(fs.readFileSync(path.join(__dirname,'../Server/data/programs.json'),'utf8')).programs;
 let server, base, accountStore;
+test('programme and country permalinks render source-backed HTML, canonical metadata and sitemap entries',async()=>{
+    const item=expectedPrograms.find(p=>p.id==='program_taltech-cybersecurity-msc');
+    const page=await fetch(`${base}/en/programs/${item.id}`);assert.equal(page.status,200);const html=await page.text();assert.ok(html.includes('rel="canonical"'));assert.ok(html.includes(item.title));assert.ok(html.includes('property="og:image"'));assert.ok(html.includes('https://globaleduai.vercel.app/en/programs/'+item.id));assert.ok(html.includes('Official sources'));assert.ok(!html.includes('password_hash'));
+    assert.equal((await fetch(`${base}/en/programs/program_not-real`)).status,404);
+    const country=await fetch(`${base}/en/countries/DE`);assert.equal(country.status,200);assert.ok((await country.text()).includes('country=DE'));
+    const sitemap=await fetch(`${base}/sitemap-en.xml`).then(r=>r.text());assert.ok(sitemap.includes('/en/programs/'+item.id));assert.ok(sitemap.includes('/en/countries/DE'));assert.ok((await fetch(`${base}/robots.txt`).then(r=>r.text())).includes('/sitemap.xml'));
+});
 
 before(async()=>{
     process.env.DATABASE_PROVIDER='postgres';

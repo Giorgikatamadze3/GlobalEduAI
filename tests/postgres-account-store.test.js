@@ -57,6 +57,18 @@ function setup(t) {
     return { ...context, pool, store };
 }
 
+test('Postgres workspace revisions preserve other profile fields and password changes revoke all sessions',async t=>{
+ const {store}=setup(t),created=await store.createUser(user());
+ const workspace={...require('../student-workspace-core').normalize(null),revision:0};
+ assert.equal((await store.updateWorkspace(created.id,workspace,0)).revision,1);
+ assert.equal(await store.updateWorkspace(created.id,workspace,0),null);
+ assert.equal((await store.findById(created.id)).studentProfile.educationLevel,'bachelor');
+ const hash=digest('password-recovery-test-session');await store.createSession({idHash:hash,userId:created.id,createdAt:stamp,expiresAt:expiry});
+ assert.equal(await store.changePassword(created.id,created.passwordHash,'$2b$12$newPasswordHashForRecoveryTest012345678901234567890123'),true);
+ assert.equal(await store.findSession(hash,stamp),null);
+ assert.equal(await store.changePassword(created.id,created.passwordHash,'$2b$12$anotherPasswordHashForRecoveryTest012345678901234567890'),false);
+});
+
 test('Postgres JSON profile persists academic background, certificates and partial updates',async t=>{
     const {store}=setup(t);
     const created=await store.createUser(user({studentProfile:{educationLevel:'bachelor',academicUniversity:'Tbilisi State University',academicFaculty:'Computer Science',academicSubject:'computer-science',completedDegree:'bachelor',degreeStatus:'completed',gpa4:3.6,certificateStatus:'provided',languageCertificate:{name:'IELTS Academic',score:7,minComponentScore:6},targetDegree:'master',targetSubject:'data-science',studyGoal:'Study data science'}}));
