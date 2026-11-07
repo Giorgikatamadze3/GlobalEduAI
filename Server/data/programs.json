@@ -2,7 +2,7 @@
   "metadata": {
     "sourcePolicy": "University pages and explicitly registered authoritative programme directories. Source kind and dated provenance are retained; unpublished attributes remain null.",
     "updatedAt": "2026-11-07",
-    "programCount": 4383,
+    "programCount": 4384,
     "coverageNote": "Official-source programme records from registered catalogues and individually checked university pages. Worldwide and national coverage remain partial; a source listing is not proof of an open admission cycle.",
     "defaultApplicant": "Non-EU/international fee-paying applicant; citizenship/residence exemptions require individual verification.",
     "unknownValuePolicy": "Unverified or applicant-dependent numeric values are null, never zero. No generic GPA conversion, currency conversion, annualisation, scholarship award or recurring-deadline year has been invented.",
@@ -36,7 +36,7 @@
         },
         {
           "region": "oceania",
-          "programCount": 94,
+          "programCount": 95,
           "countriesWithPrograms": 1
         },
         {
@@ -362,8 +362,8 @@
       "institutionCount": 10274,
       "institutionsWithPrograms": 207,
       "institutionsWithoutPrograms": 10067,
-      "programCount": 4383,
-      "linkedProgramCount": 4383,
+      "programCount": 4384,
+      "linkedProgramCount": 4384,
       "unmatchedProgramCount": 0,
       "coveragePercent": 2.01,
       "sources": [
@@ -914,8 +914,8 @@
         {
           "id": "world-auckland-masters",
           "kind": "institution",
-          "checkedAt": "2026-11-02",
-          "programCount": 94,
+          "checkedAt": "2026-11-07",
+          "programCount": 95,
           "status": "partial",
           "complete": false
         },
@@ -1855,7 +1855,7 @@
           "countryCode": "NZ",
           "institutionCount": 12,
           "institutionsWithPrograms": 1,
-          "programCount": 94
+          "programCount": 95
         },
         {
           "countryCode": "OM",
@@ -2305,8 +2305,8 @@
           "pages": 1,
           "records": 115,
           "accepted": 0,
-          "updated": 115,
-          "duplicates": 0
+          "updated": 4,
+          "duplicates": 111
         },
         {
           "sourceId": "world-boston-masters",
@@ -2323,8 +2323,8 @@
           "pages": 1,
           "records": 152,
           "accepted": 0,
-          "updated": 152,
-          "duplicates": 0
+          "updated": 2,
+          "duplicates": 150
         },
         {
           "sourceId": "world-wisconsin-masters",
@@ -2332,8 +2332,8 @@
           "pages": 1,
           "records": 143,
           "accepted": 0,
-          "updated": 143,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 143
         },
         {
           "sourceId": "world-gwu-masters",
@@ -2341,8 +2341,8 @@
           "pages": 1,
           "records": 189,
           "accepted": 0,
-          "updated": 189,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 189
         },
         {
           "sourceId": "world-ubc-masters",
@@ -2350,8 +2350,8 @@
           "pages": 4,
           "records": 218,
           "accepted": 0,
-          "updated": 218,
-          "duplicates": 0
+          "updated": 12,
+          "duplicates": 206
         },
         {
           "sourceId": "world-edinburgh-masters",
@@ -2359,17 +2359,17 @@
           "pages": 1,
           "records": 220,
           "accepted": 0,
-          "updated": 220,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 220
         },
         {
           "sourceId": "world-auckland-masters",
           "countryCode": "NZ",
           "pages": 1,
-          "records": 94,
-          "accepted": 0,
-          "updated": 0,
-          "duplicates": 94
+          "records": 95,
+          "accepted": 1,
+          "updated": 94,
+          "duplicates": 0
         },
         {
           "sourceId": "world-chile-masters",
@@ -2377,8 +2377,8 @@
           "pages": 1,
           "records": 125,
           "accepted": 0,
-          "updated": 125,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 125
         },
         {
           "sourceId": "world-twente-masters",
@@ -2386,8 +2386,8 @@
           "pages": 1,
           "records": 32,
           "accepted": 0,
-          "updated": 32,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 32
         },
         {
           "sourceId": "world-cape-town-humanities-masters",
@@ -2395,8 +2395,8 @@
           "pages": 1,
           "records": 122,
           "accepted": 0,
-          "updated": 122,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 122
         },
         {
           "sourceId": "world-trinity-dublin-masters",
@@ -2404,8 +2404,8 @@
           "pages": 1,
           "records": 136,
           "accepted": 0,
-          "updated": 136,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 136
         },
         {
           "sourceId": "world-lund-masters-index",
@@ -2413,8 +2413,8 @@
           "pages": 1,
           "records": 17,
           "accepted": 0,
-          "updated": 17,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 17
         },
         {
           "sourceId": "world-catholic-chile-masters",
@@ -2440,8 +2440,8 @@
           "pages": 1,
           "records": 143,
           "accepted": 0,
-          "updated": 143,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 143
         },
         {
           "sourceId": "world-hku-taught-masters",
@@ -2449,8 +2449,8 @@
           "pages": 1,
           "records": 154,
           "accepted": 0,
-          "updated": 154,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 154
         },
         {
           "sourceId": "world-strasbourg-masters",
@@ -2463,8 +2463,8 @@
           "pages": 1,
           "records": 18,
           "accepted": 0,
-          "updated": 18,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 18
         },
         {
           "sourceId": "world-lyon1-masters",
@@ -2472,8 +2472,8 @@
           "pages": 1,
           "records": 54,
           "accepted": 0,
-          "updated": 54,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 54
         }
       ],
       "completeness": "partial"
@@ -239281,27 +239281,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-community-dance-mcommdance.html",
           "label": "Master of Community Dance",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-community-dance-mcommdance.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -239310,7 +239310,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -239359,27 +239359,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-educational-leadership-medld.html",
           "label": "Master of Educational Leadership",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-educational-leadership-medld.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -239388,7 +239388,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -239437,27 +239437,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-engineering-geology-menggeol.html",
           "label": "Master of Engineering Geology",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-engineering-geology-menggeol.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -239466,7 +239466,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -239515,27 +239515,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-creative-arts-therapy.html",
           "label": "Master of Creative Arts Therapy",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-creative-arts-therapy.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -239544,7 +239544,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -239593,27 +239593,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-fine-arts-mfa.html",
           "label": "Master of Fine Arts",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-fine-arts-mfa.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -239622,7 +239622,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -239671,27 +239671,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-civil-engineering-mcivileng.html",
           "label": "Master of Civil Engineering",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-civil-engineering-mcivileng.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -239700,7 +239700,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -239749,27 +239749,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-teaching-english-to-speakers-of-other-languages-mtesol.html",
           "label": "Master of Teaching English to Speakers of Other Languages",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-teaching-english-to-speakers-of-other-languages-mtesol.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -239778,7 +239778,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -239827,27 +239827,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-marine-conservation-mmarinecons.html",
           "label": "Master of Marine Conservation",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-marine-conservation-mmarinecons.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -239856,7 +239856,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -239905,27 +239905,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-physiotherapy-practice-mphysioprac.html",
           "label": "Master of Physiotherapy Practice",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-physiotherapy-practice-mphysioprac.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -239934,7 +239934,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -239983,27 +239983,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-education-med.html",
           "label": "Master of Education",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-education-med.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -240012,7 +240012,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -240061,27 +240061,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-professional-supervision-practice-mprofsupprac.html",
           "label": "Master of Professional Supervision Practice",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-professional-supervision-practice-mprofsupprac.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -240090,7 +240090,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -240139,27 +240139,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-teaching-and-learning--early-childhood-.html",
           "label": "Master of Teaching and Learning (Early Childhood)",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-teaching-and-learning--early-childhood-.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -240168,7 +240168,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -240217,27 +240217,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-marketing-mmktg.html",
           "label": "Master of Marketing",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-marketing-mmktg.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -240246,7 +240246,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -240295,27 +240295,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-music-mmus.html",
           "label": "Master of Music",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-music-mmus.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -240324,7 +240324,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -240373,27 +240373,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-ecology-mecology.html",
           "label": "Master of Ecology",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-ecology-mecology.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -240402,7 +240402,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -240451,27 +240451,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-taxation-studies-mtaxs.html",
           "label": "Master of Taxation Studies",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-taxation-studies-mtaxs.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -240480,7 +240480,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -240529,27 +240529,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-public-policy-mpp.html",
           "label": "Master of Public Policy",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-public-policy-mpp.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -240558,7 +240558,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -240607,27 +240607,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-environmental-science-menvsci.html",
           "label": "Master of Environmental Science",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-environmental-science-menvsci.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -240636,7 +240636,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -240685,27 +240685,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-engineering-me.html",
           "label": "Master of Engineering",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-engineering-me.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -240714,7 +240714,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -240763,27 +240763,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-global-studies-mglobalst.html",
           "label": "Master of Global Studies",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-global-studies-mglobalst.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -240792,7 +240792,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -240841,27 +240841,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-architecture-march.html",
           "label": "Master of Architecture",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-architecture-march.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -240870,7 +240870,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -240919,27 +240919,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-clinical-education-mclined.html",
           "label": "Master of Clinical Education",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-clinical-education-mclined.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -240948,7 +240948,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -240997,27 +240997,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-organisational-psychology-morgpsych.html",
           "label": "Master of Organisational Psychology",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-organisational-psychology-morgpsych.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -241026,7 +241026,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -241075,27 +241075,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-architecture-professional-and-urban-planning-professional-marchprofurbplanprof.html",
           "label": "Master of Architecture (Professional) and Urban Planning (Professional)",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-architecture-professional-and-urban-planning-professional-marchprofurbplanprof.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -241104,7 +241104,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -241153,27 +241153,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-urban-planning-murbplan.html",
           "label": "Master of Urban Planning",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-urban-planning-murbplan.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -241182,7 +241182,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -241231,27 +241231,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-social-work-professional-mswprof.html",
           "label": "Master of Social Work (Professional)",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-social-work-professional-mswprof.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -241260,7 +241260,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -241309,27 +241309,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-urban-planning-professional-and-urban-design-murbplanprofurbdes.html",
           "label": "Master of Urban Planning (Professional) and Urban Design",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-urban-planning-professional-and-urban-design-murbplanprofurbdes.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -241338,7 +241338,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -241387,27 +241387,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-design-mdes.html",
           "label": "Master of Design",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-design-mdes.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -241416,7 +241416,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -241465,27 +241465,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-education-practice-medprac.html",
           "label": "Master of Education Practice",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-education-practice-medprac.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -241494,7 +241494,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -241543,27 +241543,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-marine-studies-mmarinest.html",
           "label": "Master of Marine Studies",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-marine-studies-mmarinest.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -241572,7 +241572,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -241621,27 +241621,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-professional-studies-mprofstuds.html",
           "label": "Master of Professional Studies",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-professional-studies-mprofstuds.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -241650,7 +241650,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -241699,27 +241699,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-behaviour-analysis.html",
           "label": "Master of Behaviour Analysis",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-behaviour-analysis.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -241728,7 +241728,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -241777,27 +241777,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-public-health-mph.html",
           "label": "Master of Public Health",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-public-health-mph.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -241806,7 +241806,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -241855,27 +241855,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-disaster-management-mdismgt.html",
           "label": "Master of Disaster Management",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-disaster-management-mdismgt.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -241884,7 +241884,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -241933,27 +241933,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-data-science-mdats.html",
           "label": "Master of Data Science",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-data-science-mdats.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -241962,7 +241962,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -242011,27 +242011,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-social-and-community-leadership-mscl.html",
           "label": "Master of Social and Community Leadership",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-social-and-community-leadership-mscl.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -242040,7 +242040,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -242089,27 +242089,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-conflict-and-terrorism-studies-mcts.html",
           "label": "Master of Conflict and Terrorism Studies",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-conflict-and-terrorism-studies-mcts.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -242118,7 +242118,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -242167,27 +242167,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-literature-mlitt.html",
           "label": "Master of Literature",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-literature-mlitt.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -242196,7 +242196,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -242245,27 +242245,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-science-msc.html",
           "label": "Master of Science",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-science-msc.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -242274,7 +242274,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -242323,27 +242323,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-artificial-intelligence--mai-.html",
           "label": "Master of Artificial Intelligence",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-artificial-intelligence--mai-.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -242352,7 +242352,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -242401,27 +242401,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-clinical-exercise-physiology.html",
           "label": "Master of Clinical Exercise Physiology",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-clinical-exercise-physiology.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -242430,7 +242430,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -242479,27 +242479,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-urban-planning-professional-murbplanprof.html",
           "label": "Master of Urban Planning (Professional)",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-urban-planning-professional-murbplanprof.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -242508,7 +242508,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -242557,27 +242557,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-architecture-professional-and-urban-design-marchprofurdes.html",
           "label": "Master of Architecture (Professional) and Urban Design",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-architecture-professional-and-urban-design-marchprofurdes.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -242586,7 +242586,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -242635,27 +242635,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-health-psychology-mhealthpsych.html",
           "label": "Master of Health Psychology",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-health-psychology-mhealthpsych.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -242664,7 +242664,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -242713,27 +242713,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-paediatrics-.html",
           "label": "Master of Paediatrics",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-paediatrics-.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -242742,7 +242742,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -242791,27 +242791,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-food-science-mfoodsci.html",
           "label": "Master of Food Science",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-food-science-mfoodsci.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -242820,7 +242820,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -242869,27 +242869,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-social-work-msw.html",
           "label": "Master of Social Work",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-social-work-msw.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -242898,7 +242898,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -242947,27 +242947,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-speech-language-therapy-practice-msltprac.html",
           "label": "Master of Speech Language Therapy Practice",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-speech-language-therapy-practice-msltprac.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -242976,7 +242976,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -243025,27 +243025,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-commerce-mcom.html",
           "label": "Master of Commerce",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-commerce-mcom.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -243054,7 +243054,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -243103,27 +243103,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-earthquake-engineering-meqeng.html",
           "label": "Master of Earthquake Engineering",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-earthquake-engineering-meqeng.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -243132,7 +243132,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -243181,27 +243181,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-engineering-project-management.html",
           "label": "Master of Engineering Project Management",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-engineering-project-management.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -243210,7 +243210,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -243259,27 +243259,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-nursing-science-mnsc.html",
           "label": "Master of Nursing Science",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-nursing-science-mnsc.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -243288,7 +243288,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -243337,27 +243337,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-dance-movement-therapy.html",
           "label": "Master of Dance Movement Therapy",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-dance-movement-therapy.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -243366,7 +243366,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -243415,27 +243415,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-professional-accounting-mprofacctg.html",
           "label": "Master of Professional Accounting",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-professional-accounting-mprofacctg.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -243444,7 +243444,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -243493,27 +243493,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-biomedical-science-mbiomedsc.html",
           "label": "Master of Biomedical Science",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-biomedical-science-mbiomedsc.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -243522,7 +243522,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -243571,27 +243571,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-urban-design-murbdes.html",
           "label": "Master of Urban Design",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-urban-design-murbdes.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -243600,7 +243600,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -243649,27 +243649,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-aerospace-engineering-maerospaceeng.html",
           "label": "Master of Aerospace Engineering",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-aerospace-engineering-maerospaceeng.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -243678,7 +243678,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -243727,27 +243727,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-business-analytics.html",
           "label": "Master of Business Analytics",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-business-analytics.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -243756,7 +243756,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -243805,27 +243805,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-dance-studies-mdancest.html",
           "label": "Master of Dance Studies",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-dance-studies-mdancest.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -243834,7 +243834,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -243883,27 +243883,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-mathematical-modelling-mmathmodel.html",
           "label": "Master of Mathematical Modelling",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-mathematical-modelling-mmathmodel.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -243912,7 +243912,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -243961,27 +243961,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-architecture-professional-marchprof.html",
           "label": "Master of Architecture (Professional)",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-architecture-professional-marchprof.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -243990,7 +243990,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -244039,27 +244039,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-bioscience-enterprise-mbioent.html",
           "label": "Master of Bioscience Enterprise",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-bioscience-enterprise-mbioent.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -244068,7 +244068,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -244117,27 +244117,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-health-leadership-mhlthld.html",
           "label": "Master of Health Leadership",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-health-leadership-mhlthld.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -244146,7 +244146,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -244195,27 +244195,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-professional-supervision-mprofsup.html",
           "label": "Master of Professional Supervision",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-professional-supervision-mprofsup.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -244224,7 +244224,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -244273,27 +244273,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-energy-menergy.html",
           "label": "Master of Energy",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-energy-menergy.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -244302,7 +244302,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -244351,27 +244351,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-robotics-and-automation-engineering-mroboteng.html",
           "label": "Master of Robotics and Automation Engineering",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-robotics-and-automation-engineering-mroboteng.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -244380,7 +244380,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -244429,27 +244429,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-engineering-management-memgt.html",
           "label": "Master of Engineering Management",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-engineering-management-memgt.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -244458,7 +244458,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -244507,27 +244507,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-applied-finance.html",
           "label": "Master of Applied Finance",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-applied-finance.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -244536,7 +244536,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -244585,27 +244585,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-chemistry-mchem.html",
           "label": "Master of Chemistry",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-chemistry-mchem.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -244614,7 +244614,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -244663,27 +244663,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.online.auckland.ac.nz/postgraduate-programmes/arts/master-of-communication/",
           "label": "Master of Communication",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/postgraduate-programmes/arts/master-of-communication/",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -244692,7 +244692,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -244741,27 +244741,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-medical-engineering-mmedicaleng.html",
           "label": "Master of Medical Engineering",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-medical-engineering-mmedicaleng.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -244770,7 +244770,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -244819,27 +244819,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-health-sciences-mhsc.html",
           "label": "Master of Health Sciences",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-health-sciences-mhsc.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -244848,7 +244848,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -244897,27 +244897,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-laws-llm.html",
           "label": "Master of Laws",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-laws-llm.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -244926,7 +244926,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -244975,27 +244975,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-professional-engineering-mprofeng.html",
           "label": "Master of Professional Engineering",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-professional-engineering-mprofeng.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -245004,7 +245004,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -245053,27 +245053,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-clinical-pharmacy-mclinpharm.html",
           "label": "Master of Clinical Pharmacy",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-clinical-pharmacy-mclinpharm.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -245082,7 +245082,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -245131,27 +245131,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-international-business-mintbus.html",
           "label": "Master of International Business",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-international-business-mintbus.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -245160,7 +245160,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -245209,27 +245209,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-creative-writing-mcw.html",
           "label": "Master of Creative Writing",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-creative-writing-mcw.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -245238,7 +245238,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -245287,27 +245287,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-property-practice-mpropprac.html",
           "label": "Master of Property Practice",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-property-practice-mpropprac.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -245316,7 +245316,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -245365,27 +245365,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-biotechnology-mbiotech.html",
           "label": "Master of Biotechnology",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-biotechnology-mbiotech.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -245394,7 +245394,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -245443,27 +245443,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-operations-research-and-analytics-moran.html",
           "label": "Master of Operations Research and Analytics",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-operations-research-and-analytics-moran.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -245472,7 +245472,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -245521,27 +245521,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-counselling-mcouns.html",
           "label": "Master of Counselling",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-counselling-mcouns.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -245550,7 +245550,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -245599,27 +245599,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-nutrition-and-dietetics.html",
           "label": "Master of Nutrition and Dietetics",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-nutrition-and-dietetics.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -245628,7 +245628,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -245677,27 +245677,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-health-practice.html",
           "label": "Master of Health Practice",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-health-practice.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -245706,7 +245706,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -245755,27 +245755,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-audiology-maud.html",
           "label": "Master of Audiology",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-audiology-maud.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -245784,7 +245784,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -245833,27 +245833,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-information-governance-minfogov.html",
           "label": "Master of Information Governance",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-information-governance-minfogov.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -245862,7 +245862,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -245911,27 +245911,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-engineering-studies-mengst.html",
           "label": "Master of Engineering Studies",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-engineering-studies-mengst.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -245940,7 +245940,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -245989,27 +245989,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-intellectual-property.html",
           "label": "Master of Intellectual Property",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-intellectual-property.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -246018,7 +246018,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -246067,27 +246067,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-business-management.html",
           "label": "Master of Business Management",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-business-management.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -246096,7 +246096,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -246145,27 +246145,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-arts-ma.html",
           "label": "Master of Arts",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-arts-ma.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -246174,7 +246174,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -246223,27 +246223,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-indigenous-studies-mindigst.html",
           "label": "Master of Indigenous Studies",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-indigenous-studies-mindigst.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -246252,7 +246252,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -246301,27 +246301,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-legal-studies-mls.html",
           "label": "Master of Legal Studies",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-legal-studies-mls.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -246330,7 +246330,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -246379,27 +246379,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-wine-science-mwinesci.html",
           "label": "Master of Wine Science",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-wine-science-mwinesci.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -246408,7 +246408,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -246457,27 +246457,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-information-technology-minfotech.html",
           "label": "Master of Information Technology",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-information-technology-minfotech.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -246486,7 +246486,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -246535,27 +246535,27 @@
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "label": "University of Auckland — official master programme index",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         },
         {
           "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-nursing-mnurs.html",
           "label": "Master of Nursing",
-          "checkedAt": "2026-11-02",
+          "checkedAt": "2026-11-07",
           "kind": "institution",
           "sourceId": "world-auckland-masters"
         }
       ],
       "verificationStatus": "official-source",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-07",
       "provenance": {
         "sourceId": "world-auckland-masters",
         "sourceRecordId": "/en/study/study-options/find-a-study-option/master-of-nursing-mnurs.html",
         "kind": "institution",
         "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
         "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-        "checkedAt": "2026-11-02"
+        "checkedAt": "2026-11-07"
       },
       "imports": [
         {
@@ -246564,7 +246564,7 @@
           "kind": "institution",
           "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
-          "checkedAt": "2026-11-02"
+          "checkedAt": "2026-11-07"
         }
       ]
     },
@@ -338887,6 +338887,84 @@
           "kind": "official-directory",
           "recordUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11280/",
           "listingSourceUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json?degree%5B%5D=1&degree%5B%5D=2&degree%5B%5D=3&sort=4&display=list&limit=250&offset=1500",
+          "checkedAt": "2026-11-07"
+        }
+      ]
+    },
+    {
+      "id": "program_94e33a50c1d85561580d99ee",
+      "institutionId": "inst_689ce5db54764d44e3589384",
+      "institutionName": "University of Auckland",
+      "institutionWebsite": "https://auckland.ac.nz/",
+      "countryCode": "NZ",
+      "title": "Executive Master of Business Administration",
+      "field": null,
+      "category": null,
+      "degree": "master",
+      "language": null,
+      "languages": [],
+      "mode": null,
+      "durationMonths": null,
+      "programUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/executive-master-of-business-administration-emba.html",
+      "subject": null,
+      "city": null,
+      "sourceLanguages": [],
+      "tuition": {
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "applicantScope": null,
+        "note": ""
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": "Master-level title and official link verified in the university catalogue. Detailed entry requirements, current intake, fees and funding are not inferred from this listing."
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": ""
+      },
+      "sources": [
+        {
+          "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
+          "label": "University of Auckland — official master programme index",
+          "checkedAt": "2026-11-07",
+          "kind": "institution",
+          "sourceId": "world-auckland-masters"
+        },
+        {
+          "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/executive-master-of-business-administration-emba.html",
+          "label": "Executive Master of Business Administration",
+          "checkedAt": "2026-11-07",
+          "kind": "institution",
+          "sourceId": "world-auckland-masters"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-11-07",
+      "provenance": {
+        "sourceId": "world-auckland-masters",
+        "sourceRecordId": "/en/study/study-options/find-a-study-option/executive-master-of-business-administration-emba.html",
+        "kind": "institution",
+        "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
+        "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
+        "checkedAt": "2026-11-07"
+      },
+      "imports": [
+        {
+          "sourceId": "world-auckland-masters",
+          "sourceRecordId": "/en/study/study-options/find-a-study-option/executive-master-of-business-administration-emba.html",
+          "kind": "institution",
+          "recordUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
+          "listingSourceUrl": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html",
           "checkedAt": "2026-11-07"
         }
       ]

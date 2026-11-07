@@ -1308,7 +1308,7 @@
         "allowed": true,
         "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
       },
-      "checkedAt": "2026-11-02",
+      "checkedAt": "2026-11-07",
       "kind": "institution",
       "enabled": true,
       "adapter": "world-official-index",

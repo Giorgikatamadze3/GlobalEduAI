@@ -16,8 +16,8 @@
     "checkedAt": "2026-11-07",
     "totalRecords": 12,
     "accepted": 0,
-    "updated": 12,
-    "duplicates": 0,
+    "updated": 0,
+    "duplicates": 12,
     "unmatched": 0,
     "ambiguous": 0,
     "invalid": 0,
@@ -892,7 +892,7 @@
       {
         "id": "world-illinois-masters",
         "kind": "institution",
-        "checkedAt": "2026-11-02",
+        "checkedAt": "2026-11-07",
         "programCount": 151,
         "status": "partial",
         "complete": false
@@ -900,7 +900,7 @@
       {
         "id": "world-wisconsin-masters",
         "kind": "institution",
-        "checkedAt": "2026-11-02",
+        "checkedAt": "2026-11-07",
         "programCount": 143,
         "status": "partial",
         "complete": false
@@ -908,7 +908,7 @@
       {
         "id": "world-gwu-masters",
         "kind": "institution",
-        "checkedAt": "2026-11-02",
+        "checkedAt": "2026-11-07",
         "programCount": 189,
         "status": "partial",
         "complete": false
@@ -916,7 +916,7 @@
       {
         "id": "world-ubc-masters",
         "kind": "institution",
-        "checkedAt": "2026-11-02",
+        "checkedAt": "2026-11-07",
         "programCount": 212,
         "status": "partial",
         "complete": false
@@ -924,7 +924,7 @@
       {
         "id": "world-edinburgh-masters",
         "kind": "institution",
-        "checkedAt": "2026-11-02",
+        "checkedAt": "2026-11-07",
         "programCount": 220,
         "status": "partial",
         "complete": false
@@ -940,7 +940,7 @@
       {
         "id": "world-chile-masters",
         "kind": "institution",
-        "checkedAt": "2026-11-02",
+        "checkedAt": "2026-11-07",
         "programCount": 125,
         "status": "partial",
         "complete": false
@@ -948,7 +948,7 @@
       {
         "id": "world-twente-masters",
         "kind": "institution",
-        "checkedAt": "2026-11-02",
+        "checkedAt": "2026-11-07",
         "programCount": 32,
         "status": "partial",
         "complete": false
@@ -956,7 +956,7 @@
       {
         "id": "world-cape-town-humanities-masters",
         "kind": "institution",
-        "checkedAt": "2026-11-02",
+        "checkedAt": "2026-11-07",
         "programCount": 122,
         "status": "partial",
         "complete": false
@@ -964,7 +964,7 @@
       {
         "id": "world-trinity-dublin-masters",
         "kind": "institution",
-        "checkedAt": "2026-11-02",
+        "checkedAt": "2026-11-07",
         "programCount": 136,
         "status": "partial",
         "complete": false
@@ -972,7 +972,7 @@
       {
         "id": "world-lund-masters-index",
         "kind": "institution",
-        "checkedAt": "2026-11-02",
+        "checkedAt": "2026-11-07",
         "programCount": 18,
         "status": "partial",
         "complete": false
@@ -988,7 +988,7 @@
       {
         "id": "world-bologna-masters",
         "kind": "institution",
-        "checkedAt": "2026-11-02",
+        "checkedAt": "2026-11-07",
         "programCount": 143,
         "status": "partial",
         "complete": false
@@ -996,7 +996,7 @@
       {
         "id": "world-hku-taught-masters",
         "kind": "institution",
-        "checkedAt": "2026-11-02",
+        "checkedAt": "2026-11-07",
         "programCount": 154,
         "status": "partial",
         "complete": false
@@ -1012,7 +1012,7 @@
       {
         "id": "world-valencia-masters",
         "kind": "institution",
-        "checkedAt": "2026-11-02",
+        "checkedAt": "2026-11-07",
         "programCount": 113,
         "status": "partial",
         "complete": false
@@ -1020,7 +1020,7 @@
       {
         "id": "world-sorbonne-science-masters",
         "kind": "institution",
-        "checkedAt": "2026-11-02",
+        "checkedAt": "2026-11-07",
         "programCount": 18,
         "status": "partial",
         "complete": false
@@ -1028,7 +1028,7 @@
       {
         "id": "world-lyon1-masters",
         "kind": "institution",
-        "checkedAt": "2026-11-02",
+        "checkedAt": "2026-11-07",
         "programCount": 54,
         "status": "partial",
         "complete": false

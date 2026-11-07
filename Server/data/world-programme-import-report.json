@@ -1,6 +1,6 @@
 {
   "checkedAt": "2026-11-07",
-  "total": 4383,
+  "total": 4384,
   "coverage": "partial",
   "reports": [
     {
@@ -9,8 +9,8 @@
       "pages": 1,
       "records": 115,
       "accepted": 0,
-      "updated": 115,
-      "duplicates": 0
+      "updated": 4,
+      "duplicates": 111
     },
     {
       "sourceId": "world-boston-masters",
@@ -27,8 +27,8 @@
       "pages": 1,
       "records": 152,
       "accepted": 0,
-      "updated": 152,
-      "duplicates": 0
+      "updated": 2,
+      "duplicates": 150
     },
     {
       "sourceId": "world-wisconsin-masters",
@@ -36,8 +36,8 @@
       "pages": 1,
       "records": 143,
       "accepted": 0,
-      "updated": 143,
-      "duplicates": 0
+      "updated": 0,
+      "duplicates": 143
     },
     {
       "sourceId": "world-gwu-masters",
@@ -45,8 +45,8 @@
       "pages": 1,
       "records": 189,
       "accepted": 0,
-      "updated": 189,
-      "duplicates": 0
+      "updated": 0,
+      "duplicates": 189
     },
     {
       "sourceId": "world-ubc-masters",
@@ -54,8 +54,8 @@
       "pages": 4,
       "records": 218,
       "accepted": 0,
-      "updated": 218,
-      "duplicates": 0
+      "updated": 12,
+      "duplicates": 206
     },
     {
       "sourceId": "world-edinburgh-masters",
@@ -63,17 +63,17 @@
       "pages": 1,
       "records": 220,
       "accepted": 0,
-      "updated": 220,
-      "duplicates": 0
+      "updated": 0,
+      "duplicates": 220
     },
     {
       "sourceId": "world-auckland-masters",
       "countryCode": "NZ",
       "pages": 1,
-      "records": 94,
-      "accepted": 0,
-      "updated": 0,
-      "duplicates": 94
+      "records": 95,
+      "accepted": 1,
+      "updated": 94,
+      "duplicates": 0
     },
     {
       "sourceId": "world-chile-masters",
@@ -81,8 +81,8 @@
       "pages": 1,
       "records": 125,
       "accepted": 0,
-      "updated": 125,
-      "duplicates": 0
+      "updated": 0,
+      "duplicates": 125
     },
     {
       "sourceId": "world-twente-masters",
@@ -90,8 +90,8 @@
       "pages": 1,
       "records": 32,
       "accepted": 0,
-      "updated": 32,
-      "duplicates": 0
+      "updated": 0,
+      "duplicates": 32
     },
     {
       "sourceId": "world-cape-town-humanities-masters",
@@ -99,8 +99,8 @@
       "pages": 1,
       "records": 122,
       "accepted": 0,
-      "updated": 122,
-      "duplicates": 0
+      "updated": 0,
+      "duplicates": 122
     },
     {
       "sourceId": "world-trinity-dublin-masters",
@@ -108,8 +108,8 @@
       "pages": 1,
       "records": 136,
       "accepted": 0,
-      "updated": 136,
-      "duplicates": 0
+      "updated": 0,
+      "duplicates": 136
     },
     {
       "sourceId": "world-lund-masters-index",
@@ -117,8 +117,8 @@
       "pages": 1,
       "records": 17,
       "accepted": 0,
-      "updated": 17,
-      "duplicates": 0
+      "updated": 0,
+      "duplicates": 17
     },
     {
       "sourceId": "world-catholic-chile-masters",
@@ -144,8 +144,8 @@
       "pages": 1,
       "records": 143,
       "accepted": 0,
-      "updated": 143,
-      "duplicates": 0
+      "updated": 0,
+      "duplicates": 143
     },
     {
       "sourceId": "world-hku-taught-masters",
@@ -153,8 +153,8 @@
       "pages": 1,
       "records": 154,
       "accepted": 0,
-      "updated": 154,
-      "duplicates": 0
+      "updated": 0,
+      "duplicates": 154
     },
     {
       "sourceId": "world-strasbourg-masters",
@@ -167,8 +167,8 @@
       "pages": 1,
       "records": 18,
       "accepted": 0,
-      "updated": 18,
-      "duplicates": 0
+      "updated": 0,
+      "duplicates": 18
     },
     {
       "sourceId": "world-lyon1-masters",
@@ -176,8 +176,8 @@
       "pages": 1,
       "records": 54,
       "accepted": 0,
-      "updated": 54,
-      "duplicates": 0
+      "updated": 0,
+      "duplicates": 54
     }
   ]
 }
