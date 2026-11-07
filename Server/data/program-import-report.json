@@ -1,9 +1,9 @@
 {
   "sourceId": "university-copenhagen-masters",
-  "checkedAt": "2026-10-29",
+  "checkedAt": "2026-11-07",
   "sourceCoverage": {
     "sourceId": "university-copenhagen-masters",
-    "asOf": "2026-10-29",
+    "asOf": "2026-11-07",
     "listingComplete": true,
     "complete": false,
     "recordsFetched": 12,
@@ -13,10 +13,10 @@
   },
   "import": {
     "sourceId": "university-copenhagen-masters",
-    "checkedAt": "2026-10-29",
+    "checkedAt": "2026-11-07",
     "totalRecords": 12,
-    "accepted": 12,
-    "updated": 0,
+    "accepted": 0,
+    "updated": 12,
     "duplicates": 0,
     "unmatched": 0,
     "ambiguous": 0,
@@ -26,19 +26,370 @@
     "issues": []
   },
   "programCoverage": {
-    "institutionCount": 10268,
-    "institutionsWithPrograms": 133,
-    "institutionsWithoutPrograms": 10135,
-    "programCount": 1873,
-    "linkedProgramCount": 1873,
+    "regions": [
+      {
+        "region": "europe",
+        "programCount": 2922,
+        "countriesWithPrograms": 45
+      },
+      {
+        "region": "north-america",
+        "programCount": 945,
+        "countriesWithPrograms": 2
+      },
+      {
+        "region": "south-america",
+        "programCount": 134,
+        "countriesWithPrograms": 1
+      },
+      {
+        "region": "asia",
+        "programCount": 166,
+        "countriesWithPrograms": 9
+      },
+      {
+        "region": "africa",
+        "programCount": 122,
+        "countriesWithPrograms": 1
+      },
+      {
+        "region": "oceania",
+        "programCount": 94,
+        "countriesWithPrograms": 1
+      },
+      {
+        "region": "other",
+        "programCount": 0,
+        "countriesWithPrograms": 0
+      }
+    ],
+    "europe": {
+      "scope": "51 European countries and education systems, including transcontinental/Caucasus systems, Kazakhstan and Kosovo. This is institutional affiliation, not a guarantee of an on-site campus in every country. All programme coverage remains partial.",
+      "countryCount": 51,
+      "countriesWithPrograms": 51,
+      "countries": [
+        {
+          "countryCode": "AD",
+          "institutionCount": 1,
+          "institutionsWithPrograms": 1,
+          "programCount": 2
+        },
+        {
+          "countryCode": "AL",
+          "institutionCount": 16,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "AM",
+          "institutionCount": 12,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "AT",
+          "institutionCount": 46,
+          "institutionsWithPrograms": 2,
+          "programCount": 113
+        },
+        {
+          "countryCode": "AZ",
+          "institutionCount": 33,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "BA",
+          "institutionCount": 16,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "BE",
+          "institutionCount": 50,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "BG",
+          "institutionCount": 37,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "BY",
+          "institutionCount": 34,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "CH",
+          "institutionCount": 76,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "CY",
+          "institutionCount": 17,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "CZ",
+          "institutionCount": 30,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "DE",
+          "institutionCount": 321,
+          "institutionsWithPrograms": 115,
+          "programCount": 1664
+        },
+        {
+          "countryCode": "DK",
+          "institutionCount": 34,
+          "institutionsWithPrograms": 2,
+          "programCount": 13
+        },
+        {
+          "countryCode": "EE",
+          "institutionCount": 10,
+          "institutionsWithPrograms": 2,
+          "programCount": 4
+        },
+        {
+          "countryCode": "ES",
+          "institutionCount": 96,
+          "institutionsWithPrograms": 2,
+          "programCount": 114
+        },
+        {
+          "countryCode": "FI",
+          "institutionCount": 35,
+          "institutionsWithPrograms": 2,
+          "programCount": 6
+        },
+        {
+          "countryCode": "FR",
+          "institutionCount": 295,
+          "institutionsWithPrograms": 4,
+          "programCount": 74
+        },
+        {
+          "countryCode": "GB",
+          "institutionCount": 193,
+          "institutionsWithPrograms": 5,
+          "programCount": 224
+        },
+        {
+          "countryCode": "GE",
+          "institutionCount": 15,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "GR",
+          "institutionCount": 33,
+          "institutionsWithPrograms": 2,
+          "programCount": 2
+        },
+        {
+          "countryCode": "HR",
+          "institutionCount": 12,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "HU",
+          "institutionCount": 42,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "IE",
+          "institutionCount": 27,
+          "institutionsWithPrograms": 1,
+          "programCount": 136
+        },
+        {
+          "countryCode": "IS",
+          "institutionCount": 10,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "IT",
+          "institutionCount": 93,
+          "institutionsWithPrograms": 2,
+          "programCount": 144
+        },
+        {
+          "countryCode": "KZ",
+          "institutionCount": 29,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "LI",
+          "institutionCount": 2,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "LT",
+          "institutionCount": 17,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "LU",
+          "institutionCount": 2,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "LV",
+          "institutionCount": 24,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "MC",
+          "institutionCount": 1,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "MD",
+          "institutionCount": 12,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "ME",
+          "institutionCount": 1,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "MK",
+          "institutionCount": 9,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "MT",
+          "institutionCount": 4,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "NL",
+          "institutionCount": 48,
+          "institutionsWithPrograms": 5,
+          "programCount": 297
+        },
+        {
+          "countryCode": "NO",
+          "institutionCount": 25,
+          "institutionsWithPrograms": 2,
+          "programCount": 66
+        },
+        {
+          "countryCode": "PL",
+          "institutionCount": 138,
+          "institutionsWithPrograms": 2,
+          "programCount": 2
+        },
+        {
+          "countryCode": "PT",
+          "institutionCount": 65,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "RO",
+          "institutionCount": 63,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "RS",
+          "institutionCount": 13,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "RU",
+          "institutionCount": 308,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "SE",
+          "institutionCount": 37,
+          "institutionsWithPrograms": 4,
+          "programCount": 32
+        },
+        {
+          "countryCode": "SI",
+          "institutionCount": 4,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "SK",
+          "institutionCount": 31,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "SM",
+          "institutionCount": 1,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "TR",
+          "institutionCount": 188,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "UA",
+          "institutionCount": 75,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "VA",
+          "institutionCount": 5,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        },
+        {
+          "countryCode": "XK",
+          "institutionCount": 5,
+          "institutionsWithPrograms": 1,
+          "programCount": 1
+        }
+      ],
+      "completeness": "partial"
+    },
+    "institutionCount": 10274,
+    "institutionsWithPrograms": 207,
+    "institutionsWithoutPrograms": 10067,
+    "programCount": 4383,
+    "linkedProgramCount": 4383,
     "unmatchedProgramCount": 0,
-    "coveragePercent": 1.3,
+    "coveragePercent": 2.01,
     "sources": [
       {
         "id": "daad-international-programmes",
         "kind": "official-directory",
         "checkedAt": "2026-10-28",
-        "programCount": 1657,
+        "programCount": 1662,
         "status": "partial",
         "complete": false
       },
@@ -81,14 +432,614 @@
         "programCount": 12,
         "status": "partial",
         "complete": false
+      },
+      {
+        "id": "europe-kuleuven-be",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-cuni-cz",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-uw-edu-pl",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-bme-hu",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-tcd-ie",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-uni-lu",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-uc-pt",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-ub-edu",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-unibuc-ro",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-tu-sofia-bg",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-uni-lj-si",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-stuba-sk",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-unizg-hr",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-unsa-ba",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-bg-ac-rs",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-ucg-ac-me",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-unitir-edu-al",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-ukim-mk",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-uni-pr-edu",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-vu-lt",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-lu-lv",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-hi-is",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-uni-li",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-ucy-ac-cy",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-um-edu-mt",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-uoc-gr",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-uda-ad",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 2,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-unirsm-sm",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-monaco-edu",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-utm-md",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-hse-ru",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-knu-ua",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-tsu-ge",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-aua-am",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-ada-edu-az",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-metu-edu-tr",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-ethz-ch",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-grsu-by",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-unigre-it",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "cybersure-consortium",
+        "kind": "official-directory",
+        "checkedAt": "2026-10-29",
+        "programCount": 7,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "multidiverse-consortium",
+        "kind": "official-directory",
+        "checkedAt": "2026-10-29",
+        "programCount": 3,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-oru-se",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 3,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "europe-nu-edu-kz",
+        "kind": "institution",
+        "checkedAt": "2026-10-29",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "sprint1-stanford-edu",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "sprint1-harvard-edu",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "sprint1-gatech-edu",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 2,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "sprint1-berkeley-edu",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "sprint1-cmu-edu",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "sprint1-uu-nl",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 3,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "sprint1-rug-nl",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "sprint1-lu-se",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 2,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "sprint1-kth-se",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "sprint1-nus-edu-sg",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 2,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "sprint1-ntu-edu-sg",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "sprint1-hkust-edu-hk",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 2,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "sprint1-u-tokyo-ac-jp",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 1,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "world-boston-masters",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 243,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "world-illinois-masters",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 151,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "world-wisconsin-masters",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 143,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "world-gwu-masters",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 189,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "world-ubc-masters",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 212,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "world-edinburgh-masters",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 220,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "world-auckland-masters",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 94,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "world-chile-masters",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 125,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "world-twente-masters",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 32,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "world-cape-town-humanities-masters",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 122,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "world-trinity-dublin-masters",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 136,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "world-lund-masters-index",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 18,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "world-catholic-chile-masters",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 9,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "world-bologna-masters",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 143,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "world-hku-taught-masters",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 154,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "world-leiden-masters-index",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 260,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "world-valencia-masters",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 113,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "world-sorbonne-science-masters",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 18,
+        "status": "partial",
+        "complete": false
+      },
+      {
+        "id": "world-lyon1-masters",
+        "kind": "institution",
+        "checkedAt": "2026-11-02",
+        "programCount": 54,
+        "status": "partial",
+        "complete": false
       }
     ],
     "countries": [
       {
         "countryCode": "AD",
         "institutionCount": 1,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 2
       },
       {
         "countryCode": "AE",
@@ -111,14 +1062,14 @@
       {
         "countryCode": "AL",
         "institutionCount": 16,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "AM",
         "institutionCount": 12,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "AO",
@@ -135,8 +1086,8 @@
       {
         "countryCode": "AT",
         "institutionCount": 46,
-        "institutionsWithPrograms": 1,
-        "programCount": 112
+        "institutionsWithPrograms": 2,
+        "programCount": 113
       },
       {
         "countryCode": "AU",
@@ -147,14 +1098,14 @@
       {
         "countryCode": "AZ",
         "institutionCount": 33,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "BA",
         "institutionCount": 16,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "BB",
@@ -171,8 +1122,8 @@
       {
         "countryCode": "BE",
         "institutionCount": 50,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "BF",
@@ -183,8 +1134,8 @@
       {
         "countryCode": "BG",
         "institutionCount": 37,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "BH",
@@ -249,8 +1200,8 @@
       {
         "countryCode": "BY",
         "institutionCount": 34,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "BZ",
@@ -262,7 +1213,7 @@
         "countryCode": "CA",
         "institutionCount": 159,
         "institutionsWithPrograms": 1,
-        "programCount": 1
+        "programCount": 212
       },
       {
         "countryCode": "CD",
@@ -285,8 +1236,8 @@
       {
         "countryCode": "CH",
         "institutionCount": 76,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "CI",
@@ -297,8 +1248,8 @@
       {
         "countryCode": "CL",
         "institutionCount": 65,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 2,
+        "programCount": 134
       },
       {
         "countryCode": "CM",
@@ -339,20 +1290,20 @@
       {
         "countryCode": "CY",
         "institutionCount": 17,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "CZ",
         "institutionCount": 30,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "DE",
         "institutionCount": 321,
         "institutionsWithPrograms": 115,
-        "programCount": 1658
+        "programCount": 1664
       },
       {
         "countryCode": "DJ",
@@ -363,8 +1314,8 @@
       {
         "countryCode": "DK",
         "institutionCount": 34,
-        "institutionsWithPrograms": 1,
-        "programCount": 12
+        "institutionsWithPrograms": 2,
+        "programCount": 13
       },
       {
         "countryCode": "DM",
@@ -394,7 +1345,7 @@
         "countryCode": "EE",
         "institutionCount": 10,
         "institutionsWithPrograms": 2,
-        "programCount": 3
+        "programCount": 4
       },
       {
         "countryCode": "EG",
@@ -411,8 +1362,8 @@
       {
         "countryCode": "ES",
         "institutionCount": 96,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 2,
+        "programCount": 114
       },
       {
         "countryCode": "ET",
@@ -424,7 +1375,7 @@
         "countryCode": "FI",
         "institutionCount": 35,
         "institutionsWithPrograms": 2,
-        "programCount": 5
+        "programCount": 6
       },
       {
         "countryCode": "FJ",
@@ -440,9 +1391,9 @@
       },
       {
         "countryCode": "FR",
-        "institutionCount": 294,
-        "institutionsWithPrograms": 1,
-        "programCount": 1
+        "institutionCount": 295,
+        "institutionsWithPrograms": 4,
+        "programCount": 74
       },
       {
         "countryCode": "GA",
@@ -453,8 +1404,8 @@
       {
         "countryCode": "GB",
         "institutionCount": 193,
-        "institutionsWithPrograms": 4,
-        "programCount": 4
+        "institutionsWithPrograms": 5,
+        "programCount": 224
       },
       {
         "countryCode": "GD",
@@ -465,8 +1416,8 @@
       {
         "countryCode": "GE",
         "institutionCount": 15,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "GF",
@@ -513,8 +1464,8 @@
       {
         "countryCode": "GR",
         "institutionCount": 33,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 2,
+        "programCount": 2
       },
       {
         "countryCode": "GT",
@@ -537,8 +1488,8 @@
       {
         "countryCode": "HK",
         "institutionCount": 15,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 2,
+        "programCount": 156
       },
       {
         "countryCode": "HN",
@@ -549,8 +1500,8 @@
       {
         "countryCode": "HR",
         "institutionCount": 12,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "HT",
@@ -561,8 +1512,8 @@
       {
         "countryCode": "HU",
         "institutionCount": 42,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "ID",
@@ -573,8 +1524,8 @@
       {
         "countryCode": "IE",
         "institutionCount": 27,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 136
       },
       {
         "countryCode": "IL",
@@ -603,14 +1554,14 @@
       {
         "countryCode": "IS",
         "institutionCount": 10,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "IT",
         "institutionCount": 93,
-        "institutionsWithPrograms": 1,
-        "programCount": 1
+        "institutionsWithPrograms": 2,
+        "programCount": 144
       },
       {
         "countryCode": "JM",
@@ -627,8 +1578,8 @@
       {
         "countryCode": "JP",
         "institutionCount": 572,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "KE",
@@ -681,8 +1632,8 @@
       {
         "countryCode": "KZ",
         "institutionCount": 29,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "LA",
@@ -705,8 +1656,8 @@
       {
         "countryCode": "LI",
         "institutionCount": 2,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "LK",
@@ -729,20 +1680,20 @@
       {
         "countryCode": "LT",
         "institutionCount": 17,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "LU",
         "institutionCount": 2,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "LV",
         "institutionCount": 24,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "LY",
@@ -757,16 +1708,22 @@
         "programCount": 0
       },
       {
+        "countryCode": "MC",
+        "institutionCount": 1,
+        "institutionsWithPrograms": 1,
+        "programCount": 1
+      },
+      {
         "countryCode": "MD",
         "institutionCount": 12,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "ME",
         "institutionCount": 1,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "MG",
@@ -777,8 +1734,8 @@
       {
         "countryCode": "MK",
         "institutionCount": 9,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "ML",
@@ -819,8 +1776,8 @@
       {
         "countryCode": "MT",
         "institutionCount": 4,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "MU",
@@ -891,14 +1848,14 @@
       {
         "countryCode": "NL",
         "institutionCount": 48,
-        "institutionsWithPrograms": 2,
-        "programCount": 2
+        "institutionsWithPrograms": 5,
+        "programCount": 297
       },
       {
         "countryCode": "NO",
         "institutionCount": 25,
-        "institutionsWithPrograms": 1,
-        "programCount": 65
+        "institutionsWithPrograms": 2,
+        "programCount": 66
       },
       {
         "countryCode": "NP",
@@ -915,8 +1872,8 @@
       {
         "countryCode": "NZ",
         "institutionCount": 12,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 94
       },
       {
         "countryCode": "OM",
@@ -963,8 +1920,8 @@
       {
         "countryCode": "PL",
         "institutionCount": 138,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 2,
+        "programCount": 2
       },
       {
         "countryCode": "PR",
@@ -981,8 +1938,8 @@
       {
         "countryCode": "PT",
         "institutionCount": 65,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "PY",
@@ -1005,20 +1962,20 @@
       {
         "countryCode": "RO",
         "institutionCount": 63,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "RS",
         "institutionCount": 13,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "RU",
         "institutionCount": 308,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "RW",
@@ -1047,26 +2004,26 @@
       {
         "countryCode": "SE",
         "institutionCount": 37,
-        "institutionsWithPrograms": 1,
-        "programCount": 8
+        "institutionsWithPrograms": 4,
+        "programCount": 32
       },
       {
         "countryCode": "SG",
         "institutionCount": 18,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 2,
+        "programCount": 3
       },
       {
         "countryCode": "SI",
         "institutionCount": 4,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "SK",
         "institutionCount": 31,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "SL",
@@ -1077,8 +2034,8 @@
       {
         "countryCode": "SM",
         "institutionCount": 1,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "SN",
@@ -1167,8 +2124,8 @@
       {
         "countryCode": "TR",
         "institutionCount": 188,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "TT",
@@ -1191,8 +2148,8 @@
       {
         "countryCode": "UA",
         "institutionCount": 75,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "UG",
@@ -1202,9 +2159,9 @@
       },
       {
         "countryCode": "US",
-        "institutionCount": 2349,
-        "institutionsWithPrograms": 1,
-        "programCount": 1
+        "institutionCount": 2353,
+        "institutionsWithPrograms": 9,
+        "programCount": 733
       },
       {
         "countryCode": "UY",
@@ -1221,8 +2178,8 @@
       {
         "countryCode": "VA",
         "institutionCount": 5,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "VC",
@@ -1257,8 +2214,8 @@
       {
         "countryCode": "XK",
         "institutionCount": 5,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 1
       },
       {
         "countryCode": "YE",
@@ -1269,8 +2226,8 @@
       {
         "countryCode": "ZA",
         "institutionCount": 29,
-        "institutionsWithPrograms": 0,
-        "programCount": 0
+        "institutionsWithPrograms": 1,
+        "programCount": 122
       },
       {
         "countryCode": "ZM",

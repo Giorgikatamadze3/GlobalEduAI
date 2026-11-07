@@ -2,7 +2,7 @@
 const BusinessUI=(()=>{
  let tab='overview',offset=0,rows=[],loadId=0,selectedUser=null,accountRequest=0;
  const t=k=>BillingUI.t(k),esc=v=>escapeHTML(v??''),money=v=>BillingUI.money(v);
- const tr=(ka,en,ru)=>({ka,en,ru}[I18n.getLanguage()]);
+ const tr=(ka,en,ru)=>I18n.localize({ka,en,ru});
  const request=(path,method,body)=>BillingUI.request('/admin'+path,method,body);
  const sections=['overview','users','payments','consultations','editPlans','reports','events','refunds'];
  const icons={reports:'⚑',overview:'▦',users:'◎',payments:'▤',consultations:'◷',editPlans:'◇',events:'↺',refunds:'↩'};

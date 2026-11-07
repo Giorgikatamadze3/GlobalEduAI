@@ -99,10 +99,12 @@ function updateAccountUI() {
     $('advisorSpecialties').querySelectorAll('input').forEach(input => input.checked = (profile.specialties || []).includes(input.value));
 }
 function switchDashTab(tab) {
+    if(['documents','application'].includes(tab))tab='calendar';
+    if(tab==='calendar')StudyCalendar.render();
     if(tab==='planner'&&currentUser&&typeof BillingUI!=='undefined')BillingUI.track('planner');
-    const titles = {profile:'ჩემი პროფილი',planner:'ჩემი გეგმა',documents:'დოკუმენტები',application:'PDF გენერაცია',favorites:'ჩემი ფავორიტები',organization:'პროფესიული პროფილი'};
+    const titles = {profile:'ჩემი პროფილი',planner:'ჩემი გეგმა',calendar:'სასწავლო კალენდარი',favorites:'ჩემი ფავორიტები',organization:'პროფესიული პროფილი'};
     if (!currentUser || !titles[tab]) return;
-    if ((tab === 'organization' && currentUser.role !== 'advisor') || (['documents','application','planner'].includes(tab) && currentUser.role !== 'student')) tab = 'profile';
+    if ((tab === 'organization' && currentUser.role !== 'advisor') || (['calendar','planner'].includes(tab) && currentUser.role !== 'student')) tab = 'profile';
     document.querySelectorAll('.dash-tab-content').forEach(panel => panel.style.display = panel.id === `tab-${tab}` ? 'block' : 'none');
     document.querySelectorAll('.dash-tab-btn').forEach(button => { const active = button.dataset.tab === tab; button.classList.toggle('active',active); button.setAttribute('aria-pressed',String(active)); });
     $('dashboard-title').textContent = titles[tab];
@@ -114,13 +116,12 @@ function applyAccount(user) {
     const changed = currentUser?._id !== user._id;
     currentUser = user;
     window.dispatchEvent(new CustomEvent('globaledu:accountchange'));
-    if (changed) { uploadedFiles = []; renderDocuments(); $('pdf-preview').style.display = 'none'; }
     restoreFavorites(); updateAccountUI(); renderFavorites(); renderFeatured(); if(catalogData)filterAndSortUnis(false);
 }
 function expireAccountSession() {
-    const hadAccount = Boolean(currentUser); currentUser = null; uploadedFiles = [];
-    restoreFavorites(); updateAccountUI(); renderDocuments(); renderFavorites(); renderFeatured();
-    $('profileForm').reset(); $('advisorProfileForm').reset(); $('pdf-preview').style.display = 'none';
+    const hadAccount = Boolean(currentUser); currentUser = null;
+    restoreFavorites(); updateAccountUI(); renderFavorites(); renderFeatured();
+    $('profileForm').reset(); $('advisorProfileForm').reset();
     if(catalogData)filterAndSortUnis(false);
     if ($('page-dashboard').classList.contains('active')||$('page-admin')?.classList.contains('active')||$('page-business')?.classList.contains('active')||$('page-billing')?.classList.contains('active')) { switchAuthTab('login'); navigateTo('page-register'); }
     if (hadAccount) notify('სესია დასრულდა. პირად სივრცეში შესასვლელად გაიარე ავტორიზაცია.');
@@ -156,11 +157,11 @@ async function logout() {
     const buttons = [...document.querySelectorAll('[onclick="logout()"]')]; buttons.forEach(button => button.disabled = true);
     try {
         await api('/api/auth/logout',{method:'POST'});
-        currentUser = null; uploadedFiles = [];
-        restoreFavorites(); updateAccountUI(); renderDocuments(); renderFavorites(); renderFeatured(); filterAndSortUnis(false);
+        currentUser = null;
+        restoreFavorites(); updateAccountUI(); renderFavorites(); renderFeatured(); filterAndSortUnis(false);
         $('profileForm').reset(); $('advisorProfileForm').reset(); $('loginForm').reset(); $('registerForm').reset();
         document.querySelectorAll('.dash-tab-content').forEach(panel => panel.style.display = panel.id === 'tab-profile' ? 'block' : 'none');
-        $('pdf-preview').style.display = 'none'; navigateTo('page-home'); notify('ანგარიშიდან გამოხვედი.');
+        navigateTo('page-home'); notify('ანგარიშიდან გამოხვედი.');
     } catch (error) { notify(accountErrorMessage(error),true); }
     finally { buttons.forEach(button => button.disabled = false); }
 }

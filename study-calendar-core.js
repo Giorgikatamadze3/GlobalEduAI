@@ -1,0 +1,15 @@
+(function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;else root.StudyCalendarCore=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
+ 'use strict';
+ const validDate=v=>typeof v==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(v)&&Number.isFinite(Date.parse(v+'T00:00:00Z'))&&new Date(v+'T00:00:00Z').toISOString().slice(0,10)===v;
+ function events(programs,state={},asOf){if(!validDate(asOf))throw Error('A valid comparison date is required.');const rows=[];for(const p of programs){if(!p?.id||typeof p.title!=='string')continue;for(const[kind,date]of [['official',p.deadline?.date],['personal',state.plans?.[p.id]?.targetDate]])if(validDate(date)&&date>=asOf)rows.push({id:p.id,kind,date,title:p.title,institution:p.institutionName||'',url:p.programUrl||p.sources?.[0]?.url||'',checkedAt:p.sources?.[0]?.checkedAt||null,cycle:p.deadline?.cycle||null});}return rows.sort((a,b)=>a.date.localeCompare(b.date)||a.title.localeCompare(b.title)||a.kind.localeCompare(b.kind));}
+ const escape=value=>String(value??'').replace(/\\/g,'\\\\').replace(/\r\n|\r|\n/g,'\\n').replace(/;/g,'\\;').replace(/,/g,'\\,');
+ function fold(line){const rows=[];let current='',bytes=0;for(const char of line){const size=new TextEncoder().encode(char).length;if(bytes+size>73){rows.push(current);current=' ';bytes=1;}current+=char;bytes+=size;}rows.push(current);return rows.join('\r\n');}
+ function calendar(items,{now=new Date().toISOString(),officialLabel='Official application deadline',personalLabel='Personal target date'}={}){
+  if(!Number.isFinite(Date.parse(now)))throw Error('A valid export timestamp is required.');const stamp=new Date(now).toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z/,'Z');
+  const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//GlobalEdu//Study Calendar//EN','CALSCALE:GREGORIAN','METHOD:PUBLISH'];
+  for(const e of items){if(!validDate(e.date)||!['official','personal'].includes(e.kind))throw Error('Invalid calendar event.');const end=new Date(e.date+'T00:00:00Z');end.setUTCDate(end.getUTCDate()+1);const label=e.kind==='official'?officialLabel:personalLabel;let url='';try{const u=new URL(e.url);if(['https:','http:'].includes(u.protocol)&&!u.username&&!u.password)url=u.href;}catch{}
+   lines.push('BEGIN:VEVENT','UID:'+escape(encodeURIComponent(e.id)+'-'+e.kind+'-'+e.date+'@globaleduai'),'DTSTAMP:'+stamp,'DTSTART;VALUE=DATE:'+e.date.replaceAll('-',''),'DTEND;VALUE=DATE:'+end.toISOString().slice(0,10).replaceAll('-',''),'SUMMARY:'+escape(label+' · '+e.title),'DESCRIPTION:'+escape([e.institution,e.kind==='official'?'Verify the current deadline on the official source.':'Your own target date; not a university deadline.',url,e.checkedAt?'Source checked: '+e.checkedAt:''].filter(Boolean).join('\n')));if(url)lines.push('URL:'+escape(url));for(const days of [7,1])lines.push('BEGIN:VALARM','ACTION:DISPLAY','TRIGGER:-P'+days+'D','DESCRIPTION:'+escape(label+' · '+e.title),'END:VALARM');lines.push('END:VEVENT');
+  }lines.push('END:VCALENDAR');return lines.map(fold).join('\r\n')+'\r\n';
+ }
+ return Object.freeze({validDate,events,calendar});
+});

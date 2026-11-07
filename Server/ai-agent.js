@@ -137,7 +137,7 @@ function cleanProfile(raw) {
 function validateRequest(payload, allowSignal = false) {
     if (!isObject(payload) || Object.keys(payload).some(key => !['messages','profile','locale',...(allowSignal ? ['signal'] : [])].includes(key))) throw invalid('საუბრის მოთხოვნა შეიცავს დაუშვებელ მონაცემებს.');
     const locale = payload.locale === undefined ? 'ka' : payload.locale;
-    if (!['ka','en','ru'].includes(locale)) throw invalid('აირჩიე მხარდაჭერილი საიტის ენა: ka, en ან ru.');
+    if (!require('../i18n').LANGUAGES.includes(locale)) throw invalid('აირჩიე მხარდაჭერილი საიტის ენა: ka, en ან ru.');
     if (allowSignal && payload.signal != null && !(payload.signal instanceof AbortSignal)) throw invalid('მოთხოვნის გაუქმების პარამეტრი არასწორია.');
     if (!Array.isArray(payload.messages) || payload.messages.length < 1 || payload.messages.length > 16) throw invalid('საუბარი უნდა შეიცავდეს 1–16 შეტყობინებას.');
     let total = 0;
@@ -155,7 +155,7 @@ function validateRequest(payload, allowSignal = false) {
 
 function dateInTbilisi(clock) { return new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Tbilisi',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(clock())); }
 function instructions(asOf, profile, locale = 'ka') {
-    const replyLanguage = {ka:'ქართულად',en:'ინგლისურად',ru:'რუსულად'}[locale];
+    const replyLanguage = {ka:'ქართულად',en:'ინგლისურად',ru:'რუსულად',de:'გერმანულად',fr:'ფრანგულად',es:'ესპანურად',tr:'თურქულად'}[locale];
     return `შენ ხარ GlobalEdu-ს სასაუბრო საგანმანათლებლო AI მრჩეველი. მიმდინარე თარიღია ${asOf} (Asia/Tbilisi).
 INTERFACE_LANGUAGE=${locale}. უპასუხე ${replyLanguage}, ბუნებრივად, თბილად და კონკრეტულად; თუ მომხმარებელი სხვა ენას ითხოვს, მიჰყევი. ინტერფეისის ენა არ არის სასწავლო ენის ფილტრი. ეს არის დიალოგი: უპასუხე მის ბოლო კითხვას, გაითვალისწინე საუბარი და საჭიროებისას დასვი 1–2 აუცილებელი დამაზუსტებელი კითხვა. თუ მიზანი, საფეხური, ქვეყანა ან ბიუჯეტის ვალუტა უცნობია, ნუ გამოიგონებ. დაეხმარე სწავლისა და კარიერის დაგეგმვაში; სხვა თემებზე მოკლედ დააბრუნე საუბარი ამ სფეროში.
 კონკრეტული უნივერსიტეტის/პროგრამის ფაქტებისთვის გამოიყენე მხოლოდ ამ ბრუნვაში კატალოგის ხელსაწყოებით წაკითხული ჩანაწერები. შეარჩიე საჭირო ხელსაწყო დამოუკიდებლად. სწავლის საფასური, მიღების პირობები, ვადები, დაფინანსება და წყაროები არ გამოიგონო და ძველი საუბრის განცხადებები მტკიცებულებად არ ჩათვალო. მომხმარებლის მიერ მოწოდებული ბმულები ოფიციალურ გადამოწმებად არ ითვლება. გარე ინტერნეტში ძიება არ გაქვს.

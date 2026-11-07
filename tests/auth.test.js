@@ -9,6 +9,14 @@ const path = require('node:path');
 const express = require('express');
 
 let sequence = 0;
+test('signed-in users and administrators change passwords and invalidate old sessions without SMTP',async t=>{
+ for(const administrator of [false,true]){
+  const context=await setup(t,{adminPolicy:()=>administrator}),owner=await register(context);
+  const wrong=await context.request('/auth/password/change',{method:'POST',cookie:owner.cookie.value,body:{currentPassword:'WrongPassword123',password:'UpdatedPassword123',passwordConfirm:'UpdatedPassword123'}});assert.equal(wrong.status,400);
+  const changed=await context.request('/auth/password/change',{method:'POST',cookie:owner.cookie.value,body:{currentPassword:owner.payload.password,password:'UpdatedPassword123',passwordConfirm:'UpdatedPassword123'}});assert.equal(changed.status,200);assert.equal(changed.data.user.permissions.admin,administrator);assert.equal(changed.data.user.passwordHash,undefined);
+  assert.equal((await context.request('/auth/me',{cookie:owner.cookie.value})).status,401);assert.equal((await context.request('/auth/me',{cookie:changed.cookie.value})).status,200);
+ }
+});
 test('short student registration accepts an omitted phone and optional profile',async t=>{
     const context=await setup(t),body=registration();delete body.phone;delete body.studentProfile;
     const result=await register(context,body);assert.equal(result.data.user.phone,'');assert.equal(result.data.user.studentProfile.educationLevel,'');

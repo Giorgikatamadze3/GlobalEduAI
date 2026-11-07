@@ -8,7 +8,7 @@ const I18n=require('../i18n');
 const Core=require('../catalog-core');
 
 test('all three interface languages translate critical student, funding and GPA actions',()=>{
-    assert.deepEqual(I18n.LANGUAGES,['ka','en','ru']);assert.ok(I18n.phraseCount>1100);
+    assert.deepEqual(I18n.LANGUAGES,['ka','en','ru','de','fr','es','tr']);assert.ok(I18n.phraseCount>1100);
     for(const source of ['მთავარი','შესვლა','რეგისტრაცია','დაფინანსების წყაროები','GPA — 0–4 სკალა','შეიყვანე პაროლი','პროგრამის შესაბამისობა გადასამოწმებელია']){
         assert.equal(I18n.t(source,'ka'),source);
         for(const language of ['en','ru'])assert.ok(!/[ა-ჰ]/.test(I18n.t(source,language)),`${language}: ${source}`);

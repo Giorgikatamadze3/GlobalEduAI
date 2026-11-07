@@ -1,7 +1,7 @@
 'use strict';
 const ContentUI=(()=>{
     let data={loans:[],faq:[],categories:[]},base=null,busy=false,appliedVersion=null,loadState='loading';
-    const local=value=>typeof value==='object'?(value?.[I18n.getLanguage()]||value?.ka||''):value||'';
+    const local=value=>typeof value==='object'?I18n.localize(value):value||'';
     const esc=value=>escapeHTML(value);
     function loanCard(r){return `<article class="loan-card"><div class="loan-top"><span class="tag">${r.countryCodes.map(c=>esc(CatalogCore.countryInfo(c).name)).join(' · ')}</span><span class="small-note">${esc(formatDate(r.checkedAt))}</span></div><h2 data-i18n-ignore>${esc(r.title)}</h2><p data-i18n-ignore>${esc(r.provider)}</p><div class="loan-rate"><span>საპროცენტო განაკვეთი</span><strong>${r.interest.annualPercent===null?'პირობების მიხედვით':r.interest.annualPercent+'%'}</strong><small>${esc(local(r.interest.note))}</small></div><h3>ვისთვისაა ხელმისაწვდომი</h3><p>${esc(local(r.eligibility))}</p><h3>დაფარვის პირობები</h3><p>${esc(local(r.repayment))}</p>${sourceLinks(r.sources)}<p class="small-note">სესხი დაბრუნებას მოითხოვს. ქვეყნის არჩევა პირად შესაბამისობას არ ადასტურებს.</p></article>`;}
     function loans(){FundingUI.renderDirectory();}

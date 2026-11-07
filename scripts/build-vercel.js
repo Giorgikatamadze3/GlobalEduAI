@@ -6,15 +6,12 @@ const {loadCatalog} = require('../Server/catalog-service');
 
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const PUBLIC_FILES = Object.freeze([
-    'experience-core.js','experience-ui.js','experience.css','billing-ui.js','business-ui.js','billing.css','content-ui.js','admin-ui.js','content.css','index.html', 'i18n.js', 'style.css', 'ai-agent.css', 'script.js', 'catalog-core.js',
+    'locale-extensions.js','language-picker.js','study-calendar-core.js','study-calendar.js','account-security.js','catalog-updates.js','features.css','experience-core.js','experience-ui.js','experience.css','billing-ui.js','business-ui.js','billing.css','content-ui.js','admin-ui.js','content.css','index.html', 'i18n.js', 'style.css', 'ai-agent.css', 'script.js', 'catalog-core.js',
     'scoring-core.js', 'catalog-ui.js', 'discovery-ui.js', 'ai-agent-ui.js',
     'account-ui.js', 'student-profile-core.js', 'academic-profile-ui.js', 'account-workspace.css', 'student-workspace-core.js', 'student-workspace.js', 'preview-data.js', 'scholarships.js', 'funding-core.js', 'funding-ui.js', 'funding.css'
 ]);
-const PDF_LIB_ROOT = path.dirname(require.resolve('pdf-lib/package.json'));
-const VENDOR_ASSETS = Object.freeze([
-    Object.freeze({filename:'assets/vendor/pdf-lib.min.js', source:require.resolve('pdf-lib/dist/pdf-lib.min.js')}),
-    Object.freeze({filename:'assets/vendor/pdf-lib.LICENSE.md', source:path.join(PDF_LIB_ROOT, 'LICENSE.md'), optional:true})
-]);
+const VENDOR_ASSETS = Object.freeze([]);
+const RETIRED_VENDOR_FILES = new Set(['assets/vendor/pdf-lib.min.js','assets/vendor/pdf-lib.LICENSE.md']);
 const ASSET_EXTENSIONS = new Set([
     '.avif', '.gif', '.ico', '.jpeg', '.jpg', '.png', '.svg', '.webp',
     '.woff', '.woff2', '.ttf', '.otf', '.mp3', '.mp4', '.ogg', '.wav', '.webm'
@@ -69,7 +66,7 @@ function assertReplaceableOutput(root, outputDirectory, expectedFiles) {
     const allowed = new Set(expectedFiles);
     for (const filename of existingFiles) {
         const previouslyGenerated = generated &&
-            (PUBLIC_FILES.includes(filename) || VENDOR_ASSETS.some(asset => asset.filename === filename) || filename === 'catalog.json' ||
+            (PUBLIC_FILES.includes(filename) || RETIRED_VENDOR_FILES.has(filename) || VENDOR_ASSETS.some(asset => asset.filename === filename) || filename === 'catalog.json' ||
                 filename === GENERATED_MARKER || allowedAsset(filename));
         if (!allowed.has(filename) && !previouslyGenerated) {
             throw new Error(`Refusing to replace an unrecognized public file: ${filename}`);

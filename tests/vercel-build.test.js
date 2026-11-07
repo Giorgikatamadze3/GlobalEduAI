@@ -58,8 +58,8 @@ test('Vercel output contains only approved frontend files, assets and validated 
     for (const asset of vendorAssets) {
         assert.deepEqual(fs.readFileSync(path.join(result.outputDirectory, asset.filename)), fs.readFileSync(asset.source), asset.filename);
     }
-    assert.ok(expected.includes('assets/vendor/pdf-lib.min.js'));
-    assert.ok(expected.includes('assets/vendor/pdf-lib.LICENSE.md'));
+    assert.equal(expected.includes('assets/vendor/pdf-lib.min.js'),false);
+    assert.equal(expected.includes('assets/vendor/pdf-lib.LICENSE.md'),false);
     assert.equal(expected.some(filename => filename.endsWith('.map')), false);
 
     const catalog = JSON.parse(fs.readFileSync(path.join(result.outputDirectory, 'catalog.json'), 'utf8'));
@@ -83,8 +83,11 @@ test('rebuilding owned public output is deterministic and removes stale generate
     const first = buildPublicSite({projectRoot:directory});
     const initial = digest(first.outputDirectory);
     fs.writeFileSync(path.join(first.outputDirectory, 'assets', 'stale.png'), 'old generated image');
+    fs.mkdirSync(path.join(first.outputDirectory,'assets','vendor'),{recursive:true});
+    fs.writeFileSync(path.join(first.outputDirectory,'assets','vendor','pdf-lib.LICENSE.md'),'retired generated licence fixture');
     buildPublicSite({projectRoot:directory});
     assert.equal(fs.existsSync(path.join(first.outputDirectory, 'assets', 'stale.png')), false);
+    assert.equal(fs.existsSync(path.join(first.outputDirectory,'assets','vendor','pdf-lib.LICENSE.md')),false);
     assert.equal(digest(first.outputDirectory), initial);
 });
 

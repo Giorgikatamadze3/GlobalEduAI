@@ -1,9 +1,6 @@
 require('dotenv').config({ path: require('path').join(__dirname, '.env'), quiet:true });
 const express = require('express');
 const cors = require('cors');
-const multer = require('multer');
-const { PDFDocument } = require('pdf-lib');
-const nodemailer = require('nodemailer');
 const path = require('path');
 const { loadCatalog } = require('./catalog-service');
 const { createConfiguredAccountStore } = require('./account-store-config');
@@ -53,15 +50,14 @@ app.use('/api/billing',createBillingPublicRouter({store:billingStore,service:bil
 app.use('/api/advisor-agent',express.json({limit:'128kb'}),(req,res,next)=>req.path.replace(/\/+$/,'').toLowerCase()==='/chat'?authRouter.originAllowed(req,res,()=>authRouter.authenticated(req,res,next)):next(),createAdvisorRouter({catalog,billingStore}));
 app.use('/api/user/workspace',express.json({limit:'1mb'}));
 app.use(express.json({limit:'64kb'}));
-app.get('/assets/vendor/pdf-lib.min.js',(req,res)=>res.sendFile(require.resolve('pdf-lib/dist/pdf-lib.min.js')));
 app.use('/assets', express.static(path.join(__dirname, '../assets')));
-for (const filename of ['experience-core.js','experience-ui.js','experience.css','billing-ui.js','business-ui.js','billing.css','content-ui.js','admin-ui.js','content.css','index.html','i18n.js','style.css','ai-agent.css','funding.css','script.js','catalog-core.js','scoring-core.js','funding-core.js','funding-ui.js','catalog-ui.js','discovery-ui.js','ai-agent-ui.js','account-ui.js', 'student-profile-core.js', 'academic-profile-ui.js', 'account-workspace.css', 'student-workspace-core.js', 'student-workspace.js','preview-data.js','scholarships.js']) {
+for (const filename of ['locale-extensions.js','language-picker.js','study-calendar-core.js','study-calendar.js','account-security.js','catalog-updates.js','features.css','experience-core.js','experience-ui.js','experience.css','billing-ui.js','business-ui.js','billing.css','content-ui.js','admin-ui.js','content.css','index.html','i18n.js','style.css','ai-agent.css','funding.css','script.js','catalog-core.js','scoring-core.js','funding-core.js','funding-ui.js','catalog-ui.js','discovery-ui.js','ai-agent-ui.js','account-ui.js', 'student-profile-core.js', 'academic-profile-ui.js', 'account-workspace.css', 'student-workspace-core.js', 'student-workspace.js','preview-data.js','scholarships.js']) {
     app.get(`/${filename}`, (req,res) => res.sendFile(path.join(__dirname, '..', filename)));
 }
 app.get('/', (req,res) => res.sendFile(path.join(__dirname, '../index.html')));
 const publicPages=require('./public-pages').createPublicPages({catalog});
-app.get('/:lang/programs/:id',(req,res,next)=>['ka','en','ru'].includes(req.params.lang)?publicPages.program(req,res):next());
-app.get('/:lang/countries/:code',(req,res,next)=>['ka','en','ru'].includes(req.params.lang)?publicPages.country(req,res):next());
+app.get('/:lang/programs/:id',(req,res,next)=>require('../i18n').LANGUAGES.includes(req.params.lang)?publicPages.program(req,res):next());
+app.get('/:lang/countries/:code',(req,res,next)=>require('../i18n').LANGUAGES.includes(req.params.lang)?publicPages.country(req,res):next());
 app.get('/sitemap.xml',publicPages.sitemap);
 app.get('/sitemap-:lang.xml',publicPages.sitemap);
 app.get('/robots.txt',publicPages.robots);
@@ -81,6 +77,10 @@ function serveCatalog(req,res) {
 app.get('/api/catalog',serveCatalog);
 app.get('/catalog.json',serveCatalog);
 app.get('/api/catalog/meta', (req,res) => res.json(catalog.payload.metadata));
+app.get('/api/catalog/refresh-status',(req,res)=>{
+    let status={status:'not-run',intervalHours:6,lastSuccessfulAt:null};try{status=require('./data/catalog-refresh-status.json');}catch{}
+    res.set('Cache-Control','no-store').json({status:status.status,intervalHours:6,attemptedAt:status.attemptedAt||null,completedAt:status.completedAt||null,lastSuccessfulAt:status.lastSuccessfulAt||null,successfulSources:status.successfulSources||0,failedSources:status.failedSources||0});
+});
 app.get('/api/institutions', (req,res) => res.json(catalog.listInstitutions(req.query)));
 app.get('/api/institutions/:id', (req,res) => {
     const institution = catalog.institutionById(req.params.id);
@@ -121,42 +121,7 @@ app.get('/api/agencies', (req, res) => {
     } catch (error) { res.status(500).json({ message: "შეცდომა სააგენტოების ჩატვირთვისას." }); }
 });
 
-const upload = multer({storage:multer.memoryStorage(),limits:{files:20,fileSize:4*1024*1024}});
-const paidFeature=feature=>[authRouter.originAllowed,authRouter.authenticated,async(req,res,next)=>{try{req.billingTicket=await billingStore.consume(req.account,feature);res.once('finish',()=>{if(res.statusCode>=400)billingStore.release(req.billingTicket).catch(()=>{});});next();}catch(e){billingError(e,req,res,next);}}];
-app.post('/api/generate-pdf', ...paidFeature('pdf'),upload.array('documents'), async (req, res) => {
-    try {
-        if (!req.files || req.files.length === 0) return res.status(400).json({ message: "ფაილები არ არის." });
-        if(req.files.reduce((sum,file)=>sum+file.size,0)>4*1024*1024)return res.status(400).json({message:'PDF პაკეტის საერთო ზომა მაქსიმუმ 4 MB უნდა იყოს.'});
-        const mergedPdf = await PDFDocument.create();
-        for (const file of req.files) {
-            const pdf = await PDFDocument.load(file.buffer);
-            const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
-            copiedPages.forEach((page) => mergedPdf.addPage(page));
-        }
-        const pdfBytes = await mergedPdf.save();
-        res.setHeader('Content-Type', 'application/pdf');
-        res.setHeader('Content-Disposition', 'attachment; filename="GlobalEdu_Application.pdf"');
-        res.send(Buffer.from(pdfBytes));
-    } catch (error) { res.status(500).json({ message: "PDF-ის გენერაცია ვერ მოხერხდა." }); }
-});
-
-app.post('/api/send-application', (req,res,next)=>{
-    if(process.env.ENABLE_APPLICATION_EMAIL!=='true'||!process.env.EMAIL_USER||!process.env.EMAIL_PASS)return res.status(503).json({message:'აპლიკაციის ელფოსტით გაგზავნა ამ ეტაპზე ხელმისაწვდომი არ არის.'});
-    next();
-},upload.single('finalPdf'), async (req, res) => {
-    try {
-        const { uniEmail, studentName, messageBody } = req.body;
-        const pdfFile = req.file;
-        let transporter = nodemailer.createTransport({ service: 'gmail', auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASS } });
-        let mailOptions = {
-            from: `"GlobalEdu Admissions" <${process.env.EMAIL_USER}>`,
-            to: uniEmail, subject: `New Application Submission: ${studentName}`, text: messageBody,
-            attachments: [{ filename: `${studentName.replace(' ', '_')}_Application.pdf`, content: pdfFile.buffer }]
-        };
-        await transporter.sendMail(mailOptions);
-        res.status(200).json({ message: "აპლიკაცია გაიგზავნა!" });
-    } catch (error) { res.status(500).json({ message: "მეილის გაგზავნა ვერ მოხერხდა." }); }
-});
+app.post(['/api/generate-pdf','/api/send-application'],(req,res)=>res.status(410).json({code:'FEATURE_RETIRED',message:'PDF გაერთიანება ამოღებულია. გამოიყენე სასწავლო კალენდარი და პირადი გეგმა.'}));
 
 if (require.main === module) {
     const PORT = process.env.PORT || 3000;

@@ -94,7 +94,7 @@ const FundingUI = (() => {
         const assessments=catalogData?FundingCore.fundingForProgram(null,null,catalogData.funding,null,{asOf:todayISO()}):[];
         const cards=assessments.filter(a=>matches(directoryType(a),a.scope.countryCodes)).map(a=>assessmentCard(a,true));
         cards.push(...loans.filter(r=>matches('loan',r.countryCodes)).map(ContentUI.loanCard));
-        const label={ka:'შესაძლებლობა',en:'opportunities',ru:'возможностей'}[I18n.getLanguage()];
+        const label=I18n.localize({ka:'შესაძლებლობა',en:'opportunities',ru:'возможностей'});
         const state=ContentUI.getLoanLoadState();
         $('fundingStatus').textContent=cards.length+' '+label+(state==='error'?' · სესხების განახლება ვერ მოხერხდა. სცადე ხელახლა.':state==='loading'?' · სესხები იტვირთება…':'');
         $('fundingResults').innerHTML=cards.join('')||'<div class="empty-state"><h3>შესაბამისი დაფინანსება ვერ მოიძებნა.</h3><p>შეცვალე ფილტრები ან გაასუფთავე არჩევანი.</p></div>';

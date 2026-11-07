@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "updatedAt": "2026-11-02",
+    "updatedAt": "2026-11-07",
     "scope": "Source registry for incremental, attributed imports of real study-programme listings. The worldwide institution directory is not evidence of worldwide programme coverage.",
     "matchingPolicy": "Match each imported programme to a unique existing institution using an institution-owned domain verified by the official source. Quarantine missing, unmatched or ambiguous domains; never distribute a country's programmes across all its institutions.",
     "unknownDataPolicy": "Keep unpublished degree, primary teaching language, mode, fees, deadlines, entry requirements and funding unknown. Multiple teaching languages do not prove an English-only route. Funding schemes require their own eligibility and deadline evidence.",
@@ -1137,7 +1137,7 @@
         "allowed": true,
         "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
       },
-      "checkedAt": "2026-11-02",
+      "checkedAt": "2026-11-07",
       "kind": "institution",
       "enabled": true,
       "adapter": "world-official-index",
@@ -1173,7 +1173,7 @@
         "allowed": true,
         "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
       },
-      "checkedAt": "2026-11-02",
+      "checkedAt": "2026-11-07",
       "kind": "institution",
       "enabled": true,
       "adapter": "world-official-index",
@@ -1206,7 +1206,7 @@
         "allowed": true,
         "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
       },
-      "checkedAt": "2026-11-02",
+      "checkedAt": "2026-11-07",
       "kind": "institution",
       "enabled": true,
       "adapter": "world-official-index",
@@ -1241,7 +1241,7 @@
         "allowed": true,
         "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
       },
-      "checkedAt": "2026-11-02",
+      "checkedAt": "2026-11-07",
       "kind": "institution",
       "enabled": true,
       "adapter": "world-official-index",
@@ -1275,7 +1275,7 @@
         "allowed": true,
         "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
       },
-      "checkedAt": "2026-11-02",
+      "checkedAt": "2026-11-07",
       "kind": "institution",
       "enabled": true,
       "adapter": "world-official-index",
@@ -1342,7 +1342,7 @@
         "allowed": true,
         "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
       },
-      "checkedAt": "2026-11-02",
+      "checkedAt": "2026-11-07",
       "kind": "institution",
       "enabled": true,
       "adapter": "world-official-index",
@@ -1375,7 +1375,7 @@
         "allowed": true,
         "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
       },
-      "checkedAt": "2026-11-02",
+      "checkedAt": "2026-11-07",
       "kind": "institution",
       "enabled": true,
       "adapter": "world-official-index",
@@ -1409,7 +1409,7 @@
         "allowed": true,
         "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
       },
-      "checkedAt": "2026-11-02",
+      "checkedAt": "2026-11-07",
       "kind": "institution",
       "enabled": true,
       "adapter": "world-official-index",
@@ -1443,7 +1443,7 @@
         "allowed": true,
         "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
       },
-      "checkedAt": "2026-11-02",
+      "checkedAt": "2026-11-07",
       "kind": "institution",
       "enabled": true,
       "adapter": "world-official-index",
@@ -1478,7 +1478,7 @@
         "allowed": true,
         "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
       },
-      "checkedAt": "2026-11-02",
+      "checkedAt": "2026-11-07",
       "kind": "institution",
       "enabled": true,
       "adapter": "world-official-index",
@@ -1539,7 +1539,14 @@
       "url": "https://www.unibo.it/en/study/second-cycle-degree",
       "format": "bologna-cards",
       "minRecords": 100,
-      "checkedAt": "2026-11-02",
+      "robots": {
+        "url": "https://www.unibo.it/robots.txt",
+        "checkedAt": "2026-11-02",
+        "httpStatus": 200,
+        "allowed": true,
+        "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
+      },
+      "checkedAt": "2026-11-07",
       "kind": "institution",
       "enabled": true,
       "adapter": "world-official-index",
@@ -1548,13 +1555,6 @@
       "license": {
         "status": "factual-metadata-and-links-only-no-open-licence-claimed",
         "note": "No descriptions, images or private data imported. Recheck robots and reuse terms before scheduled collection."
-      },
-      "robots": {
-        "url": "https://www.unibo.it/robots.txt",
-        "checkedAt": "2026-11-02",
-        "httpStatus": 200,
-        "allowed": true,
-        "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
       }
     },
     {
@@ -1582,7 +1582,14 @@
         "https://portal.hku.hk/SavedQueryService/Execute/any-faculty-opening-programmes/%25/629270001/1/10"
       ],
       "minRecords": 30,
-      "checkedAt": "2026-11-02",
+      "robots": {
+        "url": "https://portal.hku.hk/robots.txt",
+        "checkedAt": "2026-11-02",
+        "httpStatus": 404,
+        "allowed": true,
+        "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
+      },
+      "checkedAt": "2026-11-07",
       "kind": "institution",
       "enabled": true,
       "adapter": "world-official-index",
@@ -1591,13 +1598,6 @@
       "license": {
         "status": "factual-metadata-and-links-only-no-open-licence-claimed",
         "note": "No descriptions, images or private data imported. Recheck robots and reuse terms before scheduled collection."
-      },
-      "robots": {
-        "url": "https://portal.hku.hk/robots.txt",
-        "checkedAt": "2026-11-02",
-        "httpStatus": 404,
-        "allowed": true,
-        "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
       }
     },
     {
@@ -1652,7 +1652,14 @@
       "format": "masters-links",
       "pathPattern": "Titulacio\\.html\\?id=",
       "minRecords": 70,
-      "checkedAt": "2026-11-02",
+      "robots": {
+        "url": "https://www.uv.es/robots.txt",
+        "checkedAt": "2026-11-02",
+        "httpStatus": 200,
+        "allowed": true,
+        "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
+      },
+      "checkedAt": "2026-11-07",
       "kind": "institution",
       "enabled": true,
       "adapter": "world-official-index",
@@ -1661,13 +1668,6 @@
       "license": {
         "status": "factual-metadata-and-links-only-no-open-licence-claimed",
         "note": "No descriptions, images or private data imported. Recheck robots and reuse terms before scheduled collection."
-      },
-      "robots": {
-        "url": "https://www.uv.es/robots.txt",
-        "checkedAt": "2026-11-02",
-        "httpStatus": 200,
-        "allowed": true,
-        "scope": "Wildcard robots rules checked for configured catalogue path; no licence is implied."
       }
     },
     {
@@ -1693,7 +1693,7 @@
         "allowed": true,
         "scope": "Catalogue path checked against published wildcard rules; factual titles and links only."
       },
-      "checkedAt": "2026-11-02",
+      "checkedAt": "2026-11-07",
       "kind": "institution",
       "enabled": true,
       "adapter": "world-official-index",
@@ -1729,7 +1729,7 @@
         "allowed": true,
         "scope": "Catalogue path checked against published wildcard rules; factual titles and links only."
       },
-      "checkedAt": "2026-11-02",
+      "checkedAt": "2026-11-07",
       "kind": "institution",
       "enabled": true,
       "adapter": "world-official-index",

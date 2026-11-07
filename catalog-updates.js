@@ -1,0 +1,7 @@
+'use strict';
+const CatalogUpdates=(()=>{
+ let last=null,busy=false,known=false;
+ async function refresh(){if(busy||document.hidden)return;busy=true;try{const response=await api('/api/catalog/refresh-status'),data=await response.json();const label=$('catalogUpdateStatus');if(label){const local=I18n.localize({ka:'მონაცემების ავტომატური შემოწმება',en:'Automatic data checks',ru:'Автоматическая проверка данных'}),date=data.lastSuccessfulAt?new Date(data.lastSuccessfulAt).toLocaleString(I18n.getLanguage()):I18n.t('დასაზუსტებელია');label.textContent=local+' · 6h · '+date+(data.status==='partial'?' · '+I18n.localize({ka:'ნაწილობრივი განახლება',en:'Partial refresh',ru:'Частичное обновление'}):data.status==='failed'?' · '+I18n.localize({ka:'ბოლო მცდელობა ვერ დასრულდა',en:'Last attempt failed',ru:'Последняя попытка не удалась'}):'');}if(known&&data.lastSuccessfulAt&&last!==data.lastSuccessfulAt&&catalogData){const result=await fetchUniversities({force:true});if(!result)return;}last=data.lastSuccessfulAt;known=true;}catch{/* Discovery continues from the last published catalogue. */}finally{busy=false;}}
+ function init(){const note=document.createElement('p');note.id='catalogUpdateStatus';note.className='catalog-update-status';note.setAttribute('role','status');$('catalogCoverage').after(note);refresh();setInterval(refresh,10*60000);window.addEventListener('focus',refresh);window.addEventListener('globaledu:languagechange',refresh);}
+ return {init,refresh};
+})();

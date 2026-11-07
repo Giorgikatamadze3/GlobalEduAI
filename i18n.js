@@ -6,7 +6,8 @@
 }(typeof globalThis !== 'undefined' ? globalThis : this, function () {
     'use strict';
 
-    const LANGUAGES = Object.freeze(['ka', 'en', 'ru']);
+    const extensions=typeof module==='object'&&module.exports?require('./locale-extensions'):globalThis.LocaleExtensions||{};
+    const LANGUAGES = Object.freeze(['ka', 'en', 'ru',...Object.keys(extensions)]);
     const STORAGE_KEY = 'globalEduLanguage';
     const PHRASES = [
   [
@@ -5486,6 +5487,12 @@
       ['შენი შეტყობინებები იგზავნება OpenAI-სთან. აკადემიური პროფილი ემატება მხოლოდ მაშინ, როცა მის გაზიარებას მონიშნავ. ჩატის ტექსტი ბრაუზერის მუდმივ საცავში არ ინახება. არ გაგზავნო პაროლები, საბანკო ბარათი ან პირადობის დოკუმენტი.','Your messages are sent to OpenAI. Your academic profile is added only when you choose to share it. Chat text is not kept in persistent browser storage. Do not send passwords, payment card details or identity documents.','Сообщения отправляются OpenAI. Учебный профиль добавляется только при выборе его передачи. Чат не сохраняется в постоянном хранилище браузера. Не отправляй пароли, данные карты или документы личности.'],
       ['ანგარიშისთვის აღირიცხება ფუნქციების გამოყენება და პაკეტის ლიმიტები. გადახდის ჩართვისას ბარათის მონაცემები მუშავდება ბანკის გვერდზე; GlobalEdu ბარათის ნომერსა და უსაფრთხოების კოდს არ ინახავს.','Feature usage and plan limits are recorded for your account. When payments are enabled, card details are processed on the bank’s page; GlobalEdu does not store card numbers or security codes.','Для аккаунта учитываются использование функций и лимиты тарифа. При включении оплаты данные карты обрабатываются на странице банка; GlobalEdu не хранит номер карты и код безопасности.']
     );
+    PHRASES.push(
+      ['სასწავლო კალენდარი','Study calendar','Учебный календарь'],['კალენდრის ექსპორტი','Export calendar','Экспорт календаря'],['ვადის კალენდარში დამატება','Add to calendar','Добавить в календарь'],['დადასტურებული ვადა','Verified deadline','Подтверждённый срок'],['პირადი სამიზნე თარიღი','Personal target date','Личная целевая дата'],
+      ['ოფიციალური ვადები და შენი პირადი თარიღები ერთ ადგილას.','Official deadlines and your personal target dates in one place.','Официальные сроки и личные даты в одном месте.'],['შენი მომავალი ვადები აქ გამოჩნდება.','Your upcoming deadlines will appear here.','Здесь появятся ближайшие сроки.'],['შეინახე პროგრამა დადასტურებული ვადით ან ჩემს გეგმაში მიუთითე პირადი სამიზნე თარიღი.','Save a programme with a verified deadline or add your own target date in My plan.','Сохрани программу с подтверждённым сроком или укажи личную дату в плане.'],
+      ['ანგარიშის უსაფრთხოება','Account security','Безопасность аккаунта'],['მიმდინარე პაროლი','Current password','Текущий пароль'],['გაიმეორე პაროლი','Repeat password','Повтори пароль'],['შეგიძლია შეცვალო საკუთარი პაროლი. სხვა მოწყობილობებზე შესვლა დასრულდება.','You can change your own password. Sessions on other devices will end.','Можно изменить свой пароль. Сеансы на других устройствах завершатся.'],['მიმდინარე პაროლი არასწორია.','Current password is incorrect.','Текущий пароль неверен.'],['პაროლი შეიცვალა. სხვა სესიები დასრულებულია.','Password changed. Other sessions have ended.','Пароль изменён. Другие сеансы завершены.'],['მომავალი ვადები','Upcoming deadlines','Ближайшие сроки']
+    );
+    PHRASES.push(['ანგარიშის პირადი გეგმა სინქრონდება შენს მოწყობილობებს შორის. ბრაუზერში შეიძლება დარჩეს ადგილობრივი ასლი. საიტი აღარ იღებს PDF ფაილებს. სასწავლო კალენდარი იქმნება პროგრამების ვადებისა და შენ მიერ მითითებული თარიღების მიხედვით.','Your account plan syncs between devices. A local copy may remain in the browser. The site no longer accepts PDF uploads. Your study calendar uses published deadlines and the personal dates you enter.','План аккаунта синхронизируется между устройствами. В браузере может оставаться локальная копия. Загрузка PDF больше не поддерживается. Учебный календарь использует опубликованные сроки и указанные тобой даты.']);
     const dictionaries = {en:new Map(), ru:new Map()};
     const normalize = value => String(value ?? '').replace(/\s+/g, ' ').trim();
     for (const [source,en,ru] of PHRASES) {
@@ -5493,7 +5500,7 @@
         if (ru) dictionaries.ru.set(normalize(source),ru);
     }
     let language='ka', documentRef=null, windowRef=null, observer=null, scheduled=false;
-    const originals=new WeakMap(), attributes=new WeakMap(), countryDictionaries={ka:new Map(),en:new Map(),ru:new Map()};
+    const originals=new WeakMap(), attributes=new WeakMap(), countryDictionaries={ka:new Map(),en:new Map(),ru:new Map(),...Object.fromEntries(Object.keys(extensions).map(code=>[code,new Map()]))};
     let countriesLoaded=false;
     const fragmentMatchers={en:null,ru:null};
     const ignored='script,style,noscript,textarea,input,code,pre,svg,[contenteditable="true"],[data-i18n-ignore],.agent-message-body,.agent-message-sources,.file-name,#profileTopName,#sidebarName,#mainAvatar,#sidebarAvatar';
@@ -5545,7 +5552,7 @@
     function loadCountries() {
         if(countriesLoaded)return;
         const englishNames=new Intl.DisplayNames(['en'],{type:'region'});
-        for(const lang of ['ka','en','ru']){
+        for(const lang of LANGUAGES){
             const names=new Intl.DisplayNames([lang],{type:'region'});
             for(const [code,name] of COUNTRY_LABELS){
                 try{const label=lang==='ka'&&/[ა-ჰ]/.test(name)?name:names.of(code);countryDictionaries[lang].set(normalize(name),label);countryDictionaries[lang].set(normalize(englishNames.of(code)),label);}catch{}
@@ -5556,6 +5563,7 @@
     }
     function translate(value,requestedLanguage=language) {
         const source=String(value??'');
+        if(extensions[requestedLanguage]){loadCountries();const english=translate(source,'en');return countryDictionaries[requestedLanguage].get(normalize(source))||extensions[requestedLanguage][normalize(english)]||english;}
         if(!LANGUAGES.includes(requestedLanguage))return source;
         if(requestedLanguage==='ka'){loadCountries();return countryDictionaries.ka.get(normalize(source))||source;}
         const key=normalize(source);
@@ -5646,5 +5654,6 @@
         };
         if(doc.readyState==='loading')doc.addEventListener('DOMContentLoaded',start,{once:true});else start();
     }
-    return Object.freeze({LANGUAGES,STORAGE_KEY,t:translate,translate,setLanguage,getLanguage:()=>language,apply,init,phraseCount:PHRASES.length});
+    function localize(values){const lang=language;if(values?.[lang])return values[lang];const english=values?.en||values?.ka||'';return extensions[lang]?.[normalize(english)]||english;}
+    return Object.freeze({LANGUAGES,STORAGE_KEY,t:translate,translate,localize,setLanguage,getLanguage:()=>language,apply,init,phraseCount:PHRASES.length});
 }));

@@ -8,7 +8,6 @@ let allUniversities = [];
 let agencies = [];
 let compareList = [];
 let favoritesList = [];
-let uploadedFiles = [];
 let currentUser = DESIGN_PREVIEW ? {...PREVIEW_USER, favorites:[...PREVIEW_USER.favorites]} : null;
 let currentPage = 1;
 let universitiesStatus = 'loading';
@@ -33,11 +32,11 @@ function safeLink(value) {
     try { const url = new URL(value); return ['https:', 'http:'].includes(url.protocol) ? url.href : null; }
     catch { return null; }
 }
-function formatPrice(value) { return value == null ? 'დასაზუსტებელია' : `${Number(value).toLocaleString(I18n.getLanguage()==='ka'?'ka-GE':I18n.getLanguage()==='ru'?'ru-RU':'en-GB')}`; }
+function formatPrice(value) { return value == null ? 'დასაზუსტებელია' : `${Number(value).toLocaleString(I18n.getLanguage())}`; }
 function formatDate(value) {
     if (!value) return 'დასაზუსტებელია';
     const date = new Date(value);
-    const locale={ka:'ka-GE',en:'en-GB',ru:'ru-RU'}[globalThis.I18n?.getLanguage?.()||'ka'];
+    const locale={ka:'ka-GE',en:'en-GB',ru:'ru-RU',de:'de-DE',fr:'fr-FR',es:'es-ES',tr:'tr-TR'}[globalThis.I18n?.getLanguage?.()||'ka'];
     return Number.isNaN(date.getTime()) ? 'დასაზუსტებელია' : date.toLocaleDateString(locale,{day:'numeric',month:'long',year:'numeric',...(/^\d{4}-\d{2}-\d{2}$/.test(value)?{timeZone:'UTC'}:{})});
 }
 function notify(message, error = false) {
@@ -165,51 +164,6 @@ function openAgency(index) {
     details.innerHTML=`<p>კატალოგში ყოფნა პარტნიორობას ან გადამოწმებას არ ნიშნავს.</p><dl><dt>მომსახურების ენა და ფორმატი</dt><dd>${escapeHTML(agency.languages?.join(', ')||'დასაზუსტებელია')}</dd><dt>ფასი და პასუხის დრო</dt><dd>${escapeHTML(agency.pricingNote||'დასაზუსტებელია უშუალოდ კონსულტანტთან')}</dd></dl>${website?`<a class="btn-main" href="${escapeHTML(website)}" target="_blank" rel="noopener noreferrer">ოფიციალური ვებსაიტი ↗</a>`:'<p>ამ ჩანაწერის მოქმედი კონტაქტი ჯერ დადასტურებული არ არის. მანამდე შეგიძლია პროგრამები და მათი ოფიციალური წყაროები შეისწავლო.</p><button class="btn-secondary" data-discover-programs>პროგრამების ძიება</button>'}`;$('agencyModalDescription').after(details);openModal('agencyModal');
 }
 
-// Documents and PDF packet
-function handleFiles(files) {
-    let added = 0;
-    for (const file of files) {
-        if (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) { notify(`${file.name}: აირჩიე PDF ფორმატის ფაილი.`, true); continue; }
-        if (file.size > 20 * 1024 * 1024) { notify(`${file.name}: ფაილის ზომა აღემატება 20 MB-ს.`, true); continue; }
-        if (uploadedFiles.length >= 20) { notify('ერთ პაკეტში შეგიძლია დაამატო მაქსიმუმ 20 დოკუმენტი.', true); break; }
-        if (uploadedFiles.some(item => item.file.name === file.name && item.file.size === file.size && item.file.lastModified === file.lastModified)) continue;
-        uploadedFiles.push({file,category:$('docCategory').selectedOptions[0].textContent}); added++;
-    }
-    renderDocuments(); if (added) { $('pdf-preview').style.display = 'none'; notify(`დაემატა ${added} დოკუმენტი.`); }
-}
-function renderDocuments() {
-    $('documentsTable').querySelector('tbody').innerHTML = uploadedFiles.map(({file,category},i) => `<tr><td><div class="file-name"><span class="file-icon">PDF</span><strong>${escapeHTML(file.name)}</strong></div></td><td>${escapeHTML(category)}</td><td>${file.size < 1024*1024 ? `${Math.ceil(file.size/1024)} KB` : `${(file.size/(1024*1024)).toFixed(1)} MB`}</td><td><button class="file-remove" data-action="remove-file" data-index="${i}" aria-label="${escapeHTML(file.name)} — წაშლა">×</button></td></tr>`).join('');
-    $('documentsEmpty').style.display = uploadedFiles.length ? 'none' : 'block';
-    $('statDocuments').textContent = uploadedFiles.length; $('pdfFileCount').textContent = `${uploadedFiles.length} დოკუმენტი არჩეულია`;
-}
-let pdfLibraryRequest;
-function loadPdfLibrary() {
-    if(window.PDFLib)return Promise.resolve(window.PDFLib);
-    if(!pdfLibraryRequest)pdfLibraryRequest=new Promise((resolve,reject)=>{
-        const script=document.createElement('script');script.src='assets/vendor/pdf-lib.min.js';
-        script.onload=()=>window.PDFLib?resolve(window.PDFLib):reject(new Error('PDF მოდული ვერ ჩაიტვირთა.'));
-        script.onerror=()=>{script.remove();pdfLibraryRequest=null;reject(new Error('PDF მოდულის ჩატვირთვა ვერ მოხერხდა. სცადე ხელახლა.'));};
-        document.head.append(script);
-    });
-    return pdfLibraryRequest;
-}
-async function generatePDF() {
-    if(!BillingUI.requireFeature('pdf'))return;
-    if (!uploadedFiles.length) { notify('ჯერ შეარჩიე PDF დოკუმენტები.'); switchDashTab('documents'); return; }
-    const button = $('generate-btn'); button.disabled = true; $('pdf-loading').style.display = 'block'; $('pdf-preview').style.display = 'none'; $('pdf-progress').style.width = '45%';
-    const selectedFiles=[...uploadedFiles];
-    try {
-        if(selectedFiles.reduce((sum,{file})=>sum+file.size,0)>4*1024*1024)throw Error('ერთ პაკეტში აირჩიე მაქსიმუმ 4 MB დოკუმენტები.');
-        const data=new FormData();for(const {file}of selectedFiles)data.append('documents',file);
-        const response=await api('/api/generate-pdf',{method:'POST',body:data,signal:AbortSignal.timeout(60000)});
-        const blob=await response.blob();const url = URL.createObjectURL(blob);
-        const link = document.createElement('a'); link.href = url; link.download = 'GlobalEdu_Application.pdf'; document.body.append(link); link.click(); link.remove();
-        setTimeout(() => URL.revokeObjectURL(url), 30000);
-        $('pdf-progress').style.width = '100%'; $('pdf-preview').style.display = 'block'; notify('შენი PDF პაკეტი მზადაა.');BillingUI.refresh();
-    } catch (error) { notify(error.message || 'ფაილების გაერთიანება ვერ მოხერხდა.', true); }
-    finally { $('pdf-loading').style.display = 'none'; button.disabled = false; }
-}
-
 // Profile-based guidance: program matching, without invented admission probabilities.
 function toggleCustomInput(selectId, customId) {
     const custom = $(customId); const show = $(selectId).value === 'other';
@@ -233,7 +187,6 @@ document.addEventListener('click', event => {
     if (action === 'universities') navigateTo('page-universities');
     if (action === 'scholarships') navigateTo('page-scholarships');
     if (action === 'agency') openAgency(Number(target.dataset.index));
-    if (action === 'remove-file') { uploadedFiles.splice(Number(target.dataset.index),1); renderDocuments(); $('pdf-preview').style.display = 'none'; }
     if (action === 'page' && !target.disabled) { currentPage = Number(target.dataset.page); filterAndSortUnis(false); $('programSearch').scrollIntoView({behavior:'smooth',block:'start'}); }
     if (action === 'advisor-catalog') { closeAllModals(); setCatalogView('institutions'); navigateTo('page-universities'); }
     if (action === 'catalog-view') setCatalogView(target.dataset.catalogView);
@@ -264,10 +217,6 @@ let searchTimer;
 $('programSearch').addEventListener('input',() => { clearTimeout(searchTimer); searchTimer=setTimeout(()=>filterAndSortUnis(),120); });
 $('heroSearch').addEventListener('submit', async event => { event.preventDefault();await fetchUniversities(); resetFilters(false); $('filterCountry').value=$('heroCountry').value; $('filterDegree').value=$('heroDegree').value; StudentDiscovery.refreshMulti('filterCountry');StudentDiscovery.refreshMulti('filterDegree');setCatalogView('programs'); navigateTo('page-universities');Experience.results(); });
 document.querySelectorAll('.password-toggle').forEach(button => button.addEventListener('click',() => { const input = $(button.dataset.input); const show = input.type === 'password'; input.type = show ? 'text' : 'password'; button.setAttribute('aria-label', show ? 'პაროლის დამალვა' : 'პაროლის ჩვენება'); button.setAttribute('aria-pressed',String(show));button.textContent=I18n.t(show?'დამალვა':'ჩვენება'); }));
-$('dragDropZone').addEventListener('click',() => $('docInput').click());
-$('docInput').addEventListener('change',event => { handleFiles(event.target.files); event.target.value = ''; });
-['dragenter','dragover'].forEach(type => $('dragDropZone').addEventListener(type,event => { event.preventDefault(); $('dragDropZone').classList.add('dragover'); }));
-['dragleave','drop'].forEach(type => $('dragDropZone').addEventListener(type,event => { event.preventDefault(); $('dragDropZone').classList.remove('dragover'); if (type === 'drop') handleFiles(event.dataTransfer.files); }));
 document.querySelectorAll('.accordion-header').forEach((header,i) => {
     header.setAttribute('role','button'); header.tabIndex = 0; header.setAttribute('aria-expanded','false'); header.setAttribute('aria-controls',`faq-${i}`); header.nextElementSibling.id = `faq-${i}`; header.querySelector('.acc-icon').textContent = '+';
     header.addEventListener('keydown',event => { if (['Enter',' '].includes(event.key)) { event.preventDefault(); toggleAccordion(header); } });
@@ -284,8 +233,8 @@ const syncCatalogDrawer=()=>{$('catalogFilterDrawer').open=!catalogMobile.matche
 syncCatalogDrawer();catalogMobile.addEventListener('change',syncCatalogDrawer);
 ContentUI.init(); BillingUI.init();
 initAccountForms();
-ChatAdvisor.init();Experience.init();
+ChatAdvisor.init();Experience.init();LanguagePicker.init();StudyCalendar.init();AccountSecurity.init();CatalogUpdates.init();
 if (DESIGN_PREVIEW) { $('previewBanner').hidden = false; document.body.classList.add('preview-mode'); }
-restoreFavorites(); updateAccountUI(); renderDocuments(); renderFavorites();
+restoreFavorites(); updateAccountUI(); renderFavorites();
 navigateTo(`page-${location.hash.slice(1)||'home'}`,false);
 bootstrapAccount();

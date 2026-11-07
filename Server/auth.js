@@ -136,6 +136,13 @@ function createAuthRouter({store,cookieSecure=process.env.NODE_ENV==='production
         await issueSession(req,res,user,req.body.rememberMe===true);if(billingStore)await billingStore.touch(user,'login').catch(()=>{});res.json({user:publicAccount(user)});
     }));
     router.get('/auth/me',authenticated,wrap(async(req,res)=>{if(billingStore)await billingStore.touch(req.account).catch(()=>{});res.json({user:publicAccount(req.account)});}));
+    router.post('/auth/password/change',originAllowed,rateLimit,authenticated,wrap(async(req,res)=>{
+        onlyKeys(req.body,['currentPassword','password','passwordConfirm']);const body=req.body,password=validatePassword(body.password);
+        if(password!==body.passwordConfirm)fail('პაროლები ერთმანეთს არ ემთხვევა.','passwordConfirm');
+        if(typeof body.currentPassword!=='string'||Buffer.byteLength(body.currentPassword,'utf8')>72||!await bcrypt.compare(body.currentPassword,req.account.passwordHash))return res.status(400).json({message:'მიმდინარე პაროლი არასწორია.',fields:{currentPassword:'მიმდინარე პაროლი არასწორია.'}});
+        if(!await store.changePassword(req.account.id,req.account.passwordHash,await bcrypt.hash(password,12)))return res.status(409).json({message:'პაროლი სხვა სესიაში შეიცვალა. შედი ხელახლა.'});
+        const updated=await store.findById(req.account.id);await issueSession(req,res,updated,false);res.json({message:'პაროლი შეიცვალა. სხვა სესიები დასრულებულია.',user:publicAccount(updated)});
+    }));
     const reserveRecovery=billingStore?async(email,ip)=>billingStore.transaction(async q=>{
         const digest=value=>crypto.createHmac('sha256',recoveryMailer.signingSecret).update(value).digest('hex');
         const ipHash=digest('ip:'+ip),emailHash=digest('email:'+email),stamp=now();
