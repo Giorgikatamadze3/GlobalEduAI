@@ -54,7 +54,7 @@
       },
       {
         "region": "oceania",
-        "programCount": 94,
+        "programCount": 95,
         "countriesWithPrograms": 1
       },
       {
@@ -380,8 +380,8 @@
     "institutionCount": 10274,
     "institutionsWithPrograms": 207,
     "institutionsWithoutPrograms": 10067,
-    "programCount": 4383,
-    "linkedProgramCount": 4383,
+    "programCount": 4384,
+    "linkedProgramCount": 4384,
     "unmatchedProgramCount": 0,
     "coveragePercent": 2.01,
     "sources": [
@@ -932,8 +932,8 @@
       {
         "id": "world-auckland-masters",
         "kind": "institution",
-        "checkedAt": "2026-11-02",
-        "programCount": 94,
+        "checkedAt": "2026-11-07",
+        "programCount": 95,
         "status": "partial",
         "complete": false
       },
@@ -1873,7 +1873,7 @@
         "countryCode": "NZ",
         "institutionCount": 12,
         "institutionsWithPrograms": 1,
-        "programCount": 94
+        "programCount": 95
       },
       {
         "countryCode": "OM",
