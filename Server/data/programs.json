@@ -215096,8 +215096,8 @@
         "sourceId": "world-ubc-masters",
         "sourceRecordId": "/prospective-students/graduate-degree-programs/master-of-arts-literacy-education",
         "kind": "institution",
-        "recordUrl": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs?page=2",
-        "listingSourceUrl": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs?page=2",
+        "recordUrl": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs?page=1",
+        "listingSourceUrl": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs?page=1",
         "checkedAt": "2026-11-08"
       },
       "imports": [
@@ -217777,7 +217777,7 @@
       "institutionName": "University of British Columbia",
       "institutionWebsite": "https://ubc.ca/",
       "countryCode": "CA",
-      "title": "Literacy Education Master of Education Faculty of Education",
+      "title": "Master of Education in Literacy Education (MEd)",
       "field": null,
       "category": null,
       "degree": "master",
@@ -217841,8 +217841,8 @@
         "sourceId": "world-ubc-masters",
         "sourceRecordId": "/prospective-students/graduate-degree-programs/master-of-education-literacy-education",
         "kind": "institution",
-        "recordUrl": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs?page=1",
-        "listingSourceUrl": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs?page=1",
+        "recordUrl": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs?page=2",
+        "listingSourceUrl": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs?page=2",
         "checkedAt": "2026-11-08"
       },
       "imports": [
