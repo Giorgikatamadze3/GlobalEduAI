@@ -2350,8 +2350,8 @@
           "pages": 4,
           "records": 218,
           "accepted": 0,
-          "updated": 12,
-          "duplicates": 206
+          "updated": 13,
+          "duplicates": 205
         },
         {
           "sourceId": "world-edinburgh-masters",
@@ -2449,8 +2449,8 @@
           "pages": 1,
           "records": 154,
           "accepted": 0,
-          "updated": 2,
-          "duplicates": 152
+          "updated": 0,
+          "duplicates": 154
         },
         {
           "sourceId": "world-strasbourg-masters",
@@ -215032,7 +215032,7 @@
       "institutionName": "University of British Columbia",
       "institutionWebsite": "https://ubc.ca/",
       "countryCode": "CA",
-      "title": "Master of Arts in Literacy Education (MA)",
+      "title": "Literacy Education Master of Arts Faculty of Education",
       "field": null,
       "category": null,
       "degree": "master",

@@ -54,8 +54,8 @@
       "pages": 4,
       "records": 218,
       "accepted": 0,
-      "updated": 12,
-      "duplicates": 206
+      "updated": 13,
+      "duplicates": 205
     },
     {
       "sourceId": "world-edinburgh-masters",
@@ -153,8 +153,8 @@
       "pages": 1,
       "records": 154,
       "accepted": 0,
-      "updated": 2,
-      "duplicates": 152
+      "updated": 0,
+      "duplicates": 154
     },
     {
       "sourceId": "world-strasbourg-masters",
