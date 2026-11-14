@@ -1,39 +1,38 @@
 {
-  "attemptedAt": "2026-11-14T17:59:02.663Z",
+  "attemptedAt": "2026-11-14T22:22:00.107Z",
   "intervalHours": 6,
   "status": "partial",
-  "lastSuccessfulAt": "2026-11-14T18:00:25.162Z",
+  "lastSuccessfulAt": "2026-11-14T22:24:45.597Z",
   "sources": [
     {
       "id": "hipo-universities",
       "status": "checked",
-      "checkedAt": "2026-11-14T17:59:03.861Z"
+      "checkedAt": "2026-11-14T22:22:00.919Z"
     },
     {
       "id": "daad-international-programmes",
-      "status": "failed",
-      "previousSnapshotPreserved": true,
-      "reason": "Robots policy unavailable: HTTP 403"
+      "status": "checked",
+      "checkedAt": "2026-11-14T22:23:23.499Z"
     },
     {
       "id": "university-oslo-masters",
       "status": "checked",
-      "checkedAt": "2026-11-14T17:59:08.691Z"
+      "checkedAt": "2026-11-14T22:23:28.098Z"
     },
     {
       "id": "university-vienna-masters",
       "status": "checked",
-      "checkedAt": "2026-11-14T17:59:12.623Z"
+      "checkedAt": "2026-11-14T22:23:32.718Z"
     },
     {
       "id": "university-uppsala-it-masters",
       "status": "checked",
-      "checkedAt": "2026-11-14T17:59:16.758Z"
+      "checkedAt": "2026-11-14T22:23:37.591Z"
     },
     {
       "id": "university-copenhagen-masters",
       "status": "checked",
-      "checkedAt": "2026-11-14T17:59:20.152Z"
+      "checkedAt": "2026-11-14T22:23:40.931Z"
     },
     {
       "id": "world-boston-masters",
@@ -44,32 +43,32 @@
     {
       "id": "world-illinois-masters",
       "status": "checked",
-      "checkedAt": "2026-11-14T17:59:24.115Z"
+      "checkedAt": "2026-11-14T22:23:45.056Z"
     },
     {
       "id": "world-wisconsin-masters",
       "status": "checked",
-      "checkedAt": "2026-11-14T17:59:27.432Z"
+      "checkedAt": "2026-11-14T22:23:48.367Z"
     },
     {
       "id": "world-gwu-masters",
       "status": "checked",
-      "checkedAt": "2026-11-14T17:59:30.926Z"
+      "checkedAt": "2026-11-14T22:23:51.835Z"
     },
     {
       "id": "world-ubc-masters",
       "status": "checked",
-      "checkedAt": "2026-11-14T17:59:35.930Z"
+      "checkedAt": "2026-11-14T22:23:56.244Z"
     },
     {
       "id": "world-edinburgh-masters",
       "status": "checked",
-      "checkedAt": "2026-11-14T17:59:38.512Z"
+      "checkedAt": "2026-11-14T22:23:58.772Z"
     },
     {
       "id": "world-auckland-masters",
       "status": "checked",
-      "checkedAt": "2026-11-14T17:59:42.411Z"
+      "checkedAt": "2026-11-14T22:24:02.822Z"
     },
     {
       "id": "world-chile-masters",
@@ -80,22 +79,22 @@
     {
       "id": "world-twente-masters",
       "status": "checked",
-      "checkedAt": "2026-11-14T17:59:45.640Z"
+      "checkedAt": "2026-11-14T22:24:06.475Z"
     },
     {
       "id": "world-cape-town-humanities-masters",
       "status": "checked",
-      "checkedAt": "2026-11-14T17:59:49.674Z"
+      "checkedAt": "2026-11-14T22:24:11.355Z"
     },
     {
       "id": "world-trinity-dublin-masters",
       "status": "checked",
-      "checkedAt": "2026-11-14T17:59:54.213Z"
+      "checkedAt": "2026-11-14T22:24:16.261Z"
     },
     {
       "id": "world-lund-masters-index",
       "status": "checked",
-      "checkedAt": "2026-11-14T17:59:56.872Z"
+      "checkedAt": "2026-11-14T22:24:19.450Z"
     },
     {
       "id": "world-catholic-chile-masters",
@@ -112,30 +111,30 @@
     {
       "id": "world-bologna-masters",
       "status": "checked",
-      "checkedAt": "2026-11-14T18:00:08.625Z"
+      "checkedAt": "2026-11-14T22:24:28.450Z"
     },
     {
       "id": "world-hku-taught-masters",
       "status": "checked",
-      "checkedAt": "2026-11-14T18:00:14.284Z"
+      "checkedAt": "2026-11-14T22:24:34.050Z"
     },
     {
       "id": "world-valencia-masters",
       "status": "checked",
-      "checkedAt": "2026-11-14T18:00:18.359Z"
+      "checkedAt": "2026-11-14T22:24:37.707Z"
     },
     {
       "id": "world-sorbonne-science-masters",
       "status": "checked",
-      "checkedAt": "2026-11-14T18:00:21.012Z"
+      "checkedAt": "2026-11-14T22:24:40.638Z"
     },
     {
       "id": "world-lyon1-masters",
       "status": "checked",
-      "checkedAt": "2026-11-14T18:00:24.790Z"
+      "checkedAt": "2026-11-14T22:24:45.116Z"
     }
   ],
-  "completedAt": "2026-11-14T18:00:25.162Z",
-  "successfulSources": 20,
-  "failedSources": 5
+  "completedAt": "2026-11-14T22:24:45.597Z",
+  "successfulSources": 21,
+  "failedSources": 4
 }
