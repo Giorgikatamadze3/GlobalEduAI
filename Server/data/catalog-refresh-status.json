@@ -1,38 +1,38 @@
 {
-  "attemptedAt": "2026-11-16T21:59:13.733Z",
+  "attemptedAt": "2026-11-17T07:52:31.586Z",
   "intervalHours": 6,
   "status": "partial",
-  "lastSuccessfulAt": "2026-11-16T22:02:04.342Z",
+  "lastSuccessfulAt": "2026-11-17T07:55:37.472Z",
   "sources": [
     {
       "id": "hipo-universities",
       "status": "checked",
-      "checkedAt": "2026-11-16T21:59:14.410Z"
+      "checkedAt": "2026-11-17T07:52:32.238Z"
     },
     {
       "id": "daad-international-programmes",
       "status": "checked",
-      "checkedAt": "2026-11-16T22:00:30.210Z"
+      "checkedAt": "2026-11-17T07:54:02.073Z"
     },
     {
       "id": "university-oslo-masters",
       "status": "checked",
-      "checkedAt": "2026-11-16T22:00:34.403Z"
+      "checkedAt": "2026-11-17T07:54:07.046Z"
     },
     {
       "id": "university-vienna-masters",
       "status": "checked",
-      "checkedAt": "2026-11-16T22:00:38.640Z"
+      "checkedAt": "2026-11-17T07:54:11.533Z"
     },
     {
       "id": "university-uppsala-it-masters",
       "status": "checked",
-      "checkedAt": "2026-11-16T22:00:42.745Z"
+      "checkedAt": "2026-11-17T07:54:16.288Z"
     },
     {
       "id": "university-copenhagen-masters",
       "status": "checked",
-      "checkedAt": "2026-11-16T22:00:46.272Z"
+      "checkedAt": "2026-11-17T07:54:19.964Z"
     },
     {
       "id": "world-boston-masters",
@@ -43,32 +43,32 @@
     {
       "id": "world-illinois-masters",
       "status": "checked",
-      "checkedAt": "2026-11-16T22:00:50.215Z"
+      "checkedAt": "2026-11-17T07:54:24.673Z"
     },
     {
       "id": "world-wisconsin-masters",
       "status": "checked",
-      "checkedAt": "2026-11-16T22:00:53.358Z"
+      "checkedAt": "2026-11-17T07:54:28.381Z"
     },
     {
       "id": "world-gwu-masters",
       "status": "checked",
-      "checkedAt": "2026-11-16T22:00:56.466Z"
+      "checkedAt": "2026-11-17T07:54:32.200Z"
     },
     {
       "id": "world-ubc-masters",
       "status": "checked",
-      "checkedAt": "2026-11-16T22:01:14.405Z"
+      "checkedAt": "2026-11-17T07:54:41.293Z"
     },
     {
       "id": "world-edinburgh-masters",
       "status": "checked",
-      "checkedAt": "2026-11-16T22:01:16.858Z"
+      "checkedAt": "2026-11-17T07:54:44.056Z"
     },
     {
       "id": "world-auckland-masters",
       "status": "checked",
-      "checkedAt": "2026-11-16T22:01:22.298Z"
+      "checkedAt": "2026-11-17T07:54:47.689Z"
     },
     {
       "id": "world-chile-masters",
@@ -79,22 +79,22 @@
     {
       "id": "world-twente-masters",
       "status": "checked",
-      "checkedAt": "2026-11-16T22:01:25.468Z"
+      "checkedAt": "2026-11-17T07:54:51.450Z"
     },
     {
       "id": "world-cape-town-humanities-masters",
       "status": "checked",
-      "checkedAt": "2026-11-16T22:01:33.363Z"
+      "checkedAt": "2026-11-17T07:54:55.839Z"
     },
     {
       "id": "world-trinity-dublin-masters",
       "status": "checked",
-      "checkedAt": "2026-11-16T22:01:37.132Z"
+      "checkedAt": "2026-11-17T07:55:01.130Z"
     },
     {
       "id": "world-lund-masters-index",
       "status": "checked",
-      "checkedAt": "2026-11-16T22:01:39.804Z"
+      "checkedAt": "2026-11-17T07:55:04.251Z"
     },
     {
       "id": "world-catholic-chile-masters",
@@ -111,30 +111,30 @@
     {
       "id": "world-bologna-masters",
       "status": "checked",
-      "checkedAt": "2026-11-16T22:01:46.295Z"
+      "checkedAt": "2026-11-17T07:55:16.017Z"
     },
     {
       "id": "world-hku-taught-masters",
       "status": "checked",
-      "checkedAt": "2026-11-16T22:01:52.817Z"
+      "checkedAt": "2026-11-17T07:55:25.611Z"
     },
     {
       "id": "world-valencia-masters",
       "status": "checked",
-      "checkedAt": "2026-11-16T22:01:57.892Z"
+      "checkedAt": "2026-11-17T07:55:30.099Z"
     },
     {
       "id": "world-sorbonne-science-masters",
       "status": "checked",
-      "checkedAt": "2026-11-16T22:02:00.420Z"
+      "checkedAt": "2026-11-17T07:55:32.834Z"
     },
     {
       "id": "world-lyon1-masters",
       "status": "checked",
-      "checkedAt": "2026-11-16T22:02:03.861Z"
+      "checkedAt": "2026-11-17T07:55:37.060Z"
     }
   ],
-  "completedAt": "2026-11-16T22:02:04.342Z",
+  "completedAt": "2026-11-17T07:55:37.472Z",
   "successfulSources": 21,
   "failedSources": 4
 }
