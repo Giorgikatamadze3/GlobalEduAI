@@ -2,7 +2,7 @@
   "metadata": {
     "sourcePolicy": "University pages and explicitly registered authoritative programme directories. Source kind and dated provenance are retained; unpublished attributes remain null.",
     "updatedAt": "2026-11-17",
-    "programCount": 4386,
+    "programCount": 4387,
     "coverageNote": "Official-source programme records from registered catalogues and individually checked university pages. Worldwide and national coverage remain partial; a source listing is not proof of an open admission cycle.",
     "defaultApplicant": "Non-EU/international fee-paying applicant; citizenship/residence exemptions require individual verification.",
     "unknownValuePolicy": "Unverified or applicant-dependent numeric values are null, never zero. No generic GPA conversion, currency conversion, annualisation, scholarship award or recurring-deadline year has been invented.",
@@ -11,7 +11,7 @@
       "regions": [
         {
           "region": "europe",
-          "programCount": 2924,
+          "programCount": 2925,
           "countriesWithPrograms": 45
         },
         {
@@ -156,7 +156,7 @@
             "countryCode": "FR",
             "institutionCount": 295,
             "institutionsWithPrograms": 4,
-            "programCount": 74
+            "programCount": 75
           },
           {
             "countryCode": "GB",
@@ -362,8 +362,8 @@
       "institutionCount": 10274,
       "institutionsWithPrograms": 207,
       "institutionsWithoutPrograms": 10067,
-      "programCount": 4386,
-      "linkedProgramCount": 4386,
+      "programCount": 4387,
+      "linkedProgramCount": 4387,
       "unmatchedProgramCount": 0,
       "coveragePercent": 2.01,
       "sources": [
@@ -1003,7 +1003,7 @@
           "id": "world-sorbonne-science-masters",
           "kind": "institution",
           "checkedAt": "2026-11-17",
-          "programCount": 18,
+          "programCount": 19,
           "status": "partial",
           "complete": false
         },
@@ -1375,7 +1375,7 @@
           "countryCode": "FR",
           "institutionCount": 295,
           "institutionsWithPrograms": 4,
-          "programCount": 74
+          "programCount": 75
         },
         {
           "countryCode": "GA",
@@ -2305,8 +2305,8 @@
           "pages": 1,
           "records": 115,
           "accepted": 0,
-          "updated": 115,
-          "duplicates": 0
+          "updated": 4,
+          "duplicates": 111
         },
         {
           "sourceId": "world-boston-masters",
@@ -2323,8 +2323,8 @@
           "pages": 1,
           "records": 152,
           "accepted": 0,
-          "updated": 152,
-          "duplicates": 0
+          "updated": 2,
+          "duplicates": 150
         },
         {
           "sourceId": "world-wisconsin-masters",
@@ -2332,8 +2332,8 @@
           "pages": 1,
           "records": 143,
           "accepted": 0,
-          "updated": 143,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 143
         },
         {
           "sourceId": "world-gwu-masters",
@@ -2341,8 +2341,8 @@
           "pages": 1,
           "records": 189,
           "accepted": 0,
-          "updated": 189,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 189
         },
         {
           "sourceId": "world-ubc-masters",
@@ -2350,8 +2350,8 @@
           "pages": 4,
           "records": 218,
           "accepted": 0,
-          "updated": 218,
-          "duplicates": 0
+          "updated": 13,
+          "duplicates": 205
         },
         {
           "sourceId": "world-edinburgh-masters",
@@ -2359,8 +2359,8 @@
           "pages": 1,
           "records": 220,
           "accepted": 0,
-          "updated": 220,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 220
         },
         {
           "sourceId": "world-auckland-masters",
@@ -2368,8 +2368,8 @@
           "pages": 1,
           "records": 95,
           "accepted": 0,
-          "updated": 95,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 95
         },
         {
           "sourceId": "world-chile-masters",
@@ -2386,8 +2386,8 @@
           "pages": 1,
           "records": 32,
           "accepted": 0,
-          "updated": 32,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 32
         },
         {
           "sourceId": "world-cape-town-humanities-masters",
@@ -2395,8 +2395,8 @@
           "pages": 1,
           "records": 122,
           "accepted": 0,
-          "updated": 122,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 122
         },
         {
           "sourceId": "world-trinity-dublin-masters",
@@ -2404,8 +2404,8 @@
           "pages": 1,
           "records": 136,
           "accepted": 0,
-          "updated": 136,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 136
         },
         {
           "sourceId": "world-lund-masters-index",
@@ -2413,8 +2413,8 @@
           "pages": 1,
           "records": 17,
           "accepted": 0,
-          "updated": 17,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 17
         },
         {
           "sourceId": "world-catholic-chile-masters",
@@ -2440,8 +2440,8 @@
           "pages": 1,
           "records": 143,
           "accepted": 0,
-          "updated": 143,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 143
         },
         {
           "sourceId": "world-hku-taught-masters",
@@ -2449,8 +2449,8 @@
           "pages": 1,
           "records": 154,
           "accepted": 0,
-          "updated": 154,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 154
         },
         {
           "sourceId": "world-strasbourg-masters",
@@ -2462,9 +2462,9 @@
           "countryCode": "FR",
           "pages": 1,
           "records": 18,
-          "accepted": 0,
-          "updated": 18,
-          "duplicates": 0
+          "accepted": 1,
+          "updated": 0,
+          "duplicates": 17
         },
         {
           "sourceId": "world-lyon1-masters",
@@ -2472,8 +2472,8 @@
           "pages": 1,
           "records": 54,
           "accepted": 0,
-          "updated": 54,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 54
         }
       ],
       "completeness": "partial"
@@ -215096,8 +215096,8 @@
         "sourceId": "world-ubc-masters",
         "sourceRecordId": "/prospective-students/graduate-degree-programs/master-of-arts-literacy-education",
         "kind": "institution",
-        "recordUrl": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs?page=2",
-        "listingSourceUrl": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs?page=2",
+        "recordUrl": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs?page=1",
+        "listingSourceUrl": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs?page=1",
         "checkedAt": "2026-11-17"
       },
       "imports": [
@@ -217777,7 +217777,7 @@
       "institutionName": "University of British Columbia",
       "institutionWebsite": "https://ubc.ca/",
       "countryCode": "CA",
-      "title": "Literacy Education Master of Education Faculty of Education",
+      "title": "Master of Education in Literacy Education (MEd)",
       "field": null,
       "category": null,
       "degree": "master",
@@ -217830,7 +217830,7 @@
         {
           "url": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs?page=2",
           "label": "University of British Columbia — official master programme index",
-          "checkedAt": "2026-11-16",
+          "checkedAt": "2026-11-17",
           "kind": "institution",
           "sourceId": "world-ubc-masters"
         }
@@ -217841,8 +217841,8 @@
         "sourceId": "world-ubc-masters",
         "sourceRecordId": "/prospective-students/graduate-degree-programs/master-of-education-literacy-education",
         "kind": "institution",
-        "recordUrl": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs?page=1",
-        "listingSourceUrl": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs?page=1",
+        "recordUrl": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs?page=2",
+        "listingSourceUrl": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs?page=2",
         "checkedAt": "2026-11-17"
       },
       "imports": [
@@ -217860,7 +217860,7 @@
           "kind": "institution",
           "recordUrl": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs?page=2",
           "listingSourceUrl": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs?page=2",
-          "checkedAt": "2026-11-16"
+          "checkedAt": "2026-11-17"
         }
       ]
     },
@@ -218650,7 +218650,7 @@
       "institutionName": "University of British Columbia",
       "institutionWebsite": "https://ubc.ca/",
       "countryCode": "CA",
-      "title": "Master of Public Health (MPH)",
+      "title": "Population and Public Health Master of Public Health Faculty of Medicine",
       "field": null,
       "category": null,
       "degree": "master",
@@ -339196,6 +339196,84 @@
           "kind": "institution",
           "recordUrl": "https://study.ed.ac.uk/programmes/postgraduate-taught-a-z",
           "listingSourceUrl": "https://study.ed.ac.uk/programmes/postgraduate-taught-a-z",
+          "checkedAt": "2026-11-17"
+        }
+      ]
+    },
+    {
+      "id": "program_63c8c17d3a8acd3d88282f3d",
+      "institutionId": "inst_4212b63058dc23189da18540",
+      "institutionName": "Sorbonne Université - Faculté des Sciences (Paris VI)",
+      "institutionWebsite": "https://sorbonne-universite.fr/",
+      "countryCode": "FR",
+      "title": "Master Mathématiques et applications",
+      "field": null,
+      "category": null,
+      "degree": "master",
+      "language": null,
+      "languages": [],
+      "mode": null,
+      "durationMonths": null,
+      "programUrl": "https://sciences.sorbonne-universite.fr/formation-sciences/offre-de-formation/masters/master-mathematiques-et-applications",
+      "subject": null,
+      "city": null,
+      "sourceLanguages": [],
+      "tuition": {
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "applicantScope": null,
+        "note": ""
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": "Master-level title and official link verified in the university catalogue. Detailed entry requirements, current intake, fees and funding are not inferred from this listing."
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": ""
+      },
+      "sources": [
+        {
+          "url": "https://sciences.sorbonne-universite.fr/formation-sciences/offre-de-formation/masters",
+          "label": "Sorbonne Université - Faculté des Sciences (Paris VI) — official master catalogue",
+          "checkedAt": "2026-11-17",
+          "kind": "institution",
+          "sourceId": "world-sorbonne-science-masters"
+        },
+        {
+          "url": "https://sciences.sorbonne-universite.fr/formation-sciences/offre-de-formation/masters/master-mathematiques-et-applications",
+          "label": "Master Mathématiques et applications",
+          "checkedAt": "2026-11-17",
+          "kind": "institution",
+          "sourceId": "world-sorbonne-science-masters"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-11-17",
+      "provenance": {
+        "sourceId": "world-sorbonne-science-masters",
+        "sourceRecordId": "/formation-sciences/offre-de-formation/masters/master-mathematiques-et-applications",
+        "kind": "institution",
+        "recordUrl": "https://sciences.sorbonne-universite.fr/formation-sciences/offre-de-formation/masters",
+        "listingSourceUrl": "https://sciences.sorbonne-universite.fr/formation-sciences/offre-de-formation/masters",
+        "checkedAt": "2026-11-17"
+      },
+      "imports": [
+        {
+          "sourceId": "world-sorbonne-science-masters",
+          "sourceRecordId": "/formation-sciences/offre-de-formation/masters/master-mathematiques-et-applications",
+          "kind": "institution",
+          "recordUrl": "https://sciences.sorbonne-universite.fr/formation-sciences/offre-de-formation/masters",
+          "listingSourceUrl": "https://sciences.sorbonne-universite.fr/formation-sciences/offre-de-formation/masters",
           "checkedAt": "2026-11-17"
         }
       ]
