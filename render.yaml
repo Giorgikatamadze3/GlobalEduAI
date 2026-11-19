@@ -1,0 +1,29 @@
+# Existing Supabase database only; this Blueprint creates no paid resources.
+services:
+  - type: web
+    name: globaleduai
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: npm ci --include=dev && npm run check
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: "24"
+      - key: DATABASE_PROVIDER
+        value: supabase
+      - key: AUTH_DB_DRIVER
+        value: postgres
+      - key: SUPABASE_DATABASE_URL
+        sync: false
+      - key: SUPABASE_DB_CA_CERT
+        sync: false
+      - key: ADMIN_ACCOUNT_IDS
+        sync: false
+      - key: BOG_PAYMENTS_ENABLED
+        value: false
+      - key: ENABLE_PASSWORD_RECOVERY
+        value: false

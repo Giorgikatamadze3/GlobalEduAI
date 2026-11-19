@@ -2,6 +2,8 @@ require('dotenv').config({ path: require('path').join(__dirname, '.env'), quiet:
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const {publicOrigin,trustedProxy}=require('./hosting-config');
+const siteOrigin=publicOrigin();
 const { loadCatalog } = require('./catalog-service');
 const { createConfiguredAccountStore } = require('./account-store-config');
 const { createAuthRouter } = require('./auth');
@@ -16,12 +18,12 @@ const catalog=new Proxy({},{get:(_target,key)=>content.catalog[key]});
 const accountStore = createConfiguredAccountStore();
 const billingStore=require('./billing-store').createBillingStore();
 const paymentProvider=require('./bog-payments').createBogProvider();
-const billingService=require('./billing-service').createBillingService({store:billingStore,provider:paymentProvider,origin:process.env.BILLING_PUBLIC_ORIGIN||'https://globaleduai.vercel.app'});
+const billingService=require('./billing-service').createBillingService({store:billingStore,provider:paymentProvider,origin:process.env.BILLING_PUBLIC_ORIGIN||siteOrigin});
 const {createBillingRouter,createBillingPublicRouter,billingError}=require('./billing-router');
 const authRouter=createAuthRouter({store:accountStore,billingStore,billingRouter:createBillingRouter({store:billingStore,service:billingService,accountStore}),adminRouter:createAdminRouter({content}),cookieSecure:process.env.NODE_ENV==='production'||process.env.VERCEL==='1'});
 
 const app = express();
-if(process.env.VERCEL==='1')app.set('trust proxy',1);
+app.set('trust proxy',trustedProxy());
 app.locals.accountStore = accountStore;
 app.locals.contentStore = contentStore;
 app.locals.billingStore=billingStore;
@@ -42,6 +44,8 @@ app.use(cors((req,callback) => {
     }
     callback(null,{origin:allowed?origin:false,credentials:true,methods:['GET','POST','PUT','OPTIONS'],allowedHeaders:['Content-Type','Authorization']});
 }));
+// Platform health probes must not query or change the database.
+app.get('/healthz',(_req,res)=>res.set('Cache-Control','no-store').json({status:'ok'}));
 app.use('/api',require('./database-config').migrationMaintenance());
 app.use('/api',async(req,res,next)=>{await content.refresh();next();});
 app.get('/api/content',(req,res)=>{res.set('Cache-Control','no-store');res.json(content.publicChanges());});
@@ -55,7 +59,7 @@ for (const filename of ['locale-extensions.js','language-picker.js','study-calen
     app.get(`/${filename}`, (req,res) => res.sendFile(path.join(__dirname, '..', filename)));
 }
 app.get('/', (req,res) => res.sendFile(path.join(__dirname, '../index.html')));
-const publicPages=require('./public-pages').createPublicPages({catalog});
+const publicPages=require('./public-pages').createPublicPages({catalog,origin:siteOrigin});
 app.get('/:lang/programs/:id',(req,res,next)=>require('../i18n').LANGUAGES.includes(req.params.lang)?publicPages.program(req,res):next());
 app.get('/:lang/countries/:code',(req,res,next)=>require('../i18n').LANGUAGES.includes(req.params.lang)?publicPages.country(req,res):next());
 app.get('/sitemap.xml',publicPages.sitemap);
@@ -125,7 +129,7 @@ app.post(['/api/generate-pdf','/api/send-application'],(req,res)=>res.status(410
 
 if (require.main === module) {
     const PORT = process.env.PORT || 3000;
-    const listener = app.listen(PORT);
+    const listener = app.listen(PORT,'0.0.0.0');
     listener.on('listening', () => console.log(`GlobalEdu: http://localhost:${PORT} — ${catalog.payload.metadata.institutionCount} უნივერსიტეტი; ანგარიშები: ${accountStore.info.provider}`));
     listener.on('error', error => { accountStore.close(); console.error(error.code === 'EADDRINUSE' ? `პორტი ${PORT} დაკავებულია. გადატვირთე გაშვებული სერვერი ან აირჩიე სხვა PORT.` : 'სერვერის გაშვება ვერ მოხერხდა.'); process.exitCode = 1; });
     let shuttingDown = false;

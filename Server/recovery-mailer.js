@@ -1,7 +1,7 @@
 'use strict';
 function createRecoveryMailer(environment=process.env){
     const configured=environment.ENABLE_PASSWORD_RECOVERY==='true'&&!!environment.RECOVERY_SMTP_HOST&&!!environment.RECOVERY_SMTP_USER&&!!environment.RECOVERY_SMTP_PASS&&!!environment.RECOVERY_MAIL_FROM&&typeof environment.RECOVERY_SIGNING_SECRET==='string'&&environment.RECOVERY_SIGNING_SECRET.length>=32;
-    const origin=environment.PUBLIC_SITE_URL||'https://globaleduai.vercel.app';
+    const origin=environment.PUBLIC_SITE_URL||environment.RENDER_EXTERNAL_URL||'https://globaleduai.vercel.app';
     let url;try{url=new URL(origin);}catch{}
     const ready=Boolean(configured&&url?.protocol==='https:'&&!url.username&&!url.password);
     return {configured:ready,signingSecret:ready?environment.RECOVERY_SIGNING_SECRET:null,origin:ready?url.origin:'https://globaleduai.vercel.app',async send(email,token){
