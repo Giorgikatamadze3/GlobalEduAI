@@ -4,7 +4,7 @@ const SCHEMA=fs.readFileSync(path.join(__dirname,'content-schema.sql'),'utf8');
 const SCHEMA_HASH=createHash('sha256').update(SCHEMA).digest('hex');
 const error=(code,message)=>Object.assign(new Error(message),{code});
 function createContentStore({environment=process.env,pool:injectedPool,sqlite:injectedSqlite}={}){
-    const postgres=!!injectedPool||environment.VERCEL==='1'||environment.AUTH_DB_DRIVER==='postgres'||require('./database-config').databaseConfig(environment).provider==='supabase';
+    const postgres=!!injectedPool||environment.VERCEL==='1'||environment.RENDER==='true'||environment.AUTH_DB_DRIVER==='postgres'||require('./database-config').databaseConfig(environment).provider==='supabase';
     let db=injectedSqlite,pool=injectedPool,readiness,writeQueue=Promise.resolve();
     const unpack=row=>({...row,record:JSON.parse(row.payload),revision:Number(row.revision),deleted:!!row.deleted});
     function database(){if(!db){const {DatabaseSync}=require('node:sqlite');const file=environment.CMS_DB_PATH||path.join(__dirname,'data/content.sqlite');if(file!==':memory:')fs.mkdirSync(path.dirname(file),{recursive:true});db=new DatabaseSync(file);db.exec('PRAGMA busy_timeout=5000;');db.exec(SCHEMA);}return db;}

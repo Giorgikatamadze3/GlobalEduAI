@@ -11,7 +11,7 @@ function unavailableStore(provider) {
 }
 
 function createConfiguredAccountStore(environment = process.env) {
-    const cloud = environment.VERCEL === '1';
+    const cloud = environment.VERCEL === '1' || environment.RENDER === 'true';
     const config=require('./database-config').databaseConfig(environment);
     const driver = (environment.AUTH_DB_DRIVER || (cloud||config.provider==='supabase'?'postgres':'sqlite')).trim().toLowerCase();
     if(config.provider==='supabase'&&driver!=='postgres')throw new Error('Supabase requires AUTH_DB_DRIVER=postgres for all account data.');

@@ -4,7 +4,7 @@ const {DEFAULT_PLANS,fail}=require('./billing-core');
 const SCHEMA=fs.readFileSync(path.join(__dirname,'billing-schema.sql'),'utf8');
 const SCHEMA_HASH=createHash('sha256').update(SCHEMA).digest('hex');
 function createBillingStore({environment=process.env,pool:injectedPool,sqlite,clock=()=>Date.now()}={}){
- const postgres=!!injectedPool||environment.VERCEL==='1'||environment.AUTH_DB_DRIVER==='postgres'||require('./database-config').databaseConfig(environment).provider==='supabase';
+ const postgres=!!injectedPool||environment.VERCEL==='1'||environment.RENDER==='true'||environment.AUTH_DB_DRIVER==='postgres'||require('./database-config').databaseConfig(environment).provider==='supabase';
  let pool=injectedPool,db=sqlite,readiness,queue=Promise.resolve();
  const now=()=>new Date(clock()).toISOString();
  function database(){if(!db){const {DatabaseSync}=require('node:sqlite');const file=environment.BILLING_DB_PATH||path.join(__dirname,'data/billing.sqlite');if(file!==':memory:')fs.mkdirSync(path.dirname(file),{recursive:true});db=new DatabaseSync(file);db.exec('PRAGMA busy_timeout=5000');db.exec(SCHEMA);}return db;}
