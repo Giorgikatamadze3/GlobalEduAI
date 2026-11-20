@@ -16,8 +16,8 @@
     "checkedAt": "2026-11-20",
     "totalRecords": 12,
     "accepted": 0,
-    "updated": 12,
-    "duplicates": 0,
+    "updated": 0,
+    "duplicates": 12,
     "unmatched": 0,
     "ambiguous": 0,
     "invalid": 0,
@@ -29,12 +29,12 @@
     "regions": [
       {
         "region": "europe",
-        "programCount": 2926,
+        "programCount": 2927,
         "countriesWithPrograms": 45
       },
       {
         "region": "north-america",
-        "programCount": 945,
+        "programCount": 948,
         "countriesWithPrograms": 2
       },
       {
@@ -144,7 +144,7 @@
           "countryCode": "DE",
           "institutionCount": 321,
           "institutionsWithPrograms": 115,
-          "programCount": 1666
+          "programCount": 1667
         },
         {
           "countryCode": "DK",
@@ -380,8 +380,8 @@
     "institutionCount": 10274,
     "institutionsWithPrograms": 207,
     "institutionsWithoutPrograms": 10067,
-    "programCount": 4388,
-    "linkedProgramCount": 4388,
+    "programCount": 4392,
+    "linkedProgramCount": 4392,
     "unmatchedProgramCount": 0,
     "coveragePercent": 2.01,
     "sources": [
@@ -389,7 +389,7 @@
         "id": "daad-international-programmes",
         "kind": "official-directory",
         "checkedAt": "2026-10-28",
-        "programCount": 1664,
+        "programCount": 1665,
         "status": "partial",
         "complete": false
       },
@@ -900,7 +900,7 @@
       {
         "id": "world-wisconsin-masters",
         "kind": "institution",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "programCount": 143,
         "status": "partial",
         "complete": false
@@ -916,15 +916,15 @@
       {
         "id": "world-ubc-masters",
         "kind": "institution",
-        "checkedAt": "2026-11-19",
-        "programCount": 212,
+        "checkedAt": "2026-11-20",
+        "programCount": 215,
         "status": "partial",
         "complete": false
       },
       {
         "id": "world-edinburgh-masters",
         "kind": "institution",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "programCount": 221,
         "status": "partial",
         "complete": false
@@ -932,7 +932,7 @@
       {
         "id": "world-auckland-masters",
         "kind": "institution",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "programCount": 95,
         "status": "partial",
         "complete": false
@@ -948,7 +948,7 @@
       {
         "id": "world-twente-masters",
         "kind": "institution",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "programCount": 32,
         "status": "partial",
         "complete": false
@@ -956,7 +956,7 @@
       {
         "id": "world-cape-town-humanities-masters",
         "kind": "institution",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "programCount": 122,
         "status": "partial",
         "complete": false
@@ -964,7 +964,7 @@
       {
         "id": "world-trinity-dublin-masters",
         "kind": "institution",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "programCount": 136,
         "status": "partial",
         "complete": false
@@ -972,7 +972,7 @@
       {
         "id": "world-lund-masters-index",
         "kind": "institution",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "programCount": 18,
         "status": "partial",
         "complete": false
@@ -988,7 +988,7 @@
       {
         "id": "world-bologna-masters",
         "kind": "institution",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "programCount": 143,
         "status": "partial",
         "complete": false
@@ -996,7 +996,7 @@
       {
         "id": "world-hku-taught-masters",
         "kind": "institution",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "programCount": 154,
         "status": "partial",
         "complete": false
@@ -1012,7 +1012,7 @@
       {
         "id": "world-valencia-masters",
         "kind": "institution",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "programCount": 113,
         "status": "partial",
         "complete": false
@@ -1020,7 +1020,7 @@
       {
         "id": "world-sorbonne-science-masters",
         "kind": "institution",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "programCount": 19,
         "status": "partial",
         "complete": false
@@ -1028,7 +1028,7 @@
       {
         "id": "world-lyon1-masters",
         "kind": "institution",
-        "checkedAt": "2026-11-19",
+        "checkedAt": "2026-11-20",
         "programCount": 54,
         "status": "partial",
         "complete": false
@@ -1213,7 +1213,7 @@
         "countryCode": "CA",
         "institutionCount": 159,
         "institutionsWithPrograms": 1,
-        "programCount": 212
+        "programCount": 215
       },
       {
         "countryCode": "CD",
@@ -1303,7 +1303,7 @@
         "countryCode": "DE",
         "institutionCount": 321,
         "institutionsWithPrograms": 115,
-        "programCount": 1666
+        "programCount": 1667
       },
       {
         "countryCode": "DJ",

@@ -2,7 +2,7 @@
   "metadata": {
     "sourcePolicy": "University pages and explicitly registered authoritative programme directories. Source kind and dated provenance are retained; unpublished attributes remain null.",
     "updatedAt": "2026-11-20",
-    "programCount": 4391,
+    "programCount": 4392,
     "coverageNote": "Official-source programme records from registered catalogues and individually checked university pages. Worldwide and national coverage remain partial; a source listing is not proof of an open admission cycle.",
     "defaultApplicant": "Non-EU/international fee-paying applicant; citizenship/residence exemptions require individual verification.",
     "unknownValuePolicy": "Unverified or applicant-dependent numeric values are null, never zero. No generic GPA conversion, currency conversion, annualisation, scholarship award or recurring-deadline year has been invented.",
@@ -11,7 +11,7 @@
       "regions": [
         {
           "region": "europe",
-          "programCount": 2926,
+          "programCount": 2927,
           "countriesWithPrograms": 45
         },
         {
@@ -126,7 +126,7 @@
             "countryCode": "DE",
             "institutionCount": 321,
             "institutionsWithPrograms": 115,
-            "programCount": 1666
+            "programCount": 1667
           },
           {
             "countryCode": "DK",
@@ -362,8 +362,8 @@
       "institutionCount": 10274,
       "institutionsWithPrograms": 207,
       "institutionsWithoutPrograms": 10067,
-      "programCount": 4391,
-      "linkedProgramCount": 4391,
+      "programCount": 4392,
+      "linkedProgramCount": 4392,
       "unmatchedProgramCount": 0,
       "coveragePercent": 2.01,
       "sources": [
@@ -371,7 +371,7 @@
           "id": "daad-international-programmes",
           "kind": "official-directory",
           "checkedAt": "2026-10-28",
-          "programCount": 1664,
+          "programCount": 1665,
           "status": "partial",
           "complete": false
         },
@@ -1285,7 +1285,7 @@
           "countryCode": "DE",
           "institutionCount": 321,
           "institutionsWithPrograms": 115,
-          "programCount": 1666
+          "programCount": 1667
         },
         {
           "countryCode": "DJ",
@@ -2231,9 +2231,9 @@
         "sourceId": "daad-international-programmes",
         "complete": false,
         "listingComplete": true,
-        "totalReported": 2310,
-        "recordsFetched": 2285,
-        "rawRecordsFetched": 2310,
+        "totalReported": 2313,
+        "recordsFetched": 2288,
+        "rawRecordsFetched": 2313,
         "pagesFetched": 10,
         "maxPages": 50,
         "pageSize": 250,
@@ -2305,8 +2305,8 @@
           "pages": 1,
           "records": 115,
           "accepted": 0,
-          "updated": 115,
-          "duplicates": 0
+          "updated": 4,
+          "duplicates": 111
         },
         {
           "sourceId": "world-boston-masters",
@@ -2332,8 +2332,8 @@
           "pages": 1,
           "records": 143,
           "accepted": 0,
-          "updated": 143,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 143
         },
         {
           "sourceId": "world-gwu-masters",
@@ -2349,9 +2349,9 @@
           "countryCode": "CA",
           "pages": 4,
           "records": 219,
-          "accepted": 3,
-          "updated": 216,
-          "duplicates": 0
+          "accepted": 0,
+          "updated": 15,
+          "duplicates": 204
         },
         {
           "sourceId": "world-edinburgh-masters",
@@ -2359,8 +2359,8 @@
           "pages": 1,
           "records": 220,
           "accepted": 0,
-          "updated": 220,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 220
         },
         {
           "sourceId": "world-auckland-masters",
@@ -2368,8 +2368,8 @@
           "pages": 1,
           "records": 95,
           "accepted": 0,
-          "updated": 95,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 95
         },
         {
           "sourceId": "world-chile-masters",
@@ -2386,8 +2386,8 @@
           "pages": 1,
           "records": 32,
           "accepted": 0,
-          "updated": 32,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 32
         },
         {
           "sourceId": "world-cape-town-humanities-masters",
@@ -2395,8 +2395,8 @@
           "pages": 1,
           "records": 122,
           "accepted": 0,
-          "updated": 122,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 122
         },
         {
           "sourceId": "world-trinity-dublin-masters",
@@ -2404,8 +2404,8 @@
           "pages": 1,
           "records": 136,
           "accepted": 0,
-          "updated": 136,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 136
         },
         {
           "sourceId": "world-lund-masters-index",
@@ -2413,8 +2413,8 @@
           "pages": 1,
           "records": 17,
           "accepted": 0,
-          "updated": 17,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 17
         },
         {
           "sourceId": "world-catholic-chile-masters",
@@ -2440,8 +2440,8 @@
           "pages": 1,
           "records": 143,
           "accepted": 0,
-          "updated": 143,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 143
         },
         {
           "sourceId": "world-hku-taught-masters",
@@ -2449,8 +2449,8 @@
           "pages": 1,
           "records": 154,
           "accepted": 0,
-          "updated": 154,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 154
         },
         {
           "sourceId": "world-strasbourg-masters",
@@ -2463,8 +2463,8 @@
           "pages": 1,
           "records": 18,
           "accepted": 0,
-          "updated": 18,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 18
         },
         {
           "sourceId": "world-lyon1-masters",
@@ -2472,8 +2472,8 @@
           "pages": 1,
           "records": 54,
           "accepted": 0,
-          "updated": 54,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 54
         }
       ],
       "completeness": "partial"
@@ -8395,7 +8395,7 @@
         "sourceRecordId": "4208",
         "kind": "official-directory",
         "recordUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4208/",
-        "listingSourceUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json?degree%5B%5D=1&degree%5B%5D=2&degree%5B%5D=3&sort=4&display=list&limit=250&offset=1250",
+        "listingSourceUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json?degree%5B%5D=1&degree%5B%5D=2&degree%5B%5D=3&sort=4&display=list&limit=250&offset=1500",
         "checkedAt": "2026-11-20"
       },
       "imports": [
@@ -12550,7 +12550,7 @@
         "sourceRecordId": "6082",
         "kind": "official-directory",
         "recordUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6082/",
-        "listingSourceUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json?degree%5B%5D=1&degree%5B%5D=2&degree%5B%5D=3&sort=4&display=list&limit=250&offset=1000",
+        "listingSourceUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json?degree%5B%5D=1&degree%5B%5D=2&degree%5B%5D=3&sort=4&display=list&limit=250&offset=1250",
         "checkedAt": "2026-11-20"
       },
       "imports": [
@@ -44511,7 +44511,7 @@
         "sourceRecordId": "4076",
         "kind": "official-directory",
         "recordUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4076/",
-        "listingSourceUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json?degree%5B%5D=1&degree%5B%5D=2&degree%5B%5D=3&sort=4&display=list&limit=250&offset=1250",
+        "listingSourceUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json?degree%5B%5D=1&degree%5B%5D=2&degree%5B%5D=3&sort=4&display=list&limit=250&offset=1500",
         "checkedAt": "2026-11-20"
       },
       "imports": [
@@ -48056,7 +48056,7 @@
         "sourceRecordId": "6323",
         "kind": "official-directory",
         "recordUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6323/",
-        "listingSourceUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json?degree%5B%5D=1&degree%5B%5D=2&degree%5B%5D=3&sort=4&display=list&limit=250&offset=1250",
+        "listingSourceUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json?degree%5B%5D=1&degree%5B%5D=2&degree%5B%5D=3&sort=4&display=list&limit=250&offset=1500",
         "checkedAt": "2026-11-20"
       },
       "imports": [
@@ -62583,7 +62583,7 @@
         "sourceRecordId": "8302",
         "kind": "official-directory",
         "recordUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8302/",
-        "listingSourceUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json?degree%5B%5D=1&degree%5B%5D=2&degree%5B%5D=3&sort=4&display=list&limit=250&offset=750",
+        "listingSourceUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json?degree%5B%5D=1&degree%5B%5D=2&degree%5B%5D=3&sort=4&display=list&limit=250&offset=1000",
         "checkedAt": "2026-11-20"
       },
       "imports": [
@@ -63033,7 +63033,7 @@
         "sourceRecordId": "7045",
         "kind": "official-directory",
         "recordUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7045/",
-        "listingSourceUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json?degree%5B%5D=1&degree%5B%5D=2&degree%5B%5D=3&sort=4&display=list&limit=250&offset=1750",
+        "listingSourceUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json?degree%5B%5D=1&degree%5B%5D=2&degree%5B%5D=3&sort=4&display=list&limit=250&offset=2000",
         "checkedAt": "2026-11-20"
       },
       "imports": [
@@ -70725,7 +70725,7 @@
         "sourceRecordId": "9682",
         "kind": "official-directory",
         "recordUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9682/",
-        "listingSourceUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json?degree%5B%5D=1&degree%5B%5D=2&degree%5B%5D=3&sort=4&display=list&limit=250&offset=2000",
+        "listingSourceUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json?degree%5B%5D=1&degree%5B%5D=2&degree%5B%5D=3&sort=4&display=list&limit=250&offset=2250",
         "checkedAt": "2026-11-20"
       },
       "imports": [
@@ -75538,7 +75538,7 @@
         "sourceRecordId": "8309",
         "kind": "official-directory",
         "recordUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8309/",
-        "listingSourceUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json?degree%5B%5D=1&degree%5B%5D=2&degree%5B%5D=3&sort=4&display=list&limit=250&offset=250",
+        "listingSourceUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json?degree%5B%5D=1&degree%5B%5D=2&degree%5B%5D=3&sort=4&display=list&limit=250&offset=500",
         "checkedAt": "2026-11-20"
       },
       "imports": [
@@ -86244,7 +86244,7 @@
         "sourceRecordId": "11118",
         "kind": "official-directory",
         "recordUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11118/",
-        "listingSourceUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json?degree%5B%5D=1&degree%5B%5D=2&degree%5B%5D=3&sort=4&display=list&limit=250&offset=1500",
+        "listingSourceUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json?degree%5B%5D=1&degree%5B%5D=2&degree%5B%5D=3&sort=4&display=list&limit=250&offset=1750",
         "checkedAt": "2026-11-20"
       },
       "imports": [
@@ -86544,7 +86544,7 @@
         "sourceRecordId": "7973",
         "kind": "official-directory",
         "recordUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7973/",
-        "listingSourceUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json?degree%5B%5D=1&degree%5B%5D=2&degree%5B%5D=3&sort=4&display=list&limit=250&offset=1500",
+        "listingSourceUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json?degree%5B%5D=1&degree%5B%5D=2&degree%5B%5D=3&sort=4&display=list&limit=250&offset=1750",
         "checkedAt": "2026-11-20"
       },
       "imports": [
@@ -113022,7 +113022,7 @@
         "sourceRecordId": "4314",
         "kind": "official-directory",
         "recordUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4314/",
-        "listingSourceUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json?degree%5B%5D=1&degree%5B%5D=2&degree%5B%5D=3&sort=4&display=list&limit=250&offset=750",
+        "listingSourceUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json?degree%5B%5D=1&degree%5B%5D=2&degree%5B%5D=3&sort=4&display=list&limit=250&offset=1000",
         "checkedAt": "2026-11-20"
       },
       "imports": [
@@ -142224,7 +142224,7 @@
       "institutionName": "Uppsala University",
       "institutionWebsite": "https://uu.se/",
       "countryCode": "SE",
-      "title": "Data Science - Machine Learning and Statistics",
+      "title": "Data Science – Machine Learning and Statistics",
       "field": null,
       "category": null,
       "degree": "master",
@@ -142380,7 +142380,7 @@
       "institutionName": "Uppsala University",
       "institutionWebsite": "https://uu.se/",
       "countryCode": "SE",
-      "title": "Data Science - Data Engineering",
+      "title": "Data Science – Data Engineering",
       "field": null,
       "category": null,
       "degree": "master",
@@ -142458,7 +142458,7 @@
       "institutionName": "Uppsala University",
       "institutionWebsite": "https://uu.se/",
       "countryCode": "SE",
-      "title": "Bioinformatics - Computer Science Background",
+      "title": "Bioinformatics (Computer Science background)",
       "field": null,
       "category": null,
       "degree": "master",
@@ -218650,7 +218650,7 @@
       "institutionName": "University of British Columbia",
       "institutionWebsite": "https://ubc.ca/",
       "countryCode": "CA",
-      "title": "Master of Public Health (MPH)",
+      "title": "Population and Public Health Master of Public Health Faculty of Medicine",
       "field": null,
       "category": null,
       "degree": "master",
@@ -339599,6 +339599,81 @@
           "kind": "institution",
           "recordUrl": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs?page=1",
           "listingSourceUrl": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs?page=1",
+          "checkedAt": "2026-11-20"
+        }
+      ]
+    },
+    {
+      "id": "program_838052144a11d4828b646080",
+      "institutionId": "inst_ee6edcee60d2e221a1aa1793",
+      "institutionName": "University of Göttingen",
+      "institutionWebsite": "https://www.uni-goettingen.de/",
+      "countryCode": "DE",
+      "title": "Cognition, Brain, and Behaviour (MSc)",
+      "field": null,
+      "category": null,
+      "degree": "master",
+      "language": "en",
+      "languages": [
+        "en"
+      ],
+      "mode": null,
+      "durationMonths": null,
+      "programUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11293/",
+      "subject": "Psychology",
+      "city": "Göttingen",
+      "sourceLanguages": [
+        "English"
+      ],
+      "tuition": {
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "applicantScope": null,
+        "note": ""
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": ""
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": ""
+      },
+      "sources": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11293/",
+          "label": "DAAD International Programmes in Germany",
+          "checkedAt": "2026-11-20",
+          "kind": "official-directory",
+          "sourceId": "daad-international-programmes"
+        }
+      ],
+      "verificationStatus": "official-directory",
+      "updatedAt": "2026-11-20",
+      "provenance": {
+        "sourceId": "daad-international-programmes",
+        "sourceRecordId": "11293",
+        "kind": "official-directory",
+        "recordUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11293/",
+        "listingSourceUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json?degree%5B%5D=1&degree%5B%5D=2&degree%5B%5D=3&sort=4&display=list&limit=250&offset=250",
+        "checkedAt": "2026-11-20"
+      },
+      "imports": [
+        {
+          "sourceId": "daad-international-programmes",
+          "sourceRecordId": "11293",
+          "kind": "official-directory",
+          "recordUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11293/",
+          "listingSourceUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json?degree%5B%5D=1&degree%5B%5D=2&degree%5B%5D=3&sort=4&display=list&limit=250&offset=250",
           "checkedAt": "2026-11-20"
         }
       ]
