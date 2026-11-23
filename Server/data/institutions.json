@@ -6,15 +6,15 @@
     "license": "MIT",
     "licenseUrl": "https://raw.githubusercontent.com/Hipo/university-domains-list/master/LICENSE.txt",
     "retrievedAt": "2026-11-23",
-    "institutionCount": 10272,
+    "institutionCount": 10273,
     "countryCount": 200,
-    "upstreamRecordCount": 10272,
+    "upstreamRecordCount": 10273,
     "duplicateCount": 0,
     "rejectedCount": 0,
     "coverageNote": "Community-maintained institution directory, including universities, colleges and other listed higher-education providers. Not an exhaustive global register, accreditation confirmation, official admissions listing, or proof of active programs. Country count includes territories and the provider code XK. Unknown program facts must remain unknown.",
     "geographyNote": "Broad geographic grouping for browsing, not membership in the EU or eligibility for a scholarship. Transcontinental countries follow a consistent single-region mapping; geography does not determine admissions rights.",
-    "sourceSha256": "a65be79426569fbcdd8437939a2cb71370e53d7832a4534facf6b6d04270bed8",
-    "sourceEtag": "W/\"0019cfca1d884368955415292ead5e796a48d0b2203233c6380641973f240a17\""
+    "sourceSha256": "17fe25b78f0441523cff6f007064e95bf96123b12d89c11c03f708ce883ca1db",
+    "sourceEtag": "W/\"88dd56fb31ff3f81b19f80710fa56233f59516a2e4cdafd4039e360beed8e3d7\""
   },
   "institutions": [
     {
@@ -59663,6 +59663,26 @@
         "hums.ac.ir"
       ],
       "website": "http://www.hums.ac.ir/",
+      "source": {
+        "name": "Hipo University Domains and Names Data List",
+        "url": "https://raw.githubusercontent.com/Hipo/university-domains-list/master/world_universities_and_domains.json",
+        "retrievedAt": "2026-11-23"
+      },
+      "verificationStatus": "directory-listed"
+    },
+    {
+      "id": "inst_5929c02285b0c7f7202f09ec",
+      "name": "Hormuud University",
+      "countryCode": "SO",
+      "country": "სომალი",
+      "countryEnglish": "Somalia",
+      "region": "africa",
+      "city": null,
+      "stateProvince": "Banaadir",
+      "domains": [
+        "hu.edu.so"
+      ],
+      "website": "https://hu.edu.so/",
       "source": {
         "name": "Hipo University Domains and Names Data List",
         "url": "https://raw.githubusercontent.com/Hipo/university-domains-list/master/world_universities_and_domains.json",
