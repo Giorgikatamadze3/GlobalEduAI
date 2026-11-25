@@ -1,13 +1,13 @@
 {
-  "attemptedAt": "2026-11-25T08:29:10.546Z",
+  "attemptedAt": "2026-11-25T21:39:50.298Z",
   "intervalHours": 6,
   "status": "partial",
-  "lastSuccessfulAt": "2026-11-25T08:30:42.145Z",
+  "lastSuccessfulAt": "2026-11-25T21:41:12.581Z",
   "sources": [
     {
       "id": "hipo-universities",
       "status": "checked",
-      "checkedAt": "2026-11-25T08:29:11.364Z"
+      "checkedAt": "2026-11-25T21:39:51.286Z"
     },
     {
       "id": "daad-international-programmes",
@@ -18,22 +18,22 @@
     {
       "id": "university-oslo-masters",
       "status": "checked",
-      "checkedAt": "2026-11-25T08:29:16.125Z"
+      "checkedAt": "2026-11-25T21:39:55.505Z"
     },
     {
       "id": "university-vienna-masters",
       "status": "checked",
-      "checkedAt": "2026-11-25T08:29:20.198Z"
+      "checkedAt": "2026-11-25T21:39:59.074Z"
     },
     {
       "id": "university-uppsala-it-masters",
       "status": "checked",
-      "checkedAt": "2026-11-25T08:29:24.467Z"
+      "checkedAt": "2026-11-25T21:40:02.894Z"
     },
     {
       "id": "university-copenhagen-masters",
       "status": "checked",
-      "checkedAt": "2026-11-25T08:29:28.011Z"
+      "checkedAt": "2026-11-25T21:40:05.770Z"
     },
     {
       "id": "world-boston-masters",
@@ -50,7 +50,7 @@
     {
       "id": "world-wisconsin-masters",
       "status": "checked",
-      "checkedAt": "2026-11-25T08:29:32.877Z"
+      "checkedAt": "2026-11-25T21:40:10.079Z"
     },
     {
       "id": "world-gwu-masters",
@@ -61,17 +61,17 @@
     {
       "id": "world-ubc-masters",
       "status": "checked",
-      "checkedAt": "2026-11-25T08:29:38.328Z"
+      "checkedAt": "2026-11-25T21:40:22.573Z"
     },
     {
       "id": "world-edinburgh-masters",
       "status": "checked",
-      "checkedAt": "2026-11-25T08:29:41.366Z"
+      "checkedAt": "2026-11-25T21:40:25.285Z"
     },
     {
       "id": "world-auckland-masters",
       "status": "checked",
-      "checkedAt": "2026-11-25T08:29:45.875Z"
+      "checkedAt": "2026-11-25T21:40:29.806Z"
     },
     {
       "id": "world-chile-masters",
@@ -82,27 +82,27 @@
     {
       "id": "world-twente-masters",
       "status": "checked",
-      "checkedAt": "2026-11-25T08:29:49.135Z"
+      "checkedAt": "2026-11-25T21:40:33.243Z"
     },
     {
       "id": "world-cape-town-humanities-masters",
       "status": "checked",
-      "checkedAt": "2026-11-25T08:29:53.365Z"
+      "checkedAt": "2026-11-25T21:40:37.155Z"
     },
     {
       "id": "world-trinity-dublin-masters",
       "status": "checked",
-      "checkedAt": "2026-11-25T08:29:57.888Z"
+      "checkedAt": "2026-11-25T21:40:40.652Z"
     },
     {
       "id": "world-lund-masters-index",
       "status": "checked",
-      "checkedAt": "2026-11-25T08:30:00.766Z"
+      "checkedAt": "2026-11-25T21:40:43.240Z"
     },
     {
       "id": "world-catholic-chile-masters",
       "status": "checked",
-      "checkedAt": "2026-11-25T08:30:04.706Z"
+      "checkedAt": "2026-11-25T21:40:46.614Z"
     },
     {
       "id": "world-leiden-masters-index",
@@ -113,30 +113,30 @@
     {
       "id": "world-bologna-masters",
       "status": "checked",
-      "checkedAt": "2026-11-25T08:30:24.114Z"
+      "checkedAt": "2026-11-25T21:40:56.595Z"
     },
     {
       "id": "world-hku-taught-masters",
       "status": "checked",
-      "checkedAt": "2026-11-25T08:30:30.544Z"
+      "checkedAt": "2026-11-25T21:41:02.802Z"
     },
     {
       "id": "world-valencia-masters",
       "status": "checked",
-      "checkedAt": "2026-11-25T08:30:35.049Z"
+      "checkedAt": "2026-11-25T21:41:06.447Z"
     },
     {
       "id": "world-sorbonne-science-masters",
       "status": "checked",
-      "checkedAt": "2026-11-25T08:30:38.052Z"
+      "checkedAt": "2026-11-25T21:41:08.780Z"
     },
     {
       "id": "world-lyon1-masters",
       "status": "checked",
-      "checkedAt": "2026-11-25T08:30:41.661Z"
+      "checkedAt": "2026-11-25T21:41:12.221Z"
     }
   ],
-  "completedAt": "2026-11-25T08:30:42.145Z",
+  "completedAt": "2026-11-25T21:41:12.581Z",
   "successfulSources": 19,
   "failedSources": 6
 }
