@@ -2,7 +2,7 @@
   "metadata": {
     "sourcePolicy": "University pages and explicitly registered authoritative programme directories. Source kind and dated provenance are retained; unpublished attributes remain null.",
     "updatedAt": "2026-11-26",
-    "programCount": 4393,
+    "programCount": 4394,
     "coverageNote": "Official-source programme records from registered catalogues and individually checked university pages. Worldwide and national coverage remain partial; a source listing is not proof of an open admission cycle.",
     "defaultApplicant": "Non-EU/international fee-paying applicant; citizenship/residence exemptions require individual verification.",
     "unknownValuePolicy": "Unverified or applicant-dependent numeric values are null, never zero. No generic GPA conversion, currency conversion, annualisation, scholarship award or recurring-deadline year has been invented.",
@@ -11,7 +11,7 @@
       "regions": [
         {
           "region": "europe",
-          "programCount": 2928,
+          "programCount": 2929,
           "countriesWithPrograms": 45
         },
         {
@@ -270,7 +270,7 @@
             "countryCode": "NL",
             "institutionCount": 48,
             "institutionsWithPrograms": 5,
-            "programCount": 297
+            "programCount": 298
           },
           {
             "countryCode": "NO",
@@ -362,8 +362,8 @@
       "institutionCount": 10275,
       "institutionsWithPrograms": 207,
       "institutionsWithoutPrograms": 10068,
-      "programCount": 4393,
-      "linkedProgramCount": 4393,
+      "programCount": 4394,
+      "linkedProgramCount": 4394,
       "unmatchedProgramCount": 0,
       "coveragePercent": 2.01,
       "sources": [
@@ -931,7 +931,7 @@
           "id": "world-twente-masters",
           "kind": "institution",
           "checkedAt": "2026-11-26",
-          "programCount": 32,
+          "programCount": 33,
           "status": "partial",
           "complete": false
         },
@@ -1831,7 +1831,7 @@
           "countryCode": "NL",
           "institutionCount": 48,
           "institutionsWithPrograms": 5,
-          "programCount": 297
+          "programCount": 298
         },
         {
           "countryCode": "NO",
@@ -2305,8 +2305,8 @@
           "pages": 1,
           "records": 115,
           "accepted": 0,
-          "updated": 115,
-          "duplicates": 0
+          "updated": 4,
+          "duplicates": 111
         },
         {
           "sourceId": "world-boston-masters",
@@ -2332,8 +2332,8 @@
           "pages": 1,
           "records": 143,
           "accepted": 0,
-          "updated": 143,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 143
         },
         {
           "sourceId": "world-gwu-masters",
@@ -2348,10 +2348,10 @@
           "sourceId": "world-ubc-masters",
           "countryCode": "CA",
           "pages": 4,
-          "records": 218,
+          "records": 219,
           "accepted": 0,
-          "updated": 218,
-          "duplicates": 0
+          "updated": 15,
+          "duplicates": 204
         },
         {
           "sourceId": "world-edinburgh-masters",
@@ -2359,8 +2359,8 @@
           "pages": 1,
           "records": 220,
           "accepted": 0,
-          "updated": 220,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 220
         },
         {
           "sourceId": "world-auckland-masters",
@@ -2368,8 +2368,8 @@
           "pages": 1,
           "records": 95,
           "accepted": 0,
-          "updated": 95,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 95
         },
         {
           "sourceId": "world-chile-masters",
@@ -2384,10 +2384,10 @@
           "sourceId": "world-twente-masters",
           "countryCode": "NL",
           "pages": 1,
-          "records": 32,
-          "accepted": 0,
-          "updated": 32,
-          "duplicates": 0
+          "records": 33,
+          "accepted": 1,
+          "updated": 0,
+          "duplicates": 32
         },
         {
           "sourceId": "world-cape-town-humanities-masters",
@@ -2395,8 +2395,8 @@
           "pages": 1,
           "records": 122,
           "accepted": 0,
-          "updated": 122,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 122
         },
         {
           "sourceId": "world-trinity-dublin-masters",
@@ -2404,8 +2404,8 @@
           "pages": 1,
           "records": 136,
           "accepted": 0,
-          "updated": 136,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 136
         },
         {
           "sourceId": "world-lund-masters-index",
@@ -2413,8 +2413,8 @@
           "pages": 1,
           "records": 17,
           "accepted": 0,
-          "updated": 17,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 17
         },
         {
           "sourceId": "world-catholic-chile-masters",
@@ -2422,8 +2422,8 @@
           "pages": 1,
           "records": 9,
           "accepted": 0,
-          "updated": 9,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 9
         },
         {
           "sourceId": "world-leiden-masters-index",
@@ -2440,8 +2440,8 @@
           "pages": 1,
           "records": 143,
           "accepted": 0,
-          "updated": 143,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 143
         },
         {
           "sourceId": "world-hku-taught-masters",
@@ -2449,8 +2449,8 @@
           "pages": 1,
           "records": 154,
           "accepted": 0,
-          "updated": 154,
-          "duplicates": 0
+          "updated": 1,
+          "duplicates": 153
         },
         {
           "sourceId": "world-strasbourg-masters",
@@ -2463,8 +2463,8 @@
           "pages": 1,
           "records": 18,
           "accepted": 0,
-          "updated": 18,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 18
         },
         {
           "sourceId": "world-lyon1-masters",
@@ -2472,8 +2472,8 @@
           "pages": 1,
           "records": 54,
           "accepted": 0,
-          "updated": 54,
-          "duplicates": 0
+          "updated": 0,
+          "duplicates": 54
         }
       ],
       "completeness": "partial"
@@ -210114,7 +210114,7 @@
         {
           "url": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs?page=1",
           "label": "University of British Columbia — official master programme index",
-          "checkedAt": "2026-11-25",
+          "checkedAt": "2026-11-26",
           "kind": "institution",
           "sourceId": "world-ubc-masters"
         },
@@ -210150,7 +210150,7 @@
           "kind": "institution",
           "recordUrl": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs?page=1",
           "listingSourceUrl": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs?page=1",
-          "checkedAt": "2026-11-25"
+          "checkedAt": "2026-11-26"
         },
         {
           "sourceId": "world-ubc-masters",
@@ -218652,7 +218652,7 @@
       "institutionName": "University of British Columbia",
       "institutionWebsite": "https://ubc.ca/",
       "countryCode": "CA",
-      "title": "Population and Public Health Master of Public Health Faculty of Medicine",
+      "title": "Master of Public Health (MPH)",
       "field": null,
       "category": null,
       "degree": "master",
@@ -303645,7 +303645,7 @@
       "updatedAt": "2026-11-26",
       "provenance": {
         "sourceId": "world-hku-taught-masters",
-        "sourceRecordId": "2baa9f12-5fab-f111-aaad-6045bd5843c9",
+        "sourceRecordId": "699f7e80-70e9-f111-84e9-002248172fab",
         "kind": "institution",
         "recordUrl": "https://portal.hku.hk/tpg-admissions/programme-listing",
         "listingSourceUrl": "https://portal.hku.hk/tpg-admissions/programme-listing",
@@ -303655,6 +303655,14 @@
         {
           "sourceId": "world-hku-taught-masters",
           "sourceRecordId": "2baa9f12-5fab-f111-aaad-6045bd5843c9",
+          "kind": "institution",
+          "recordUrl": "https://portal.hku.hk/tpg-admissions/programme-listing",
+          "listingSourceUrl": "https://portal.hku.hk/tpg-admissions/programme-listing",
+          "checkedAt": "2026-11-26"
+        },
+        {
+          "sourceId": "world-hku-taught-masters",
+          "sourceRecordId": "699f7e80-70e9-f111-84e9-002248172fab",
           "kind": "institution",
           "recordUrl": "https://portal.hku.hk/tpg-admissions/programme-listing",
           "listingSourceUrl": "https://portal.hku.hk/tpg-admissions/programme-listing",
@@ -339759,6 +339767,84 @@
           "kind": "official-directory",
           "recordUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11069/",
           "listingSourceUrl": "https://www2.daad.de/deutschland/studienangebote/international-programmes/api/solr/en/search.json?degree%5B%5D=1&degree%5B%5D=2&degree%5B%5D=3&sort=4&display=list&limit=250&offset=1500",
+          "checkedAt": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "program_25528e87def21553fa86eb99",
+      "institutionId": "inst_40fdd2d74b57f58b79cf9b8b",
+      "institutionName": "University of Twente",
+      "institutionWebsite": "https://utwente.nl/",
+      "countryCode": "NL",
+      "title": "Geographical Information Management & Applications (joint degree) (MSc)",
+      "field": null,
+      "category": null,
+      "degree": "master",
+      "language": "en",
+      "languages": [],
+      "mode": null,
+      "durationMonths": 24,
+      "programUrl": "https://www.utwente.nl/en/education/master/programmes/geographical-information-management-applications/",
+      "subject": null,
+      "city": null,
+      "sourceLanguages": [],
+      "tuition": {
+        "amount": null,
+        "currency": null,
+        "period": null,
+        "applicantScope": null,
+        "note": ""
+      },
+      "funding": {
+        "fullFunding": null,
+        "scholarships": []
+      },
+      "requirements": {
+        "gpaMinPercent": null,
+        "languageLevel": null,
+        "languageTest": null,
+        "experienceYears": null,
+        "note": "Master-level title and official link verified in the university catalogue. Detailed entry requirements, current intake, fees and funding are not inferred from this listing."
+      },
+      "deadline": {
+        "date": null,
+        "cycle": null,
+        "note": ""
+      },
+      "sources": [
+        {
+          "url": "https://www.utwente.nl/en/education/master/programmes/",
+          "label": "University of Twente — official master programme index",
+          "checkedAt": "2026-11-26",
+          "kind": "institution",
+          "sourceId": "world-twente-masters"
+        },
+        {
+          "url": "https://www.utwente.nl/en/education/master/programmes/geographical-information-management-applications/",
+          "label": "Geographical Information Management & Applications (joint degree) (MSc)",
+          "checkedAt": "2026-11-26",
+          "kind": "institution",
+          "sourceId": "world-twente-masters"
+        }
+      ],
+      "verificationStatus": "official-source",
+      "updatedAt": "2026-11-26",
+      "provenance": {
+        "sourceId": "world-twente-masters",
+        "sourceRecordId": "/en/education/master/programmes/geographical-information-management-applications/",
+        "kind": "institution",
+        "recordUrl": "https://www.utwente.nl/en/education/master/programmes/",
+        "listingSourceUrl": "https://www.utwente.nl/en/education/master/programmes/",
+        "checkedAt": "2026-11-26"
+      },
+      "imports": [
+        {
+          "sourceId": "world-twente-masters",
+          "sourceRecordId": "/en/education/master/programmes/geographical-information-management-applications/",
+          "kind": "institution",
+          "recordUrl": "https://www.utwente.nl/en/education/master/programmes/",
+          "listingSourceUrl": "https://www.utwente.nl/en/education/master/programmes/",
           "checkedAt": "2026-11-26"
         }
       ]
